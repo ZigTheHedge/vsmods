@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,7 @@ namespace zeekea.src.nightstand
         {
             if (Api.Side == EnumAppSide.Client)
             {                
+                /*
                 if (nightstandDialog == null)
                 {
                     nightstandDialog = new GuiEightSlots(Lang.Get("zeekea:nightstand-title"), Inventory, Pos, Api as ICoreClientAPI);
@@ -57,9 +59,28 @@ namespace zeekea.src.nightstand
                 nightstandDialog.TryOpen();
 
                 (Api as ICoreClientAPI).Network.SendPacketClient(inventory.Open(byPlayer));
+                */
             }
             else
             {
+                byte[] data;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryWriter writer = new BinaryWriter(ms);
+                    TreeAttribute tree = new TreeAttribute();
+                    inventory.ToTreeAttributes(tree);
+                    tree.ToBytes(writer);
+                    data = ms.ToArray();
+                }
+
+                ((ICoreServerAPI)Api).Network.SendBlockEntityPacket(
+                    (IServerPlayer)byPlayer,
+                    Pos.X, Pos.Y, Pos.Z,
+                    (int)EnumBlockStovePacket.OpenGUI,
+                    data
+                );
+
                 byPlayer.InventoryManager.OpenInventory(inventory);
             }
         }
@@ -94,6 +115,31 @@ namespace zeekea.src.nightstand
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
             base.OnReceivedServerPacket(packetid, data);
+
+            if (packetid == (int)EnumBlockStovePacket.OpenGUI)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    BinaryReader reader = new BinaryReader(ms);
+                    TreeAttribute tree = new TreeAttribute();
+                    tree.FromBytes(reader);
+                    Inventory.FromTreeAttributes(tree);
+                    Inventory.ResolveBlocksOrItems();
+
+                    IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
+
+                    if (nightstandDialog == null)
+                    {
+                        nightstandDialog = new GuiEightSlots(Lang.Get("zeekea:nightstand-title"), Inventory, Pos, Api as ICoreClientAPI);
+                        nightstandDialog.OnClosed += () =>
+                        {
+                            nightstandDialog = null;
+                        };
+                    }
+
+                    nightstandDialog.TryOpen();
+                }
+            }
 
             if (packetid == (int)EnumBlockEntityPacketId.Close)
             {

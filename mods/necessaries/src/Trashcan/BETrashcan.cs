@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
 namespace necessaries.src.Trashcan
@@ -122,6 +124,7 @@ namespace necessaries.src.Trashcan
         {
             if (Api.Side == EnumAppSide.Client)
             {
+                /*
                 if (clientDialog == null)
                 {
                     clientDialog = new GuiTrashcan(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
@@ -136,10 +139,28 @@ namespace necessaries.src.Trashcan
                 clientDialog.TryOpen();
 
                 (Api as ICoreClientAPI).Network.SendPacketClient(inventory.Open(byPlayer));
-
+                */
             }
             else
             {
+                byte[] data;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryWriter writer = new BinaryWriter(ms);
+                    TreeAttribute tree = new TreeAttribute();
+                    inventory.ToTreeAttributes(tree);
+                    tree.ToBytes(writer);
+                    data = ms.ToArray();
+                }
+
+                ((ICoreServerAPI)Api).Network.SendBlockEntityPacket(
+                    (IServerPlayer)byPlayer,
+                    Pos.X, Pos.Y, Pos.Z,
+                    (int)EnumBlockStovePacket.OpenGUI,
+                    data
+                );
+
                 byPlayer.InventoryManager.OpenInventory(inventory);
             }
         }
@@ -174,6 +195,30 @@ namespace necessaries.src.Trashcan
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
             base.OnReceivedServerPacket(packetid, data);
+            if (packetid == (int)EnumBlockStovePacket.OpenGUI)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    BinaryReader reader = new BinaryReader(ms);
+                    TreeAttribute tree = new TreeAttribute();
+                    tree.FromBytes(reader);
+                    Inventory.FromTreeAttributes(tree);
+                    Inventory.ResolveBlocksOrItems();
+
+                    IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
+
+                    if (clientDialog == null)
+                    {
+                        clientDialog = new GuiTrashcan(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
+                        clientDialog.OnClosed += () =>
+                        {
+                            clientDialog = null;
+                        };
+                    }
+
+                    clientDialog.TryOpen();
+                }
+            }
 
             if (packetid == (int)EnumBlockEntityPacketId.Close)
             {

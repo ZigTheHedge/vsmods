@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,24 +40,21 @@ namespace tradeomat.src.TradeomatBlock
             base.Initialize(api);
 
             inventory.LateInitialize("tomat-1", api);
-            inventory.SlotModified += OnSlotModified;
         }
 
-        private void OnSlotModified(int slotid)
-        {
-            Api.World.BlockAccessor.GetChunkAtBlockPos(Pos)?.MarkModified();
-        }
 
         public void OnBlockInteract(IPlayer byPlayer, bool isOwner)
         {
             if (Api.Side == EnumAppSide.Client)
             {
+                /*
                 if (isOwner)
                 {
                     if (byPlayer.PlayerName.Equals(ownerName))
                     {
                         if (ownerDialog == null)
                         {
+                            
                             ownerDialog = new GuiOwnerTradeBlock(Lang.Get("tradeomat:owner-title", ownerName), Inventory, Pos, Api as ICoreClientAPI);
                             ownerDialog.OnClosed += () =>
                             {
@@ -98,6 +96,7 @@ namespace tradeomat.src.TradeomatBlock
 
                     (Api as ICoreClientAPI).Network.SendPacketClient(inventory.Open(byPlayer));
                 }
+                */
             }
             else
             {
@@ -105,11 +104,49 @@ namespace tradeomat.src.TradeomatBlock
                 {
                     if (byPlayer.PlayerName.Equals(ownerName))
                     {
+                        byte[] data;
+
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            BinaryWriter writer = new BinaryWriter(ms);
+                            writer.Write(true);
+                            TreeAttribute tree = new TreeAttribute();
+                            inventory.ToTreeAttributes(tree);
+                            tree.ToBytes(writer);
+                            data = ms.ToArray();
+                        }
+
+                        ((ICoreServerAPI)Api).Network.SendBlockEntityPacket(
+                            (IServerPlayer)byPlayer,
+                            Pos.X, Pos.Y, Pos.Z,
+                            (int)EnumBlockStovePacket.OpenGUI,
+                            data
+                        );
+
                         byPlayer.InventoryManager.OpenInventory(inventory);
                     } else
                         ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:notyours"), EnumChatType.CommandError);
                 } else
                 {
+                    byte[] data;
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(ms);
+                        writer.Write(false);
+                        TreeAttribute tree = new TreeAttribute();
+                        inventory.ToTreeAttributes(tree);
+                        tree.ToBytes(writer);
+                        data = ms.ToArray();
+                    }
+
+                        ((ICoreServerAPI)Api).Network.SendBlockEntityPacket(
+                            (IServerPlayer)byPlayer,
+                            Pos.X, Pos.Y, Pos.Z,
+                            (int)EnumBlockStovePacket.OpenGUI,
+                            data
+                        );
+
                     byPlayer.InventoryManager.OpenInventory(inventory);
                 }
             }
@@ -386,7 +423,61 @@ namespace tradeomat.src.TradeomatBlock
 
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
-            base.OnReceivedServerPacket(packetid, data);
+            if (packetid == (int)EnumBlockStovePacket.OpenGUI)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    BinaryReader reader = new BinaryReader(ms);
+                    bool isOwner = reader.ReadBoolean();
+                    TreeAttribute tree = new TreeAttribute();
+                    tree.FromBytes(reader);
+                    Inventory.FromTreeAttributes(tree);
+                    Inventory.ResolveBlocksOrItems();
+
+                    IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
+
+                    if (isOwner)
+                    {
+                        if (ownerDialog == null || !ownerDialog.IsOpened())
+                        {
+                            ownerDialog = new GuiOwnerTradeBlock(Lang.Get("tradeomat:owner-title", ownerName), Inventory, Pos, Api as ICoreClientAPI);
+                            ownerDialog.OnClosed += () =>
+                            {
+                                ownerDialog = null;
+                            };
+
+                            ownerDialog.TryOpen();
+                        }
+                    }
+                    else
+                    {
+                        if (customerDialog == null || !customerDialog.IsOpened())
+                        {
+                            customerDialog = new GuiCustomerTradeBlock(Lang.Get("tradeomat:customer-title", ownerName), Inventory, Pos, Api as ICoreClientAPI);
+                            customerDialog.OnClosed += () =>
+                            {
+                                customerDialog = null;
+                            };
+
+                            customerDialog.TryOpen();
+
+                            GuiElementDynamicText errorText = customerDialog.SingleComposer.GetDynamicText("errorText");
+                            if (inventory[0].Itemstack == null || inventory[1].Itemstack == null)
+                            {
+                                errorText.SetNewText(Lang.Get("tradeomat:isnotsetup"));
+                            }
+                            else
+                            {
+                                if (GetStorage(true) < inventory[1].Itemstack.StackSize)
+                                    errorText.SetNewText(Lang.Get("tradeomat:outofgoods"));
+                                if (GetStorage(false) < inventory[0].Itemstack.StackSize)
+                                    errorText.SetNewText(Lang.Get("tradeomat:outofspace"));
+                            }
+                        }
+                    }
+                }
+            }
+
 
             if (packetid == (int)EnumBlockEntityPacketId.Close)
             {

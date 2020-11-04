@@ -8,6 +8,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
 namespace necessaries.src.Parcel
@@ -62,6 +63,7 @@ namespace necessaries.src.Parcel
         {
             if (Api.Side == EnumAppSide.Client)
             {
+                /*
                 if (clientDialog == null)
                 {
                     clientDialog = new GuiParcel(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
@@ -80,9 +82,29 @@ namespace necessaries.src.Parcel
                 clientDialog.DefMessage = message;
                 clientDialog.DefRcpt = rcptAddress;
                 clientDialog.DefDest = destAddress;
+                */
             }
             else
             {
+
+                byte[] data;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryWriter writer = new BinaryWriter(ms);
+                    TreeAttribute tree = new TreeAttribute();
+                    inventory.ToTreeAttributes(tree);
+                    tree.ToBytes(writer);
+                    data = ms.ToArray();
+                }
+
+                ((ICoreServerAPI)Api).Network.SendBlockEntityPacket(
+                    (IServerPlayer)byPlayer,
+                    Pos.X, Pos.Y, Pos.Z,
+                    (int)EnumBlockStovePacket.OpenGUI,
+                    data
+                );
+
                 byPlayer.InventoryManager.OpenInventory(inventory);
             }
         }
@@ -148,6 +170,36 @@ namespace necessaries.src.Parcel
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
             base.OnReceivedServerPacket(packetid, data);
+
+            if (packetid == (int)EnumBlockStovePacket.OpenGUI)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    BinaryReader reader = new BinaryReader(ms);
+                    TreeAttribute tree = new TreeAttribute();
+                    tree.FromBytes(reader);
+                    Inventory.FromTreeAttributes(tree);
+                    Inventory.ResolveBlocksOrItems();
+
+                    IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
+
+                    if (clientDialog == null)
+                    {
+                        clientDialog = new GuiParcel(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
+                        clientDialog.OnClosed += () =>
+                        {
+                            clientDialog = null;
+                        };
+                    }
+
+                    clientDialog.TryOpen();
+
+                    clientDialog.DefMessage = message;
+                    clientDialog.DefRcpt = rcptAddress;
+                    clientDialog.DefDest = destAddress;
+                }
+            }
+
 
             if (packetid == (int)EnumBlockEntityPacketId.Close)
             {

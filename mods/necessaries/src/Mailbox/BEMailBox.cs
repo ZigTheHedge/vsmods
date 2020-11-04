@@ -62,6 +62,7 @@ namespace necessaries.src.Mailbox
         {
             if (Api.Side == EnumAppSide.Client)
             {
+                /*
                 if (clientDialog == null)
                 {
                     clientDialog = new GuiDialogMailbox(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
@@ -85,9 +86,29 @@ namespace necessaries.src.Mailbox
                 
                 if (address == "") address = byPlayer.PlayerName + ", " + (foundCount + 1);
                 clientDialog.DefAddress = address;
+                */
             }
             else
             {
+                byte[] data;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryWriter writer = new BinaryWriter(ms);
+                    writer.Write(byPlayer.PlayerName);
+                    TreeAttribute tree = new TreeAttribute();
+                    inventory.ToTreeAttributes(tree);
+                    tree.ToBytes(writer);
+                    data = ms.ToArray();
+                }
+
+                ((ICoreServerAPI)Api).Network.SendBlockEntityPacket(
+                    (IServerPlayer)byPlayer,
+                    Pos.X, Pos.Y, Pos.Z,
+                    (int)EnumBlockStovePacket.OpenGUI,
+                    data
+                );
+
                 byPlayer.InventoryManager.OpenInventory(inventory);
             }
         }
@@ -239,6 +260,41 @@ namespace necessaries.src.Mailbox
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
             base.OnReceivedServerPacket(packetid, data);
+
+            if (packetid == (int)EnumBlockStovePacket.OpenGUI)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    BinaryReader reader = new BinaryReader(ms);
+                    string playerName = reader.ReadString();
+                    TreeAttribute tree = new TreeAttribute();
+                    tree.FromBytes(reader);
+                    Inventory.FromTreeAttributes(tree);
+                    Inventory.ResolveBlocksOrItems();
+
+                    IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
+
+                    if (clientDialog == null)
+                    {
+                        clientDialog = new GuiDialogMailbox(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
+                        clientDialog.OnClosed += () =>
+                        {
+                            clientDialog = null;
+                        };
+                    }
+
+                    clientDialog.TryOpen();
+
+                    int foundCount = 0;
+                    for (int i = 0; i < Necessaries.postServicesClient.Count; i++)
+                    {
+                        if (Necessaries.postServicesClient[i].title.StartsWith(playerName)) foundCount++;
+                    }
+
+                    if (address == "") address = playerName + ", " + (foundCount + 1);
+                    clientDialog.DefAddress = address;
+                }
+            }
 
             if (packetid == (int)EnumBlockEntityPacketId.Close)
             {
