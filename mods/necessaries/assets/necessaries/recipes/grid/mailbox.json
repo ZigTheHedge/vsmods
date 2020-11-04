@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": " BF	BGB	BBB",
+  "ingredients": {
+    "B": {
+      type: "item", 
+	  code: "game:plank-*"
+    },
+    "F": {
+      "type": "item",
+      "code": "mailflag"
+    },
+    "G": {
+      "type": "item",
+      "code": "game:gear-temporal"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "mailbox-nonewmail-north" }
+}

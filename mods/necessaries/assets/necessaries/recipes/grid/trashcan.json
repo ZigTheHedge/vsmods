@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "_H_	BBB	_C_",
+  "ingredients": {
+    "B": {
+      type: "item", 
+	  code: "game:plank-*"
+    },
+    "H": {
+      "type": "item",
+      "code": "game:flaxtwine"
+    },
+    "C": {
+      "type": "block",
+      "code": "game:barrel"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "trashcan" }
+}

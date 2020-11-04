@@ -1,0 +1,125 @@
+{
+	"block-nightstand-acacia-north": "Nightstand made of acacia",	
+	"block-nightstand-birch-north": "Nightstand made of birch",	
+	"block-nightstand-kapok-north": "Nightstand made of kapok",	
+	"block-nightstand-maple-north": "Nightstand made of maple",	
+	"block-nightstand-oak-north": "Nightstand made of oak",	
+	"block-nightstand-pine-north": "Nightstand made of pine",
+	
+	"nightstand-title": "Nightstand",
+
+	"block-nightlamp-copper-blue-on": "Blue copper nightlamp",
+	"block-nightlamp-tinbronze-blue-on": "Blue tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-blue-on": "Blue bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-blue-on": "Blue black bronze nightlamp",
+	"block-nightlamp-iron-blue-on": "Blue iron nightlamp",
+
+	"block-nightlamp-copper-brown-on": "Brown copper nightlamp",
+	"block-nightlamp-tinbronze-brown-on": "Brown tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-brown-on": "Brown bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-brown-on": "Brown black bronze nightlamp",
+	"block-nightlamp-iron-brown-on": "Brown iron nightlamp",
+
+	"block-nightlamp-copper-green-on": "Green copper nightlamp",
+	"block-nightlamp-tinbronze-green-on": "Green tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-green-on": "Green bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-green-on": "Green black bronze nightlamp",
+	"block-nightlamp-iron-green-on": "Green iron nightlamp",
+
+	"block-nightlamp-copper-plain-on": "Plain copper nightlamp",
+	"block-nightlamp-tinbronze-plain-on": "Plain tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-plain-on": "Plain bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-plain-on": "Plain black bronze nightlamp",
+	"block-nightlamp-iron-plain-on": "Plain iron nightlamp",
+
+	"block-nightlamp-copper-quartz-on": "Quartz copper nightlamp",
+	"block-nightlamp-tinbronze-quartz-on": "Quartz tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-quartz-on": "Quartz bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-quartz-on": "Quartz black bronze nightlamp",
+	"block-nightlamp-iron-quartz-on": "Quartz iron nightlamp",
+
+	"block-nightlamp-copper-red-on": "Red copper nightlamp",
+	"block-nightlamp-tinbronze-red-on": "Red tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-red-on": "Red bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-red-on": "Red black bronze nightlamp",
+	"block-nightlamp-iron-red-on": "Red iron nightlamp",
+
+	"block-nightlamp-copper-vintage-on": "Vintage copper nightlamp",
+	"block-nightlamp-tinbronze-vintage-on": "Vintage tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-vintage-on": "Vintage bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-vintage-on": "Vintage black bronze nightlamp",
+	"block-nightlamp-iron-vintage-on": "Vintage iron nightlamp",
+
+	"block-nightlamp-copper-violet-on": "Violet copper nightlamp",
+	"block-nightlamp-tinbronze-violet-on": "Violet tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-violet-on": "Violet bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-violet-on": "Violet black bronze nightlamp",
+	"block-nightlamp-iron-violet-on": "Violet iron nightlamp",
+
+	"block-nightlamp-copper-yellow-on": "Yellow copper nightlamp",
+	"block-nightlamp-tinbronze-yellow-on": "Yellow tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-yellow-on": "Yellow bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-yellow-on": "Yellow black bronze nightlamp",
+	"block-nightlamp-iron-yellow-on": "Yellow iron nightlamp",
+	
+	"block-nightlamp-copper-blue-off": "Blue copper nightlamp",
+	"block-nightlamp-tinbronze-blue-off": "Blue tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-blue-off": "Blue bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-blue-off": "Blue black bronze nightlamp",
+	"block-nightlamp-iron-blue-off": "Blue iron nightlamp",
+
+	"block-nightlamp-copper-brown-off": "Brown copper nightlamp",
+	"block-nightlamp-tinbronze-brown-off": "Brown tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-brown-off": "Brown bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-brown-off": "Brown black bronze nightlamp",
+	"block-nightlamp-iron-brown-off": "Brown iron nightlamp",
+
+	"block-nightlamp-copper-green-off": "Green copper nightlamp",
+	"block-nightlamp-tinbronze-green-off": "Green tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-green-off": "Green bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-green-off": "Green black bronze nightlamp",
+	"block-nightlamp-iron-green-off": "Green iron nightlamp",
+
+	"block-nightlamp-copper-plain-off": "Plain copper nightlamp",
+	"block-nightlamp-tinbronze-plain-off": "Plain tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-plain-off": "Plain bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-plain-off": "Plain black bronze nightlamp",
+	"block-nightlamp-iron-plain-off": "Plain iron nightlamp",
+
+	"block-nightlamp-copper-quartz-off": "Quartz copper nightlamp",
+	"block-nightlamp-tinbronze-quartz-off": "Quartz tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-quartz-off": "Quartz bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-quartz-off": "Quartz black bronze nightlamp",
+	"block-nightlamp-iron-quartz-off": "Quartz iron nightlamp",
+
+	"block-nightlamp-copper-red-off": "Red copper nightlamp",
+	"block-nightlamp-tinbronze-red-off": "Red tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-red-off": "Red bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-red-off": "Red black bronze nightlamp",
+	"block-nightlamp-iron-red-off": "Red iron nightlamp",
+
+	"block-nightlamp-copper-vintage-off": "Vintage copper nightlamp",
+	"block-nightlamp-tinbronze-vintage-off": "Vintage tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-vintage-off": "Vintage bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-vintage-off": "Vintage black bronze nightlamp",
+	"block-nightlamp-iron-vintage-off": "Vintage iron nightlamp",
+
+	"block-nightlamp-copper-violet-off": "Violet copper nightlamp",
+	"block-nightlamp-tinbronze-violet-off": "Violet tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-violet-off": "Violet bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-violet-off": "Violet black bronze nightlamp",
+	"block-nightlamp-iron-violet-off": "Violet iron nightlamp",
+
+	"block-nightlamp-copper-yellow-off": "Yellow copper nightlamp",
+	"block-nightlamp-tinbronze-yellow-off": "Yellow tin bronze nightlamp",
+	"block-nightlamp-bismuthbronze-yellow-off": "Yellow bismuth bronze nightlamp",
+	"block-nightlamp-blackbronze-yellow-off": "Yellow black bronze nightlamp",
+	"block-nightlamp-iron-yellow-off": "Yellow iron nightlamp",
+	
+	"block-linen-carbon_black-down": "Black linen",
+	"block-linen-verdigris-down": "Green linen",
+	"block-linen-ultramarine-down": "Blue linen",
+	"block-linen-cinnabar-down": "Red linen",
+	"block-linen-chalk_white-down": "White linen"
+	
+}

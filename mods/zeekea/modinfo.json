@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "zeekea",
+  "name": "ZEEkea",
+  "authors": [ "ZigTheHedge" ],
+  "description": "Your favourite furniture for Vintage homes",
+  "version": "1.13.4-0.1",
+  "dependency": {
+    "game": "1.13.4"
+  }
+}

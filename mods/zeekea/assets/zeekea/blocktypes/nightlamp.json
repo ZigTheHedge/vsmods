@@ -1,0 +1,45 @@
+{
+	code: "nightlamp",
+	class: "nightlamp",
+	creativeinventory: { "general": ["*-off"], "decorative": ["*-off"] },
+	blockmaterial: "Metal",
+	variantgroups: [
+		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron" ] },
+		{ code: "color", states: ["blue", "brown", "green", "plain", "quartz", "red", "vintage", "violet", "yellow" ] },
+		{ code: "state", states: ["on", "off"] }
+	],
+	drawtype: "json",
+	textures: {
+		"metal": { base: "game:block/metal/plate/{metal}" },
+		"lamp": { base: "game:block/glass/{color}" }
+	},
+	shape: { 
+			base: "block/nightlamp"
+	},
+	lightAbsorption: 0,
+	sideopaque: {
+		all: false
+	},
+	renderPass: "Transparent",
+	vertexFlags: {
+		zOffset: 2
+	},
+	lightHsvByType: {
+		"*-blue-on": [43, 6, 10],
+		"*-brown-on": [5, 3, 10],
+		"*-green-on": [20, 6, 10],
+		"*-plain-on": [20, 0, 10],
+		"*-quartz-on": [10, 0, 10],
+		"*-red-on": [0, 7, 10],
+		"*-vintage-on": [56, 1, 10],
+		"*-violet-on": [49, 6, 10],
+		"*-yellow-on": [10, 6, 10] 
+	},
+	collisionbox: { x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 0.875, z2: 0.75 },
+	selectionbox: { x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 0.875, z2: 0.75 },
+	resistance: 1,
+	sounds: {
+		"place": "block/planks",
+		"walk": "game:walk/wood"
+	}
+}

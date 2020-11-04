@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/climbable",
+    "value": "true",
+    "file": "blocktypes/wood/generic/trapdoor.json"
+  }
+]

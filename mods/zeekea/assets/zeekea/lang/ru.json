@@ -1,0 +1,20 @@
+{
+	"block-tomat-north": "Трейдомат",
+	"block-tomat-up": "Трейдомат",
+	
+	"owner-title": "Настройка Трейдомата {0}",
+	"customer-title": "Трейдомат {0} рад приветствовать!",
+	"tomat-goods": "Продаю:",
+	"tomat-price": "За:",
+	"agree-button": "Купить!",
+	"deal-notenoughgoods": "В Трейдомате недостаточно товаров!",
+	"deal-notenoughspace": "В Трейдомате закончилось место!",
+	"deal-notenoughpayment": "Недостаточно предметов оплаты!",
+	"deal-payenterror": "Неверные предметы для оплаты!",
+	"deal-slotnotempty": "Слот выдачи занят!",
+	"isnotsetup": "Еще не настроен!",
+	"outofspace": "Закончилось место!",
+	"outofgoods": "Распродано!",
+	"notyours": "Этот Трейдомат не ваш!"
+	
+}

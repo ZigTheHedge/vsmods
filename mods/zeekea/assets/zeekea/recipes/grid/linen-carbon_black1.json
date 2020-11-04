@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "LP",
+  "ingredients": {
+    "L": {
+      "type": "block", 
+	  "code": "linen-*"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:charcoal"
+	}
+  },
+  "width": 2,
+  "height": 1,
+  "shapeless": true,
+  "output": { type: "block", code: "linen-carbon_black-down" }
+}
