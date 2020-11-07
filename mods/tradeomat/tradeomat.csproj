@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\TradeomatBlock\BETradeBlock.cs" />
+    <Compile Include="src\TradeomatBlock\DealRenderer.cs" />
     <Compile Include="src\TradeomatBlock\GuiCustomerTradeBlock.cs" />
     <Compile Include="src\TradeomatBlock\GuiOwnerTradeBlock.cs" />
     <Compile Include="src\TradeomatBlock\InventoryTradeBlock.cs" />

@@ -13,6 +13,7 @@ namespace tradeomat.src
 {
     class Tradeomat : ModSystem
     {
+
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
@@ -20,6 +21,8 @@ namespace tradeomat.src
             api.RegisterBlockClass("tomat", typeof(TradeBlock));
             api.RegisterBlockEntityClass("betomat", typeof(BETradeBlock));
             api.RegisterBlockClass("tomat-up", typeof(TradeBlockUp));
+
         }
+
     }
 }

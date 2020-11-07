@@ -39,16 +39,16 @@
 		all: "false"
 	},
 	collisionboxes: [ 
-		{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.5, z2: 1, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
-		{ x1: 0, y1: 0.5, z1: 0, x2: 1, y2: 1, z2: 0.25, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
-		{ x1: 0, y1: 0.5, z1: 0.25, x2: 0.125, y2: 0.75, z2: 1, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
-		{ x1: 0.875, y1: 0.5, z1: 0.25, x2: 1, y2: 0.75, z2: 1, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } } 
+		{ x1: 0.125, y1: 0, z1: 0.125, x2: 0.875, y2: 0.5, z2: 0.875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+		{ x1: 0.125, y1: 0.5, z1: 0.125, x2: 0.875, y2: 1, z2: 0.25, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0, y1: 0.625, z1: 0.1875, x2: 0.125, y2: 0.75, z2: 0.9375, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.875, y1: 0.625, z1: 0.1875, x2: 1, y2: 0.75, z2: 0.9375, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } } 
 	],
 	selectionboxes: [ 
-		{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.5, z2: 1, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
-		{ x1: 0, y1: 0.5, z1: 0, x2: 1, y2: 1, z2: 0.25, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
-		{ x1: 0, y1: 0.5, z1: 0.25, x2: 0.125, y2: 0.75, z2: 1, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
-		{ x1: 0.875, y1: 0.5, z1: 0.25, x2: 1, y2: 0.75, z2: 1, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } } 
+		{ x1: 0.125, y1: 0, z1: 0.125, x2: 0.875, y2: 0.5, z2: 0.875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+		{ x1: 0.125, y1: 0.5, z1: 0.125, x2: 0.875, y2: 1, z2: 0.25, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0, y1: 0.625, z1: 0.1875, x2: 0.125, y2: 0.75, z2: 0.9375, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.875, y1: 0.625, z1: 0.1875, x2: 1, y2: 0.75, z2: 0.9375, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } } 
 	],
 	resistance: 3.5,
 	sounds: {

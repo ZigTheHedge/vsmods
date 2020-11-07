@@ -20,6 +20,8 @@ namespace tradeomat.src.TradeomatBlock
         GuiOwnerTradeBlock ownerDialog;
         GuiCustomerTradeBlock customerDialog;
 
+        DealRenderer dealRenderer;
+
         public override InventoryBase Inventory
         {
             get { return inventory; }
@@ -40,63 +42,19 @@ namespace tradeomat.src.TradeomatBlock
             base.Initialize(api);
 
             inventory.LateInitialize("tomat-1", api);
-        }
 
+            if(api is ICoreClientAPI cApi)
+            {
+                dealRenderer = new DealRenderer(Pos, cApi);
+                dealRenderer.UpdateDeal(Inventory[0]);
+            }
+        }
 
         public void OnBlockInteract(IPlayer byPlayer, bool isOwner)
         {
             if (Api.Side == EnumAppSide.Client)
             {
-                /*
-                if (isOwner)
-                {
-                    if (byPlayer.PlayerName.Equals(ownerName))
-                    {
-                        if (ownerDialog == null)
-                        {
-                            
-                            ownerDialog = new GuiOwnerTradeBlock(Lang.Get("tradeomat:owner-title", ownerName), Inventory, Pos, Api as ICoreClientAPI);
-                            ownerDialog.OnClosed += () =>
-                            {
-                                ownerDialog = null;
-                                (Api as ICoreClientAPI).Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
-                                byPlayer.InventoryManager.CloseInventory(inventory);
-                            };
-                        }
-
-                        ownerDialog.TryOpen();
-
-                        (Api as ICoreClientAPI).Network.SendPacketClient(inventory.Open(byPlayer));
-                    }                    
-                } else
-                {
-                    if (customerDialog == null)
-                    {
-                        customerDialog = new GuiCustomerTradeBlock(Lang.Get("tradeomat:customer-title", ownerName), Inventory, Pos, Api as ICoreClientAPI);
-                        GuiElementDynamicText errorText = customerDialog.SingleComposer.GetDynamicText("errorText");
-                        if (inventory[0].Itemstack == null || inventory[1].Itemstack == null)
-                        {
-                            errorText.SetNewText(Lang.Get("tradeomat:isnotsetup"));
-                        } else
-                        {
-                            if (GetStorage(true) < inventory[1].Itemstack.StackSize)
-                                errorText.SetNewText(Lang.Get("tradeomat:outofgoods"));
-                            if (GetStorage(false) < inventory[0].Itemstack.StackSize)
-                                errorText.SetNewText(Lang.Get("tradeomat:outofspace"));
-                        }
-                        customerDialog.OnClosed += () =>
-                        {
-                            customerDialog = null;
-                            (Api as ICoreClientAPI).Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
-                            byPlayer.InventoryManager.CloseInventory(inventory);
-                        };
-                    }
-
-                    customerDialog.TryOpen();
-
-                    (Api as ICoreClientAPI).Network.SendPacketClient(inventory.Open(byPlayer));
-                }
-                */
+                //stub
             }
             else
             {
@@ -490,5 +448,13 @@ namespace tradeomat.src.TradeomatBlock
                 customerDialog = null;
             }
         }
+
+        public override void OnBlockUnloaded()
+        {
+            base.OnBlockUnloaded();
+
+            dealRenderer?.Dispose();
+        }
+
     }
 }

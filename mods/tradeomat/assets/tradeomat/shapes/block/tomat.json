@@ -22,7 +22,7 @@
 				"east": { "texture": "#sides3", "uv": [ 1.0, 0.0, 14.0, 12.0 ], "autoUv": false },
 				"south": { "texture": "#sides3", "uv": [ 0.0, 0.0, 14.0, 12.0 ], "autoUv": false },
 				"west": { "texture": "#sides3", "uv": [ 0.0, 0.0, 13.0, 12.0 ], "autoUv": false },
-				"up": { "texture": "#null", "uv": [ 0.0, 0.0, 16.0, 15.0 ] },
+				"up": { "texture": "#sides3", "uv": [ 0.0, 0.0, 16.0, 15.0 ] },
 				"down": { "texture": "#sides3", "uv": [ 0.0, 0.0, 14.0, 12.0 ], "autoUv": false }
 			},
 			"children": [

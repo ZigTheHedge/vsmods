@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -11,7 +12,7 @@ namespace zeekea.src.armchair
 {
     class Armchair : Block
     {
-        public Block GetBlockVariant(IWorldAccessor world, BlockPos pos, string orientation)
+        public Block GetBlockVariant(IWorldAccessor world, BlockPos pos, string orientation, bool isolated = false)
         {
             bool leftConnected = false;
             bool rightConnected = false;
@@ -48,7 +49,7 @@ namespace zeekea.src.armchair
 
             if (blockLeft.FirstCodePart() == "armchair")
             {
-                if (blockLeft.Variant["color"] == Variant["color"])
+                if (blockLeft.Variant["isolated"] == "no")
                 {
                     if(blockLeft.Variant["horizontalorientation"] == orientation)
                         leftConnected = true;
@@ -56,9 +57,9 @@ namespace zeekea.src.armchair
             }
             if (blockRight.FirstCodePart() == "armchair")
             {
-                if (blockRight.Variant["color"] == Variant["color"])
+                if (blockRight.Variant["isolated"] == "no")
                 {
-                    if (blockLeft.Variant["horizontalorientation"] == orientation)
+                    if (blockRight.Variant["horizontalorientation"] == orientation)
                         rightConnected = true;
                 }
             }
@@ -68,8 +69,11 @@ namespace zeekea.src.armchair
             else if (!leftConnected && rightConnected) thisArms = "left";
             else if (leftConnected && rightConnected) thisArms = "none";
             else thisArms = "both";
+            
+            if(isolated || Variant["isolated"] == "yes") thisArms = "both";
             blockCode = CodeWithVariants(new Dictionary<string, string>() {
                                 { "color", Variant["color"] },
+                                { "isolated", (isolated || Variant["isolated"] == "yes")?"yes":"no" },
                                 { "arms", thisArms },
                                 { "horizontalorientation", orientation }
                             });
@@ -80,8 +84,13 @@ namespace zeekea.src.armchair
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             BlockFacing[] horVer = Block.SuggestedHVOrientation(byPlayer, blockSel);
-            
-            Block newBlock = GetBlockVariant(world, blockSel.Position, horVer[0].Code);
+
+            Block newBlock;
+
+            if (byPlayer.WorldData.EntityControls.Sneak)
+                newBlock = GetBlockVariant(world, blockSel.Position, horVer[0].Code, true);
+            else
+                newBlock = GetBlockVariant(world, blockSel.Position, horVer[0].Code);
 
             newBlock.DoPlaceBlock(world, byPlayer, blockSel, itemstack);
 
@@ -100,6 +109,7 @@ namespace zeekea.src.armchair
             AssetLocation blockCode = CodeWithVariants(new Dictionary<string, string>() {
                     { "arms", "both" },
                     { "color", Variant["color"] },
+                    { "isolated", "no" },
                     { "horizontalorientation", "north" }
                 });
 
@@ -112,5 +122,13 @@ namespace zeekea.src.armchair
         {
             return new ItemStack[] { OnPickBlock(world, pos) };
         }
+
+        public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
+        {
+            base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+
+            dsc.AppendLine("\n" + Lang.Get("zeekea:armchair-help"));
+        }
+
     }
 }

@@ -14,6 +14,8 @@ namespace zeekea.src.nightlamp
         {
             AssetLocation newCode;
 
+            world.PlaySoundAt(new AssetLocation("zeekea:sounds/lamp_switch.ogg"), byPlayer, byPlayer, false);
+
             if (Variant["state"] == "on") newCode = CodeWithVariant("state", "off");
             else newCode = CodeWithVariant("state", "on");
             

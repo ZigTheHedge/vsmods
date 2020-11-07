@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 
@@ -91,6 +92,17 @@ namespace tradeomat.src.TradeomatBlock
                     MouseButton = EnumMouseButton.Right,
                 }
             }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
+        }
+
+        public override string GetPlacedBlockInfo(IWorldAccessor world, BlockPos pos, IPlayer forPlayer)
+        {
+            BETradeBlock be = null;
+            string tooltip = "";
+            be = world.BlockAccessor.GetBlockEntity(pos) as BETradeBlock;
+            if (be != null)
+                tooltip = Lang.Get("tradeomat:owner-tooltip", be.ownerName);
+            
+            return base.GetPlacedBlockInfo(world, pos, forPlayer) + tooltip; 
         }
 
     }

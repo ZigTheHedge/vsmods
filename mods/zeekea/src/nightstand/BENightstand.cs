@@ -44,22 +44,7 @@ namespace zeekea.src.nightstand
         {
             if (Api.Side == EnumAppSide.Client)
             {                
-                /*
-                if (nightstandDialog == null)
-                {
-                    nightstandDialog = new GuiEightSlots(Lang.Get("zeekea:nightstand-title"), Inventory, Pos, Api as ICoreClientAPI);
-                    nightstandDialog.OnClosed += () =>
-                    {
-                        nightstandDialog = null;
-                        (Api as ICoreClientAPI).Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
-                        byPlayer.InventoryManager.CloseInventory(inventory);
-                    };
-                }
 
-                nightstandDialog.TryOpen();
-
-                (Api as ICoreClientAPI).Network.SendPacketClient(inventory.Open(byPlayer));
-                */
             }
             else
             {
@@ -130,10 +115,13 @@ namespace zeekea.src.nightstand
 
                     if (nightstandDialog == null)
                     {
+                        Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/shelf_open.ogg"), Pos.X, Pos.Y, Pos.Z);
+
                         nightstandDialog = new GuiEightSlots(Lang.Get("zeekea:nightstand-title"), Inventory, Pos, Api as ICoreClientAPI);
                         nightstandDialog.OnClosed += () =>
                         {
                             nightstandDialog = null;
+                            Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/shelf_close.ogg"), Pos.X, Pos.Y, Pos.Z);
                         };
                     }
 

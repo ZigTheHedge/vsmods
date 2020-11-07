@@ -1,0 +1,47 @@
+{
+	code: "doorbell",
+	class: "doorbell",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Metal",
+	variantgroups: [
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/doorbell",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/doorbell",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/doorbell",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/doorbell",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0.25, y1: 0.25, z1: 0, x2: 0.75, y2: 0.75, z2: 0.1625, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0.25, y1: 0.25, z1: 0, x2: 0.75, y2: 0.75, z2: 0.1625, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+	resistance: 3.5,
+	sounds: {
+		"place": "block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: 0, y: -180, z: 0 },
+		scale: 2.16
+	}
+}

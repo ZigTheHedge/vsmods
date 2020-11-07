@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 
 namespace tradeomat.src.TradeomatBlock
@@ -23,6 +24,16 @@ namespace tradeomat.src.TradeomatBlock
         {
             world.BlockAccessor.BreakBlock(pos.DownCopy(), byPlayer);
             world.BlockAccessor.SetBlock(0, pos);
+        }
+
+        public override string GetPlacedBlockName(IWorldAccessor world, BlockPos pos)
+        {
+            return world.BlockAccessor.GetBlock(pos.DownCopy()).GetPlacedBlockName(world, pos.DownCopy());
+        }
+
+        public override string GetPlacedBlockInfo(IWorldAccessor world, BlockPos pos, IPlayer forPlayer)
+        {
+            return world.BlockAccessor.GetBlock(pos.DownCopy()).GetPlacedBlockInfo(world, pos.DownCopy(), forPlayer);
         }
 
     }

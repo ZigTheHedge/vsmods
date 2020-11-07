@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/grindingPropsByType",
+    "value": { 
+		"*-temporal": { grindedStack: { type: "item", code: "zeekea:temporal_dust" }}
+	},
+    "file": "game:itemtypes/resource/gear.json"
+  }
+]

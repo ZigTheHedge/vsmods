@@ -1,10 +1,10 @@
 {
-	"block-nightstand-acacia-north": "Nightstand made of acacia",	
-	"block-nightstand-birch-north": "Nightstand made of birch",	
-	"block-nightstand-kapok-north": "Nightstand made of kapok",	
-	"block-nightstand-maple-north": "Nightstand made of maple",	
-	"block-nightstand-oak-north": "Nightstand made of oak",	
-	"block-nightstand-pine-north": "Nightstand made of pine",
+	"block-nightstand-acacia-north": "Nightstand made of Acacia",
+	"block-nightstand-birch-north": "Nightstand made of Birch",	
+	"block-nightstand-kapok-north": "Nightstand made of Kapok",	
+	"block-nightstand-maple-north": "Nightstand made of Maple",	
+	"block-nightstand-oak-north": "Nightstand made of Oak",	
+	"block-nightstand-pine-north": "Nightstand made of Pine",
 	
 	"nightstand-title": "Nightstand",
 
@@ -120,6 +120,93 @@
 	"block-linen-verdigris-down": "Green linen",
 	"block-linen-ultramarine-down": "Blue linen",
 	"block-linen-cinnabar-down": "Red linen",
-	"block-linen-chalk_white-down": "White linen"
+	"block-linen-chalk_white-down": "White linen",
 	
+	"block-armchair-normal1-no-both-north": "Lime Armchair",
+	"block-armchair-carbon_black-no-both-north": "Black Armchair",
+	"block-armchair-verdigris-no-both-north": "Green Armchair",
+	"block-armchair-ultramarine-no-both-north": "Blue Armchair",
+	"block-armchair-cinnabar-no-both-north": "Red Armchair",
+	"block-armchair-chalk_white-no-both-north": "White Armchair",
+
+	"block-fancychair-birch-normal1-north": "Lime Fancy Armchair made of Birch",
+	"block-fancychair-oak-normal1-north": "Lime Fancy Armchair made of Oak",
+	"block-fancychair-maple-normal1-north": "Lime Fancy Armchair made of Maple",
+	"block-fancychair-pine-normal1-north": "Lime Fancy Armchair made of Pine",
+	"block-fancychair-acacia-normal1-north": "Lime Fancy Armchair made of Acacia",
+	"block-fancychair-kapok-normal1-north": "Lime Fancy Armchair made of Kapok",
+
+	"block-fancychair-birch-carbon_black-north": "Black Fancy Armchair made of Birch",
+	"block-fancychair-oak-carbon_black-north": "Black Fancy Armchair made of Oak",
+	"block-fancychair-maple-carbon_black-north": "Black Fancy Armchair made of Maple",
+	"block-fancychair-pine-carbon_black-north": "Black Fancy Armchair made of Pine",
+	"block-fancychair-acacia-carbon_black-north": "Black Fancy Armchair made of Acacia",
+	"block-fancychair-kapok-carbon_black-north": "Black Fancy Armchair made of Kapok",
+
+	"block-fancychair-birch-verdigris-north": "Green Fancy Armchair made of Birch",
+	"block-fancychair-oak-verdigris-north": "Green Fancy Armchair made of Oak",
+	"block-fancychair-maple-verdigris-north": "Green Fancy Armchair made of Maple",
+	"block-fancychair-pine-verdigris-north": "Green Fancy Armchair made of Pine",
+	"block-fancychair-acacia-verdigris-north": "Green Fancy Armchair made of Acacia",
+	"block-fancychair-kapok-verdigris-north": "Green Fancy Armchair made of Kapok",
+
+	"block-fancychair-birch-ultramarine-north": "Blue Fancy Armchair made of Birch",
+	"block-fancychair-oak-ultramarine-north": "Blue Fancy Armchair made of Oak",
+	"block-fancychair-maple-ultramarine-north": "Blue Fancy Armchair made of Maple",
+	"block-fancychair-pine-ultramarine-north": "Blue Fancy Armchair made of Pine",
+	"block-fancychair-acacia-ultramarine-north": "Blue Fancy Armchair made of Acacia",
+	"block-fancychair-kapok-ultramarine-north": "Blue Fancy Armchair made of Kapok",
+
+	"block-fancychair-birch-cinnabar-north": "Red Fancy Armchair made of Birch",
+	"block-fancychair-oak-cinnabar-north": "Red Fancy Armchair made of Oak",
+	"block-fancychair-maple-cinnabar-north": "Red Fancy Armchair made of Maple",
+	"block-fancychair-pine-cinnabar-north": "Red Fancy Armchair made of Pine",
+	"block-fancychair-acacia-cinnabar-north": "Red Fancy Armchair made of Acacia",
+	"block-fancychair-kapok-cinnabar-north": "Red Fancy Armchair made of Kapok",
+
+	"block-fancychair-birch-chalk_white-north": "White Fancy Armchair made of Birch",
+	"block-fancychair-oak-chalk_white-north": "White Fancy Armchair made of Oak",
+	"block-fancychair-maple-chalk_white-north": "White Fancy Armchair made of Maple",
+	"block-fancychair-pine-chalk_white-north": "White Fancy Armchair made of Pine",
+	"block-fancychair-acacia-chalk_white-north": "White Fancy Armchair made of Acacia",
+	"block-fancychair-kapok-chalk_white-north": "White Fancy Armchair made of Kapok",
+	
+	"block-tall_locker-acacia-north": "Tall Locker made of Acacia",
+	"block-tall_locker-birch-north": "Tall Locker made of Birch",	
+	"block-tall_locker-kapok-north": "Tall Locker made of Kapok",	
+	"block-tall_locker-maple-north": "Tall Locker made of Maple",	
+	"block-tall_locker-oak-north": "Tall Locker made of Oak",	
+	"block-tall_locker-pine-north": "Tall Locker made of Pine",
+	
+	"tall_locker-title": "Tall Locker",
+	
+	"armchair-help": "Place down while holding Sneak key to prevent connections with adjacent Armchairs",
+	"freezer-help": "Feed with 4 ice (Glacier Ice or Lake Ice is fine) and close the door to store food",
+	"freezer-over-sneak-help": "Open/Close the door. When opened Ice is melting.",
+	"freezer-over-help": "Open the door then feed Ice to all four side slots.",	
+	"freezer-title": "Freezer",
+	
+	"block-freezer-melted-closed-north": "Freezer",
+	"block-doorbell-north": "Door bell",
+	"block-toolmold-raw-icepickhead": "Icepick Head mold (raw)",
+	"block-toolmold-burned-icepickhead": "Icepick Head mold (burned)",
+	
+	"item-icepickhead-copper": "Icepick Head made of Copper",
+	"item-icepickhead-tinbronze": "Icepick Head made of Tin Bronze",
+	"item-icepickhead-bismuthbronze": "Icepick Head made of Bismuth Bronze",
+	"item-icepickhead-blackbronze": "Icepick Head made of Black Bronze",
+	"item-icepickhead-iron": "Icepick Head made of Iron",
+	"item-icepick-copper": "Icepick made of Copper",
+	"item-icepick-tinbronze": "Icepick made of Tin Bronze",
+	"item-icepick-bismuthbronze": "Icepick made of Bismuth Bronze",
+	"item-icepick-blackbronze": "Icepick made of Black Bronze",
+	"item-icepick-iron": "Icepick made of Iron",
+	
+	"item-lampstand-copper": "Copper Lamp stand",
+	"item-lampstand-tinbronze": "Tin Bronze Lamp stand",
+	"item-lampstand-bismuthbronze": "Bismuth Bronze Lamp stand",
+	"item-lampstand-blackbronze": "Black Lamp stand",
+	"item-lampstand-iron": "Iron Lamp stand",
+
+	"item-temporal_dust": "Temporal Dust"
 }

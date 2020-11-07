@@ -10,21 +10,26 @@
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
 	drawtype: "json",
+	textures: {
+		"acacia1": { base: "game:block/wood/planks/{wood}1" },
+		"acacia2": { base: "game:block/wood/treetrunk/{wood}" },
+		"acacia": { base: "game:block/wood/debarked/{wood}" }
+	},
 	shapebytype: { 
 		"*-north": {
-			base: "block/nightstand/{wood}",
+			base: "block/nightstand",
 			rotateY: 0
 		},
 		"*-east": {
-			base: "block/nightstand/{wood}",
+			base: "block/nightstand",
 			rotateY: 270
 		},
 		"*-south": {
-			base: "block/nightstand/{wood}",
+			base: "block/nightstand",
 			rotateY: 180
 		},
 		"*-west": {
-			base: "block/nightstand/{wood}",
+			base: "block/nightstand",
 			rotateY: 90
 		}
 	},

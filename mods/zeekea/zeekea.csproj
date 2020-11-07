@@ -66,11 +66,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\armchair\Armchair.cs" />
+    <Compile Include="src\doorbell\DoorBell.cs" />
+    <Compile Include="src\DummyUP.cs" />
+    <Compile Include="src\freezer\BEFreezer.cs" />
+    <Compile Include="src\freezer\Freezer.cs" />
+    <Compile Include="src\freezer\FreezerInventory.cs" />
+    <Compile Include="src\freezer\IceSlot.cs" />
+    <Compile Include="src\IcepickItem.cs" />
     <Compile Include="src\nightlamp\Nightlamp.cs" />
     <Compile Include="src\nightstand\BENightstand.cs" />
     <Compile Include="src\standardInventories\GuiEightSlots.cs" />
+    <Compile Include="src\freezer\GuiFreezer.cs" />
+    <Compile Include="src\standardInventories\GuiTwentyFourSlots.cs" />
     <Compile Include="src\standardInventories\InventoryEight.cs" />
     <Compile Include="src\nightstand\Nightstand.cs" />
+    <Compile Include="src\standardInventories\InventoryTwentyFour.cs" />
+    <Compile Include="src\tall_locker\BETallLocker.cs" />
+    <Compile Include="src\tall_locker\TallLocker.cs" />
     <Compile Include="src\ZEEkea.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,20 @@
+{
+  "ingredientPattern": "B_B	BCB	B_B",
+  "ingredients": {
+    "B": {
+      "type": "item",
+      "code": "game:plank-*",
+	  "name": "wood",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+    },
+    "C": {
+      "type": "block",
+      "code": "game:chest-east", 
+	  "attributes": { type: "normal-generic" }
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "tall_locker-{wood}-north" }
+}

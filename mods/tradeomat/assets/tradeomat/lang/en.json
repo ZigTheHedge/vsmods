@@ -2,8 +2,8 @@
 	"block-tomat-north": "Trade'o'mat",
 	"block-tomat-up": "Trade'o'mat",
 	
-	"owner-title": "Setting up {0}'s Trade'o'mat!",
-	"customer-title": "{0}'s Trade'o'mat welcomes you!",
+	"owner-title": "Setting up",
+	"customer-title": "Seller: {0}",
 	"tomat-goods": "Selling:",
 	"tomat-price": "For:",
 	"agree-button": "Deal!",
@@ -18,7 +18,7 @@
 	"notyours": "This trade'o'mat is not yours!",
 	
 	"blockhelp-tomat-owner": "Configure the Trade'o'mat",
-	"blockhelp-tomat-customer": "Open customer interface"
+	"blockhelp-tomat-customer": "Open customer interface",
 	
-	
+	"owner-tooltip": "{0}'s Trade'o'mat"
 }

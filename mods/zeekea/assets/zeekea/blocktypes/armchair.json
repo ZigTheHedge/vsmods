@@ -1,11 +1,12 @@
 {
 	code: "armchair",
 	class: "armchair",
-	creativeinventory: { "general": ["*-both-north"], "decorative": ["*-both-north"] },
+	creativeinventory: { "general": ["*-no-both-north"], "decorative": ["*-no-both-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	blockmaterial: "Cloth",
 	variantgroups: [
 		{ code: "color", states: ["normal1", "carbon_black", "verdigris", "ultramarine", "cinnabar", "chalk_white"] },
+		{ code: "isolated", states: ["yes", "no"] },
 		{ code: "arms", states: ["both", "left", "right", "none"] },
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
