@@ -48,9 +48,9 @@ namespace tradeomat.src.TradeomatBlock
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
-            bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
             BlockPos upperPart = blockSel.Position.UpCopy();
             if (world.BlockAccessor.GetBlockId(upperPart) != 0) return false;
+            bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
 
             Block upperBlock = world.GetBlock(new AssetLocation("tradeomat:tomat-up"));
             world.BlockAccessor.SetBlock(upperBlock.BlockId, upperPart);

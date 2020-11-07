@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace zeekea.src.freezer
         public bool isOpened;
         public int fuelRemaining;
         public int closedDelay;
+        private bool refueling;
 
         public override InventoryBase Inventory
         {
@@ -39,6 +41,7 @@ namespace zeekea.src.freezer
             isOpened = false;
             fuelRemaining = 0;
             closedDelay = 0;
+            refueling = false;
         }
 
         public override void Initialize(ICoreAPI api)
@@ -51,37 +54,40 @@ namespace zeekea.src.freezer
         }
 
         private void IceTick(float dt)
-        {           
-            if (fuelRemaining > 0)
+        {
+            if (Api.Side == EnumAppSide.Server)
             {
-                if(isOpened)
-                    fuelRemaining--;
-                else
+                if (fuelRemaining > 0)
                 {
-                    if(closedDelay > 0)
+                    if (isOpened)
+                        fuelRemaining--;
+                    else
                     {
-                        closedDelay--;
-                        if(closedDelay <= 0)
+                        if (closedDelay > 0)
                         {
-                            closedDelay = 100;
-                            fuelRemaining--;
+                            closedDelay--;
+                            if (closedDelay <= 0)
+                            {
+                                closedDelay = 100;
+                                fuelRemaining--;
+                            }
+                        }
+                    }
+                    MarkDirty();
+                    if (fuelRemaining == 0)
+                    {
+                        TryRefuel();
+                        if (fuelRemaining == 0)
+                        {
+                            Block originalBlock = Api.World.BlockAccessor.GetBlock(Pos);
+                            AssetLocation newBlockAL = originalBlock.CodeWithVariant("status", "melted");
+                            Block newBlock = Api.World.GetBlock(newBlockAL);
+                            Api.World.BlockAccessor.ExchangeBlock(newBlock.Id, Pos);
+                            Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/freezer_stop.ogg"), Pos.X, Pos.Y, Pos.Z, null, false);
                         }
                     }
                 }
-                if(fuelRemaining == 0)
-                {
-                    TryRefuel();
-                    if(fuelRemaining == 0)
-                    {
-                        Block originalBlock = Api.World.BlockAccessor.GetBlock(Pos);
-                        AssetLocation newBlockAL = originalBlock.CodeWithVariant("status", "melted");
-                        Block newBlock = Api.World.GetBlock(newBlockAL);
-                        Api.World.BlockAccessor.ExchangeBlock(newBlock.Id, Pos);
-                        Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/freezer_stop.ogg"), Pos.X, Pos.Y, Pos.Z, null, false);
-                    }
-                }
             }
-
         }
 
         private void TryRefuel()
@@ -95,6 +101,7 @@ namespace zeekea.src.freezer
             }
             if (iceCount == 4)
             {
+                refueling = true;
                 for (int i = 0; i < 4; i++)
                 {
                     inventory[i].Itemstack.StackSize--;
@@ -102,18 +109,21 @@ namespace zeekea.src.freezer
                     inventory[i].MarkDirty();
                 }
                 fuelRemaining = 12;
+                refueling = false;
                 Block originalBlock = Api.World.BlockAccessor.GetBlock(Pos);
                 AssetLocation newBlockAL = originalBlock.CodeWithVariant("status", "frozen");
                 Block newBlock = Api.World.GetBlock(newBlockAL);
                 Api.World.BlockAccessor.ExchangeBlock(newBlock.Id, Pos);
+                MarkDirty();
             }
 
         }
 
         private void OnSlotModified(int slotid)
         {
-            if (slotid > 3) return;
-            if (fuelRemaining == 0) TryRefuel();
+            if (slotid > 3 || refueling) return;
+            if(Api.Side == EnumAppSide.Server)
+                if (fuelRemaining == 0) TryRefuel();
         }
 
 
@@ -153,6 +163,7 @@ namespace zeekea.src.freezer
             fuelRemaining = tree.GetInt("fuelRemaining");
             closedDelay = tree.GetInt("closedDelay");
             isOpened = tree.GetBool("isOpened");
+            refueling = tree.GetBool("refueling");
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -161,6 +172,7 @@ namespace zeekea.src.freezer
             tree.SetInt("fuelRemaining", fuelRemaining);
             tree.SetInt("closedDelay", closedDelay);
             tree.SetBool("isOpened", isOpened);
+            tree.SetBool("refueling", refueling);
         }
 
 
@@ -221,7 +233,6 @@ namespace zeekea.src.freezer
         public override float GetPerishRate()
         {
             float initial = base.GetPerishRate();
-            if (isOpened) return initial * 2;
             if (fuelRemaining == 0) return initial;
             return initial / 4;
         }
