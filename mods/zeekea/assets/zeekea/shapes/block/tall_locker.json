@@ -8,7 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"acacia": "game:block/wood/debarked/acacia"
 	},
 	"elements": [
 		{
@@ -141,6 +140,48 @@
 				"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 13.0 ] },
 				"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 13.0 ] }
 			}
+		},
+		{
+			"name": "Shelf1",
+			"from": [ 1.0, 9.0, 1.0 ], 
+			"to": [ 15.0, 10.0, 14.0 ], 
+			"rotationOrigin": [ 1.0, 9.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+				"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 13.0, 1.0 ] },
+				"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+				"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 13.0, 1.0 ] },
+				"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 13.0 ] },
+				"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 13.0 ] }
+			}
+		},
+		{
+			"name": "Shelf11",
+			"from": [ 1.0, 17.0, 1.0 ], 
+			"to": [ 15.0, 18.0, 14.0 ], 
+			"rotationOrigin": [ 1.0, 17.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+				"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 13.0, 1.0 ] },
+				"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+				"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 13.0, 1.0 ] },
+				"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 13.0 ] },
+				"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 13.0 ] }
+			}
+		},
+		{
+			"name": "Shelf12",
+			"from": [ 1.0, 25.0, 1.0 ], 
+			"to": [ 15.0, 26.0, 14.0 ], 
+			"rotationOrigin": [ 1.0, 25.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+				"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 13.0, 1.0 ] },
+				"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 1.0 ] },
+				"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 13.0, 1.0 ] },
+				"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 13.0 ] },
+				"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 14.0, 13.0 ] }
+			}
 		}
 	],
 	"animations": [
@@ -148,8 +189,8 @@
 			"name": "open",
 			"code": "open",
 			"quantityframes": 30,
-			"onActivityStopped": "Stop",
-			"onAnimationEnd": "Stop",
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Hold",
 			"keyframes": [
 				{
 					"frame": 0,
@@ -164,6 +205,23 @@
 						"doorleft": { "rotationX": 0.0, "rotationY": 135.0, "rotationZ": 0.0 },
 						"doorright": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 0.0 }
 					}
+				}
+			]
+		},
+
+		{
+			"name": "close",
+			"code": "close",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+				{
+					"frame": 29,
+					"elements": {
+						"doorright": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"doorleft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}					
 				}
 			]
 		}

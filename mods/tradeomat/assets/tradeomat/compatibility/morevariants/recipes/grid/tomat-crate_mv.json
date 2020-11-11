@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "BB	CC",
+  "ingredients": {
+    "B": {
+      "type": "item",
+      "code": "game:plank-*"
+    },
+    "C": {
+      "type": "block",
+      "code": "morevariants:chest-east",
+    }
+  },
+  "width": 2,
+  "height": 2,
+  "shapeless": false,
+  "output": { type: "block", code: "tomat-crate-north" }
+}

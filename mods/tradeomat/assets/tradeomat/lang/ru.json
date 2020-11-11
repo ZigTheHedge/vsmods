@@ -1,6 +1,8 @@
 {
-	"block-tomat-north": "Трейдомат",
-	"block-tomat-up": "Трейдомат",
+	"block-tomat-tall-north": "Трейдомат",
+	"block-tomat-tall-up": "Трейдомат",
+	"block-tomat-crate-north": "Трейдомат",
+	"block-tomat-crate-up": "Трейдомат",
 	
 	"owner-title": "Настройка Трейдомата",
 	"customer-title": "Продавец: {0}",
@@ -16,6 +18,8 @@
 	"outofspace": "Закончилось место!",
 	"outofgoods": "Распродано!",
 	"notyours": "Этот Трейдомат не ваш!",
+	"count": "Вы используете {0} из {1} доступных Трейдоматов.",
+	"nomore": "Вам не разрешено использовать больше Трейдоматов!",
 	
 	"blockhelp-tomat-owner": "Открыть конфигурацию трейдомата",
 	"blockhelp-tomat-customer": "Открыть интерфейс покупателя",

@@ -69,6 +69,7 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\ApiExtensions.cs" />
     <Compile Include="src\ItemBranchcutter.cs" />
     <Compile Include="src\Mailbox\BEMailBox.cs" />
     <Compile Include="src\Mailbox\GuiDialogMailbox.cs" />
@@ -89,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

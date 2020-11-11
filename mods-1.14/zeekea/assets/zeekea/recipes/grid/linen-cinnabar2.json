@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "LP",
+  "ingredients": {
+    "L": {
+      "type": "block", 
+	  "code": "game:linen-*"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:ore-cinnabar"
+	}
+  },
+  "width": 2,
+  "height": 1,
+  "shapeless": true,
+  "output": { type: "block", code: "linen-cinnabar-down" }
+}

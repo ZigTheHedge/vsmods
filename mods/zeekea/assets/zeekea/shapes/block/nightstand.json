@@ -8,9 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"acacia1": "game:block/wood/planks/acacia1",
-		"acacia2": "game:block/wood/treetrunk/acacia",
-		"acacia": "game:block/wood/debarked/acacia"
 	},
 	"elements": [
 		{
@@ -102,7 +99,7 @@
 			}
 		},
 		{
-			"name": "Cube7",
+			"name": "Shelf",
 			"from": [ 1.0, 2.0, 14.0 ], 
 			"to": [ 15.0, 9.0, 15.0 ], 
 			"rotationOrigin": [ 1.0, 2.0, 14.0 ],
@@ -128,7 +125,87 @@
 						"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 4.0, 1.0 ] },
 						"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 4.0, 1.0 ] }
 					}
+				},
+				{
+					"name": "Cube9",
+					"from": [ 1.0, 1.0, -12.0 ], 
+					"to": [ 13.0, 2.0, 0.0 ], 
+					"rotationOrigin": [ 1.0, 1.0, -12.0 ],
+					"faces": {
+						"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 1.0 ] },
+						"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 1.0 ] },
+						"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 1.0 ] },
+						"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 1.0 ] },
+						"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 12.0 ] },
+						"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 12.0 ] }
+					}
+				},
+				{
+					"name": "Cube10",
+					"from": [ 1.0, 2.0, -12.0 ], 
+					"to": [ 2.0, 6.0, 0.0 ], 
+					"rotationOrigin": [ 1.0, 2.0, -12.0 ],
+					"faces": {
+						"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 4.0 ] },
+						"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 4.0 ] },
+						"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 12.0 ] },
+						"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 12.0 ] }
+					}
+				},
+				{
+					"name": "Cube11",
+					"from": [ 12.0, 2.0, -12.0 ], 
+					"to": [ 13.0, 6.0, 0.0 ], 
+					"rotationOrigin": [ 12.0, 2.0, -12.0 ],
+					"faces": {
+						"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 4.0 ] },
+						"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 12.0, 4.0 ] },
+						"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 12.0 ] },
+						"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 12.0 ] }
+					}
+				},
+				{
+					"name": "Cube12",
+					"from": [ 2.0, 2.0, -12.0 ], 
+					"to": [ 12.0, 5.0, -11.0 ], 
+					"rotationOrigin": [ 2.0, 2.0, -12.0 ],
+					"faces": {
+						"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 10.0, 3.0 ] },
+						"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 10.0, 3.0 ] },
+						"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 10.0, 1.0 ] },
+						"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 10.0, 1.0 ] }
+					}
 				}
 			]
 		}
-	]}
+	],
+	"animations": [
+		{
+			"name": "open",
+			"code": "open",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Shelf": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"Shelf": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 10.0 }
+					}
+				}
+			]
+		}
+	]
+}

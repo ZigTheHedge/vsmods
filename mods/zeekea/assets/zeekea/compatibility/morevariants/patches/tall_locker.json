@@ -1,0 +1,8 @@
+[
+  {
+    "file": "zeekea:recipes/grid/tall_locker.json",
+    "op": "replace",
+    "path": "/output",
+    "value": { type: "block", code: "tall_locker-oak-north" }
+  }
+]

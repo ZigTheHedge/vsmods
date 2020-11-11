@@ -1,0 +1,23 @@
+{
+	code: "trashcan",
+	class: "trashcan",
+	behaviors: [{name: "UnstableFalling"} ],
+	entityClass: "betrashcan",
+	creativeinventory: { "general": ["*"] },
+	blockmaterial: "Wood",
+	shape: {
+		base: "block/trashcan"
+	},	
+	drawtype: "json",
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/anvil",
+		"walk": "game:walk/wood"
+	}
+}

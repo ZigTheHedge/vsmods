@@ -6,26 +6,43 @@
 	behaviors: [{ name: "HorizontalOrientable" }],
 	blockmaterial: "Wood",
 	variantgroups: [
+		{ code: "type", states: [ "tall", "crate" ] },
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
 	drawtype: "json",
 	shapebytype: { 
-		"*-north": {
+		"*-tall-north": {
 			base: "block/tomat",
 			rotateY: 0
 		},
-		"*-east": {
+		"*-tall-east": {
 			base: "block/tomat",
 			rotateY: 270
 		},
-		"*-south": {
+		"*-tall-south": {
 			base: "block/tomat",
 			rotateY: 180
 		},
-		"*-west": {
+		"*-tall-west": {
 			base: "block/tomat",
 			rotateY: 90
-		}
+		},
+		"*-crate-north": {
+			base: "block/opencrate",
+			rotateY: 0
+		},
+		"*-crate-east": {
+			base: "block/opencrate",
+			rotateY: 270
+		},
+		"*-crate-south": {
+			base: "block/opencrate",
+			rotateY: 180
+		},
+		"*-crate-west": {
+			base: "block/opencrate",
+			rotateY: 90
+		}		
 	},
 	snowcoverage: true,
 	lightAbsorption: 0,
@@ -35,11 +52,17 @@
 	sideopaque: {
 		all: "false"
 	},
-	collisionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } },
-	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } },
+	collisionboxbytype: {
+		"*-tall-*": { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } },
+		"*-crate-*": { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.75, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } }
+	},
+	selectionboxbytype: {
+		"*-tall-*": { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } },
+		"*-crate-*": { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.75, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } }
+	},
 	resistance: 3.5,
 	sounds: {
-		"place": "game:block/anvil",
+		"place": "game:block/planks",
 		"walk": "game:walk/wood"
 	},
 	

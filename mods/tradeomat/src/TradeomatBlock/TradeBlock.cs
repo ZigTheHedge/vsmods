@@ -7,6 +7,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 
 namespace tradeomat.src.TradeomatBlock
@@ -21,9 +22,7 @@ namespace tradeomat.src.TradeomatBlock
                 be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BETradeBlock;
             }
 
-            bool handled = base.OnBlockInteractStart(world, byPlayer, blockSel);
-
-            if (!handled && byPlayer.WorldData.EntityControls.Sneak && blockSel.Position != null)
+            if (byPlayer.WorldData.EntityControls.Sneak && blockSel.Position != null)
             {
                 if (be != null)
                 {
@@ -33,7 +32,7 @@ namespace tradeomat.src.TradeomatBlock
                 return true;
             }
             
-            if (!handled && !byPlayer.WorldData.EntityControls.Sneak && blockSel.Position != null)
+            if (!byPlayer.WorldData.EntityControls.Sneak && blockSel.Position != null)
             {
                 if (be != null)
                 {
@@ -43,18 +42,35 @@ namespace tradeomat.src.TradeomatBlock
                 return true;
             }
 
-            return handled;
+            return false;
         }
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             BlockPos upperPart = blockSel.Position.UpCopy();
-            if (world.BlockAccessor.GetBlockId(upperPart) != 0) return false;
+            bool shouldAffectUpperPart = false;
+            if (itemstack.Collectible.Variant["type"] == "tall") shouldAffectUpperPart = true;
+            if (shouldAffectUpperPart && world.BlockAccessor.GetBlockId(upperPart) != 0) return false;
+            
+            if (!Tradeomat.AbleToPlaceTomat(byPlayer, api))
+            {
+                if (api.Side == EnumAppSide.Server)
+                    ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:nomore"), EnumChatType.CommandError);
+                return false;
+            } else
+            {
+                if(SDCFileConfig.Current.NumberOfTomatsAllowed != 0)
+                {
+                    if (api.Side == EnumAppSide.Server)
+                        ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:count", (Tradeomat.CountTomatoes(byPlayer, api) + 1), SDCFileConfig.Current.NumberOfTomatsAllowed), EnumChatType.CommandSuccess);
+                }
+            }
             bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
 
             Block upperBlock = world.GetBlock(new AssetLocation("tradeomat:tomat-up"));
-            world.BlockAccessor.SetBlock(upperBlock.BlockId, upperPart);
-            
+            if(shouldAffectUpperPart) world.BlockAccessor.SetBlock(upperBlock.BlockId, upperPart);
+            if (api.Side == EnumAppSide.Server)
+                Tradeomat.AddTomat((IServerPlayer)byPlayer, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
             return ret;
         }
 
@@ -72,7 +88,13 @@ namespace tradeomat.src.TradeomatBlock
         }
         public override void OnBlockRemoved(IWorldAccessor world, BlockPos pos)
         {
-            world.BlockAccessor.SetBlock(0, pos.UpCopy());
+            bool shouldAffectUpperPart = false;
+            if (Variant["type"] == "tall") shouldAffectUpperPart = true;
+            if(shouldAffectUpperPart)world.BlockAccessor.SetBlock(0, pos.UpCopy());
+            if (api.Side == EnumAppSide.Server)
+            {
+                Tradeomat.RemoveTomat(pos.X, pos.Y, pos.Z);
+            }
             base.OnBlockRemoved(world, pos);
         }
 

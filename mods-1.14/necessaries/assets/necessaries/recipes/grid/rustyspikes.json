@@ -1,0 +1,13 @@
+{
+  "ingredientPattern": "SSS",
+  "ingredients": {
+    "S": {
+      type: "block", 
+	  code: "game:metal-scraps"
+    }
+  },
+  "width": 3,
+  "height": 1,
+  "shapeless": false,
+  "output": { type: "block", code: "rustyspikes" }
+}

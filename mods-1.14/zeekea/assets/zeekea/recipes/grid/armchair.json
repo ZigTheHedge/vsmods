@@ -1,0 +1,19 @@
+{
+  "ingredientPattern": "_W_	WPW	W_W",
+  "ingredients": {
+    "W": {
+      "type": "block",
+      "code": "zeekea:linen-*-down",
+	  "name": "color",
+	  "allowedVariants": ["carbon_black", "verdigris", "ultramarine", "cinnabar", "chalk_white" ]
+    },
+	"P": {
+      "type": "item",
+      "code": "game:plank-*"
+    },
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "armchair-{color}-no-both-north" }
+}

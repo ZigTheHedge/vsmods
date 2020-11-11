@@ -37,7 +37,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>g:\Vintagestory\Lib\protobuf-net.dll</HintPath>
+      <HintPath>g:\VintageStory\Lib\protobuf-net.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -50,11 +50,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="VintagestoryAPI, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>g:\Vintagestory\VintagestoryAPI.dll</HintPath>
+      <HintPath>g:\VintageStory\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>g:\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>g:\VintageStory\Mods\VSSurvivalMod.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -66,8 +66,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetPath)" "g:\Vintagestory\Mods\"
-copy "$(TargetDir)\$(TargetName).pdb" "g:\Vintagestory\Mods\"</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetPath)" "g:\VintageStory\Mods\"
+copy "$(TargetDir)\$(TargetName).pdb" "g:\VintageStory\Mods\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

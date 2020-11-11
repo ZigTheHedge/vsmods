@@ -73,7 +73,7 @@ namespace zeekea.src.freezer
                             }
                         }
                     }
-                    MarkDirty();
+                    //MarkDirty();
                     if (fuelRemaining == 0)
                     {
                         TryRefuel();

@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "_R_	LLL",
+  "ingredients": {
+    "R": {
+      type: "item", 
+	  code: "game:rope"
+    },
+    "L": {
+      "type": "item",
+      "code": "game:leather"
+    }
+  },
+  "width": 3,
+  "height": 2,
+  "shapeless": false,
+  "output": { type: "block", code: "parcel-empty" }
+}

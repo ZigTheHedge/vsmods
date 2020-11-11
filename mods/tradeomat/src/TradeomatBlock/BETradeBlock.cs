@@ -8,6 +8,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
@@ -42,14 +43,28 @@ namespace tradeomat.src.TradeomatBlock
             base.Initialize(api);
 
             inventory.LateInitialize("tomat-1", api);
+            inventory.SlotModified += OnSlotModified;
 
-            if(api is ICoreClientAPI cApi)
+            if(api is ICoreClientAPI cApi && Block.Variant["type"] == "crate")
             {
                 dealRenderer = new DealRenderer(Pos, cApi);
-                dealRenderer.UpdateDeal(Inventory[0]);
+                UpdateDeal();
             }
         }
 
+        private void OnSlotModified(int slotid)
+        {
+            if (Block.Variant["type"] == "tall") return;
+            dealRenderer?.UpdateDeal(Inventory[0], Inventory[1], GetFullness());
+            if(Api.Side == EnumAppSide.Server)
+            {
+                Tradeomat.serverChannel.BroadcastPacket<StallUpdate>(new StallUpdate(Pos.X, Pos.Y, Pos.Z), null);
+            }
+        }
+        public void UpdateDeal()
+        {
+            dealRenderer?.UpdateDeal(Inventory[0], Inventory[1], GetFullness());
+        }
         public void OnBlockInteract(IPlayer byPlayer, bool isOwner)
         {
             if (Api.Side == EnumAppSide.Client)
@@ -114,6 +129,7 @@ namespace tradeomat.src.TradeomatBlock
         {
             base.FromTreeAtributes(tree, worldForResolving);
             ownerName = tree.GetString("ownerName", "");
+            //dealRenderer.UpdateDeal(Inventory[0], Inventory[1], GetFullness());
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -213,12 +229,25 @@ namespace tradeomat.src.TradeomatBlock
             }
             */
         }
-
+        private int GetFullness()
+        {
+            if (inventory[1].Itemstack == null) return 0;
+            int fullness = 0;
+            for (int i = 10; i < 18; i++)
+            {
+                if (inventory[i].Itemstack != null && inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[1].Itemstack))
+                {
+                    fullness++;
+                }
+            }
+            return fullness;
+        }
         public int GetStorage(bool goodsStorage)
         {
             int freeSpace = 0;
             if(goodsStorage)
             {
+                if (inventory[1].Itemstack == null) return 0;
                 for (int i = 10; i < 18; i++)
                 {
                     if (inventory[i].Itemstack != null && inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[1].Itemstack))
@@ -228,6 +257,7 @@ namespace tradeomat.src.TradeomatBlock
                 }
             } else
             {
+                if (inventory[0].Itemstack == null) return 0;
                 for (int i = 2; i < 10; i++)
                 {
                     if (inventory[i].Itemstack == null || inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[0].Itemstack))
@@ -456,5 +486,12 @@ namespace tradeomat.src.TradeomatBlock
             dealRenderer?.Dispose();
         }
 
+        public override void OnBlockRemoved()
+        {
+            base.OnBlockRemoved();
+
+            dealRenderer?.Dispose();
+            dealRenderer = null;
+        }
     }
 }

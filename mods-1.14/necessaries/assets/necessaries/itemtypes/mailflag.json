@@ -1,0 +1,33 @@
+{
+	code: "mailflag",
+	shape: { base: "item/mailflag" },
+	creativeinventory: { "general": ["*"], "items": ["*"]},
+	attributes: {
+		handbook: {
+			createdBy: "metalmolding"
+		}
+	},
+	fpHandTransform: {
+		translation: { x: 0.1, y: 0.2, z: 0.4 },
+		rotation: { x: -20, y: -93, z: -75 },
+		scale: 2.5
+	},
+	guiTransform: {
+		rotate: false,
+		translation: { x: 3, y: 0, z: 0 },
+		rotation: { x: -8, y: -152, z: 142 },
+		origin: { x: 0.5, y: 0.5, z: 0.5 },
+		scale: 3.4
+	},
+	groundTransform: {
+		translation: { x: 0.0468, y: 0, z: 0 },
+		rotation: { x: 101, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.5299 },
+		scale: 3.5
+	},
+	tpHandTransform: {
+		translation: { x: -0.78, y: -0.44, z: -0.5 },
+		rotation: { x: 0, y: 180, z: -10 },
+		scale: 1
+	}
+}

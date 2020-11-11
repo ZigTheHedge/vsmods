@@ -8,6 +8,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 using zeekea.src.standardInventories;
@@ -17,7 +18,9 @@ namespace zeekea.src.tall_locker
     class BETallLocker : BlockEntityContainer
     {
         internal InventoryTwentyFour inventory;
-        GuiTwentyFourSlots nightstandDialog;
+        GuiTwentyFourSlots lockerDialog;
+
+        private BlockEntityAnimationUtil animUtil => ((BEBehaviorAnimatable)GetBehavior<BEBehaviorAnimatable>())?.animUtil;
 
         public override InventoryBase Inventory
         {
@@ -39,13 +42,19 @@ namespace zeekea.src.tall_locker
             base.Initialize(api);
 
             inventory.LateInitialize("zeetwentyfour-1", api);
+
+            if (api.World.Side == EnumAppSide.Client)
+            {
+                animUtil.InitializeAnimator("zeekea:tall_locker", new Vec3f(0, Block.Shape.rotateY, 0));
+            }
+
         }
+
 
         public void OnBlockInteract(IPlayer byPlayer, bool isOwner)
         {
             if (Api.Side == EnumAppSide.Client)
             {
-                
             }
             else
             {
@@ -114,30 +123,44 @@ namespace zeekea.src.tall_locker
 
                     IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
 
-                    if (nightstandDialog == null)
+                    if (lockerDialog == null)
                     {
                         Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/locker_open.ogg"), Pos.X, Pos.Y, Pos.Z);
 
-                        nightstandDialog = new GuiTwentyFourSlots(Lang.Get("zeekea:tall_locker-title"), Inventory, Pos, Api as ICoreClientAPI);
-                        nightstandDialog.OnClosed += () =>
+                        lockerDialog = new GuiTwentyFourSlots(Lang.Get("zeekea:tall_locker-title"), Inventory, Pos, Api as ICoreClientAPI);
+                        lockerDialog.OnClosed += () =>
                         {
-                            nightstandDialog = null;
+                            lockerDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/locker_close.ogg"), Pos.X, Pos.Y, Pos.Z);
-
+                            animUtil.StopAnimation("open");
                         };
                     }
 
-                    nightstandDialog.TryOpen();
+                    lockerDialog.TryOpen();
+                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
                 }
             }
 
             if (packetid == (int)EnumBlockEntityPacketId.Close)
             {
                 (Api.World as IClientWorldAccessor).Player.InventoryManager.CloseInventory(Inventory);
-                nightstandDialog?.TryClose();
-                nightstandDialog?.Dispose();
-                nightstandDialog = null;
+                lockerDialog?.TryClose();
+                lockerDialog?.Dispose();
+                lockerDialog = null;
             }
         }
+
+        public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
+        {
+            if (animUtil.activeAnimationsByAnimCode.Count > 0)
+            {
+                return true;
+            } 
+
+            return false;
+        }
+
+
+
     }
 }

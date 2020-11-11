@@ -8,6 +8,7 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
@@ -17,6 +18,8 @@ namespace zeekea.src.nightstand
     {
         internal InventoryEight inventory;
         GuiEightSlots nightstandDialog;
+
+        private BlockEntityAnimationUtil animUtil => ((BEBehaviorAnimatable)GetBehavior<BEBehaviorAnimatable>())?.animUtil;
 
         public override InventoryBase Inventory
         {
@@ -38,6 +41,11 @@ namespace zeekea.src.nightstand
             base.Initialize(api);
 
             inventory.LateInitialize("zeeeight-1", api);
+            if (api.World.Side == EnumAppSide.Client)
+            {
+                animUtil.InitializeAnimator("zeekea:nightstand", new Vec3f(0, Block.Shape.rotateY, 0));
+            }
+
         }
 
         public void OnBlockInteract(IPlayer byPlayer, bool isOwner)
@@ -122,10 +130,14 @@ namespace zeekea.src.nightstand
                         {
                             nightstandDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/shelf_close.ogg"), Pos.X, Pos.Y, Pos.Z);
+                            animUtil.StopAnimation("open");
+
                         };
                     }
 
                     nightstandDialog.TryOpen();
+                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
+
                 }
             }
 
@@ -136,6 +148,15 @@ namespace zeekea.src.nightstand
                 nightstandDialog?.Dispose();
                 nightstandDialog = null;
             }
+        }
+        public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
+        {
+            if (animUtil.activeAnimationsByAnimCode.Count > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
