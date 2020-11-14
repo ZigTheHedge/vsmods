@@ -17,7 +17,7 @@
 	},
 	resistance: 3.5,
 	sounds: {
-		"place": "game:block/anvil",
+		"place": "game:block/planks",
 		"walk": "game:walk/wood"
 	}
 }

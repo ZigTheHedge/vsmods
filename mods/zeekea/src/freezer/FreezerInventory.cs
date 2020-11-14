@@ -20,14 +20,16 @@ namespace zeekea.src.freezer
 
         public FreezerInventory(string inventoryID, ICoreAPI api) : base(inventoryID, api)
         {
-            slots = new ItemSlot[8];
-            for(int i = 0; i < 8; i++)
-            {
-                if (i < 4)
-                    slots[i] = new IceSlot(this);
-                else
-                    slots[i] = new ItemSlot(this);
-            }
+            slots = GenEmptySlots(8);
+            baseWeight = 4;
+        }
+
+        protected override ItemSlot NewSlot(int slotId)
+        {
+            if(slotId < 4)
+                return new IceSlot(this);
+            else
+                return new ItemSlot(this);
         }
 
         public override ItemSlot this[int slotId]

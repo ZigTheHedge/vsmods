@@ -1,0 +1,29 @@
+{
+	"block-tomat-tall-north": "Trade'o'mat",
+	"block-tomat-tall-up": "Trade'o'mat",
+	"block-tomat-crate-north": "Trade'o'mat",
+	"block-tomat-crate-up": "Trade'o'mat",
+	
+	"owner-title": "Setting up",
+	"customer-title": "Seller: {0}",
+	"tomat-goods": "Selling:",
+	"tomat-price": "For:",
+	"agree-button": "Deal!",
+	"deal-notenoughgoods": "Trade'o'mat ran out of stock!",
+	"deal-notenoughspace": "Trade'o'mat has ran out of storage!",
+	"deal-notenoughpayment": "Payment is not enough!",
+	"deal-payenterror": "Wrong payment items!",
+	"deal-slotnotempty": "Output slot is occupied!",
+	"isnotsetup": "Hasn't been set up yet!",
+	"outofspace": "Out of storage!",
+	"outofgoods": "SOLD OUT: Out of stock!",
+	"notyours": "This trade'o'mat is not yours!",
+	"count": "You've used {0} out of {1} allowed Trade'o'mats.",
+	"nomore": "You are not allowed to place more Trade'o'mats!",
+	
+	"blockhelp-tomat-owner": "Configure the Trade'o'mat",
+	"blockhelp-tomat-customer": "Open customer interface",
+	
+	"owner-tooltip": "{0}'s Trade'o'mat"
+	
+}

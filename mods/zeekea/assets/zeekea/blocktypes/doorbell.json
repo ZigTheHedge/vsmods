@@ -37,7 +37,7 @@
 	selectionbox: { x1: 0.25, y1: 0.25, z1: 0, x2: 0.75, y2: 0.75, z2: 0.1625, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
 	resistance: 3.5,
 	sounds: {
-		"place": "block/planks",
+		"place": "game:block/planks",
 		"walk": "game:walk/wood"
 	},
 	guiTransform: {

@@ -52,7 +52,7 @@
 	],
 	resistance: 3.5,
 	sounds: {
-		"place": "block/planks",
+		"place": "game:block/planks",
 		"walk": "game:walk/wood"
 	},
 	guiTransform: {

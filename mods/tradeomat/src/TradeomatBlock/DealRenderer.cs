@@ -55,8 +55,9 @@ namespace tradeomat.src.TradeomatBlock
                 {
                     string fp = goods.Itemstack.Item.Code.FirstPathPart();
                     if (fp.StartsWith("ingot") ||
-                       fp.StartsWith("stone")
-                        ) 
+                       fp.StartsWith("stone") ||
+                       fp.StartsWith("metalplate")
+                        )
                         goodsRender = EnumGoodsRenderType.Reverse;
                 }
             }

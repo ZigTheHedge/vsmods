@@ -4,10 +4,10 @@
     "op": "add",
     "path": "/tradeomat:1.3B",
     "value": [
-		"/bir remapq tradeomat-tall-north tradeomat-north force",
-		"/bir remapq tradeomat-tall-east tradeomat-east force",
-		"/bir remapq tradeomat-tall-south tradeomat-south force",
-		"/bir remapq tradeomat-tall-west tradeomat-west force"
+		"/bir remapq tradeomat:tomat-tall-north tradeomat:tomat-north force",
+		"/bir remapq tradeomat:tomat-tall-east tradeomat:tomat-east force",
+		"/bir remapq tradeomat:tomat-tall-south tradeomat:tomat-south force",
+		"/bir remapq tradeomat:tomat-tall-west tradeomat:tomat-west force"
 	]
   }
 ]

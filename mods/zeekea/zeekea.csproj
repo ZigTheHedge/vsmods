@@ -81,8 +81,10 @@
     <Compile Include="src\standardInventories\InventoryEight.cs" />
     <Compile Include="src\nightstand\Nightstand.cs" />
     <Compile Include="src\standardInventories\InventoryTwentyFour.cs" />
+    <Compile Include="src\standardInventories\StandardSlot.cs" />
     <Compile Include="src\tall_locker\BETallLocker.cs" />
     <Compile Include="src\tall_locker\TallLocker.cs" />
+    <Compile Include="src\vanillapatches\BEContainerDisplayPatch.cs" />
     <Compile Include="src\ZEEkea.cs" />
   </ItemGroup>
   <ItemGroup>

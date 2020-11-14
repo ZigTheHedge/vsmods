@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
+using zeekea.src.standardInventories;
 
 namespace zeekea.src.nightstand
 {
@@ -21,6 +22,10 @@ namespace zeekea.src.nightstand
         {
             slots = GenEmptySlots(8);
             baseWeight = 4;
+        }
+        protected override ItemSlot NewSlot(int slotId)
+        {
+            return new StandardSlot(this);
         }
 
         public override ItemSlot this[int slotId]

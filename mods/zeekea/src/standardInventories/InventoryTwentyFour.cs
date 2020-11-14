@@ -23,6 +23,12 @@ namespace zeekea.src.standardInventories
             baseWeight = 4;
         }
 
+        protected override ItemSlot NewSlot(int slotId)
+        {
+            return new StandardSlot(this);
+        }
+
+
         public override ItemSlot this[int slotId]
         {
             get

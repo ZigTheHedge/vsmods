@@ -83,10 +83,10 @@
 		burnDuration: 15,
 	},
 	sounds: {
-		place: "block/cloth",
-		break: "block/cloth",
-		hit: "block/cloth",
-		walk: "walk/cloth"
+		place: "game:block/cloth",
+		break: "game:block/cloth",
+		hit: "game:block/cloth",
+		walk: "game:walk/cloth"
 	},
 	materialDensity: 200,
 	guiTransform: {

@@ -1,0 +1,56 @@
+{
+	code: "tall_locker",
+	class: "tall_locker",
+	entityClass: "betall_locker",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	entityBehaviors: [{ name: "Animatable" }], 
+	blockmaterial: "Wood",
+	variantgroups: [
+		{ loadFromProperties: "block/wood" },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	textures: {
+		"acacia": { base: "game:block/wood/debarked/{wood}" }
+	},
+	shapebytype: { 
+		"*-north": {
+			base: "block/tall_locker",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/tall_locker",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/tall_locker",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/tall_locker",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false",
+		up: "true"
+	},
+	sideopaque: {
+		all: "false",
+		up: "true"
+	},
+	collisionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1 },
+	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1 },
+	resistance: 3.5,
+	sounds: {
+		"place": "block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 },
+		origin: { x: 0.5, y: 0.9, z: 0.5 },
+		scale: 0.72
+	}
+}

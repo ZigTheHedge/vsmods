@@ -52,7 +52,7 @@
 	},
 	resistance: 1.5,
 	sounds: {
-		"place": "game:block/anvil",
+		"place": "game:block/cloth",
 		"walk": "game:walk/wood"
 	}
 }

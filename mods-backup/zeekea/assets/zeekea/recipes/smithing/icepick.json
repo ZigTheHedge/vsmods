@@ -1,0 +1,14 @@
+{
+	ingredient: { 
+		type: "item", 
+		code: "game:ingot-iron"
+	},
+	pattern: [[
+		"_____####____#",
+		"__############",
+		"#####______###",
+		"____________##"
+	]],
+	name: "Iron Icepick",
+	output: { type: "item", code: "zeekea:icepickhead-iron"  }
+}

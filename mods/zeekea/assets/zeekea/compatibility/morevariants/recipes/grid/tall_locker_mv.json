@@ -1,19 +1,72 @@
-{
-  "ingredientPattern": "B_B	BCB	B_B",
-  "ingredients": {
-    "B": {
-      "type": "item",
-      "code": "game:plank-*",
-	  "name": "wood",
-	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "pine"]
+[
+  {
+    "ingredientPattern": "B_B	BCB	B_B",
+    "ingredients": {
+      "B": { "type": "item", "code": "game:plank-acacia" },
+      "C": {
+        "type": "block",
+        "code": "morevariants:chest-east",
+        "attributes": { "type": "acacia" }
+      }
     },
-    "C": {
-      "type": "block",
-      "code": "morevariants:chest-east",
-    }
+    "width": 3,
+    "height": 3,
+    "output": { "type": "block", "code": "tall_locker-acacia-north" }
   },
-  "width": 3,
-  "height": 3,
-  "shapeless": false,
-  "output": { type: "block", code: "tall_locker-{wood}-north" }
-}
+  {
+    "ingredientPattern": "B_B	BCB	B_B",
+    "ingredients": {
+      "B": { "type": "item", "code": "game:plank-birch" },
+      "C": {
+        "type": "block",
+        "code": "morevariants:chest-east",
+        "attributes": { "type": "birch" }
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "block", "code": "tall_locker-birch-north" }
+  },
+  {
+    "ingredientPattern": "B_B	BCB	B_B",
+    "ingredients": {
+      "B": { "type": "item", "code": "game:plank-kapok" },
+      "C": {
+        "type": "block",
+        "code": "morevariants:chest-east",
+        "attributes": { "type": "kapok" }
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "block", "code": "tall_locker-kapok-north" }
+  },
+  {
+    "ingredientPattern": "B_B	BCB	B_B",
+    "ingredients": {
+      "B": { "type": "item", "code": "game:plank-maple" },
+      "C": {
+        "type": "block",
+        "code": "morevariants:chest-east",
+        "attributes": { "type": "maple" }
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "block", "code": "tall_locker-maple-north" }
+  },
+  {
+    "ingredientPattern": "B_B	BCB	B_B",
+    "ingredients": {
+      "B": { "type": "item", "code": "game:plank-pine" },
+      "C": {
+        "type": "block",
+        "code": "morevariants:chest-east",
+        "attributes": { "type": "pine" }
+      }
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "block", "code": "tall_locker-pine-north" }
+  }
+]

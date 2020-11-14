@@ -1,0 +1,46 @@
+{
+	code: "grindstone",
+	class: "grindstone",
+	creativeinventory: { "general": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Wood",
+	variantgroups: [
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/grindstone",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/grindstone",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/grindstone",
+			rotateY: 180
+		},
+		"*west": {
+			base: "block/grindstone",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.7, z2: 1, rotateYByType: { "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.7, z2: 1, rotateYByType: { "*-south": 180, "*-east": 270, "*-west": 90 } },
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 }
+	}
+}

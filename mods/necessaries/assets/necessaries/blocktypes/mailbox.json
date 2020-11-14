@@ -39,7 +39,7 @@
 	selectionbox: { x1: 0.1875, y1: 0, z1: 0, x2: 0.8125, y2: 0.625, z2: 1, rotateYByType: {  "*-north": 180, "*-east": 90, "*-west": 270 } },
 	resistance: 3.5,
 	sounds: {
-		"place": "game:block/anvil",
+		"place": "game:block/planks",
 		"walk": "game:walk/wood"
 	}
 }

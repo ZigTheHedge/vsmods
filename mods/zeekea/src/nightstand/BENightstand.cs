@@ -11,10 +11,11 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
+using zeekea.src.vanillapatches;
 
 namespace zeekea.src.nightstand
 {
-    class BENightstand : BlockEntityContainer
+    class BENightstand : BEContainerDisplayPatch
     {
         internal InventoryEight inventory;
         GuiEightSlots nightstandDialog;
@@ -33,14 +34,17 @@ namespace zeekea.src.nightstand
 
         public BENightstand()
         {
-            inventory = new InventoryEight(null, null);
+            inventory = new InventoryEight("zeeeight-1", null);
+            meshes = new MeshData[8];
         }
 
         public override void Initialize(ICoreAPI api)
         {
+            //inventory.LateInitialize();
+            
             base.Initialize(api);
+            inventory.SlotModified += OnSlotModified;
 
-            inventory.LateInitialize("zeeeight-1", api);
             if (api.World.Side == EnumAppSide.Client)
             {
                 animUtil.InitializeAnimator("zeekea:nightstand", new Vec3f(0, Block.Shape.rotateY, 0));
@@ -104,6 +108,46 @@ namespace zeekea.src.nightstand
                 }
             }
         }
+        protected override void translateMesh(MeshData mesh, int index)
+        {
+            if(index > 3)
+            {
+                mesh.Clear();
+                return;
+            }
+            float x = (index % 2 == 0) ? 5 / 16f : 11 / 16f;
+            float y = 0.56f;
+            float z = (index > 1) ? 11 / 16f : 5 / 16f;
+
+            if(!Inventory[index].Empty)
+            {
+                if(Inventory[index].Itemstack.Class == EnumItemClass.Block)
+                    mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.35f, 0.35f, 0.35f);
+                else
+                    mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.75f, 0.75f, 0.75f);
+            }
+
+            mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, 45 * GameMath.DEG2RAD, 0);
+            mesh.Translate(x - 0.5f, y, z - 0.5f);
+            int orientationRotate = 0;
+            if (Block.Variant["horizontalorientation"] == "east") orientationRotate = 270;
+            if (Block.Variant["horizontalorientation"] == "south") orientationRotate = 180;
+            if (Block.Variant["horizontalorientation"] == "west") orientationRotate = 90;
+            mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, orientationRotate * GameMath.DEG2RAD, 0);
+        }
+        private void OnSlotModified(int slotid)
+        {
+            if(slotid < 4)
+                UpdateShape();
+        }
+        public void UpdateShape()
+        {
+            for(int i = 0; i < 8; i++)
+            {
+                    updateMesh(i);
+            }
+            MarkDirty(Api.Side != EnumAppSide.Server);
+        }
 
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
@@ -131,7 +175,7 @@ namespace zeekea.src.nightstand
                             nightstandDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/shelf_close.ogg"), Pos.X, Pos.Y, Pos.Z);
                             animUtil.StopAnimation("open");
-
+                            UpdateShape();
                         };
                     }
 
@@ -151,6 +195,7 @@ namespace zeekea.src.nightstand
         }
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
+            base.OnTesselation(mesher, tessThreadTesselator);
             if (animUtil.activeAnimationsByAnimCode.Count > 0)
             {
                 return true;

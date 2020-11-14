@@ -1,0 +1,41 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"normal1": "block/cloth/linen/normal1"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 0.0, 0.0, 0.0 ], 
+			"to": [ 16.0, 8.0, 16.0 ], 
+			"faces": {
+				"north": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 8.0 ] },
+				"east": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 8.0 ] },
+				"south": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 8.0 ] },
+				"west": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 8.0 ] },
+				"up": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+				"down": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+			}
+		},
+		{
+			"name": "Cube2",
+			"from": [ 0.0, 8.0, 0.0 ], 
+			"to": [ 16.0, 16.0, 4.0 ], 
+			"rotationOrigin": [ 0.0, 8.0, 0.0 ],
+			"faces": {
+				"north": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 8.0 ] },
+				"east": { "texture": "#normal1", "uv": [ 0.0, 0.0, 4.0, 8.0 ] },
+				"south": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 8.0 ] },
+				"west": { "texture": "#normal1", "uv": [ 0.0, 0.0, 4.0, 8.0 ] },
+				"up": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 4.0 ] },
+				"down": { "texture": "#normal1", "uv": [ 0.0, 0.0, 16.0, 4.0 ] }
+			}
+		}
+	]}

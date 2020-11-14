@@ -1,0 +1,17 @@
+{
+  "ingredientPattern": "_W_	WPW	W_W",
+  "ingredients": {
+    "W": {
+      "type": "block",
+      "code": "game:linen-normal-down"
+    },
+	"P": {
+      "type": "item",
+      "code": "game:plank-*"
+    },
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "armchair-normal1-no-both-north" }
+}

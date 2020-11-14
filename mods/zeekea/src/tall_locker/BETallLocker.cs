@@ -12,10 +12,11 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 using zeekea.src.standardInventories;
+using zeekea.src.vanillapatches;
 
 namespace zeekea.src.tall_locker
 {
-    class BETallLocker : BlockEntityContainer
+    class BETallLocker : BEContainerDisplayPatch
     {
         internal InventoryTwentyFour inventory;
         GuiTwentyFourSlots lockerDialog;
@@ -35,6 +36,7 @@ namespace zeekea.src.tall_locker
         public BETallLocker()
         {
             inventory = new InventoryTwentyFour(null, null);
+            meshes = new MeshData[24];
         }
 
         public override void Initialize(ICoreAPI api)
@@ -42,6 +44,7 @@ namespace zeekea.src.tall_locker
             base.Initialize(api);
 
             inventory.LateInitialize("zeetwentyfour-1", api);
+            inventory.SlotModified += OnSlotModified;
 
             if (api.World.Side == EnumAppSide.Client)
             {
@@ -50,7 +53,10 @@ namespace zeekea.src.tall_locker
 
         }
 
-
+        private void OnSlotModified(int slotid)
+        {
+            UpdateShape(slotid);
+        }
         public void OnBlockInteract(IPlayer byPlayer, bool isOwner)
         {
             if (Api.Side == EnumAppSide.Client)
@@ -106,6 +112,50 @@ namespace zeekea.src.tall_locker
                 }
             }
         }
+        protected override void translateMesh(MeshData mesh, int index)
+        {
+            float x = (index % 4) * 4f/16f + 2f/16f;
+            float y = 2f/16f + 25f/16f - (index / 4) * 5f/16f;
+            float z = 8f / 16f;
+
+
+            if (!Inventory[index].Empty)
+            {
+                if (Inventory[index].Itemstack.Class == EnumItemClass.Block)
+                {
+                    mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.22f, 0.22f, 0.22f);
+                    mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, 8 * GameMath.DEG2RAD, 0);
+                }
+                else
+                {
+                    mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.7f, 0.7f, 0.7f);
+                    mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, 15 * GameMath.DEG2RAD, 0);
+
+                }
+            }
+            
+            mesh.Translate(x - 0.5f, y, z - 0.5f);
+
+            int orientationRotate = 0;
+            if (Block.Variant["horizontalorientation"] == "east") orientationRotate = 270;
+            if (Block.Variant["horizontalorientation"] == "south") orientationRotate = 180;
+            if (Block.Variant["horizontalorientation"] == "west") orientationRotate = 90;
+            mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, orientationRotate * GameMath.DEG2RAD, 0);
+
+        }
+        public void UpdateShape(int slotId = -1)
+        {
+            if (slotId == -1)
+            {
+                for (int i = 0; i < 24; i++)
+                {
+                    updateMesh(i);
+                }
+            }
+            else
+                updateMesh(slotId);
+            MarkDirty(Api.Side != EnumAppSide.Server);
+        }
 
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
@@ -133,6 +183,7 @@ namespace zeekea.src.tall_locker
                             lockerDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/locker_close.ogg"), Pos.X, Pos.Y, Pos.Z);
                             animUtil.StopAnimation("open");
+                            UpdateShape();
                         };
                     }
 
@@ -152,6 +203,7 @@ namespace zeekea.src.tall_locker
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
+            base.OnTesselation(mesher, tessThreadTesselator);
             if (animUtil.activeAnimationsByAnimCode.Count > 0)
             {
                 return true;

@@ -40,7 +40,7 @@
 	selectionbox: { x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 0.875, z2: 0.75 },
 	resistance: 1,
 	sounds: {
-		"place": "block/planks",
+		"place": "game:block/planks",
 		"walk": "game:walk/wood"
 	}
 }

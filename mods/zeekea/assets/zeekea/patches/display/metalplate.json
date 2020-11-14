@@ -1,0 +1,13 @@
+[
+  {
+    "file": "game:itemtypes/resource/metalplate.json",
+    "op": "add",
+    "path": "/attributes/onDisplayTransform",
+    "value": {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 0.55
+	}
+  }
+]
