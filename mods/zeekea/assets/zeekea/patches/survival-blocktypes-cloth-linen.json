@@ -1,0 +1,11 @@
+[
+  {
+    "file": "game:blocktypes/cloth/linen.json",
+    "op": "add",
+    "path": "/attributes",
+    "value": { 
+		"canChisel": true,
+		"chiselShapeFromCollisionBox": true
+	}
+  }
+]

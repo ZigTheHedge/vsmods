@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using zeekea.src.armchair;
+using zeekea.src.curtains;
 using zeekea.src.doorbell;
 using zeekea.src.freezer;
 using zeekea.src.nightlamp;
@@ -30,6 +31,7 @@ namespace zeekea.src
             api.RegisterBlockClass("freezer", typeof(Freezer));
             api.RegisterBlockEntityClass("befreezer", typeof(BEFreezer));
             api.RegisterBlockClass("doorbell", typeof(DoorBell));
+            api.RegisterBlockClass("curtain", typeof(Curtains));
 
             api.RegisterItemClass("icepick", typeof(IcepickItem));
         }

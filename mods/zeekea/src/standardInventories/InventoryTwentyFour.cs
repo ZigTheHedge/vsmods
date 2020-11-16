@@ -28,7 +28,6 @@ namespace zeekea.src.standardInventories
             return new StandardSlot(this);
         }
 
-
         public override ItemSlot this[int slotId]
         {
             get

@@ -208,6 +208,21 @@
 	"item-lampstand-blackbronze": "Основа ночника из черной бронзы",
 	"item-lampstand-iron": "Основа ночника из железа",
 
-	"item-temporal_dust": "Темпоральная пыль"
-
+	"item-temporal_dust": "Темпоральная пыль",
+	
+	"block-curtain-normal1-no-left-shut-north": "Лаймовая штора",
+	"block-curtain-carbon_black-no-left-shut-north": "Черная штора",
+	"block-curtain-verdigris-no-left-shut-north": "Зеленая штора",
+	"block-curtain-ultramarine-no-left-shut-north": "Синяя штора",
+	"block-curtain-cinnabar-no-left-shut-north": "Красная штора",
+	"block-curtain-chalk_white-no-left-shut-north": "Белая штора",
+	
+	"curtain-help": "Повесить штору можно под Карнизом",
+	
+	"block-rod-acacia-north": "Карниз из акации",
+	"block-rod-birch-north": "Карниз из березы",	
+	"block-rod-kapok-north": "Карниз из капока",	
+	"block-rod-maple-north": "Карниз из клена",	
+	"block-rod-oak-north": "Карниз из дуба",	
+	"block-rod-pine-north": "Карниз из сосны"
 }

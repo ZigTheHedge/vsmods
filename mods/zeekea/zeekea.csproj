@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\armchair\Armchair.cs" />
+    <Compile Include="src\curtains\Curtains.cs" />
     <Compile Include="src\doorbell\DoorBell.cs" />
     <Compile Include="src\DummyUP.cs" />
     <Compile Include="src\freezer\BEFreezer.cs" />

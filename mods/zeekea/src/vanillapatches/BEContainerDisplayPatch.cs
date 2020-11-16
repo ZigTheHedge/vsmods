@@ -139,7 +139,12 @@ namespace zeekea.src.vanillapatches
                     ModelTransform transform = stack.Collectible.Attributes?["onDisplayTransform"].AsObject<ModelTransform>();
                     transform.EnsureDefaultValues();
                     mesh.ModelTransform(transform);
-                } else
+                } else if (stack.Collectible.GroundTransform != null) {
+                    ModelTransform transform = stack.Collectible.GroundTransform;
+                    transform.EnsureDefaultValues();
+                    mesh.ModelTransform(transform);
+                }
+                else
                     mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
             }
             else

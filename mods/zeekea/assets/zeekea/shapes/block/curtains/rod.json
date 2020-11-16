@@ -1,0 +1,56 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"acacia": "block/wood/debarked/acacia"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 0.0, -2.0, 0.0 ], 
+			"to": [ 16.0, 1.0, 1.0 ], 
+			"rotationOrigin": [ 0.0, -2.0, 0.0 ],
+			"faces": {
+				"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+				"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+				"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+				"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] }
+			}
+		},
+		{
+			"name": "Cube2",
+			"from": [ 0.0, -2.0, 2.0 ], 
+			"to": [ 16.0, 1.0, 3.1 ], 
+			"rotationOrigin": [ 0.0, -2.0, 2.0 ],
+			"faces": {
+				"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+				"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+				"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+				"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] }
+			}
+		},
+		{
+			"name": "Cube3",
+			"from": [ 0.0, 0.0, 1.0 ], 
+			"to": [ 16.0, 1.0, 2.0 ], 
+			"rotationOrigin": [ 0.0, 0.0, 1.0 ],
+			"faces": {
+				"north": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+				"east": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"south": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+				"west": { "texture": "#acacia", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"up": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+				"down": { "texture": "#acacia", "uv": [ 0.0, 0.0, 16.0, 1.0 ] }
+			}
+		}
+	]}

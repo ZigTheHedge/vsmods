@@ -208,5 +208,21 @@
 	"item-lampstand-blackbronze": "Black Lamp stand",
 	"item-lampstand-iron": "Iron Lamp stand",
 
-	"item-temporal_dust": "Temporal Dust"
+	"item-temporal_dust": "Temporal Dust",
+	
+	"block-curtain-normal1-no-left-shut-north": "Lime Curtain",
+	"block-curtain-carbon_black-no-left-shut-north": "Black Curtain",
+	"block-curtain-verdigris-no-left-shut-north": "Green Curtain",
+	"block-curtain-ultramarine-no-left-shut-north": "Blue Curtain",
+	"block-curtain-cinnabar-no-left-shut-north": "Red Curtain",
+	"block-curtain-chalk_white-no-left-shut-north": "White Curtain",
+	
+	"curtain-help": "Place curtains below placed Curtain Rods",
+	
+	"block-rod-acacia-north": "Curtain Rod made of Acacia",
+	"block-rod-birch-north": "Curtain Rod made of Birch",	
+	"block-rod-kapok-north": "Curtain Rod made of Kapok",	
+	"block-rod-maple-north": "Curtain Rod made of Maple",	
+	"block-rod-oak-north": "Curtain Rod made of Oak",	
+	"block-rod-pine-north": "Curtain Rod made of Pine"
 }

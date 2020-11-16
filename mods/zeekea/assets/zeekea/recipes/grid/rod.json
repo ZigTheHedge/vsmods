@@ -1,0 +1,19 @@
+{
+  "ingredientPattern": "_S_	P_P",
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+	  "name": "wood",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+    },
+    "S": {
+      "type": "item",
+      "code": "game:stick"
+    }
+  },
+  "width": 3,
+  "height": 2,
+  "shapeless": false,
+  "output": { type: "block", code: "zeekea:rod-{wood}-north" }
+}

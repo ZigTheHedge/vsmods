@@ -1,0 +1,51 @@
+{
+	code: "rod",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Wood",
+	variantgroups: [
+		{ loadFromProperties: "block/wood" },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	textures: {
+		"acacia": { base: "game:block/wood/debarked/{wood}" }
+	},
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/curtains/rod",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/curtains/rod",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/curtains/rod",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/curtains/rod",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0, y1: -0.125, z1: 0, x2: 1, y2: 0.0625, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0, y1: -0.125, z1: 0, x2: 1, y2: 0.0625, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	resistance: 2.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		translation: { x: -5, y: -16, z: 0 },
+		rotation: { x: -20, y: -160, z: 0 },
+		scale: 1.56
+	}
+}

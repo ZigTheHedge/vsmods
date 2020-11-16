@@ -1,0 +1,255 @@
+{
+	code: "curtain",
+	class: "curtain",
+	creativeinventory: { "general": ["*-no-left-shut-north"], "decorative": ["*-no-left-shut-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Cloth",
+	variantgroups: [
+		{ code: "color", states: ["normal1", "carbon_black", "verdigris", "ultramarine", "cinnabar", "chalk_white"] },
+		{ code: "topside", states: ["yes", "no"] },
+		{ code: "side", states: ["left", "right", "bothleft", "bothright", "both"] },
+		{ code: "state", states: ["open", "shut"] },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	textures: {
+		"normal1": { base: "zeekea:block/cloth/linen/{color}" }
+	},
+	shapebytype: { 
+		"*-bothleft-*-north": {
+			base: "block/curtains/left_half_shut",
+			rotateY: 0
+		},
+		"*-bothleft-*-east": {
+			base: "block/curtains/left_half_shut",
+			rotateY: 270
+		},
+		"*-bothleft-*-south": {
+			base: "block/curtains/left_half_shut",
+			rotateY: 180
+		},
+		"*-bothleft-*-west": {
+			base: "block/curtains/left_half_shut",
+			rotateY: 90
+		},
+		"*-bothright-*-north": {
+			base: "block/curtains/right_half_shut",
+			rotateY: 0
+		},
+		"*-bothright-*-east": {
+			base: "block/curtains/right_half_shut",
+			rotateY: 270
+		},
+		"*-bothright-*-south": {
+			base: "block/curtains/right_half_shut",
+			rotateY: 180
+		},
+		"*-bothright-*-west": {
+			base: "block/curtains/right_half_shut",
+			rotateY: 90
+		},
+		"*-both-*-north": {
+			base: "block/curtains/center_shut",
+			rotateY: 0
+		},
+		"*-both-*-east": {
+			base: "block/curtains/center_shut",
+			rotateY: 270
+		},
+		"*-both-*-south": {
+			base: "block/curtains/center_shut",
+			rotateY: 180
+		},
+		"*-both-*-west": {
+			base: "block/curtains/center_shut",
+			rotateY: 90
+		},
+		"*-yes-left-open-north": {
+			base: "block/curtains/left_top_opened",
+			rotateY: 0
+		},
+		"*-yes-left-open-east": {
+			base: "block/curtains/left_top_opened",
+			rotateY: 270
+		},
+		"*-yes-left-open-south": {
+			base: "block/curtains/left_top_opened",
+			rotateY: 180
+		},
+		"*-yes-left-open-west": {
+			base: "block/curtains/left_top_opened",
+			rotateY: 90
+		},
+		"*-yes-left-shut-north": {
+			base: "block/curtains/left_shut",
+			rotateY: 0
+		},
+		"*-yes-left-shut-east": {
+			base: "block/curtains/left_shut",
+			rotateY: 270
+		},
+		"*-yes-left-shut-south": {
+			base: "block/curtains/left_shut",
+			rotateY: 180
+		},
+		"*-yes-left-shut-west": {
+			base: "block/curtains/left_shut",
+			rotateY: 90
+		},
+		"*-yes-right-open-north": {
+			base: "block/curtains/right_top_opened",
+			rotateY: 0
+		},
+		"*-yes-right-open-east": {
+			base: "block/curtains/right_top_opened",
+			rotateY: 270
+		},
+		"*-yes-right-open-south": {
+			base: "block/curtains/right_top_opened",
+			rotateY: 180
+		},
+		"*-yes-right-open-west": {
+			base: "block/curtains/right_top_opened",
+			rotateY: 90
+		},
+		"*-yes-right-shut-north": {
+			base: "block/curtains/right_shut",
+			rotateY: 0
+		},
+		"*-yes-right-shut-east": {
+			base: "block/curtains/right_shut",
+			rotateY: 270
+		},
+		"*-yes-right-shut-south": {
+			base: "block/curtains/right_shut",
+			rotateY: 180
+		},
+		"*-yes-right-shut-west": {
+			base: "block/curtains/right_shut",
+			rotateY: 90
+		},
+		"*-no-left-open-north": {
+			base: "block/curtains/left_opened",
+			rotateY: 0
+		},
+		"*-no-left-open-east": {
+			base: "block/curtains/left_opened",
+			rotateY: 270
+		},
+		"*-no-left-open-south": {
+			base: "block/curtains/left_opened",
+			rotateY: 180
+		},
+		"*-no-left-open-west": {
+			base: "block/curtains/left_opened",
+			rotateY: 90
+		},
+		"*-no-left-shut-north": {
+			base: "block/curtains/left_shut",
+			rotateY: 0
+		},
+		"*-no-left-shut-east": {
+			base: "block/curtains/left_shut",
+			rotateY: 270
+		},
+		"*-no-left-shut-south": {
+			base: "block/curtains/left_shut",
+			rotateY: 180
+		},
+		"*-no-left-shut-west": {
+			base: "block/curtains/left_shut",
+			rotateY: 90
+		},
+		"*-no-right-open-north": {
+			base: "block/curtains/right_opened",
+			rotateY: 0
+		},
+		"*-no-right-open-east": {
+			base: "block/curtains/right_opened",
+			rotateY: 270
+		},
+		"*-no-right-open-south": {
+			base: "block/curtains/right_opened",
+			rotateY: 180
+		},
+		"*-no-right-open-west": {
+			base: "block/curtains/right_opened",
+			rotateY: 90
+		},
+		"*-no-right-shut-north": {
+			base: "block/curtains/right_shut",
+			rotateY: 0
+		},
+		"*-no-right-shut-east": {
+			base: "block/curtains/right_shut",
+			rotateY: 270
+		},
+		"*-no-right-shut-south": {
+			base: "block/curtains/right_shut",
+			rotateY: 180
+		},
+		"*-no-right-shut-west": {
+			base: "block/curtains/right_shut",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0, y1: 0, z1: 0, x2: 0, y2: 0, z2: 0 },
+	selectionboxesByType: {
+		"*-yes-left-open-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 0.3125, y2: 0.5, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+			{ x1: 0, y1: 0.5, z1: 0, x2: 0.75, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-yes-right-open-*": [ 
+			{ x1: 0.6875, y1: 0, z1: 0, x2: 1, y2: 0.5, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+			{ x1: 0.25, y1: 0.5, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-yes-left-shut-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-yes-right-shut-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-no-left-open-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 0.3125, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-no-right-open-*": [ 
+			{ x1: 0.6875, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-no-left-shut-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-no-right-shut-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-bothright-*": [ 
+			{ x1: 0.5, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-bothleft-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 0.5, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		],
+		"*-both-*": [ 
+			{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+		]
+	},
+	resistance: 1.5,
+	sounds: {
+		"place": "game:block/cloth",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 }
+	},
+	groundTransform: {
+		translation: { x: 0, y: -0.2, z: 0 },
+		rotation: { x: 90, y: -45, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3
+	}
+}

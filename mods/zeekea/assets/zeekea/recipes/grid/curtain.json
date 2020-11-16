@@ -1,0 +1,15 @@
+{
+  "ingredientPattern": "L	L	L",
+  "ingredients": {
+    "L": {
+      "type": "block",
+      "code": "zeekea:linen-*-down",
+	  "name": "color",
+	  "allowedVariants": ["carbon_black", "verdigris", "ultramarine", "cinnabar", "chalk_white" ]
+    }
+  },
+  "width": 1,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "zeekea:curtain-{color}-no-left-shut-north" }
+}

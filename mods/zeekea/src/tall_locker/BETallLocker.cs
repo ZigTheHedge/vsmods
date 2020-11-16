@@ -123,7 +123,7 @@ namespace zeekea.src.tall_locker
             {
                 if (Inventory[index].Itemstack.Class == EnumItemClass.Block)
                 {
-                    mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.22f, 0.22f, 0.22f);
+                    mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.15f, 0.15f, 0.15f);
                     mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, 8 * GameMath.DEG2RAD, 0);
                 }
                 else

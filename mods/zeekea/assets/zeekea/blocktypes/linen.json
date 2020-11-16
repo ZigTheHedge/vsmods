@@ -5,6 +5,10 @@
 		{ code:"color", states: ["carbon_black", "verdigris", "ultramarine", "cinnabar", "chalk_white"] },
 		{ code:"side", states: ["north", "east", "south", "west", "up", "down"] }
 	],
+	attributes: {
+		canChisel: true,
+		chiselShapeFromCollisionBox: true
+	},
 	shapebytype: {
 		"*-down": { base: "game:block/basic/layers/1voxel" },
 		"*-up": { base: "game:block/basic/layers/1voxel", rotateX: 180 },
