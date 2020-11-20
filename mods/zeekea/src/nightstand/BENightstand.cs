@@ -78,6 +78,7 @@ namespace zeekea.src.nightstand
                     data
                 );
 
+                ZEEkea.serverChannel.BroadcastPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, data, ZEEContainerEnum.NIGHTSTAND, true), null);
                 byPlayer.InventoryManager.OpenInventory(inventory);
             }
         }
@@ -148,6 +149,13 @@ namespace zeekea.src.nightstand
             }
             MarkDirty(Api.Side != EnumAppSide.Server);
         }
+        public void Animate(bool start)
+        {
+            if(start)
+                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
+            else
+                animUtil.StopAnimation("open");
+        }
 
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
@@ -174,14 +182,15 @@ namespace zeekea.src.nightstand
                         {
                             nightstandDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/shelf_close.ogg"), Pos.X, Pos.Y, Pos.Z);
-                            animUtil.StopAnimation("open");
+                            //Animate(false);
                             UpdateShape();
+                            ZEEkea.clientChannel.SendPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, new byte[] { 0 }, ZEEContainerEnum.NIGHTSTAND, false));
+
                         };
                     }
 
                     nightstandDialog.TryOpen();
-                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
-
+                    Animate(true);
                 }
             }
 

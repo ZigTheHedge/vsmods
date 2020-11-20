@@ -19,18 +19,18 @@ namespace tradeomat.src.TradeomatBlock
             if (IsDuplicate) return;
 
             capi.World.Player.InventoryManager.OpenInventory(Inventory);
+            Inventory.SlotModified += OnInventorySlotModified;
 
             SetupDialog();
         }
-
+        public void OnInventorySlotModified(int slotid)
+        {
+            SetupDialog();
+        }
         void SetupDialog()
         {
             ItemSlot hoveredSlot = capi.World.Player.InventoryManager.CurrentHoveredSlot;
-            if (hoveredSlot != null && hoveredSlot.Inventory == Inventory)
-            {
-                capi.Input.TriggerOnMouseLeaveSlot(hoveredSlot);
-            }
-            else
+            if (hoveredSlot != null && hoveredSlot.Inventory?.InventoryID != Inventory?.InventoryID)
             {
                 hoveredSlot = null;
             }
@@ -61,7 +61,7 @@ namespace tradeomat.src.TradeomatBlock
                 .WithFixedAlignmentOffset(-GuiStyle.DialogToScreenPadding, 0);
 
 
-            ClearComposers();
+            //ClearComposers();
             SingleComposer = capi.Gui
                 .CreateCompo("blockentitytradeomat" + BlockEntityPosition, dialogBounds)
                 .AddShadedDialogBG(bgBounds)
@@ -99,6 +99,7 @@ namespace tradeomat.src.TradeomatBlock
         private void OnTitleBarClose()
         {
             TryClose();
+            Inventory.SlotModified -= OnInventorySlotModified;
         }
 
         public override bool OnEscapePressed()

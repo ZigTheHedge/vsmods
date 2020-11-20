@@ -82,6 +82,8 @@ namespace zeekea.src.tall_locker
                     data
                 );
 
+                ZEEkea.serverChannel.BroadcastPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, data, ZEEContainerEnum.LOCKER, true), null);
+
                 byPlayer.InventoryManager.OpenInventory(inventory);
             }
         }
@@ -156,7 +158,13 @@ namespace zeekea.src.tall_locker
                 updateMesh(slotId);
             MarkDirty(Api.Side != EnumAppSide.Server);
         }
-
+        public void Animate(bool start)
+        {
+            if (start)
+                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
+            else
+                animUtil.StopAnimation("open");
+        }
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
             base.OnReceivedServerPacket(packetid, data);
@@ -182,13 +190,14 @@ namespace zeekea.src.tall_locker
                         {
                             lockerDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/locker_close.ogg"), Pos.X, Pos.Y, Pos.Z);
-                            animUtil.StopAnimation("open");
+                            //Animate(false);
                             UpdateShape();
+                            ZEEkea.clientChannel.SendPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, new byte[] { 0 }, ZEEContainerEnum.LOCKER, false));
                         };
                     }
 
                     lockerDialog.TryOpen();
-                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
+                    Animate(true);
                 }
             }
 

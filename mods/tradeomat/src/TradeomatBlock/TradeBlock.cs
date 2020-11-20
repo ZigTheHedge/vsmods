@@ -16,6 +16,7 @@ namespace tradeomat.src.TradeomatBlock
     {
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
+
             BETradeBlock be = null;
             if (blockSel.Position != null)
             {
@@ -37,6 +38,12 @@ namespace tradeomat.src.TradeomatBlock
                 if (be != null)
                 {
                     be.OnBlockInteract(byPlayer, false);
+
+                    if (world.Side == EnumAppSide.Client)
+                    {
+                        Tradeomat.clientChannel.SendPacket<OpenBuyerInterface>(new OpenBuyerInterface(blockSel.Position));
+                        return false;
+                    }
                 }
 
                 return true;

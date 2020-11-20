@@ -58,7 +58,19 @@ namespace tradeomat.src.TradeomatBlock
             dealRenderer?.UpdateDeal(Inventory[0], Inventory[1], GetFullness());
             if(Api.Side == EnumAppSide.Server)
             {
-                Tradeomat.serverChannel.BroadcastPacket<StallUpdate>(new StallUpdate(Pos.X, Pos.Y, Pos.Z), null);
+                byte[] data;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryWriter writer = new BinaryWriter(ms);
+                    writer.Write(true);
+                    TreeAttribute tree = new TreeAttribute();
+                    inventory.ToTreeAttributes(tree);
+                    tree.ToBytes(writer);
+                    data = ms.ToArray();
+                }
+
+                Tradeomat.serverChannel.BroadcastPacket<StallUpdate>(new StallUpdate(Pos.X, Pos.Y, Pos.Z, data), null);
             }
         }
         public void UpdateDeal()
@@ -422,7 +434,7 @@ namespace tradeomat.src.TradeomatBlock
                     Inventory.FromTreeAttributes(tree);
                     Inventory.ResolveBlocksOrItems();
 
-                    IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
+                    //IClientWorldAccessor clientWorld = (IClientWorldAccessor)Api.World;
 
                     if (isOwner)
                     {

@@ -2,6 +2,7 @@
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -9,9 +10,11 @@ using System.Threading.Tasks;
 using tradeomat.src.TradeomatBlock;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
+
 
 namespace tradeomat.src
 {
@@ -48,18 +51,49 @@ namespace tradeomat.src
         public int X;
         public int Y;
         public int Z;
+        public byte[] invSync;
 
         public StallUpdate()
         {
 
         }
 
-        public StallUpdate(int X, int Y, int Z)
+        public StallUpdate(int X, int Y, int Z, byte[] invSync)
+        {
+            this.X = X;
+            this.Y = Y;
+            this.Z = Z;
+            this.invSync = invSync;
+        }
+    }
+
+    [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
+    class OpenBuyerInterface
+    {
+        public int X;
+        public int Y;
+        public int Z;
+
+
+        public OpenBuyerInterface()
+        {
+
+        }
+
+        public OpenBuyerInterface(int X, int Y, int Z)
         {
             this.X = X;
             this.Y = Y;
             this.Z = Z;
         }
+        public OpenBuyerInterface(BlockPos pos)
+        {
+            this.X = pos.X;
+            this.Y = pos.Y;
+            this.Z = pos.Z;
+        }
+
+
     }
     public class SDCFileConfig
     {
@@ -75,6 +109,7 @@ namespace tradeomat.src
         public static List<Tomatoes> tomatoesServer;
         public static List<Tomatoes> tomatoesClient = new List<Tomatoes>();
         public static IServerNetworkChannel serverChannel;
+        public static IClientNetworkChannel clientChannel;
 
         public override void Start(ICoreAPI api)
         {
@@ -86,7 +121,8 @@ namespace tradeomat.src
 
             api.Network.RegisterChannel("tradeomat")
                 .RegisterMessageType(typeof(Tomatoes))
-                .RegisterMessageType(typeof(StallUpdate));
+                .RegisterMessageType(typeof(StallUpdate))
+                .RegisterMessageType(typeof(OpenBuyerInterface));
 
         }
         public static int CountTomatoes(IPlayer player, ICoreAPI api)
@@ -118,17 +154,39 @@ namespace tradeomat.src
         {
             clientApi = api;
 
-            api.Network.GetChannel("tradeomat")
+            clientChannel = api.Network.GetChannel("tradeomat");
+
+            clientChannel
                 .SetMessageHandler<Tomatoes>(OnServerMessage)
                 .SetMessageHandler<StallUpdate>(OnStallUpdate)
             ;
         }
+        private void OnBuyerInterfaceOpen(IPlayer player, OpenBuyerInterface msg)
+        {
+            BlockPos blockPos = new BlockPos(msg.X, msg.Y, msg.Z);
+            
+            BlockSelection blockSelection = new BlockSelection();
+            blockSelection.Position = blockPos;
+            
+            TradeBlock block = serverApi.World.BlockAccessor.GetBlock(blockPos) as TradeBlock;
+            block.OnBlockInteractStart(serverApi.World, player, blockSelection);
+        }
+
         private void OnStallUpdate(StallUpdate msg)
         {
             BlockPos bePos = new BlockPos(msg.X, msg.Y, msg.Z);
             BETradeBlock be = clientApi.World.BlockAccessor.GetBlockEntity(bePos) as BETradeBlock;
             if(be != null)
             {
+                using (MemoryStream ms = new MemoryStream(msg.invSync))
+                {
+                    BinaryReader reader = new BinaryReader(ms);
+                    bool isOwner = reader.ReadBoolean();
+                    TreeAttribute tree = new TreeAttribute();
+                    tree.FromBytes(reader);
+                    be.Inventory.FromTreeAttributes(tree);
+                    be.Inventory.ResolveBlocksOrItems();
+                }
                 be.UpdateDeal();
             }
         }
@@ -176,6 +234,8 @@ namespace tradeomat.src
             api.Event.SaveGameLoaded += LoadPlayerTomatoes;
             api.Event.GameWorldSave += SavePlayerTomatoes;
             api.Event.PlayerJoin += PushTomatoes;
+
+            serverChannel.SetMessageHandler<OpenBuyerInterface>(OnBuyerInterfaceOpen);
         }
         public void PushTomatoes(IServerPlayer serverPlayer)
         {
