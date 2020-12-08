@@ -1,0 +1,20 @@
+{
+	"ingredientPattern": "FBF,FBF,FBF",
+	"ingredients": {
+		"F": {
+			"type": "item",
+			"code": "game:flaxfibers"
+		},
+		"B": {
+			"type": "item",
+			"code": "game:fruit-redcurrant"
+		}
+	},
+	"width": 3,
+	"height": 3,
+	"shapeless": true,
+	"output": {
+		"type": "block",
+		"code": "xmastime:sock-north"
+	}
+}

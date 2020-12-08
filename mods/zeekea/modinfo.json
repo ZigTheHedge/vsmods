@@ -4,8 +4,8 @@
   "name": "ZEEkea",
   "authors": [ "ZigTheHedge" ],
   "description": "Your favourite furniture for Vintage homes",
-  "version": "1.13.4-1.1B",
+  "version": "1.14.0-1.2.4-B",
   "dependency": {
-    "game": "1.13.4"
+    "game": "1.14.0"
   }
 }

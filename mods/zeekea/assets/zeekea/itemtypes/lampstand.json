@@ -1,7 +1,7 @@
 {
 	code: "lampstand",
 	shape: { base: "item/lampstand" },
-	creativeinventory: { "general": ["*"], "items": ["*"], "tools": ["*"]},
+	creativeinventory: { "general": ["*"], "items": ["*"], "zeekea": ["*"]},
 	
 	variantgroups: [
 		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron" ] },

@@ -1,0 +1,17 @@
+{
+	code: "wallcanvas",
+	class: "wallcanvas",
+	entityclass: "bewallcanvas",
+	blockmaterial: "Other",
+	drawtype: "empty",
+	lightAbsorption: 0,
+	replaceable: 6000,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: null,
+	selectionbox: null
+}

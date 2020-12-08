@@ -12,6 +12,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 using zeekea.src.armchair;
+using zeekea.src.candleholder;
 using zeekea.src.curtains;
 using zeekea.src.doorbell;
 using zeekea.src.freezer;
@@ -74,6 +75,7 @@ namespace zeekea.src
             api.RegisterBlockEntityClass("befreezer", typeof(BEFreezer));
             api.RegisterBlockClass("doorbell", typeof(DoorBell));
             api.RegisterBlockClass("curtain", typeof(Curtains));
+            api.RegisterBlockClass("candleholder", typeof(CandleHolder));
 
             api.RegisterItemClass("icepick", typeof(IcepickItem));
 

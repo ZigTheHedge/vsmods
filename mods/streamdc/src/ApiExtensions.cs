@@ -45,7 +45,7 @@ namespace Foundation.Extensions
             }
             catch (Exception e)
             {
-                //api.World.Logger.LogRaw(EnumLogType.Error, $"Failed loading file ({path}), error {e}. Will initialize new one");
+                api.World.Logger.Log(EnumLogType.Error, $"Failed loading file ({path}), error {e}. Will initialize new one");
             }
             var newData = new TData();
             SaveDataFile(api, filename, newData);
@@ -66,7 +66,7 @@ namespace Foundation.Extensions
             }
             catch (Exception e)
             {
-                //api.World.Logger.LogRaw(EnumLogType.Error, $"Failed loading file ({path}), error {e}. Will initialize new one");
+                api.World.Logger.Log(EnumLogType.Error, $"Failed loading file ({path}), error {e}. Will initialize new one");
             }
         }
 

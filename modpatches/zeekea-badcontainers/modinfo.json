@@ -1,0 +1,11 @@
+{
+  "type": "content",
+  "modid": "zeekea-badcontainers",
+  "name": "ZEEkea - Bad Containers!",
+  "authors": [ "ZigTheHedge" ],
+  "description": "This patch disables recipes for Tall Lockers and Nightstands on ZEEkea mod",
+  "version": "1.13.4-1.2.1-B",
+  "dependency": {
+    "game": "1.13.4"
+  }
+}

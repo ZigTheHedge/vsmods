@@ -1,7 +1,7 @@
 {
 	code: "curtain",
 	class: "curtain",
-	creativeinventory: { "general": ["*-no-left-shut-north"], "decorative": ["*-no-left-shut-north"] },
+	creativeinventory: { "general": ["*-no-left-shut-north"], "decorative": ["*-no-left-shut-north"], "zeekea": ["*-no-left-shut-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	blockmaterial: "Cloth",
 	variantgroups: [

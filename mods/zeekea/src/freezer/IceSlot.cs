@@ -32,7 +32,7 @@ namespace zeekea.src.freezer
             }
         }
 
-        public override bool CanTakeFrom(ItemSlot sourceSlot)
+        public override bool CanTakeFrom(ItemSlot sourceSlot, EnumMergePriority priority = EnumMergePriority.AutoMerge)
         {
             if (IsIce(sourceSlot))
                 return base.CanTakeFrom(sourceSlot);

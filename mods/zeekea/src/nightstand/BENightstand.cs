@@ -83,9 +83,9 @@ namespace zeekea.src.nightstand
             }
         }
 
-        public override void FromTreeAtributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            base.FromTreeAtributes(tree, worldForResolving);
+            base.FromTreeAttributes(tree, worldForResolving);
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -180,17 +180,15 @@ namespace zeekea.src.nightstand
                         nightstandDialog = new GuiEightSlots(Lang.Get("zeekea:nightstand-title"), Inventory, Pos, Api as ICoreClientAPI);
                         nightstandDialog.OnClosed += () =>
                         {
-                            nightstandDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/shelf_close.ogg"), Pos.X, Pos.Y, Pos.Z);
-                            //Animate(false);
                             UpdateShape();
                             ZEEkea.clientChannel.SendPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, new byte[] { 0 }, ZEEContainerEnum.NIGHTSTAND, false));
-
+                            capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
+                            nightstandDialog = null;
                         };
                     }
 
                     nightstandDialog.TryOpen();
-                    Animate(true);
                 }
             }
 

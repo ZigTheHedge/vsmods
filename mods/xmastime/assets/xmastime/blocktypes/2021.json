@@ -1,0 +1,61 @@
+{
+	code: "year2021",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "xmastime": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Glass",
+	variantgroups: [
+		{ code: "type", states: ["normal", "gold-red", "blue"] },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/2021-{type}",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/2021-{type}",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/2021-{type}",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/2021-{type}",
+			rotateY: 90
+		}
+	},
+	renderPass: "Transparent",
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0.05, y1: 0.5, z1: 0, x2: 0.95, y2: 0.81, z2: 0.08, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0.05, y1: 0.5, z1: 0, x2: 0.95, y2: 0.81, z2: 0.08, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		translation: { x: -3, y: -5.1, z: 0 },
+		origin: { x: 0.5, y: 0.8, z: 0.1 },
+		scale: 1.69
+	},
+	fpHandTransform: {
+		translation: { x: -1, y: -0.35, z: 0.4 },
+		rotation: { x: 0, y: -90, z: 0 },
+		scale: 2.85
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.44, z: 0 },
+		rotation: { x: -90, y: -87, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3.96
+	}
+
+}

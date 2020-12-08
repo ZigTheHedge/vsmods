@@ -1,0 +1,122 @@
+[
+	{
+		"ingredientPattern": "BBB,BWB,BBB",
+		"ingredients": {
+			"W": {
+				"type": "block",
+				"code": "game:log-placed-*"
+			},
+			"B": {
+				"type": "item",
+				"code": "game:fruit-whitecurrant"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:present-01-north"
+		}
+	},
+	{
+		"ingredientPattern": "BBB,BWB,BBB",
+		"ingredients": {
+			"W": {
+				"type": "block",
+				"code": "game:log-placed-*"
+			},
+			"B": {
+				"type": "item",
+				"code": "game:fruit-cranberry"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:present-02-north"
+		}
+	},
+	{
+		"ingredientPattern": "BBB,BWB,BBB",
+		"ingredients": {
+			"W": {
+				"type": "block",
+				"code": "game:log-placed-*"
+			},
+			"B": {
+				"type": "item",
+				"code": "game:cattailtops"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:present-03-north"
+		}
+	},
+	{
+		"ingredientPattern": "BBB,BWB,BBB",
+		"ingredients": {
+			"W": {
+				"type": "block",
+				"code": "game:log-placed-*"
+			},
+			"B": {
+				"type": "block",
+				"code": "game:waterlily"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:present-04-north"
+		}
+	},
+	{
+		"ingredientPattern": "BBB,BWB,BBB",
+		"ingredients": {
+			"W": {
+				"type": "block",
+				"code": "game:log-placed-*"
+			},
+			"B": {
+				"type": "block",
+				"code": "game:mushroom-bolete-*"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:present-05-north"
+		}
+	},
+	{
+		"ingredientPattern": "BBB,BWB,BBB",
+		"ingredients": {
+			"W": {
+				"type": "block",
+				"code": "game:log-placed-*"
+			},
+			"B": {
+				"type": "block",
+				"code": "game:mushroom-fieldmushroom-*"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:present-06-north"
+		}
+	}
+]

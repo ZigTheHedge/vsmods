@@ -1,0 +1,50 @@
+[
+	{
+		"ingredientPattern": "BBB,BWB,BBB",
+		"ingredients": {
+			"W": {
+				"type": "item",
+				"code": "game:stone-obsidian"
+			},
+			"B": {
+				"type": "item",
+				"code": "game:stone-chert"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:cyclops-north"
+		}
+	},
+	{
+		"ingredientPattern": "OSC,TST,_S_",
+		"ingredients": {
+			"O": {
+				"type": "item",
+				"code": "game:charcoal"
+			},
+			"S": {
+				"type": "block",
+				"code": "game:snowblock"
+			},
+			"C": {
+				"type": "item",
+				"code": "game:vegetable-carrot"
+			},
+			"T": {
+				"type": "item",
+				"code": "game:stick"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:snowman-north"
+		}
+	}
+]

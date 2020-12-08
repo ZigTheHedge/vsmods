@@ -1,0 +1,44 @@
+{
+	"code": "crayon",
+	"class": "pigmentitem",
+	"creativeinventory": { "general": ["*"] },
+	"variantgroups": [
+		{ "code": "col", "states": [ "black", "white", "blue", "red", "green" ] }
+	],
+	"shape": { "base": "item/crayon" },
+	"textures": {
+		"charcoal": { "base": "item/{col}" }
+	},
+	"attributes": {
+		"shelvable": true,
+		"onDisplayTransform": {
+			"translation": { x: 0, y: -0.05, z: -0.3 },
+			"rotation": { x: 0, y: 17, z: 0 },
+			"scale": 0.8
+		}
+
+	},
+	"maxstacksize": 1,
+	"guiTransform": {
+		translation: { x: 3, y: 4, z: 0 },
+		rotation: { x: -53, y: -57, z: 0 },
+		origin: { x: 0.6, y: 0, z: 0.7 },
+		scale: 2.15
+	},
+	"fpHandTransform": {
+		translation: { x: 0.05, y: -0.4, z: 0 },
+		rotation: { x: 158, y: 166, z: -15 },
+		scale: 1.49
+	},
+	"tpHandTransform": {
+		translation: { x: -1.3, y: -0.7, z: -0.5 },
+		rotation: { x: 27, y: -57, z: 18 },
+		scale: 0.49
+	},
+	"groundTransform": {
+		translation: { x: 0, y: -0.15, z: 0 },
+		rotation: { x: 180, y: 48, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.5299 },
+		scale: 2.3
+	}
+}

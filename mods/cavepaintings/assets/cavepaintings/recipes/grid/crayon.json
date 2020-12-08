@@ -1,0 +1,122 @@
+[
+	{
+		"ingredientPattern": "CRL",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:charcoal"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"L": {
+				"type": "item",
+				"code": "game:clay-blue"
+			}	
+		},
+		"width": 1,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "cavepaintings:crayon-black"
+		}
+	},
+		{
+		"ingredientPattern": "CRL",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:stone-chalk"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"L": {
+				"type": "item",
+				"code": "game:clay-blue"
+			}	
+		},
+		"width": 1,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "cavepaintings:crayon-white"
+		}
+	},
+		{
+		"ingredientPattern": "CRL",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:ore-lapislazuli"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"L": {
+				"type": "item",
+				"code": "game:clay-blue"
+			}	
+		},
+		"width": 1,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "cavepaintings:crayon-blue"
+		}
+	},
+		{
+		"ingredientPattern": "CRL",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:ore-cinnabar"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"L": {
+				"type": "item",
+				"code": "game:clay-blue"
+			}	
+		},
+		"width": 1,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "cavepaintings:crayon-red"
+		}
+	},
+		{
+		"ingredientPattern": "CRL",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:ore-olivine"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"L": {
+				"type": "item",
+				"code": "game:clay-blue"
+			}	
+		},
+		"width": 1,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "cavepaintings:crayon-green"
+		}
+	}
+]

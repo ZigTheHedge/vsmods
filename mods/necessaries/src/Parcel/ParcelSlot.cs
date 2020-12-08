@@ -22,7 +22,7 @@ namespace necessaries.src.Parcel
 
         }
 
-        public override bool CanTakeFrom(ItemSlot sourceSlot)
+        public override bool CanTakeFrom(ItemSlot sourceSlot, EnumMergePriority priority = EnumMergePriority.AutoMerge)
         {
             if (sourceSlot.Itemstack?.Collectible.FirstCodePart().Equals("parcel") == true)
                 return false;

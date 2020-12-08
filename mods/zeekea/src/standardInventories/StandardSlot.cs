@@ -30,7 +30,7 @@ namespace zeekea.src.standardInventories
             }
         }
 
-        public override bool CanTakeFrom(ItemSlot sourceSlot)
+        public override bool CanTakeFrom(ItemSlot sourceSlot, EnumMergePriority priority = EnumMergePriority.AutoMerge)
         {
             if (!IsTool(sourceSlot))
                 return base.CanTakeFrom(sourceSlot);

@@ -73,6 +73,7 @@ namespace zeekea.src.freezer
                             }
                         }
                     }
+                    if (fuelRemaining < 0) fuelRemaining = 0;
                     //MarkDirty();
                     if (fuelRemaining == 0)
                     {
@@ -84,6 +85,7 @@ namespace zeekea.src.freezer
                             Block newBlock = Api.World.GetBlock(newBlockAL);
                             Api.World.BlockAccessor.ExchangeBlock(newBlock.Id, Pos);
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/freezer_stop.ogg"), Pos.X, Pos.Y, Pos.Z, null, false);
+                            MarkDirty();
                         }
                     }
                 }
@@ -157,9 +159,9 @@ namespace zeekea.src.freezer
             }
         }
 
-        public override void FromTreeAtributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            base.FromTreeAtributes(tree, worldForResolving);
+            base.FromTreeAttributes(tree, worldForResolving);
             fuelRemaining = tree.GetInt("fuelRemaining");
             closedDelay = tree.GetInt("closedDelay");
             isOpened = tree.GetBool("isOpened");
@@ -233,7 +235,9 @@ namespace zeekea.src.freezer
         public override float GetPerishRate()
         {
             float initial = base.GetPerishRate();
-            if (fuelRemaining == 0) return initial;
+            EnumAppSide side = Api.Side;
+            if (fuelRemaining == 0) 
+                return initial;
             return initial / 4;
         }
     }

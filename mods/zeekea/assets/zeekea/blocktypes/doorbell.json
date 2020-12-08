@@ -1,7 +1,7 @@
 {
 	code: "doorbell",
 	class: "doorbell",
-	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	blockmaterial: "Metal",
 	variantgroups: [

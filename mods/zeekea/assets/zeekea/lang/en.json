@@ -224,5 +224,13 @@
 	"block-rod-kapok-north": "Curtain Rod made of Kapok",	
 	"block-rod-maple-north": "Curtain Rod made of Maple",	
 	"block-rod-oak-north": "Curtain Rod made of Oak",	
-	"block-rod-pine-north": "Curtain Rod made of Pine"
+	"block-rod-pine-north": "Curtain Rod made of Pine",
+	
+	"block-candleholder-copper-no-north": "Copper Candleholder",
+	"block-candleholder-tinbronze-no-north": "Tin Bronze Candleholder",
+	"block-candleholder-bismuthbronze-no-north": "Bismuth Bronze Candleholder",
+	"block-candleholder-blackbronze-no-north": "Black Candleholder",
+	"block-candleholder-iron-no-north": "Iron Candleholder",
+	
+	"game:tabname-zeekea": "ZEEkea"
 }

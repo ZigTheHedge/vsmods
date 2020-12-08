@@ -11,7 +11,7 @@ namespace zeekea.src
 {
     class IcepickItem : Item
     {
-        public override bool OnBlockBrokenWith(IWorldAccessor world, Entity byEntity, ItemSlot itemslot, BlockSelection blockSel)
+        public override bool OnBlockBrokenWith(IWorldAccessor world, Entity byEntity, ItemSlot itemslot, BlockSelection blockSel, float dropQtyMultiplier = 1)
         {
             Block block = world.BlockAccessor.GetBlock(blockSel.Position);
             if (block.Code.FirstPathPart().EndsWith("ice"))

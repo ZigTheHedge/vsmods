@@ -2,7 +2,7 @@
 	code: "freezer",
 	class: "freezer",
 	entityClass: "befreezer",
-	creativeinventory: { "general": ["*-melted-closed-north"], "decorative": ["*-melted-closed-north"] },
+	creativeinventory: { "general": ["*-melted-closed-north"], "decorative": ["*-melted-closed-north"], "zeekea": ["*-melted-closed-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	blockmaterial: "Metal",
 	variantgroups: [

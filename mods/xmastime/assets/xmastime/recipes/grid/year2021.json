@@ -1,0 +1,65 @@
+[
+	{
+		"ingredientPattern": "CCC,CCC,_T_",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:stone-chert"
+			},
+			"T": { 
+				"type": "item", 
+				"code": "game:chisel-*", 
+				"isTool": true
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:year2021-normal-north"
+		}
+	},
+	{
+		"ingredientPattern": "CCC,CCC,_T_",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:stone-andesite"
+			},
+			"T": { 
+				"type": "item", 
+				"code": "game:chisel-*", 
+				"isTool": true
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:year2021-blue-north"
+		}
+	},
+	{
+		"ingredientPattern": "CCC,CCC,_T_",
+		"ingredients": {
+			"C": {
+				"type": "item",
+				"code": "game:stone-bauxite"
+			},
+			"T": { 
+				"type": "item", 
+				"code": "game:chisel-*", 
+				"isTool": true
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:year2021-gold-red-north"
+		}
+	}
+]

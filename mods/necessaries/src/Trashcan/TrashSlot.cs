@@ -19,7 +19,7 @@ namespace necessaries.src.Trashcan
             return false;
         }
 
-        public override bool CanTakeFrom(ItemSlot sourceSlot)
+        public override bool CanTakeFrom(ItemSlot sourceSlot, EnumMergePriority priority = EnumMergePriority.AutoMerge)
         {
             return false;
         }

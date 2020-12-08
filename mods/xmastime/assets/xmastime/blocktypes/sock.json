@@ -1,0 +1,63 @@
+{
+	code: "sock",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "xmastime": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Cloth",
+	variantgroups: [
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/sock",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/sock",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/sock",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/sock",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},	
+
+	collisionbox: { x1: 0.1, y1: 0.25, z1: 0, x2: 0.9, y2: 1, z2: 0.1625, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0.1, y1: 0.25, z1: 0, x2: 0.9, y2: 1, z2: 0.1625, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: 0, y: -180, z: 0 },
+		origin: { x: 0.5, y: 0.6, z: 0 },
+		scale: 2.16
+	},
+	groundTransform: {
+		translation: { x: 0, y: -0.2, z: 0 },
+		rotation: { x: 90, y: -45, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3.14
+	},
+	fpHandTransform: {
+		translation: { x: -0.3, y: -0.15, z: 0.6 },
+		rotation: { x: 0, y: -101, z: -10 }
+	},
+	tpHandTransform: {
+		translation: { x: -1.4, y: -1, z: -0.55 },
+		rotation: { x: 0, y: 180, z: -25 },
+		scale: 0.48
+	}
+}

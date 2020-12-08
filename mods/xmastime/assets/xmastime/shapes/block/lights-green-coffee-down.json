@@ -1,0 +1,165 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"gold": "game:block/metal/ingot/gold",
+		"gooseberry": "game:item/food/fruit/gooseberry",
+		"turnip": "game:item/food/pickledvegetable/turnip",
+		"zinc": "game:block/metal/ingot/zinc"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 0.3, 1.6, 0.0 ], 
+			"to": [ 2.5, 3.8, 1.1 ], 
+			"rotationOrigin": [ 0.3, 1.6, 0.0 ],
+			"rotationZ": -45.0,
+			"faces": {
+				"north": { "texture": "#zinc", "uv": [ 7.0, 5.5, 12.0, 11.5 ], "glow": 200, "autoUv": false },
+				"east": { "texture": "#zinc", "uv": [ 6.5, 7.0, 12.0, 13.0 ], "glow": 200, "autoUv": false },
+				"south": { "texture": "#zinc", "uv": [ 2.5, 3.5, 13.5, 12.5 ], "glow": 200, "autoUv": false },
+				"west": { "texture": "#zinc", "uv": [ 13.5, 6.5, 8.0, 13.0 ], "glow": 200, "autoUv": false },
+				"up": { "texture": "#zinc", "uv": [ 13.5, 7.5, 7.5, 14.0 ], "glow": 200, "autoUv": false },
+				"down": { "texture": "#zinc", "uv": [ 14.0, 7.0, 7.5, 13.5 ], "glow": 200, "autoUv": false }
+			},
+			"children": [
+				{
+					"name": "Cube2",
+					"from": [ 2.2, 2.2, 0.1 ], 
+					"to": [ 4.4, 4.4, 1.2 ], 
+					"rotationOrigin": [ 2.2, 2.2, 0.1 ],
+					"faces": {
+						"north": { "texture": "#gooseberry", "uv": [ 8.5, 9.5, 14.0, 14.0 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#gooseberry", "uv": [ 9.5, 11.5, 13.0, 14.0 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#gooseberry", "uv": [ 4.5, 8.0, 10.0, 14.0 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#gooseberry", "uv": [ 9.5, 10.5, 13.0, 13.5 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#gooseberry", "uv": [ 8.5, 9.5, 13.5, 14.0 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#gooseberry", "uv": [ 8.5, 10.0, 13.0, 13.5 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube3",
+					"from": [ 4.4, 4.4, 0.1 ], 
+					"to": [ 6.6, 6.6, 1.2 ], 
+					"rotationOrigin": [ 4.4, 4.4, 0.1 ],
+					"faces": {
+						"north": { "texture": "#gold", "uv": [ 5.5, 7.0, 9.0, 11.0 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#gold", "uv": [ 5.5, 6.0, 9.0, 11.0 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#gold", "uv": [ 5.0, 6.0, 9.5, 11.5 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#gold", "uv": [ 5.5, 6.5, 9.5, 10.0 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#gold", "uv": [ 5.0, 6.0, 9.0, 10.5 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#gold", "uv": [ 4.5, 6.5, 9.5, 10.5 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube4",
+					"from": [ 6.6, 6.6, 0.1 ], 
+					"to": [ 8.8, 8.8, 1.2 ], 
+					"rotationOrigin": [ 6.6, 6.6, 0.1 ],
+					"faces": {
+						"north": { "texture": "#gooseberry", "uv": [ 7.5, 8.0, 11.0, 13.0 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#gooseberry", "uv": [ 9.0, 10.5, 12.0, 14.0 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#gooseberry", "uv": [ 9.0, 10.0, 12.5, 14.5 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#gooseberry", "uv": [ 10.0, 9.5, 13.0, 13.5 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#gooseberry", "uv": [ 10.5, 9.5, 14.5, 14.0 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#gooseberry", "uv": [ 6.0, 9.5, 11.0, 12.5 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube5",
+					"from": [ 8.8, 8.8, 0.0 ], 
+					"to": [ 11.0, 11.0, 1.1 ], 
+					"rotationOrigin": [ 8.8, 8.8, 0.0 ],
+					"faces": {
+						"north": { "texture": "#zinc", "uv": [ 7.5, 7.5, 11.5, 11.5 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#zinc", "uv": [ 10.0, 6.5, 13.0, 11.0 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#zinc", "uv": [ 4.0, 5.0, 11.5, 13.0 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#zinc", "uv": [ 9.5, 7.5, 13.0, 11.5 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#zinc", "uv": [ 10.0, 8.0, 13.5, 11.5 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#zinc", "uv": [ 8.5, 7.5, 12.5, 11.5 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube12",
+					"from": [ 8.3, 9.9, 0.1 ], 
+					"to": [ 10.5, 12.1, 1.2 ], 
+					"rotationOrigin": [ 8.3, 9.9, 0.1 ],
+					"rotationZ": -45.0,
+					"faces": {
+						"north": { "texture": "#gold", "uv": [ 5.5, 8.0, 9.5, 12.0 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#gold", "uv": [ 4.5, 6.0, 8.5, 11.0 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#gold", "uv": [ 4.5, 6.0, 8.0, 10.0 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#gold", "uv": [ 4.0, 6.5, 9.5, 11.0 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#gold", "uv": [ 3.5, 8.0, 8.0, 11.5 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#gold", "uv": [ 6.0, 7.0, 9.5, 11.5 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube13",
+					"from": [ 6.2, 7.8, 0.0 ], 
+					"to": [ 8.4, 10.0, 1.1 ], 
+					"rotationOrigin": [ 6.2, 7.8, 0.0 ],
+					"rotationZ": -45.0,
+					"faces": {
+						"north": { "texture": "#turnip", "uv": [ 3.5, 9.0, 7.0, 12.0 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#turnip", "uv": [ 10.5, 10.5, 13.0, 14.0 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#turnip", "uv": [ 7.0, 10.0, 14.0, 14.0 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#turnip", "uv": [ 10.5, 9.5, 12.5, 13.5 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#turnip", "uv": [ 6.5, 9.5, 13.0, 14.0 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#turnip", "uv": [ 11.0, 9.5, 14.5, 13.0 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube14",
+					"from": [ 4.0, 5.6, 0.0 ], 
+					"to": [ 6.2, 7.8, 1.1 ], 
+					"rotationOrigin": [ 4.0, 5.6, 0.0 ],
+					"rotationZ": -45.0,
+					"faces": {
+						"north": { "texture": "#zinc", "uv": [ 3.5, 4.5, 10.0, 11.0 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#zinc", "uv": [ 3.0, 5.5, 10.0, 11.5 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#zinc", "uv": [ 4.5, 4.5, 12.0, 11.5 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#zinc", "uv": [ 3.0, 5.5, 9.5, 11.5 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#zinc", "uv": [ 5.0, 6.5, 9.0, 10.0 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#zinc", "uv": [ 3.0, 6.0, 9.0, 11.0 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube15",
+					"from": [ 1.7, 3.3, 0.0 ], 
+					"to": [ 3.9, 5.5, 1.1 ], 
+					"rotationOrigin": [ 1.7, 3.3, 0.0 ],
+					"rotationZ": -45.0,
+					"faces": {
+						"north": { "texture": "#turnip", "uv": [ 10.0, 10.0, 13.5, 12.5 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#turnip", "uv": [ 9.0, 9.0, 11.5, 12.5 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#turnip", "uv": [ 8.0, 9.0, 12.5, 13.5 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#turnip", "uv": [ 9.0, 10.5, 12.5, 14.5 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#turnip", "uv": [ 8.5, 9.5, 11.5, 14.5 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#turnip", "uv": [ 8.0, 10.5, 13.0, 14.0 ], "glow": 200, "autoUv": false }
+					}
+				},
+				{
+					"name": "Cube31",
+					"from": [ -0.5, 1.1, 0.2 ], 
+					"to": [ 1.7, 3.3, 1.3 ], 
+					"rotationOrigin": [ -0.5, 1.1, 0.2 ],
+					"rotationZ": -45.0,
+					"faces": {
+						"north": { "texture": "#gold", "uv": [ 6.5, 6.0, 11.5, 10.5 ], "glow": 200, "autoUv": false },
+						"east": { "texture": "#gold", "uv": [ 5.5, 6.0, 10.5, 11.0 ], "glow": 200, "autoUv": false },
+						"south": { "texture": "#gold", "uv": [ 6.5, 5.5, 11.5, 10.5 ], "glow": 200, "autoUv": false },
+						"west": { "texture": "#gold", "uv": [ 6.0, 6.0, 11.0, 11.0 ], "glow": 200, "autoUv": false },
+						"up": { "texture": "#gold", "uv": [ 7.0, 6.5, 11.5, 11.0 ], "glow": 200, "autoUv": false },
+						"down": { "texture": "#gold", "uv": [ 6.5, 6.5, 11.5, 10.5 ], "glow": 200, "autoUv": false }
+					}
+				}
+			]
+		}
+	]}

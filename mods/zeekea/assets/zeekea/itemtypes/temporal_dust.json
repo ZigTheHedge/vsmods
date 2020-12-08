@@ -1,7 +1,7 @@
 {
 	code: "temporal_dust",
 	shape: { base: "item/temporal_dust" },
-	creativeinventory: { "general": ["*"], "items": ["*"] },
+	creativeinventory: { "general": ["*"], "items": ["*"], "zeekea": ["*"] },
 	guiTransform: {
 		rotation: { x: -33, y: 171, z: -180 },
 		origin: { x: 0.6, y: 0.5, z: 0 },

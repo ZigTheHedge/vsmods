@@ -88,9 +88,9 @@ namespace zeekea.src.tall_locker
             }
         }
 
-        public override void FromTreeAtributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            base.FromTreeAtributes(tree, worldForResolving);
+            base.FromTreeAttributes(tree, worldForResolving);
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -161,9 +161,13 @@ namespace zeekea.src.tall_locker
         public void Animate(bool start)
         {
             if (start)
-                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
+            {
+                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 1F });
+            }
             else
+            {
                 animUtil.StopAnimation("open");
+            }
         }
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
@@ -188,16 +192,15 @@ namespace zeekea.src.tall_locker
                         lockerDialog = new GuiTwentyFourSlots(Lang.Get("zeekea:tall_locker-title"), Inventory, Pos, Api as ICoreClientAPI);
                         lockerDialog.OnClosed += () =>
                         {
-                            lockerDialog = null;
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/locker_close.ogg"), Pos.X, Pos.Y, Pos.Z);
-                            //Animate(false);
                             UpdateShape();
                             ZEEkea.clientChannel.SendPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, new byte[] { 0 }, ZEEContainerEnum.LOCKER, false));
+                            capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
+                            lockerDialog = null;
                         };
                     }
 
                     lockerDialog.TryOpen();
-                    Animate(true);
                 }
             }
 
@@ -212,8 +215,8 @@ namespace zeekea.src.tall_locker
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
-            base.OnTesselation(mesher, tessThreadTesselator);
-            if (animUtil.activeAnimationsByAnimCode.Count > 0)
+            bool parentSkip = base.OnTesselation(mesher, tessThreadTesselator);
+            if (animUtil.activeAnimationsByAnimCode.Count > 0 || parentSkip)
             {
                 return true;
             } 

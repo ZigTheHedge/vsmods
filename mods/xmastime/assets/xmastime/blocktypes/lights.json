@@ -1,0 +1,67 @@
+{
+	code: "lights",
+	class: "lights",
+	creativeinventory: { "general": ["*-s-north"], "decorative": ["*-s-north"], "xmastime": ["*-s-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Glass",
+	variantgroups: [
+		{ code: "style", states: [ "blue-green", "pink-gold", "white-vines", "red-gold-blue", "lightblue-red", "lava-water", "lava-beer", "honey-black", "grey-fruit", "green-wheat", "green-coffee", "blue-vines" ] },
+		{ code: "rotator", states: ["s", "f", "down", "up", "left", "right" ] },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/lights-{style}-{rotator}",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/lights-{style}-{rotator}",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/lights-{style}-{rotator}",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/lights-{style}-{rotator}",
+			rotateY: 90
+		}
+	},
+	lightHsv: [ 3, 3, 8 ],
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: null,
+	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 0.06, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0 },
+		scale: 1.73
+	},
+	fpHandTransform: {
+		translation: { x: -0.7, y: 0.35, z: 0.3 },
+		rotation: { x: -2, y: -122, z: 0 },
+		scale: 1.89
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.25, z: 0 },
+		rotation: { x: -90, y: -41, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 2.46
+	},
+	tpHandTransform: {
+		translation: { x: -1.24, y: -1.1, z: -1.2 },
+		rotation: { x: 0, y: 0, z: -2 },
+		scale: 0.64
+	}
+}

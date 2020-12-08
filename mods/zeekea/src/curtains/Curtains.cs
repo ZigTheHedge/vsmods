@@ -97,7 +97,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(leftmostBlock.WestCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(leftmostBlock.WestCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             leftmostBlock.West();
                         else
                             break;
@@ -109,7 +110,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(leftmostBlock.NorthCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(leftmostBlock.NorthCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             leftmostBlock.North();
                         else
                             break;
@@ -121,7 +123,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(leftmostBlock.EastCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(leftmostBlock.EastCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             leftmostBlock.East();
                         else
                             break;
@@ -133,7 +136,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(leftmostBlock.SouthCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(leftmostBlock.SouthCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             leftmostBlock.South();
                         else
                             break;
@@ -157,7 +161,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(rightmostBlock.EastCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(rightmostBlock.EastCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             rightmostBlock.East();
                         else
                             break;
@@ -169,7 +174,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(rightmostBlock.SouthCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(rightmostBlock.SouthCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             rightmostBlock.South();
                         else
                             break;
@@ -181,7 +187,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(rightmostBlock.WestCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(rightmostBlock.WestCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             rightmostBlock.West();
                         else
                             break;
@@ -193,7 +200,8 @@ namespace zeekea.src.curtains
                     else
                     {
                         string varSide = world.BlockAccessor.GetBlock(rightmostBlock.NorthCopy()).Variant["side"];
-                        if (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both")
+                        string varOrientation = world.BlockAccessor.GetBlock(rightmostBlock.NorthCopy()).Variant["horizontalorientation"];
+                        if (varOrientation == orientation && (varSide == originalSide || (originalSide == "bothleft" && varSide == "left") || (originalSide == "left" && varSide == "bothleft") || (originalSide == "bothright" && varSide == "right") || (originalSide == "right" && varSide == "bothright") || originalSide == "both" || varSide == "both"))
                             rightmostBlock.North();
                         else
                             break;
@@ -322,9 +330,11 @@ namespace zeekea.src.curtains
                 {
                     if (orientation == "north")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().EastCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().EastCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.East();
                         }
@@ -333,9 +343,11 @@ namespace zeekea.src.curtains
                     }
                     if (orientation == "east")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().SouthCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().SouthCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.South();
                         }
@@ -344,9 +356,11 @@ namespace zeekea.src.curtains
                     }
                     if (orientation == "south")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().WestCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().WestCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.West();
                         }
@@ -355,9 +369,11 @@ namespace zeekea.src.curtains
                     }
                     if (orientation == "west")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().NorthCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().NorthCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.North();
                         }
@@ -371,9 +387,11 @@ namespace zeekea.src.curtains
                 {
                     if (orientation == "north")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().WestCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().WestCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.West();
                         }
@@ -382,9 +400,11 @@ namespace zeekea.src.curtains
                     }
                     if (orientation == "east")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().NorthCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().NorthCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.North();
                         }
@@ -393,9 +413,11 @@ namespace zeekea.src.curtains
                     }
                     if (orientation == "south")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().EastCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().EastCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.East();
                         }
@@ -404,9 +426,11 @@ namespace zeekea.src.curtains
                     }
                     if (orientation == "west")
                     {
-                        string upSupport = world.BlockAccessor.GetBlock(rightPos.UpCopy().SouthCopy()).Code.FirstPathPart();
+                        Block upBlock = world.BlockAccessor.GetBlock(rightPos.UpCopy().SouthCopy());
+                        string upSupport = upBlock.Code.FirstPathPart();
                         if (upSupport.StartsWith("rod") || upSupport.StartsWith("curtain"))
                         {
+                            if (upBlock.Variant["horizontalorientation"] != orientation) break;
                             CloseCount++;
                             rightPos.South();
                         }
@@ -552,10 +576,16 @@ namespace zeekea.src.curtains
         {
             BlockFacing[] horVer = Block.SuggestedHVOrientation(byPlayer, blockSel);
 
-            string topBlock = world.BlockAccessor.GetBlock(blockSel.Position.UpCopy()).Code.FirstPathPart();
+            Block top = world.BlockAccessor.GetBlock(blockSel.Position.UpCopy());
+
+            string topBlock = top.Code.FirstPathPart();
             if (!topBlock.StartsWith("rod") && !topBlock.StartsWith("curtain")) return false;
 
-            Block newBlock = GetBlockVariant(world, blockSel.Position, horVer[0].Code);
+            Block newBlock;
+            if (top.Variant["horizontalorientation"] != horVer[0].Code)
+                newBlock = GetBlockVariant(world, blockSel.Position, top.Variant["horizontalorientation"]);
+            else
+                newBlock = GetBlockVariant(world, blockSel.Position, horVer[0].Code);
 
             newBlock.DoPlaceBlock(world, byPlayer, blockSel, itemstack);
 

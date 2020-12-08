@@ -1,0 +1,56 @@
+[
+	{
+		"ingredientPattern": "Q,S,T",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 2
+			},
+			"Q": { 
+				"type": "item", 
+				"code": "game:clearquartz",
+				"quantity": 2
+			},
+			"S": { 
+				"type": "item", 
+				"code": "game:stone-chert",
+				"quantity": 2
+			}
+		},
+		"width": 1,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:snowflake-2-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "Q,S,T",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 2
+			},
+			"Q": { 
+				"type": "item", 
+				"code": "game:clearquartz",
+				"quantity": 2
+			},
+			"S": { 
+				"type": "item", 
+				"code": "game:stone-andesite",
+				"quantity": 2
+			}
+		},
+		"width": 1,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:snowflake-1-s-north"
+		}
+	}
+]

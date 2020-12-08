@@ -109,9 +109,9 @@ namespace necessaries.src.Parcel
             }
         }
 
-        public override void FromTreeAtributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            base.FromTreeAtributes(tree, worldForResolving);
+            base.FromTreeAttributes(tree, worldForResolving);
             rcptAddress = tree.GetString("rcptAddress");
             message = tree.GetString("message");
             destAddress = tree.GetString("destAddress");

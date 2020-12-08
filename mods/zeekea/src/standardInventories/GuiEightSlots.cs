@@ -77,9 +77,8 @@ namespace zeekea.src.nightstand
 
         public override bool OnEscapePressed()
         {
-            base.OnEscapePressed();
-            OnTitleBarClose();
-            return TryClose();
+            Inventory.SlotModified -= OnInventorySlotModified;
+            return base.OnEscapePressed();
         }
     }
 }

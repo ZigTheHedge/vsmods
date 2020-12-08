@@ -1,0 +1,92 @@
+[
+	{
+		"ingredientPattern": "TXT,_C_,W_W",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 2
+			},
+			"X": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 3
+			},
+			"W": { 
+				"type": "item", 
+				"code": "game:firewood"
+			},
+			"C": { 
+				"type": "block", 
+				"code": "game:waterlily"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:candlestick-green-north"
+		}
+	},
+	{
+		"ingredientPattern": "TXT,_C_,W_W",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 2
+			},
+			"X": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 3
+			},
+			"W": { 
+				"type": "item", 
+				"code": "game:firewood"
+			},
+			"C": { 
+				"type": "item", 
+				"code": "game:resin"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:candlestick-copper-north"
+		}
+	},
+	{
+		"ingredientPattern": "TXT,_C_,W_W",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 2
+			},
+			"X": {
+				"type": "block",
+				"code": "game:torch-up",
+				"quantity": 3
+			},
+			"W": { 
+				"type": "item", 
+				"code": "game:firewood"
+			},
+			"C": { 
+				"type": "block", 
+				"code": "game:mushroom-bolete-*"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:candlestick-brown-north"
+		}
+	}
+]

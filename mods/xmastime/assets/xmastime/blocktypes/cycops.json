@@ -1,0 +1,65 @@
+{
+	code: "cyclops",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "xmastime": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Glass",
+	variantgroups: [
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/cyclops-minic-2",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/cyclops-minic-2",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/cyclops-minic-2",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/cyclops-minic-2",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0.3, y1: 0, z1: 0, x2: 0.74, y2: 0.65, z2: 0.22, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0.3, y1: 0, z1: 0, x2: 0.74, y2: 0.65, z2: 0.22, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		translation: { x: -0.7, y: -1.8, z: 0 },
+		rotation: { x: -22.6, y: -171, z: 0 },
+		origin: { x: 0.5, y: 0.35, z: 0.1 },
+		scale: 2.34
+	},
+	fpHandTransform: {
+		translation: { x: -0.5, y: 0.25, z: 1.1 },
+		rotation: { x: 0, y: -82, z: 0 },
+		scale: 1.89
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.43, z: 0 },
+		rotation: { x: -90, y: -70, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 4.01
+	},
+	tpHandTransform: {
+		translation: { x: -0.8, y: -0.2, z: 0 },
+		rotation: { x: -85, y: -132, z: 76 },
+		origin: { x: 0.5, y: 0, z: 0 },
+		scale: 0.72
+	}
+}

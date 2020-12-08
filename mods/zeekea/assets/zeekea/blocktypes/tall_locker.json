@@ -2,7 +2,7 @@
 	code: "tall_locker",
 	class: "tall_locker",
 	entityClass: "betall_locker",
-	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	entityBehaviors: [{ name: "Animatable" }], 
 	blockmaterial: "Wood",

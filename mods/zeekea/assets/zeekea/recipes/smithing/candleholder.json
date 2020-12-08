@@ -1,0 +1,17 @@
+{
+	ingredient: { 
+		type: "item", 
+		code: "game:ingot-*", 
+		name: "metal", 
+		allowedVariants: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron"] 
+	},
+	pattern: [[
+		"______#",
+		"_######",
+		"##__###",
+		"_#___##",
+		"______#"
+	]],
+	name: "Candle Holder",
+	output: { type: "block", code: "zeekea:candleholder-{metal}-no-north"  }
+}

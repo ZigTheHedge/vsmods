@@ -1,0 +1,36 @@
+{
+	"ingredientPattern": "1R2,ROR,3R4",
+	"ingredients": {
+		"1": {
+			"type": "item",
+			"code": "game:fruit-blackcurrant"
+		},
+		"2": {
+			"type": "item",
+			"code": "game:fruit-whitecurrant"
+		},
+		"3": {
+			"type": "item",
+			"code": "game:fruit-redcurrant"
+		},
+		"4": {
+			"type": "item",
+			"code": "game:fruit-blueberry"
+		},
+		"R": {
+			"type": "item",
+			"code": "game:resin"
+		},
+		"O": {
+			"type": "item",
+			"code": "game:rope"
+		}
+	},
+	"width": 3,
+	"height": 3,
+	"shapeless": true,
+	"output": {
+		"type": "block",
+		"code": "xmastime:wreath-north"
+	}
+}

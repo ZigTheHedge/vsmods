@@ -113,9 +113,9 @@ namespace necessaries.src.Mailbox
             }
         }
 
-        public override void FromTreeAtributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            base.FromTreeAtributes(tree, worldForResolving);
+            base.FromTreeAttributes(tree, worldForResolving);
             address = tree.GetString("address");
         }
 

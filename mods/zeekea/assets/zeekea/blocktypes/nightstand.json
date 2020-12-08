@@ -2,7 +2,7 @@
 	code: "nightstand",
 	class: "nightstand",
 	entityClass: "benightstand",
-	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	entityBehaviors: [{ name: "Animatable" }], 	
 	blockmaterial: "Wood",

@@ -14,7 +14,7 @@
 		"string": { base: "game:block/transparent" },
 		"handle": { base: "game:block/transparent" },
 	},
-	creativeinventory: { "general": ["*"], "items": ["*"] },
+	creativeinventory: { "general": ["*"], "items": ["*"], "zeekea": ["*"] },
 	fpHandTransform: {
 		translation: { x: 0.2, y: -0.2, z: 0 },
 		rotation: { x: 15, y: 15, z: 90 },

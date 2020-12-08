@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "xmastime",
+  "name": "Xmas Time",
+  "authors": [ "NatElfa", "ZigTheHedge" ],
+  "description": "Various Xmas stuff for your Vintage Home and Garden",
+  "version": "1.13.4-0.2-B",
+  "dependency": {
+    "game": "1.13.4"
+  }
+}

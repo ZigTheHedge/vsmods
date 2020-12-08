@@ -1,7 +1,7 @@
 {
 	code: "armchair",
 	class: "armchair",
-	creativeinventory: { "general": ["*-no-both-north"], "decorative": ["*-no-both-north"] },
+	creativeinventory: { "general": ["*-no-both-north"], "decorative": ["*-no-both-north"], "zeekea": ["*-no-both-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	blockmaterial: "Cloth",
 	variantgroups: [

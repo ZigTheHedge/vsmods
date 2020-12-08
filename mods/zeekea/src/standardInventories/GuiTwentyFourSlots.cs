@@ -27,16 +27,6 @@ namespace zeekea.src.standardInventories
         void SetupDialog()
         {
             ItemSlot hoveredSlot = capi.World.Player.InventoryManager.CurrentHoveredSlot;
-/*
-            if (hoveredSlot != null && hoveredSlot.Inventory == Inventory)
-            {
-                capi.Input.TriggerOnMouseLeaveSlot(hoveredSlot);
-            }
-            else
-            {
-                hoveredSlot = null;
-            }
-*/
 
             if (hoveredSlot != null && hoveredSlot.Inventory?.InventoryID != Inventory?.InventoryID)
             {
@@ -78,7 +68,6 @@ namespace zeekea.src.standardInventories
         {
             capi.Network.SendBlockEntityPacket(BlockEntityPosition.X, BlockEntityPosition.Y, BlockEntityPosition.Z, p);
         }
-
         private void OnTitleBarClose()
         {
             TryClose();
@@ -87,10 +76,10 @@ namespace zeekea.src.standardInventories
 
         public override bool OnEscapePressed()
         {
-            base.OnEscapePressed();
-            OnTitleBarClose();
-            return TryClose();
+            Inventory.SlotModified -= OnInventorySlotModified;
+            return base.OnEscapePressed();
+            //return TryClose();
         }
-    
+
     }
 }

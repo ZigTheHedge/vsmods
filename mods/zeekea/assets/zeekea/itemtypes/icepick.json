@@ -2,7 +2,7 @@
 	code: "icepick",
 	class: "icepick", 
 	shape: { base: "item/icepick" },
-	creativeinventory: { "general": ["*"], "items": ["*"], "tools": ["*"]},
+	creativeinventory: { "general": ["*"], "items": ["*"], "tools": ["*"], "zeekea": ["*"]},
 	attributes: {
 		handbook: {
 			groupBy: ["icepick-*"]
@@ -22,6 +22,8 @@
 	},
 	
 	damagedby: ["blockbreaking", "attacking"],
+	
+	heldTpHitAnimation: "smithing",
 	
 	attackpowerbytype: {
 		"icepick-copper": 1.25,
@@ -57,8 +59,8 @@
 		scale: 3.4
 	},
 	tpHandTransform: {
-		translation: { x: -1.07, y: -0.01, z: -0.56 },
-		rotation: { x: -81, y: -102, z: 0 },
+		translation: { x: -1.07, y: 0.09, z: -0.66 },
+		rotation: { x: 112, y: -2, z: -2 },
 		origin: { x: 0.5, y: 0, z: 0.5 },
 		scale: 0.8
 	}

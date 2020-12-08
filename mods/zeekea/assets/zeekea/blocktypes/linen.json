@@ -34,7 +34,7 @@
 		"*-south": { all: false, south: true },
 	},
 	blockmaterial: "Cloth",
-	creativeinventory: { "general": ["*-down"], "decorative": ["*-down"] },
+	creativeinventory: { "general": ["*-down"], "decorative": ["*-down"], "zeekea": ["*-down"] },
 	replaceable: 700,
 	resistance: 1,
 	lightAbsorption: 1,

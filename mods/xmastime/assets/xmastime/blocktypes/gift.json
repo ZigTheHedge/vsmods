@@ -1,0 +1,64 @@
+{
+	code: "present",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "xmastime": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }, { name: "UnstableFalling" }],
+	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock",
+	blockmaterial: "Glass",
+	variantgroups: [
+		{ code: "type", states: ["01", "02", "03", "04", "05", "06"] },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/present-{type}",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/present-{type}",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/present-{type}",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/present-{type}",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0.3, y1: 0, z1: 0.3, x2: 0.7, y2: 0.5, z2: 0.7, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0.3, y1: 0, z1: 0.3, x2: 0.7, y2: 0.5, z2: 0.7, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		translation: { x: -0.7, y: -4, z: 0 },
+		origin: { x: 0.5, y: 0.3, z: 0.5 },
+		scale: 2.58
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.55, z: 0.5 },
+		scale: 2.21
+	},
+	tpHandTransform: {
+		translation: { x: -1, y: -0.7, z: -0.3 },
+		rotation: { x: 99, y: 0, z: -74 },
+		scale: 0.75
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: -45, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3.71
+	}
+}

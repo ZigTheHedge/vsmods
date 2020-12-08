@@ -4,8 +4,8 @@
   "name": "Necessaries Mod",
   "authors": ["ZigTheHedge"],
   "description": "Many things to make your survival experience better!",
-  "version": "1.13.4-0.75B",
+  "version": "1.14.0-0.7.8-B",
   "dependency": {
-    "game": "1.13.4"
+    "game": "1.14.0"
   }
 }

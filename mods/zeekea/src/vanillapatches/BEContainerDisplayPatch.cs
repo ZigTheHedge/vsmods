@@ -14,76 +14,7 @@ namespace zeekea.src.vanillapatches
 {
     public abstract class BEContainerDisplayPatch : BlockEntityDisplay, ITexPositionSource
     {
-        new public TextureAtlasPosition this[string textureCode]
-        {
-            get
-            {
-                AssetLocation texturePath = null;
-                CompositeTexture tex;
-                if (nowTesselatingItem.Textures.TryGetValue(textureCode, out tex))
-                {
-                    texturePath = tex.Baked.BakedName;
-                }
-                else
-                {
-                    nowTesselatingShape?.Textures.TryGetValue(textureCode, out texturePath);
-                }
 
-                if (texturePath == null)
-                {
-                    texturePath = new AssetLocation(textureCode);
-                }
-
-                TextureAtlasPosition texpos = capi.BlockTextureAtlas[texturePath];
-
-
-
-                if (texpos == null)
-                {
-                    IAsset texAsset = capi.Assets.TryGet(texturePath.Clone().WithPathPrefixOnce("textures/").WithPathAppendixOnce(".png"));
-                    if (texAsset != null)
-                    {
-                        BitmapRef bmp = texAsset.ToBitmap(capi);
-                        capi.BlockTextureAtlas.InsertTextureCached(texturePath, bmp, out _, out texpos);
-                    }
-                    else
-                    {
-                        textureCode = "all";
-                        if (nowTesselatingItem.Textures.TryGetValue(textureCode, out tex))
-                        {
-                            texturePath = tex.Baked.BakedName;
-                        }
-                        else
-                        {
-                            nowTesselatingShape?.Textures.TryGetValue(textureCode, out texturePath);
-                        }
-
-                        if (texturePath == null)
-                        {
-                            texturePath = new AssetLocation(textureCode);
-                        }
-
-                        texpos = capi.BlockTextureAtlas[texturePath];
-
-                        if (texpos == null)
-                        {
-                            texAsset = capi.Assets.TryGet(texturePath.Clone().WithPathPrefixOnce("textures/").WithPathAppendixOnce(".png"));
-                            if (texAsset != null)
-                            {
-                                BitmapRef bmp = texAsset.ToBitmap(capi);
-                                capi.BlockTextureAtlas.InsertTextureCached(texturePath, bmp, out _, out texpos);
-                            }
-                            else
-                            {
-                                capi.World.Logger.Warning("Display cased item {0} defined texture {1}, not no such texture found. 'All' is also absent.", nowTesselatingItem.Code, texturePath);
-                            }
-                        }
-                    }
-                }
-
-                return texpos;
-            }
-        }
         public BEContainerDisplayPatch(): base()
         {
 

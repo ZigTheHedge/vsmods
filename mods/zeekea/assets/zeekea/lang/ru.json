@@ -224,5 +224,11 @@
 	"block-rod-kapok-north": "Карниз из капока",	
 	"block-rod-maple-north": "Карниз из клена",	
 	"block-rod-oak-north": "Карниз из дуба",	
-	"block-rod-pine-north": "Карниз из сосны"
+	"block-rod-pine-north": "Карниз из сосны",
+		
+	"block-candleholder-copper-no-north": "Медный настенный подсвечник",
+	"block-candleholder-tinbronze-no-north": "Настенный подсвечник из оловянной бронзы",
+	"block-candleholder-bismuthbronze-no-north": "Настенный подсвечник из висмутовой бронзы",
+	"block-candleholder-blackbronze-no-north": "Настенный подсвечник из черной бронзы",
+	"block-candleholder-iron-no-north": "Железный настенный подсвечник"
 }

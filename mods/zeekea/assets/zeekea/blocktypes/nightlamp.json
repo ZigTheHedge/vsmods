@@ -1,7 +1,7 @@
 {
 	code: "nightlamp",
 	class: "nightlamp",
-	creativeinventory: { "general": ["*-off"], "decorative": ["*-off"] },
+	creativeinventory: { "general": ["*-off"], "decorative": ["*-off"], "zeekea": ["*-off"] },
 	blockmaterial: "Metal",
 	variantgroups: [
 		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron" ] },

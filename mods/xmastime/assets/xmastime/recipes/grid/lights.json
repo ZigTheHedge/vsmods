@@ -1,0 +1,330 @@
+[
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "block",
+				"code": "game:glacierice"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:drygrass"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-blue-green-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_1,TRT,1_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "block",
+				"code": "game:glacierice"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-blue-vines-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:drygrass"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-green-coffee-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "block",
+				"code": "game:waterlily"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:stone-granite"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-green-wheat-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:fruit-saguaro"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:stone-granite"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-grey-fruit-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:grain-flax"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:stone-basalt"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-honey-black-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"2": {
+				"type": "block",
+				"code": "game:mushroom-bolete-*"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-lava-beer-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:resin"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:stone-andesite"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-lava-water-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "block",
+				"code": "game:mushroom-flyagaric-*"
+			},
+			"2": {
+				"type": "block",
+				"code": "game:glacierice"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-lightblue-red-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:fruit-blueberry"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:fruit-cranberry"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-red-gold-blue-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_1,TRT,1_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:clearquartz"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-white-vines-s-north"
+		}
+	},
+	{
+		"ingredientPattern": "1_2,TRT,2_1",
+		"ingredients": {
+			"T": {
+				"type": "block",
+				"code": "game:torch-up"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			},
+			"1": {
+				"type": "item",
+				"code": "game:fruit-whitecurrant"
+			},
+			"2": {
+				"type": "item",
+				"code": "game:resin"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "block",
+			"code": "xmastime:lights-pink-gold-s-north"
+		}
+	}
+]

@@ -44,7 +44,6 @@
 			rotateY: 90
 		}		
 	},
-	snowcoverage: true,
 	lightAbsorption: 0,
 	sidesolid: {
 		all: "false"
