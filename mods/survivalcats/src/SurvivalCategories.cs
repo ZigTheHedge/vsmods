@@ -11,12 +11,19 @@ namespace survivalcats.src
 {
     class SurvivalCategories : ModSystem
     {
+        Harmony harmony = new Harmony("com.cwelth.survivalcats");
+
         public override void StartClientSide(ICoreClientAPI api)
         {
             base.Start(api);
 
-            var harmony = new Harmony("com.cwelth.survivalcats");
             harmony.PatchAll();
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            harmony.UnpatchAll("com.cwelth.survivalcats");
         }
     }
 }
