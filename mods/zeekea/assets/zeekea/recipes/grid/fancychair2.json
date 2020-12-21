@@ -3,7 +3,7 @@
   "ingredients": {
     "W": {
       "type": "block",
-      "code": "game:linen-normal-down"
+      "code": "game:linen-*-down"
     },
     "P": {
       "type": "item",

@@ -1,0 +1,26 @@
+{
+  "ingredientPattern": "W,P,L",
+  "ingredients": {
+    "W": {
+      "type": "block",
+      "code": "game:linen-*-down"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+	  "name": "wood",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+    },
+    "L": {
+      "type": "block",
+      "code": "game:log-placed-*-ud",
+	  "quantity": 2,
+	  "name": "wood",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+    },
+  },
+  "width": 1,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "zeekea:barchair-{wood}-normal1" }
+}

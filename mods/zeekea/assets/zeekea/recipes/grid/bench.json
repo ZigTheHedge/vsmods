@@ -1,0 +1,23 @@
+{
+  "ingredientPattern": "RPR,SSS,P_P",
+  "ingredients": {
+	"R": {
+      "type": "item",
+      "code": "game:stone-*"
+    },
+	"S": {
+      "type": "item",
+      "code": "game:stick"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+	  "name": "wood",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "bench-{wood}-north" }
+}

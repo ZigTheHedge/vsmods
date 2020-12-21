@@ -200,7 +200,7 @@
 	sideopaque: {
 		all: "false"
 	},
-	collisionbox: { x1: 0, y1: 0, z1: 0, x2: 0, y2: 0, z2: 0 },
+	collisionbox: null,
 	selectionboxesByType: {
 		"*-yes-left-open-*": [ 
 			{ x1: 0, y1: 0, z1: 0, x2: 0.3125, y2: 0.5, z2: 0.1875, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }, 

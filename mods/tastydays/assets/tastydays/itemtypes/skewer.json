@@ -1,0 +1,52 @@
+{
+	"code": "skewer",
+	"creativeinventory": { "general": ["*"] },
+	"variantgroups": [
+		{ "code": "state", "states": [ "empty", "raw", "fried", "burned" ] }
+	],
+	"shapeByType": {
+		"*-empty": { "base": "tastydays:item/skewer" },
+		"*-raw": { "base": "tastydays:item/skewer_meat" },
+		"*-fried": { "base": "tastydays:item/skewer_meat" },
+		"*-burned": { "base": "tastydays:item/skewer_meat" }
+	},
+	"texturesByType": {
+		"*-fried": { 
+			"cap": { "base": "tastydays:item/capfried" },
+			"onion": { "base": "tastydays:item/onionfried" },
+			"stipe": { "base": "tastydays:item/stipefried" },
+			"raw": { "base": "tastydays:item/fried" }
+		},
+		"*-burned": { 
+			"cap": { "base": "tastydays:item/capburned" },
+			"onion": { "base": "tastydays:item/onionburned" },
+			"stipe": { "base": "tastydays:item/stipeburned" },
+			"raw": { "base": "tastydays:item/burned" }
+		}
+	},
+	"maxstacksize": 1,
+	"guiTransform": {
+		"translation": { x: 0, y: 0, z: 0 },
+		"rotation": { x: 90, y: -135, z: 0 },
+		"origin": { x: 0.5, y: 0.1, z: 0.5 },
+		"scale": 1.64
+	},
+	"fpHandTransform": {
+		"translation": { x: 0, y: 0.4, z: 0 },
+		"rotation": { x: -99, y: 180, z: -95 },
+		"origin": { x: 0.5, y: 0.1, z: 0.5 },
+		"scale": 1.87
+	},
+	"tpHandTransform": {
+		"translation": { x: -1, y: -0.1, z: -0.6 },
+		"rotation": { x: -3, y: -94, z: -89 },
+		"origin": { x: 0.5, y: 0.1, z: 0.5 },
+		"scale": 1
+	},
+	"groundTransform": {
+		"translation": { x: 0, y: -0.03, z: 0 },
+		"rotation": { x: 180, y: 8, z: 0 },
+		"origin": { x: 0.5, y: 0.1, z: 0.5 },
+		"scale": 3.83
+	}
+}

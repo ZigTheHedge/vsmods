@@ -230,5 +230,61 @@
 	"block-candleholder-tinbronze-no-north": "Настенный подсвечник из оловянной бронзы",
 	"block-candleholder-bismuthbronze-no-north": "Настенный подсвечник из висмутовой бронзы",
 	"block-candleholder-blackbronze-no-north": "Настенный подсвечник из черной бронзы",
-	"block-candleholder-iron-no-north": "Железный настенный подсвечник"
+	"block-candleholder-iron-no-north": "Железный настенный подсвечник",
+	
+	"block-bench-birch-north": "Скамейка из березы",
+	"block-bench-oak-north": "Скамейка из дуба",
+	"block-bench-maple-north": "Скамейка из клена",
+	"block-bench-pine-north": "Скамейка из сосны",
+	"block-bench-acacia-north": "Скамейка из акации",
+	"block-bench-kapok-north": "Скамейка из капока",
+	
+	"block-fancychairwooden-birch-north": "Элегантное кресло из березы",
+	"block-fancychairwooden-oak-north": "Элегантное кресло из дуба",
+	"block-fancychairwooden-maple-north": "Элегантное кресло из клена",
+	"block-fancychairwooden-pine-north": "Элегантное кресло из сосны",
+	"block-fancychairwooden-acacia-north": "Элегантное кресло из акации",
+	"block-fancychairwooden-kapok-north": "Элегантное кресло из капока",
+
+	"block-barchair-birch-normal1": "Lime барный стул из березы",
+	"block-barchair-oak-normal1": "Lime барный стул из дуба",
+	"block-barchair-maple-normal1": "Lime барный стул из клена",
+	"block-barchair-pine-normal1": "Lime барный стул из сосны",
+	"block-barchair-acacia-normal1": "Lime барный стул из акации",
+	"block-barchair-kapok-normal1": "Lime барный стул из капока",
+
+	"block-barchair-birch-carbon_black": "Черный барный стул из березы",
+	"block-barchair-oak-carbon_black": "Черный барный стул из дуба",
+	"block-barchair-maple-carbon_black": "Черный барный стул из клена",
+	"block-barchair-pine-carbon_black": "Черный барный стул из сосны",
+	"block-barchair-acacia-carbon_black": "Черный барный стул из акации",
+	"block-barchair-kapok-carbon_black": "Черный барный стул из капока",
+
+	"block-barchair-birch-verdigris": "Зеленый барный стул из березы",
+	"block-barchair-oak-verdigris": "Зеленый барный стул из дуба",
+	"block-barchair-maple-verdigris": "Зеленый барный стул из клена",
+	"block-barchair-pine-verdigris": "Зеленый барный стул из сосны",
+	"block-barchair-acacia-verdigris": "Зеленый барный стул из акации",
+	"block-barchair-kapok-verdigris": "Зеленый барный стул из капока",
+
+	"block-barchair-birch-ultramarine": "Синий барный стул из березы",
+	"block-barchair-oak-ultramarine": "Синий барный стул из дуба",
+	"block-barchair-maple-ultramarine": "Синий барный стул из клена",
+	"block-barchair-pine-ultramarine": "Синий барный стул из сосны",
+	"block-barchair-acacia-ultramarine": "Синий барный стул из акации",
+	"block-barchair-kapok-ultramarine": "Синий барный стул из капока",
+
+	"block-barchair-birch-cinnabar": "Красный барный стул из березы",
+	"block-barchair-oak-cinnabar": "Красный барный стул из дуба",
+	"block-barchair-maple-cinnabar": "Красный барный стул из клена",
+	"block-barchair-pine-cinnabar": "Красный барный стул из сосны",
+	"block-barchair-acacia-cinnabar": "Красный барный стул из акации",
+	"block-barchair-kapok-cinnabar": "Красный барный стул из капока",
+
+	"block-barchair-birch-chalk_white": "Белый барный стул из березы",
+	"block-barchair-oak-chalk_white": "Белый барный стул из дуба",
+	"block-barchair-maple-chalk_white": "Белый барный стул из клена",
+	"block-barchair-pine-chalk_white": "Белый барный стул из сосны",
+	"block-barchair-acacia-chalk_white": "Белый барный стул из акации",
+	"block-barchair-kapok-chalk_white": "Белый барный стул из капока"	
 }

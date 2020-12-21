@@ -232,5 +232,61 @@
 	"block-candleholder-blackbronze-no-north": "Black Candleholder",
 	"block-candleholder-iron-no-north": "Iron Candleholder",
 	
+	"block-bench-birch-north": "Bench made of Birch",
+	"block-bench-oak-north": "Bench made of Oak",
+	"block-bench-maple-north": "Bench made of Maple",
+	"block-bench-pine-north": "Bench made of Pine",
+	"block-bench-acacia-north": "Bench made of Acacia",
+	"block-bench-kapok-north": "Bench made of Kapok",
+	
+	"block-fancychairwooden-birch-north": "Fancy chair made of Birch",
+	"block-fancychairwooden-oak-north": "Fancy chair made of Oak",
+	"block-fancychairwooden-maple-north": "Fancy chair made of Maple",
+	"block-fancychairwooden-pine-north": "Fancy chair made of Pine",
+	"block-fancychairwooden-acacia-north": "Fancy chair made of Acacia",
+	"block-fancychairwooden-kapok-north": "Fancy chair made of Kapok",
+
+	"block-barchair-birch-normal1": "Lime Bar Chair made of Birch",
+	"block-barchair-oak-normal1": "Lime Bar Chair made of Oak",
+	"block-barchair-maple-normal1": "Lime Bar Chair made of Maple",
+	"block-barchair-pine-normal1": "Lime Bar Chair made of Pine",
+	"block-barchair-acacia-normal1": "Lime Bar Chair made of Acacia",
+	"block-barchair-kapok-normal1": "Lime Bar Chair made of Kapok",
+
+	"block-barchair-birch-carbon_black": "Black Bar Chair made of Birch",
+	"block-barchair-oak-carbon_black": "Black Bar Chair made of Oak",
+	"block-barchair-maple-carbon_black": "Black Bar Chair made of Maple",
+	"block-barchair-pine-carbon_black": "Black Bar Chair made of Pine",
+	"block-barchair-acacia-carbon_black": "Black Bar Chair made of Acacia",
+	"block-barchair-kapok-carbon_black": "Black Bar Chair made of Kapok",
+
+	"block-barchair-birch-verdigris": "Green Bar Chair made of Birch",
+	"block-barchair-oak-verdigris": "Green Bar Chair made of Oak",
+	"block-barchair-maple-verdigris": "Green Bar Chair made of Maple",
+	"block-barchair-pine-verdigris": "Green Bar Chair made of Pine",
+	"block-barchair-acacia-verdigris": "Green Bar Chair made of Acacia",
+	"block-barchair-kapok-verdigris": "Green Bar Chair made of Kapok",
+
+	"block-barchair-birch-ultramarine": "Blue Bar Chair made of Birch",
+	"block-barchair-oak-ultramarine": "Blue Bar Chair made of Oak",
+	"block-barchair-maple-ultramarine": "Blue Bar Chair made of Maple",
+	"block-barchair-pine-ultramarine": "Blue Bar Chair made of Pine",
+	"block-barchair-acacia-ultramarine": "Blue Bar Chair made of Acacia",
+	"block-barchair-kapok-ultramarine": "Blue Bar Chair made of Kapok",
+
+	"block-barchair-birch-cinnabar": "Red Bar Chair made of Birch",
+	"block-barchair-oak-cinnabar": "Red Bar Chair made of Oak",
+	"block-barchair-maple-cinnabar": "Red Bar Chair made of Maple",
+	"block-barchair-pine-cinnabar": "Red Bar Chair made of Pine",
+	"block-barchair-acacia-cinnabar": "Red Bar Chair made of Acacia",
+	"block-barchair-kapok-cinnabar": "Red Bar Chair made of Kapok",
+
+	"block-barchair-birch-chalk_white": "White Bar Chair made of Birch",
+	"block-barchair-oak-chalk_white": "White Bar Chair made of Oak",
+	"block-barchair-maple-chalk_white": "White Bar Chair made of Maple",
+	"block-barchair-pine-chalk_white": "White Bar Chair made of Pine",
+	"block-barchair-acacia-chalk_white": "White Bar Chair made of Acacia",
+	"block-barchair-kapok-chalk_white": "White Bar Chair made of Kapok",
+	
 	"game:tabname-zeekea": "ZEEkea"
 }

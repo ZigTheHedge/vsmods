@@ -1,0 +1,79 @@
+{
+	"code": "kebabbrazier",
+	"class": "kebabbrazier",
+	"entityclass": "kebabbrazierbe",
+	"creativeinventory": { "general": ["*-north"] },
+	"behaviors": [{ "name": "HorizontalOrientable" }, { "name": "HeatSource", "properties": { "heatStrength": 6 } } ],
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"variantgroups": [
+		{ "code": "coalstate", "states": [ "nocoal", "coal", "burningcoal" ] },
+		{ "loadFromProperties": "abstract/horizontalorientation" }
+	],
+	"shapeByType": {
+		"*-nocoal-north": { "base": "block/kebabbrazier", "rotateY": 0 },
+		"*-nocoal-east": { "base": "block/kebabbrazier", "rotateY": 270 },
+		"*-nocoal-south": { "base": "block/kebabbrazier", "rotateY": 180 },
+		"*-nocoal-west": { "base": "block/kebabbrazier", "rotateY": 90 },
+		"*-coal-north": { "base": "block/kebabbrazier_withcoal", "rotateY": 0 },
+		"*-coal-east": { "base": "block/kebabbrazier_withcoal", "rotateY": 270 },
+		"*-coal-south": { "base": "block/kebabbrazier_withcoal", "rotateY": 180 },
+		"*-coal-west": { "base": "block/kebabbrazier_withcoal", "rotateY": 90 },
+		"*-burningcoal-north": { "base": "block/kebabbrazier_withburningcoal", "rotateY": 0 },
+		"*-burningcoal-east": { "base": "block/kebabbrazier_withburningcoal", "rotateY": 270 },
+		"*-burningcoal-south": { "base": "block/kebabbrazier_withburningcoal", "rotateY": 180 },
+		"*-burningcoal-west": { "base": "block/kebabbrazier_withburningcoal", "rotateY": 90 }		
+	},
+	"particlePropertiesByType": {
+		"*-burningcoal-*": [
+			{
+				"__comment": "Ember cubicles",
+				hsvaColor: [{ avg: 30, var: 20 }, { avg: 255, var: 50 }, { avg: 255, var: 50 },  { avg: 255, var: 0 }],
+				gravityEffect: { dist: "invexp", avg: -0.1, var: 0.4 },
+				posOffset: [ { avg: 0.2, var: 0.2 }, { avg: -0.4, var: 0 }, { avg: 0, var: 0.2 }],
+				velocity: [ { avg: 0, var: 0.15 }, { avg: 0.5, var: 0.1 }, { avg: 0, var: 0.15 }],
+				quantity: { avg: 0.04 },
+				size: { avg: 0.4, var: 0 },
+				sizeEvolve: { transform: "quadratic", factor: -0.7 },
+				lifeLength: { avg: 1.5 },
+				vertexFlags: 128,
+				windAffectednes: 0.2
+			},
+			{
+				"__comment": "Smoke quads",
+				hsvaColor: [{ avg: 0, var: 0 }, { avg: 0, var: 0 }, { avg: 70, var: 30 },  { avg: 220, var: 50 }],
+				opacityEvolve: { transform: "linear", factor: -255 },
+				gravityEffect: { avg: 0, var: 0 },
+				posOffset: [ { avg: 0.2, var: 0.2 }, { avg: -0.4, var: 0 }, { avg: 0, var: 0.2 }],
+				velocity: [ { avg: 0, var: 0.025 }, { avg: 0.2, var: 0.05 }, { avg: 0, var: 0.025 }],
+				quantity: { avg: 0.08 },
+				size: { avg: 0.3, var: 0.05 },
+				sizeEvolve: { transform: "linear", factor: 1.5 },
+				particleModel: "Quad",
+				lifeLength: { avg: 5 },
+				selfPropelled: true,
+				windAffectednes: 0.7
+			}
+		]
+
+	},
+	"sidesolid": {
+		"all": "false"
+	},
+	"sideopaque": {
+		"all": "false"
+	},
+	"resistance": 3.5,
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	},
+	"collisionBox": { "x1": 0, "y1": 0, "z1": 0.12, "x2": 1, "y2": 1, "z2": 0.88, "rotateYByType": {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	"selectionBoxes": [
+		{ x1: 0, y1: 0, z1: 0.12, x2: 1, y2: 0.94, z2: 0.88, "rotateYByType": {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.1875, y1: 0.94, z1: 0, x2: 0.25, y2: 1, z2: 1, "rotateYByType": {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.375, y1: 0.94, z1: 0, x2: 0.4375, y2: 1, z2: 1, "rotateYByType": {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.5625, y1: 0.94, z1: 0, x2: 0.625, y2: 1, z2: 1, "rotateYByType": {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.75, y1: 0.94, z1: 0, x2: 0.8125, y2: 1, z2: 1, "rotateYByType": {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+	]
+}

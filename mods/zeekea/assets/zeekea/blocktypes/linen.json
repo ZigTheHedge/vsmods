@@ -6,6 +6,7 @@
 		{ code:"side", states: ["north", "east", "south", "west", "up", "down"] }
 	],
 	attributes: {
+		clothingRepairStrength: 0.5,	
 		canChisel: true,
 		chiselShapeFromCollisionBox: true
 	},

@@ -1,11 +1,14 @@
 [
   {
-    "file": "game:blocktypes/cloth/linen.json",
     "op": "add",
-    "path": "/attributes",
-    "value": { 
-		"canChisel": true,
-		"chiselShapeFromCollisionBox": true
-	}
+    "path": "/attributes/canChisel",
+    "value": true,
+    "file": "game:blocktypes/cloth/linen.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/chiselShapeFromCollisionBox",
+    "value": true,
+    "file": "game:blocktypes/cloth/linen.json"
   }
 ]

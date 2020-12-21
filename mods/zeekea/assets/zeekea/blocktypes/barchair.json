@@ -1,0 +1,45 @@
+{
+	code: "barchair",
+	creativeinventory: { "general": ["*"], "decorative": ["*"], "zeekea": ["*"] },
+	blockmaterial: "Cloth",
+	variantgroups: [
+		{ loadFromProperties: "block/wood" },
+		{ code:"color", states: ["normal1", "carbon_black", "verdigris", "ultramarine", "cinnabar", "chalk_white"] }
+	],
+	drawtype: "json",
+	textures: {
+		"normal1": { base: "zeekea:block/cloth/linen/{color}" },
+		"acacia3": { base: "game:block/wood/debarked/{wood}" },
+		"acacia": { base: "game:block/wood/bark/{wood}" }
+	},
+	shape: {
+		base: "block/barchair",
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox:  
+		{ x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 1, z2: 0.75, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	selectionbox: 
+		{ x1: 0.25, y1: 0, z1: 0.25, x2: 0.75, y2: 1, z2: 0.75, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.15, z: 0 },
+		rotation: { x: 85, y: -71, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 4.11
+	},
+	tpHandTransform: {
+		translation: { x: -0.9, y: -0.7, z: -0.7 },
+		rotation: { x: 0, y: 0, z: -92 },
+		scale: 0.68
+	}
+}

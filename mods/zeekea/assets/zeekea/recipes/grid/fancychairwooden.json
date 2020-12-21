@@ -1,0 +1,15 @@
+{
+  "ingredientPattern": "_P_	PPP	P_P",
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+	  "name": "wood",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+    },
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "fancychairwooden-{wood}-north" }
+}

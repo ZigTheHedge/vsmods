@@ -152,7 +152,7 @@ namespace zeekea.src.nightstand
         public void Animate(bool start)
         {
             if(start)
-                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 0.5F });
+                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 10F });
             else
                 animUtil.StopAnimation("open");
         }
@@ -203,7 +203,7 @@ namespace zeekea.src.nightstand
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
             base.OnTesselation(mesher, tessThreadTesselator);
-            if (animUtil.activeAnimationsByAnimCode.Count > 0)
+            if (animUtil.activeAnimationsByAnimCode.Count > 0 || (animUtil.animator != null && animUtil.animator.ActiveAnimationCount > 0))
             {
                 return true;
             }

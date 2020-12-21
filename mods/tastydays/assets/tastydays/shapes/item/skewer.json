@@ -1,0 +1,106 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"iron": "game:block/metal/plate/iron"
+	},
+	"elements": [
+		{
+			"name": "Skewer",
+			"from": [ 7.7, 7.7, 1.0 ], 
+			"to": [ 8.3, 8.3, 15.0 ], 
+			"rotationOrigin": [ 7.7, 7.7, 1.0 ],
+			"faces": {
+				"north": { "texture": "#iron", "uv": [ 0.0, 2.5, 0.5, 3.0 ] },
+				"east": { "texture": "#iron", "uv": [ 0.5, 5.5, 14.5, 6.0 ] },
+				"south": { "texture": "#iron", "uv": [ 4.0, 7.0, 4.5, 7.5 ] },
+				"west": { "texture": "#iron", "uv": [ 0.0, 14.0, 14.0, 14.5 ] },
+				"up": { "texture": "#iron", "uv": [ 3.0, 0.5, 3.5, 14.5 ] },
+				"down": { "texture": "#iron", "uv": [ 14.0, 0.0, 14.5, 14.0 ] }
+			},
+			"children": [
+				{
+					"name": "Handle",
+					"from": [ 0.6, 0.0, 13.4 ], 
+					"to": [ 1.6, 0.6, 14.0 ], 
+					"rotationOrigin": [ 0.6, 0.0, 13.4 ],
+					"faces": {
+						"north": { "texture": "#iron", "uv": [ 6.0, 10.0, 7.0, 10.5 ] },
+						"east": { "texture": "#iron", "uv": [ 4.0, 14.0, 4.5, 14.5 ] },
+						"south": { "texture": "#iron", "uv": [ 1.0, 0.5, 2.0, 1.0 ] },
+						"west": { "texture": "#iron", "uv": [ 2.0, 11.5, 2.5, 12.0 ] },
+						"up": { "texture": "#iron", "uv": [ 8.5, 7.5, 9.5, 8.0 ] },
+						"down": { "texture": "#iron", "uv": [ 10.0, 11.0, 11.0, 11.5 ] }
+					},
+					"children": [
+						{
+							"name": "Cube3",
+							"from": [ 1.0, 0.0, 0.0 ], 
+							"to": [ 1.6, 0.6, 2.0 ], 
+							"rotationOrigin": [ 1.0, 0.0, 0.0 ],
+							"faces": {
+								"north": { "texture": "#iron", "uv": [ 14.5, 4.0, 15.0, 4.5 ] },
+								"east": { "texture": "#iron", "uv": [ 8.5, 9.5, 10.5, 10.0 ] },
+								"south": { "texture": "#iron", "uv": [ 3.0, 13.0, 3.5, 13.5 ] },
+								"west": { "texture": "#iron", "uv": [ 2.0, 11.5, 4.0, 12.0 ] },
+								"up": { "texture": "#iron", "uv": [ 11.0, 3.0, 11.5, 5.0 ] },
+								"down": { "texture": "#iron", "uv": [ 12.5, 1.0, 13.0, 3.0 ] }
+							},
+							"children": [
+								{
+									"name": "Cube4",
+									"from": [ -3.0, 0.0, 1.4 ], 
+									"to": [ 0.0, 0.6, 2.0 ], 
+									"rotationOrigin": [ -3.0, 0.0, 1.4 ],
+									"faces": {
+										"north": { "texture": "#iron", "uv": [ 11.0, 12.0, 14.0, 12.5 ] },
+										"east": { "texture": "#iron", "uv": [ 4.5, 4.0, 5.0, 4.5 ] },
+										"south": { "texture": "#iron", "uv": [ 5.5, 12.0, 8.5, 12.5 ] },
+										"west": { "texture": "#iron", "uv": [ 5.0, 8.5, 5.5, 9.0 ] },
+										"up": { "texture": "#iron", "uv": [ 10.5, 11.5, 13.5, 12.0 ] },
+										"down": { "texture": "#iron", "uv": [ 7.0, 3.5, 10.0, 4.0 ] }
+									},
+									"children": [
+										{
+											"name": "Cube5",
+											"from": [ 0.0, 0.0, -1.0 ], 
+											"to": [ 0.6, 0.6, 0.0 ], 
+											"rotationOrigin": [ 0.0, 0.0, -1.0 ],
+											"faces": {
+												"north": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"east": { "texture": "#iron", "uv": [ 0.0, 0.0, 1.0, 0.5 ] },
+												"south": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"west": { "texture": "#iron", "uv": [ 0.0, 0.0, 1.0, 0.5 ] },
+												"up": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+												"down": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Sharpening",
+					"from": [ 0.1, 0.1, -1.0 ], 
+					"to": [ 0.5, 0.5, 0.0 ], 
+					"rotationOrigin": [ 0.1, 0.1, -1.0 ],
+					"faces": {
+						"north": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#iron", "uv": [ 0.0, 0.0, 1.0, 0.5 ] },
+						"south": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#iron", "uv": [ 0.0, 0.0, 1.0, 0.5 ] },
+						"up": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+						"down": { "texture": "#iron", "uv": [ 0.0, 0.0, 0.5, 1.0 ] }
+					}
+				}
+			]
+		}
+	]}

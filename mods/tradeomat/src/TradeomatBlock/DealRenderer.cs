@@ -59,11 +59,13 @@ namespace tradeomat.src.TradeomatBlock
                        fp.StartsWith("metalplate")
                         )
                         goodsRender = EnumGoodsRenderType.Reverse;
+                    else
+                        goodsRender = EnumGoodsRenderType.FlatItem;
                 }
             }
             else
                 goodsRender = EnumGoodsRenderType.Generic;
-            //infoPrice = cApi.Render.GetItemStackRenderInfo(price, EnumItemRenderTarget.Ground);
+
         }
 
         public void Dispose()

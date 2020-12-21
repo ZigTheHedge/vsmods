@@ -25,8 +25,8 @@ namespace zeekea.src.candleholder
             if(Variant["candle"] == "unlit")
             {
                 SetBlockState("lit", pos);
-            }
-            base.OnTryIgniteBlockOver(byEntity, pos, secondsIgniting, ref handling);
+            } else
+                base.OnTryIgniteBlockOver(byEntity, pos, secondsIgniting, ref handling);
         }
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
@@ -77,6 +77,14 @@ namespace zeekea.src.candleholder
             return true;
         }
 
+        public override bool ShouldReceiveClientParticleTicks(IWorldAccessor world, IPlayer player, BlockPos pos, out bool isWindAffected)
+        {
+            base.ShouldReceiveClientParticleTicks(world, player, pos, out _);
+            isWindAffected = true;
+
+            return true;
+        }
+
         public override void OnAsyncClientParticleTick(IAsyncParticleManager manager, BlockPos pos, float windAffectednessAtPos, float secondsTicking)
         {
             if (Variant["candle"] == "lit")
@@ -121,7 +129,8 @@ namespace zeekea.src.candleholder
         {
             AssetLocation blockCode = CodeWithVariants(new Dictionary<string, string>() {
                     { "candle", "no" },
-                    { "metal", Variant["metal"] }
+                    { "metal", Variant["metal"] },
+                    { "horizontalorientation", "north" }
                 });
 
             Block block = world.BlockAccessor.GetBlock(blockCode);

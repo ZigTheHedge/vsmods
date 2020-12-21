@@ -162,7 +162,7 @@ namespace zeekea.src.tall_locker
         {
             if (start)
             {
-                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 1F });
+                animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 10F });
             }
             else
             {
@@ -216,7 +216,7 @@ namespace zeekea.src.tall_locker
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
             bool parentSkip = base.OnTesselation(mesher, tessThreadTesselator);
-            if (animUtil.activeAnimationsByAnimCode.Count > 0 || parentSkip)
+            if (animUtil.activeAnimationsByAnimCode.Count > 0 || parentSkip || (animUtil.animator != null && animUtil.animator.ActiveAnimationCount > 0))
             {
                 return true;
             } 
