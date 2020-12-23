@@ -16,7 +16,7 @@ namespace survivalcats.src
         public override void StartClientSide(ICoreClientAPI api)
         {
             base.Start(api);
-
+            //Harmony.DEBUG = true;
             harmony.PatchAll();
         }
 

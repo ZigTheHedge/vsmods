@@ -68,6 +68,8 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\GuiDialogHandbookBookmarks.cs" />
+    <Compile Include="src\GuiHandbookBookmarkedItemStackPage.cs" />
     <Compile Include="src\Patcher.cs" />
     <Compile Include="src\SurvivalCategories.cs" />
   </ItemGroup>
