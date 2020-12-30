@@ -1,0 +1,291 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Vintagestory.API.Client;
+using Vintagestory.API.Common;
+using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
+using Vintagestory.GameContent;
+
+namespace fancydoors.src
+{
+    class BEFancyDoorPart : BlockEntityDisplay
+    {
+        enum EnumState
+        {
+            IDLE, 
+            OPENING,
+            CLOSING
+        }
+        
+        internal ChiseledInventory inventory;
+        bool isOpened = false;
+        EnumState enumState = EnumState.IDLE;
+        float delta = 0;
+
+        public BEFancyDoorPart()
+        {
+            inventory = new ChiseledInventory(null, null);
+            meshes = new MeshData[1];
+        }
+
+        public override InventoryBase Inventory
+        {
+            get { return inventory; }
+        }
+
+        public override string InventoryClassName
+        {
+            get { return "chiseledinventory"; }
+        }
+
+        public override void Initialize(ICoreAPI api)
+        {
+            base.Initialize(api);
+
+            inventory.LateInitialize("chiseledinventory-1", api);
+            //RegisterGameTickListener(Tick, 100);
+        }
+
+        public void TouchMyBEE(IWorldAccessor world, BlockPos pos, string ignoreSide)
+        {
+            BEFancyDoorPart be = world.BlockAccessor.GetBlockEntity(pos) as BEFancyDoorPart;
+            if (be != null) be.OpenCloseDoor(world, ignoreSide);
+        }
+
+        public void OpenCloseDoor(IWorldAccessor world, string ignoreSide)
+        {
+            if (world.BlockAccessor.GetBlock(Pos.UpCopy()).FirstCodePart() == "fancydoor" && ignoreSide != "up") TouchMyBEE(world, Pos.UpCopy(), "down");
+            if (world.BlockAccessor.GetBlock(Pos.DownCopy()).FirstCodePart() == "fancydoor" && ignoreSide != "down") TouchMyBEE(world, Pos.DownCopy(), "up");
+            else
+            {
+                if (ignoreSide != "down")
+                {
+                    if (world.BlockAccessor.GetBlock(Pos.NorthCopy()).FirstCodePart() == "fancydoor" && ignoreSide != "north") TouchMyBEE(world, Pos.NorthCopy(), "south");
+                    if (world.BlockAccessor.GetBlock(Pos.SouthCopy()).FirstCodePart() == "fancydoor" && ignoreSide != "south") TouchMyBEE(world, Pos.SouthCopy(), "north");
+                    if (world.BlockAccessor.GetBlock(Pos.EastCopy()).FirstCodePart() == "fancydoor" && ignoreSide != "east") TouchMyBEE(world, Pos.EastCopy(), "west");
+                    if (world.BlockAccessor.GetBlock(Pos.WestCopy()).FirstCodePart() == "fancydoor" && ignoreSide != "west") TouchMyBEE(world, Pos.WestCopy(), "east");
+                }
+            }
+
+            isOpened = !isOpened;
+            
+            /*
+            if (isOpened) enumState = EnumState.CLOSING;
+            else enumState = EnumState.OPENING;
+            */
+            MarkDirty(true);
+        }
+
+        public bool GenMeshOfChiseledBlock(ItemStack itemStack, out MeshData mesh)
+        {
+            ICoreClientAPI capi = Api as ICoreClientAPI;
+            mesh = null;
+
+            if (itemStack.Class != EnumItemClass.Block || !(itemStack.Block is BlockChisel))
+                return false;
+
+            ITreeAttribute tree = itemStack.Attributes ?? new TreeAttribute();
+            int[] materials = BlockEntityChisel.MaterialIdsFromAttributes(tree, capi.World);
+            uint[] numArray = null;
+            if (tree["cuboids"] is IntArrayAttribute intArrayAttribute)
+                numArray = intArrayAttribute.AsUint;
+            if (numArray == null && tree["cuboids"] is LongArrayAttribute longArrayAttribute)
+                numArray = longArrayAttribute.AsUint;
+
+            List<uint> voxelCuboids = numArray != null ? new List<uint>(numArray) : new List<uint>();
+            mesh = BlockEntityChisel.CreateMesh(capi, voxelCuboids, materials);
+            if (mesh == null)
+                return false;
+
+            for (int index = 0; index < mesh.GetVerticesCount(); ++index)
+                mesh.Flags[index] &= -256;
+
+            for (int index = 0; index < mesh.RenderPassCount; ++index)
+            {
+                if (mesh.RenderPasses[index] != 3)
+                    mesh.RenderPasses[index] = 1;
+            }
+            return true;
+        }
+
+        protected override MeshData genMesh(ItemStack stack, int index)
+        {
+            MeshData mesh;
+            ICoreClientAPI capi = Api as ICoreClientAPI;
+
+            if (stack.Class == EnumItemClass.Block && stack.Block is BlockChisel)
+            {
+                GenMeshOfChiseledBlock(stack, out mesh);
+                return mesh;
+            }
+            
+            return base.genMesh(stack, index);
+        }
+
+        void Tick(float dt)
+        {
+            if (enumState == EnumState.OPENING) { 
+                delta -= 10; 
+                MarkDirty(true); 
+            }
+            if (enumState == EnumState.CLOSING) { 
+                delta += 10; 
+                MarkDirty(true); 
+            }
+        }
+
+        protected override void translateMesh(MeshData mesh, int index)
+        {
+            float x = 0;
+            if (Block.Variant["size"] == "2wide") x = 1f / 16f;
+            if (Block.Variant["size"] == "3wide") x = 1.5f / 16f;
+            if (Block.Variant["size"] == "4wide") x = 2f / 16f;
+            if (Block.Variant["size"] == "5wide") x = 2.5f / 16f;
+
+            int orientationRotate = 0;
+            float degree = 0;
+
+            if (Block.Variant["orientation"] == "right")
+            {
+                if (Block.Variant["horizontalorientation"] == "north") orientationRotate = 0;
+                if (Block.Variant["horizontalorientation"] == "east") orientationRotate = 270;
+                if (Block.Variant["horizontalorientation"] == "south") orientationRotate = 180;
+                if (Block.Variant["horizontalorientation"] == "west") orientationRotate = 90;
+                mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, orientationRotate * GameMath.DEG2RAD, 0);
+
+                if (isOpened) degree = -90f;
+                /*
+                degree = delta;
+                if (degree < -90) { degree = -90; enumState = EnumState.IDLE; isOpened = true; }
+                if (degree > 0) { degree = 0; enumState = EnumState.IDLE; isOpened = false; }
+                */
+
+                if (Block.Variant["horizontalorientation"] == "north") mesh.Rotate(new Vec3f(1f - x, 0, 1f - x), 0, degree * GameMath.DEG2RAD, 0);
+                if (Block.Variant["horizontalorientation"] == "east") mesh.Rotate(new Vec3f(x, 0, 1f - x), 0, degree * GameMath.DEG2RAD, 0);
+                if (Block.Variant["horizontalorientation"] == "south") mesh.Rotate(new Vec3f(x, 0, x), 0, degree * GameMath.DEG2RAD, 0);
+                if (Block.Variant["horizontalorientation"] == "west") mesh.Rotate(new Vec3f(1f - x, 0, x), 0, degree * GameMath.DEG2RAD, 0);
+            }
+            else
+            {
+                if (Block.Variant["horizontalorientation"] == "north") orientationRotate = 0;
+                if (Block.Variant["horizontalorientation"] == "east") orientationRotate = 270;
+                if (Block.Variant["horizontalorientation"] == "south") orientationRotate = 180;
+                if (Block.Variant["horizontalorientation"] == "west") orientationRotate = 90;
+
+                mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 0, orientationRotate * GameMath.DEG2RAD, 0);
+
+                if (isOpened) degree = 90f;
+                /*
+                degree = -delta;
+                if (degree > 90) { degree = 90; enumState = EnumState.IDLE; isOpened = true; }
+                if (degree < 0) { degree = 0; enumState = EnumState.IDLE; isOpened = false; }
+                */
+
+                if (Block.Variant["horizontalorientation"] == "north") mesh.Rotate(new Vec3f(x, 0, 1f - x), 0, degree * GameMath.DEG2RAD, 0);
+                if (Block.Variant["horizontalorientation"] == "east") mesh.Rotate(new Vec3f(x, 0, x), 0, degree * GameMath.DEG2RAD, 0);
+                if (Block.Variant["horizontalorientation"] == "south") mesh.Rotate(new Vec3f(1f - x, 0, x), 0, degree * GameMath.DEG2RAD, 0);
+                if (Block.Variant["horizontalorientation"] == "west") mesh.Rotate(new Vec3f(1f - x, 0, 1f - x), 0, degree * GameMath.DEG2RAD, 0);
+            }
+        }
+
+        public bool OnInteract(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
+        {
+            ItemSlot slot = byPlayer.InventoryManager.ActiveHotbarSlot;
+
+            if (byPlayer.WorldData.EntityControls.Sneak)
+            {
+                if (slot.Empty)
+                {
+                    if (inventory[0].Empty) return false;
+                    byPlayer.InventoryManager.TryGiveItemstack(inventory[0].TakeOutWhole());
+                    MarkDirty(true);
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (ChiseledSlot.IsChiseled(slot))
+                {
+                    if (inventory[0].Empty)
+                    {
+                        int res = slot.TryPutInto(Api.World, inventory[0], 1);
+                        MarkDirty(true);
+                        return true;
+                    }
+                }
+            }
+            OpenCloseDoor(world, "");
+
+            if (world.Side == EnumAppSide.Server)
+                Api.World.PlaySoundAt(new AssetLocation("game:sounds/block/door.ogg"), Pos.X + 0.5f, Pos.Y + 0.5f, Pos.Z + 0.5f);
+
+            return true;
+        }
+
+        public Cuboidf GetCollision()
+        {
+            float width = 0;
+            if (Block.Variant["size"] == "2wide") width = 2f / 16f;
+            if (Block.Variant["size"] == "3wide") width = 3f / 16f;
+            if (Block.Variant["size"] == "4wide") width = 4f / 16f;
+            if (Block.Variant["size"] == "5wide") width = 5f / 16f;
+
+            if (Block.Variant["horizontalorientation"] == "north")
+            {
+                if (!isOpened) return new Cuboidf(0, 0, 1f - width, 1f, 1f, 1f);
+                else
+                {
+                    if(Block.Variant["orientation"] == "right") return new Cuboidf(1f - width, 0, 0, 1f, 1f, 1f);
+                    else return new Cuboidf(0, 0, 0, width, 1f, 1f);
+                }
+            }
+            if (Block.Variant["horizontalorientation"] == "east")
+            {
+                if (!isOpened) return new Cuboidf(0, 0, 0, width, 1f, 1f);
+                else
+                {
+                    if (Block.Variant["orientation"] == "right") return new Cuboidf(0, 0, 1f - width, 1f, 1f, 1f);
+                    else return new Cuboidf(0, 0, 0, 1f, 1f, width);
+                }
+            }
+            if (Block.Variant["horizontalorientation"] == "south")
+            {
+                if (!isOpened) return new Cuboidf(0, 0, 0, 1f, 1f, width);
+                else
+                {
+                    if (Block.Variant["orientation"] == "right") return new Cuboidf(0, 0, 0, width, 1f, 1f);
+                    else return new Cuboidf(1f - width, 0, 0, 1f, 1f, 1f);
+                }
+            }
+            if (Block.Variant["horizontalorientation"] == "west")
+            {
+                if (!isOpened) return new Cuboidf(1f - width, 0, 0, 1f, 1f, 1f);
+                else
+                {
+                    if (Block.Variant["orientation"] == "right") return new Cuboidf(0, 0, 0, 1f, 1f, width);
+                    else return new Cuboidf(0, 0, 1f - width, 1f, 1f, 1f);
+                }
+            }
+            return null;
+        }
+
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
+        {
+            base.FromTreeAttributes(tree, worldForResolving);
+            isOpened = tree.GetBool("isOpened");
+        }
+
+        public override void ToTreeAttributes(ITreeAttribute tree)
+        {
+            base.ToTreeAttributes(tree);
+            tree.SetBool("isOpened", isOpened);
+        }
+
+    }
+}

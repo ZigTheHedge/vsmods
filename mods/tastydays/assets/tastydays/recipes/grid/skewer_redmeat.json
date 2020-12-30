@@ -1,0 +1,27 @@
+{
+  "ingredientPattern": "_MO,_SM,R__",
+  "ingredients": {
+    "M": {
+      "type": "block",
+      "code": "game:mushroom-bolete-normal-*"
+    },
+    "O": {
+      "type": "item",
+      "code": "tastydays:onion_chopped",
+	  "quantity": 2
+    },
+    "S": {
+      "type": "item",
+      "code": "tastydays:redmeat_chopped",
+	  "quantity": 2
+    },
+    "R": {
+      "type": "item",
+      "code": "tastydays:skewer-redmeat-empty"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "item", code: "tastydays:skewer-redmeat-raw", quantity: 2 }
+}

@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="protobuf-net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>g:\VintageModding\Lib\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,23 +45,23 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VintagestoryAPI">
-      <HintPath>g:\vintage1.14\VintagestoryAPI.dll</HintPath>
+      <HintPath>g:\vintageModding\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>g:\vintage1.14\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>g:\vintageModding\Mods\VSSurvivalMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>g:\vintage1.14\Mods\VSEssentials.dll</HintPath>
+      <HintPath>g:\vintageModding\Mods\VSEssentials.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>g:\vintage1.14\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>g:\vintageModding\Mods\VSCreativeMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>g:\vintage1.14\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>g:\vintageModding\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -74,7 +78,8 @@
     <Compile Include="src\kebabbrazier\CoalSlot.cs" />
     <Compile Include="src\kebabbrazier\InventoryKebabbrazier.cs" />
     <Compile Include="src\kebabbrazier\Kebabbrazier.cs" />
-    <Compile Include="src\Skewer.cs" />
+    <Compile Include="src\MultiFood.cs" />
+    <Compile Include="src\MultiNutritionProps.cs" />
     <Compile Include="src\TastyDays.cs" />
   </ItemGroup>
   <ItemGroup>

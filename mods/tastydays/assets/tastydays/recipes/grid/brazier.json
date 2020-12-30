@@ -1,0 +1,13 @@
+{
+  "ingredientPattern": "P_P	PPP",
+  "ingredients": {
+    "P": {
+      "type": "block",
+      "code": "game:metalsheet-iron-down"
+    }
+  },
+  "width": 3,
+  "height": 2,
+  "shapeless": false,
+  "output": { type: "block", code: "tastydays:kebabbrazier-nocoal-north" }
+}

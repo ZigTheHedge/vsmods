@@ -1,9 +1,32 @@
 {
 	"code": "skewer",
-	"creativeinventory": { "general": ["*"] },
+	"class": "multifood",
+	"creativeinventory": { "general": ["*-redmeat-empty", "*-redmeat-raw", "*-redmeat-fried", "*-redmeat-burned"] },
 	"variantgroups": [
+		{ "code": "variant", "states": [ "redmeat" ] },
 		{ "code": "state", "states": [ "empty", "raw", "fried", "burned" ] }
 	],
+	"attributesByType": {
+		"*-redmeat-fried": {
+			"multinutrition": {
+				"eatenstack": { "type": "item", "code": "tastydays:skewer-redmeat-empty" },
+				"nutritionProps": [
+					{ "satiety": 420, "foodcategory": "Protein" },
+					{ "satiety": 370, "foodcategory": "Vegetable" }
+				]
+			}
+		},
+		"*-redmeat-burned": {
+			"multinutrition": {
+				"eatenstack": { "type": "item", "code": "tastydays:skewer-redmeat-empty" },
+				"health": -2,
+				"nutritionProps": [
+					{ "satiety": 42, "foodcategory": "Protein" },
+					{ "satiety": 37, "foodcategory": "Vegetable" }
+				]
+			}
+		}
+	},
 	"shapeByType": {
 		"*-empty": { "base": "tastydays:item/skewer" },
 		"*-raw": { "base": "tastydays:item/skewer_meat" },
@@ -25,6 +48,22 @@
 		}
 	},
 	"maxstacksize": 1,
+	"transitionablePropsByType": {
+		"*-redmeat-raw": [{
+			"type": "Perish",
+			"freshHours": { "avg": 36 },
+			"transitionHours": { "avg": 24 },
+			"transitionedStack": { "type": "item", "code": "tastydays:skewer-redmeat-empty" },
+			"transitionRatio": 1
+		}],
+		"*-redmeat-fried": [{
+			"type": "Perish",
+			"freshHours": { "avg": 120 },
+			"transitionHours": { "avg": 36 },
+			"transitionedStack": { "type": "item", "code": "tastydays:skewer-redmeat-empty" },
+			"transitionRatio": 1
+		}]
+	},
 	"guiTransform": {
 		"translation": { x: 0, y: 0, z: 0 },
 		"rotation": { x: 90, y: -135, z: 0 },
@@ -38,7 +77,7 @@
 		"scale": 1.87
 	},
 	"tpHandTransform": {
-		"translation": { x: -1, y: -0.1, z: -0.6 },
+		"translation": { x: -1, y: -0.1, z: -0.15 },
 		"rotation": { x: -3, y: -94, z: -89 },
 		"origin": { x: 0.5, y: 0.1, z: 0.5 },
 		"scale": 1

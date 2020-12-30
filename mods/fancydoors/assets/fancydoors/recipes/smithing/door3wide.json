@@ -1,0 +1,15 @@
+{
+	ingredient: { 
+		type: "item", 
+		code: "game:ingot-*", 
+		name: "metal", 
+		allowedVariants: ["copper"] 
+	},
+	pattern: [[
+		"_##_____##_",
+		"###########",
+		"_#_______#_"
+	]],
+	name: "Candle Holder",
+	output: { type: "block", code: "fancydoors:fancydoor-3wide-right-north"  }
+}

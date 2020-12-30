@@ -1,8 +1,22 @@
 [
   {
     "op": "add",
+    "path": "/attributes/onCuttingBoardTransform",
+    "value": {
+		"origin": { x: 0.5, y: 0, z: 0.5 }
+	},
+    "file": "game:itemtypes/resource/rot.json"
+  },
+  {
+    "op": "add",
     "path": "/attributes/cuttable",
     "value": true,
+    "file": "game:itemtypes/food/redmeat.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/cutDurability",
+    "value": 5,
     "file": "game:itemtypes/food/redmeat.json"
   },
   {
@@ -18,44 +32,8 @@
     "path": "/attributes/cutOutput",
     "value": {
 		"type": "item",
-		"code": "bushmeat-raw"
+		"code": "tastydays:redmeat_chopped"
 	},
     "file": "game:itemtypes/food/redmeat.json"
-  },
-  {
-    "op": "add",
-    "path": "/attributesByType/*-carrot",
-    "value": {
-		"inContainerTexture": { "base": "block/wood/barrel/raw-{type}" },
-		"nutritionPropsWhenInMeal": { "satiety": 250, "foodcategory": "Vegetable" },
-		"cuttable": true,
-		"onCuttingBoardTransform": {
-			"rotation": { "z": 270 },
-			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
-		},
-		"cutOutput": { 
-			"type": "item",
-			"code": "bushmeat-raw"
-		}
-    },
-    "file": "game:itemtypes/food/vegetable.json"
-  },
-  {
-    "op": "add",
-    "path": "/attributesByType/*-onion",
-    "value": {
-		"inContainerTexture": { "base": "block/wood/barrel/raw-{type}" },
-		"nutritionPropsWhenInMeal": { "satiety": 150, "foodcategory": "Vegetable" },
-		"cuttable": true,
-		"onCuttingBoardTransform": {
-			"rotation": { "z": 90 },
-			"origin": { "x": 0.5, "y": 0, "z": 0.5 }
-		},
-		"cutOutput": {
-			"type": "item",
-			"code": "bushmeat-raw"
-		}
-    },
-    "file": "game:itemtypes/food/vegetable.json"
   }
 ]

@@ -17,11 +17,8 @@ namespace tastydays.src.cuttingboard
         {
             if (itemSlot != null)
             {
-                return true;
-                /*
                 bool isCuttable = itemSlot.Itemstack.Collectible.Attributes != null && itemSlot.Itemstack.Collectible.Attributes["cuttable"].AsBool();
                 return isCuttable;
-                */
             }
             else
                 return false;

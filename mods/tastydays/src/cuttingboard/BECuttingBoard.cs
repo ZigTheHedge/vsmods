@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
+using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
@@ -14,8 +15,9 @@ namespace tastydays.src.cuttingboard
 {
     class BECuttingBoard : BlockEntityDisplay
     {
-        int rotTest;
         internal InventoryCuttingBoard inventory;
+        ItemStack cutItem = null;
+        int numHits = 0;
 
         public override InventoryBase Inventory
         {
@@ -39,24 +41,51 @@ namespace tastydays.src.cuttingboard
             base.Initialize(api);
 
             inventory.LateInitialize("cuttingboard-1", api);
-            RegisterGameTickListener(Tick, 100);
         }
 
-        public void Tick(float dt)
+        public bool SuccessfulHit()
         {
-            rotTest += 2;
-            if (rotTest > 359) rotTest = 0;
-            //MarkDirty(true);
-        }
-
-        public void SetCoalState(string state)
-        {
-            AssetLocation loc = Block.CodeWithVariant("coalstate", state);
-            Block block = Api.World.GetBlock(loc);
-            if (block == null) return;
-
-            Api.World.BlockAccessor.ExchangeBlock(block.Id, Pos);
-            this.Block = block;
+            if (inventory[0].Empty) return false;
+            if (cutItem == null)
+            {
+                if (inventory[0].Itemstack.Collectible.Attributes != null)
+                {
+                    if (inventory[0].Itemstack.Collectible.Attributes["cutOutput"]["type"].Exists)
+                    {
+                        bool isItem = (inventory[0].Itemstack.Collectible.Attributes["cutOutput"]["type"].AsString() == "item") ? true : false;
+                        int qty = inventory[0].Itemstack.Collectible.Attributes["cutOutput"]["quantity"].AsInt(1);
+                        if (isItem)
+                        {
+                            cutItem = new ItemStack(Api.World.GetItem(new AssetLocation(inventory[0].Itemstack.Collectible.Attributes["cutOutput"]["code"].AsString())), qty);
+                        }
+                        else
+                        {
+                            cutItem = new ItemStack(Api.World.GetBlock(new AssetLocation(inventory[0].Itemstack.Collectible.Attributes["cutOutput"]["code"].AsString())), qty);
+                        }
+                        numHits = inventory[0].Itemstack.Collectible.Attributes["cutDurability"].AsInt(10);
+                    } else
+                    {
+                        cutItem = null;
+                        numHits = 0;
+                        MarkDirty();
+                        return false;
+                    }
+                }
+            }
+            if (numHits > 0)
+            {
+                numHits--;
+                if(numHits == 0)
+                {
+                    inventory[0].Itemstack = cutItem.Clone();
+                    cutItem = null;
+                    MarkDirty(true);
+                    return true;
+                }
+                MarkDirty();
+                return true;
+            }
+            return false;
         }
 
         public bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
@@ -68,6 +97,8 @@ namespace tastydays.src.cuttingboard
             {
                 if (inventory[0].Empty) return false;
                 byPlayer.InventoryManager.TryGiveItemstack(inventory[0].TakeOutWhole());
+                cutItem = null;
+                numHits = 0;
                 MarkDirty(true);
                 return true;
             }
@@ -107,8 +138,6 @@ namespace tastydays.src.cuttingboard
 
         protected override MeshData genMesh(ItemStack stack, int index)
         {
-            //if (index == 0) return null;
-
             MeshData mesh;
 
             ICoreClientAPI capi = Api as ICoreClientAPI;
@@ -182,6 +211,20 @@ namespace tastydays.src.cuttingboard
             {
                 sb.AppendLine(slot.Itemstack.GetName() + " x" + slot.Itemstack.StackSize);
             }
+        }
+
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
+        {
+            base.FromTreeAttributes(tree, worldForResolving);
+            cutItem = tree.GetItemstack("cutItem");
+            numHits = tree.GetInt("numHits");
+        }
+
+        public override void ToTreeAttributes(ITreeAttribute tree)
+        {
+            base.ToTreeAttributes(tree);
+            tree.SetItemstack("cutItem", cutItem);
+            tree.SetInt("numHits", numHits);
         }
     }
 }

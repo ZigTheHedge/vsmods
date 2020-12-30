@@ -1,0 +1,11 @@
+{
+  "type": "content",
+  "modid": "theneighbours",
+  "name": "The Neighbours",
+  "authors": [ "NatElfa", "ZigTheHedge" ],
+  "description": "Evil beings from parallel plane",
+  "version": "1.14.0-0.3-B",
+  "dependency": {
+    "game": "1.14.0"
+  }
+}

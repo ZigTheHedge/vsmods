@@ -1,0 +1,43 @@
+{
+	"code": "onion_chopped",
+	"creativeinventory": { "general": ["*"] },
+	"attributes": {
+		"onCuttingBoardTransform": {
+			"origin": { "x": 0.5, "y": 0, "z": 0.5 }
+		}
+	},
+	"shape": { "base": "tastydays:item/onion_chopped" },
+	"maxstacksize": 64,
+	"transitionableProps": [{
+		"type": "Perish",
+		"freshHours": { "avg": 672 },
+		"transitionHours": { "avg": 120 },
+		"transitionedStack": { "type": "item", "code": "game:rot" },
+		"transitionRatio": 0.5
+	}],
+	"materialDensity": 600,
+	"tpHandTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 5, "y": 41, "z": -31 },
+		"origin": { "x": 0.23, "y": 0, "z": 0.13 },
+		"scale": 0.75
+	},
+	"guiTransform": {
+		"translation": { x: 0.5, y: 0, z: 0 },
+		"rotation": { x: -38, y: -122, z: 33 },
+		"origin": { x: 0.3, y: 0.18, z: 0.6 },
+		"scale": 4.7199
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 180, "y": 33, "z": -180 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 5
+	},
+	"fpHandTransform": {
+		"translation": { "x": -0.06, "y": 0.36, "z": 0.23 },
+		"rotation": { "x": 40, "y": 91, "z": 15 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"scale": 2.5
+	}
+}

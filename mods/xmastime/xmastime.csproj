@@ -41,23 +41,23 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VintagestoryAPI">
-      <HintPath>g:\VintageStory\VintagestoryAPI.dll</HintPath>
+      <HintPath>g:\VintageModding\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>g:\VintageStory\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>g:\VintageModding\Mods\VSSurvivalMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>g:\VintageStory\Mods\VSEssentials.dll</HintPath>
+      <HintPath>g:\VintageModding\Mods\VSEssentials.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>g:\VintageStory\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>g:\VintageModding\Mods\VSCreativeMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>g:\VintageStory\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>g:\VintageModding\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

@@ -1,0 +1,13 @@
+{
+	ingredient: { 
+		type: "item", 
+		code: "game:ingot-iron"
+	},
+	pattern: [[
+		"___________###",
+		"############_#",
+		"_____________#"
+	]],
+	name: "Skewer",
+	output: { type: "item", code: "tastydays:skewer-redmeat-empty" }
+}

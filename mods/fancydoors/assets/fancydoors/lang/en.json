@@ -1,0 +1,17 @@
+{
+	"block-fancydoor-2wide-right-north": "Chiseled door 2-wide",
+	"block-fancydoor-3wide-right-north": "Chiseled door 3-wide",
+	"block-fancydoor-4wide-right-north": "Chiseled door 4-wide",
+	"block-fancydoor-5wide-right-north": "Chiseled door 5-wide",
+	
+	"removestatic-sneak-help": "Remove static part",
+	"remove-sneak-help": "Remove door panel",
+	"removenotempty-sneak-help": "Use empty hand to interact with panels",
+	"justplace-sneak-help": "Use current held item as usual",
+	"emptyhand-sneak-help": "Does nothing right now",
+	
+	"nonchiseled-help": "Only chiseled blocks can be used as a panel",
+	"placedoor-help": "Install door panel",
+	"placestatic-help": "Install static part",
+	"interact-help": "Open/Close this and all adjacent doors"
+}

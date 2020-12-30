@@ -1,0 +1,62 @@
+{
+	code: "fancydoor",
+	class: "fancydoor",
+	entityClass: "befancydoor",
+	creativeinventory: { "general": ["*-right-north"], "decorative": ["*-right-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Wood",
+	variantgroups: [
+		{ code: "size", states: ["2wide", "3wide", "4wide", "5wide"] },
+		{ code: "orientation", states: ["right", "left"] },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	textures: {
+		"bismuth": { base: "game:block/metal/plate/copper" }
+	},
+	shapeinventory: { base: "block/doorinventory" },
+	shapebytype: { 
+		"*-north": {
+			base: "block/chiseleddoor-{size}-{orientation}",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/chiseleddoor-{size}-{orientation}",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/chiseleddoor-{size}-{orientation}",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/chiseleddoor-{size}-{orientation}",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -148, z: 0 },
+		origin: { x: 0.5, y: 1, z: 0.5 },
+		scale: 0.7799
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.25, z: 0.5 },
+		rotation: { x: 0, y: 87, z: 0 },
+		scale: 1.66
+	},
+	tpHandTransform: {
+		translation: { x: -1.9, y: -1.3, z: -1.6 },
+		rotation: { x: -100, y: 26, z: -89 }
+	}
+}

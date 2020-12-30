@@ -11,6 +11,17 @@ namespace tastydays.src.cuttingboard
     {
         public override float OnGettingBroken(IPlayer player, BlockSelection blockSel, ItemSlot itemslot, float remainingResistance, float dt, int counter)
         {
+            if(itemslot != null)
+            {
+                if(itemslot.Itemstack != null)
+                {
+                    if(itemslot.Itemstack.Collectible.FirstCodePart().StartsWith("cleaver"))
+                    {
+                        if(counter % 10 == 0)
+                            TastyDays.clientChannel.SendPacket(new CuttingBoardHit(blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z));
+                    }
+                }
+            }
             return remainingResistance;
         }
 
