@@ -1,0 +1,71 @@
+{
+	"code": "coin",
+	class: "itemcoin",	
+	"creativeinventory": { "general": ["*"] },
+	"variantgroups": [
+		{ "code": "metal", "states": [ "copper", "silver", "gold" ] }
+	],
+	"attributes": {
+		"handbook": {
+			"createdBy": "metalmolding"
+		}
+	},
+	combustiblePropsByType: {
+		"*-copper": {
+			meltingPoint: 1084,
+			meltingDuration: 60,
+			smeltedRatio: 4,
+			requirescontainer: true,
+			smeltedStack: { type: "item", code: "game:ingot-copper" }
+		},
+		"*-gold": {
+			meltingPoint: 1063,
+			meltingDuration: 60,
+			smeltedRatio: 4,
+			requirescontainer: true,
+			smeltedStack: { type: "item", code: "game:ingot-gold", }
+		},
+		"*-silver": {
+			meltingPoint: 961,
+			meltingDuration: 60,
+			smeltedRatio: 4,
+			requirescontainer: true,
+			smeltedStack: { type: "item", code: "game:ingot-silver" }
+		}
+	},
+	storageFlags: 5,	
+	"shape": { 
+		"base": "tradeomat:item/basecoin" 
+	},
+	"textures": {
+		"copper": { "base": "game:block/metal/plate/{metal}" }
+	},
+	"maxstacksize": 256,
+	guiTransform: {
+		translation: { x: 0, y: 4, z: 0 },
+		rotation: { x: -33, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.05, z: 0.5 },
+		scale: 2.65
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.3, z: 0 },
+		rotation: { x: 52, y: 0, z: -13 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 1.24
+	},
+	tpHandTransform: {
+		translation: { x: -1.7, y: -1, z: -1.3 }
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 180, y: 27, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5299 },
+		scale: 1.5
+	},
+	heldSounds: {
+		"idle": "tradeomat:silence",
+		"equip": "tradeomat:coinswalk",
+		"unequip": "tradeomat:coin",
+		"attack": "tradeomat:silence"
+	}
+}

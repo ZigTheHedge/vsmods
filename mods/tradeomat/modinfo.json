@@ -4,7 +4,7 @@
   "name": "Trade'o'mat",
   "authors": ["ZigTheHedge"],
   "description": "Fancy way of making an offline shop for server players",
-  "version": "1.14.0-1.3.4-B",
+  "version": "1.14.0-1.4.5-B",
   "dependency": {
     "game": "1.14.0"
   }

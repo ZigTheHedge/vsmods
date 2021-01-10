@@ -16,6 +16,8 @@
 		"toolmold-burned-icepickhead": {
 			"requiredUnits": 100,
 			"fillHeight": 1,
+			"moldrackable": true,
+			"onmoldrackTransform": { rotation: { z: 90 } },			
 			"drop": { 
 				type: "item", 
 				code: "icepickhead-{metal}", 

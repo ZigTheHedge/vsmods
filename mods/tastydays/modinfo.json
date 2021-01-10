@@ -4,7 +4,7 @@
   "name": "Tasty Days (another food mod)",
   "authors": [ "ZigTheHedge" ],
   "description": "The mod adds a varienty of different foods. Just because it looks tasty!",
-  "version": "1.14.0-0.1-B",
+  "version": "1.14.0-0.1.1-B",
   "dependency": {
     "game": "1.14.0"
   }

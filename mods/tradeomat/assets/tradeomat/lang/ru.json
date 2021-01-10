@@ -24,5 +24,14 @@
 	"blockhelp-tomat-owner": "Открыть конфигурацию трейдомата",
 	"blockhelp-tomat-customer": "Открыть интерфейс покупателя",
 		
-	"owner-tooltip": "Трейдомат {0}"
+	"owner-tooltip": "Трейдомат {0}",
+	"item-coin-copper": "Медная монета",
+	"item-coin-silver": "Серебряная монета",
+	"item-coin-gold": "Золотая монета",
+	
+	"block-toolmold-raw-coin": "Форма для монет (необожженная)",
+	"block-toolmold-burned-coin": "Форма для монет (обожженная)",
+	"block-coinspile-copper": "Стопка медных монет",
+	"block-coinspile-silver": "Стопка серебряных монет",
+	"block-coinspile-gold": "Стопка золотых монет"
 }

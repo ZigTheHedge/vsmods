@@ -43,5 +43,12 @@ namespace cavepaintings.src
             serverChannel = api.Network.GetChannel("cavepaintings");
 
         }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            serverChannel = null;
+            clientChannel = null;
+        }
     }
 }

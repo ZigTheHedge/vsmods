@@ -139,5 +139,12 @@ namespace zeekea.src
                     ((BENightstand)be).Animate(msg.open);
             }
         }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            serverChannel = null;
+            clientChannel = null;
+        }
     }
 }

@@ -163,7 +163,7 @@ namespace tradeomat.src.TradeomatBlock
             {
                 int placeThisIteration = toPlace;
                 if (placeThisIteration > inventory[0].Itemstack.Collectible.MaxStackSize) placeThisIteration = inventory[0].Itemstack.Collectible.MaxStackSize;
-                if (inventory[curSlot].Itemstack == null || inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[0].Itemstack))
+                if (inventory[curSlot].Itemstack == null || inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes))
                 {
                     if (inventory[curSlot].Itemstack == null)
                     {
@@ -205,7 +205,7 @@ namespace tradeomat.src.TradeomatBlock
             {
                 if (inventory[curSlot].Itemstack != null)
                 {
-                    if (inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[1].Itemstack))
+                    if (inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
                     {
 
                         if (inventory[curSlot].Itemstack.StackSize < toPlace)
@@ -247,7 +247,7 @@ namespace tradeomat.src.TradeomatBlock
             int fullness = 0;
             for (int i = 10; i < 18; i++)
             {
-                if (inventory[i].Itemstack != null && inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[1].Itemstack))
+                if (inventory[i].Itemstack != null && inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
                 {
                     fullness++;
                 }
@@ -262,7 +262,7 @@ namespace tradeomat.src.TradeomatBlock
                 if (inventory[1].Itemstack == null) return 0;
                 for (int i = 10; i < 18; i++)
                 {
-                    if (inventory[i].Itemstack != null && inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[1].Itemstack))
+                    if (inventory[i].Itemstack != null && inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
                     {
                         freeSpace += inventory[i].Itemstack.StackSize;
                     }
@@ -272,7 +272,7 @@ namespace tradeomat.src.TradeomatBlock
                 if (inventory[0].Itemstack == null) return 0;
                 for (int i = 2; i < 10; i++)
                 {
-                    if (inventory[i].Itemstack == null || inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[0].Itemstack))
+                    if (inventory[i].Itemstack == null || inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes))
                     {
                         if (inventory[i].Itemstack == null)
                         {
@@ -301,7 +301,8 @@ namespace tradeomat.src.TradeomatBlock
                 {
                     // Process Deal. Checking for payment match
                     int dealMaxPossible = 0;
-                    if (inventory[18].Itemstack.Collectible.Equals(inventory[18].Itemstack, inventory[0].Itemstack))
+                    
+                    if (inventory[18].Itemstack.Equals(fromPlayer.Entity.World, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes))
                     {
                         //Passed. Calculating maximum deal
                         dealMaxPossible = (int)(inventory[18].Itemstack.StackSize / inventory[0].Itemstack.StackSize);
@@ -319,7 +320,7 @@ namespace tradeomat.src.TradeomatBlock
                                 if (goodsAvailable >= dealMaxPossible * inventory[1].Itemstack.StackSize)
                                 {
                                     //Passed. Checking for free space in output slot
-                                    if (inventory[19].Itemstack == null || inventory[19].Itemstack.Collectible.Equals(inventory[19].Itemstack, inventory[1].Itemstack))
+                                    if (inventory[19].Itemstack == null || inventory[19].Itemstack.Collectible.Equals(inventory[19].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
                                     {
                                         if (inventory[19].Itemstack == null)
                                         {
@@ -359,7 +360,7 @@ namespace tradeomat.src.TradeomatBlock
                                     if (dealMaxPossible > 0)
                                     {
                                         //Passed. Checking for free space in output slot
-                                        if (inventory[19].Itemstack == null || inventory[19].Itemstack.Collectible.Equals(inventory[19].Itemstack, inventory[1].Itemstack))
+                                        if (inventory[19].Itemstack == null || inventory[19].Itemstack.Collectible.Equals(inventory[19].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
                                         {
                                             if (inventory[19].Itemstack == null)
                                             {

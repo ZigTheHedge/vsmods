@@ -9,7 +9,7 @@
 	},
 	"textures": {
 		"white2": "block/cloth/wool/white2",
-		"orecoalmix": "block/orecoalmix",
+		"orecoalmix": "block/tallow",
 		"bone": "block/bone"
 	},
 	"elements": [

@@ -4,7 +4,7 @@
   "name": "Cave Paintings",
   "authors": [ "ZigTheHedge" ],
   "description": "Draw like cavemen do",
-  "version": "1.14.0-1.2-B",
+  "version": "1.14.0-1.2.1-B",
   "dependency": {
     "game": "1.14.0"
   }

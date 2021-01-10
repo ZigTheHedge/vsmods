@@ -24,6 +24,15 @@
 	"blockhelp-tomat-owner": "Configure the Trade'o'mat",
 	"blockhelp-tomat-customer": "Open customer interface",
 	
-	"owner-tooltip": "{0}'s Trade'o'mat"
+	"owner-tooltip": "{0}'s Trade'o'mat",
+	"item-coin-copper": "Copper Coin",
+	"item-coin-silver": "Silver Coin",
+	"item-coin-gold": "Gold Coin",
+	
+	"block-toolmold-raw-coin": "Coin mold (raw)",
+	"block-toolmold-burned-coin": "Coin mold (burned)",
+	"block-coinspile-copper": "Pile of Copper Coins",
+	"block-coinspile-silver": "Pile of Silver Coins",
+	"block-coinspile-gold": "Pile of Gold Coins"
 	
 }

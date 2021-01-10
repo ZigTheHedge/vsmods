@@ -43,5 +43,12 @@ namespace xmastime.src
 
         }
 
+        public override void Dispose()
+        {
+            base.Dispose();
+            serverChannel = null;
+            clientChannel = null;
+        }
+
     }
 }

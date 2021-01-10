@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using tradeomat.src.Coins;
 using tradeomat.src.TradeomatBlock;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -118,6 +119,9 @@ namespace tradeomat.src
             api.RegisterBlockClass("tomat", typeof(TradeBlock));
             api.RegisterBlockEntityClass("betomat", typeof(BETradeBlock));
             api.RegisterBlockClass("tomat-up", typeof(TradeBlockUp));
+            api.RegisterBlockClass("coinspile", typeof(CoinsPile));
+            api.RegisterBlockEntityClass("becoinspile", typeof(BECoinsPile));
+            api.RegisterItemClass("itemcoin", typeof(BaseCoin));
 
             api.Network.RegisterChannel("tradeomat")
                 .RegisterMessageType(typeof(Tomatoes))
@@ -301,5 +305,11 @@ namespace tradeomat.src
             tomatoesServer = data == null ? new List<Tomatoes>() : SerializerUtil.Deserialize<List<Tomatoes>>(data);
         }
 
+        public override void Dispose()
+        {
+            base.Dispose();
+            serverChannel = null;
+            clientChannel = null;            
+        }
     }
 }

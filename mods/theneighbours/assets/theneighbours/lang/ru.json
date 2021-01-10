@@ -1,4 +1,8 @@
 {
 	"item-creature-tickling": "Тикающий",
-	"item-dead-creature-tickling": "Мертвый тикающий"
+	"item-dead-creature-tickling": "Мертвый тикающий",
+	"game:prefixandcreature-tickling": "тикающим",
+	"item-creature-shintorickae": "Шинторика",
+	"item-dead-creature-shintorickae": "Мертвая шинторика",
+	"game:prefixandcreature-shintorickae": "шинторикой"
 }

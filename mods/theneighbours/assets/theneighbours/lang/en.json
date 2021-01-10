@@ -1,4 +1,8 @@
 {
 	"item-creature-tickling": "Tickling",
-	"item-dead-creature-tickling": "Dead Tickling"
+	"item-dead-creature-tickling": "Dead Tickling",
+	"game:prefixandcreature-tickling": "a Tickling",
+	"item-creature-shintorickae": "Shintorickae",
+	"item-dead-creature-shintorickae": "Dead Shintorickae",
+	"game:prefixandcreature-shintorickae": "a Shintorickae"
 }

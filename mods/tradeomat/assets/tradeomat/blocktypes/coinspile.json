@@ -1,0 +1,28 @@
+{
+	code: "coinspile",
+	class: "coinspile",
+	entityClass: "becoinspile",
+	behaviors: [{name: "Unstable"}],
+	"variantgroups": [
+		{ "code": "metal", "states": [ "copper", "silver", "gold" ] }
+	],
+	"textures": {
+		"copper": { "base": "game:block/metal/plate/{metal}" }
+	},
+	shape: {
+		base: "game:block/basic/invisible"
+	},
+	randomizeRotations: true, 
+	sidesolid: { all: false },
+	sideopaque: { all: false },
+	blockmaterial: "Metal",
+	lightAbsorption: 0,
+	collisionbox: null,
+	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.5, z2: 1 },
+	creativeinventory: { "general": [""] },
+	sounds: {
+		"place": "tradeomat:coin",
+		"walk": "tradeomat:coinswalk",
+		"break": "tradeomat:coinsbreak"
+	},	
+}

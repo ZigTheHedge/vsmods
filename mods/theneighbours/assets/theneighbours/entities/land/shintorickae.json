@@ -1,0 +1,154 @@
+{
+	code: "shintorickae",
+	class: "EntityHumanoid",
+	hitboxSize: { x: 1.8, y: 0.7 },
+	deadHitboxSize: { x: 2, y: 0.6 },
+	eyeHeight: 0.5,
+	drops: [],
+	client: {
+		renderer: "Shape",
+		shape: { base: "theneighbours:entity/land/shintorickae" },
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 }, 
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "interpolateposition" },
+			{ code: "harvestable" },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt", 
+				animationSpeed: 1.4,
+				weight: 10,
+				blendMode: "Average" 
+			},
+			{
+				code: "die",
+				animation: "die", 
+				animationSpeed: 1.0,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{ 
+				code: "idle", 
+				animation: "idle",
+				blendMode: "AddAverage",
+				animationSpeed: 0.4,
+				triggeredBy: { defaultAnim: true },
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 },
+			{ code: "health", currenthealth: 40, maxhealth: 40, },
+			{ code: "deaddecay", hoursToDecay: 96, decayedBlock: "carcass-medium" },
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ 
+				code: "emotionstates",
+				states: [
+					{ code: "fleeondamage", duration: 60, chance: 0.75, slot: 2, priority: 5, accumType: "max", whenHealthRelBelow: 0.4 }
+				],
+			},
+			{ code: "harvestable", drops: [
+					{
+						type: "item",
+						code: "fat",
+						quantity: { avg: 0.5, var: 0 }
+					}
+				],
+			}, 
+			{
+				code: "taskai",
+				aitasks: [
+					{
+						code: "meleeattack",
+						entityCodes: ["player", "sheep-bighorn-lamb", "pig-wild-piglet", "hare-*"],
+						priority: 2,
+						damage: 8,
+						damageTier: 3,
+						damageType: "SlashingAttack",
+						slot: 1,
+						mincooldown: 500, 
+						maxcooldown: 1500, 
+						attackDurationMs: 1000,
+						damagePlayerAtMs: 500,
+						animation: "attack",
+						sound: "theneighbours:creature/tickling/attack" 
+					},
+					{
+						code: "seekentity",
+						entityCodes: ["player", "sheep-bighorn-lamb", "pig-wild-piglet", "hare-*"],
+						priority: 1.5,
+						mincooldown: 400, 
+						maxcooldown: 800, 
+						movespeed: 0.028,
+						seekingRange: 15,
+						animationSpeed: 2.7,
+						animation: "walk"
+					},
+					{
+						code: "fleeentity",
+						entityCodes: ["player"],
+						priority: 1.6,
+						movespeed: 0.08,
+						seekingRange: 20,
+						animation: "walk",
+						animationSpeed: 4.2,
+						whenInEmotionState: "fleeondamage"
+					},
+					{
+						code: "wander", 
+						priority: 1.0, 
+						priorityForCancel: 1.35,
+						movespeed: 0.002,
+						animation: "walk",
+						animationSpeed: 0.5,
+						preferredLightLevel: 20
+					},
+					{ 
+						code: "lookaround", 
+						priority: 0.5
+					}
+				]
+			}
+		],
+		spawnconditions: {
+			worldgen: {
+				TriesPerChunk: { avg: 0.07, var: 0 },
+				tryOnlySurface: false,
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:air", "game:tallgrass-*"],
+				minTemp: -15,
+				maxTemp: 15,
+				minRain: 0.25,
+				minForest: 0.5
+			},
+			runtime: {
+				group: "hostile",
+				tryOnlySurface: false,
+				chance: 0.008,
+				maxQuantity: 4,
+				maxLightLevel: 7,
+				lightLevelType: "onlyBlockLight",					
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:air", "game:tallgrass-*"],
+				minTemp: -15,
+				maxTemp: 15,
+				minRain: 0.25,
+				minForest: 0.5
+			}
+		}
+	},
+	sounds: {
+		hurt: "creature/shintorickae/hurt",
+		death: "creature/shintorickae/death",
+		idle: "creature/shintorickae/idle"
+	},
+	idleSoundChance: 0.1
+}

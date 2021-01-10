@@ -106,6 +106,8 @@ namespace fancydoors.src
                 }
             }
 
+            if (BE.isOpened == false && BE.enumState == BEFancyDoorPart.EnumState.IDLE && BE.meshState > 1) return;
+
             int faceRotation = 0;
             if (BE.Block.Variant["horizontalorientation"] == "north") faceRotation = 0;
             if (BE.Block.Variant["horizontalorientation"] == "east") faceRotation = 270;
@@ -193,6 +195,7 @@ namespace fancydoors.src
             }
 
             prog.Stop();
+            if (BE.meshState == 1) BE.meshState++;
         }
     }
 }

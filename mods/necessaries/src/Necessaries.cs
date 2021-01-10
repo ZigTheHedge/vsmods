@@ -64,6 +64,7 @@ namespace necessaries.src
             api.RegisterBlockClass("rustyspikes", typeof(RustySpikes));
 
             api.RegisterItemClass("branchcutter", typeof(ItemBranchcutter));
+
         }
 
         public static IServerNetworkChannel serverChannel;
@@ -208,6 +209,10 @@ namespace necessaries.src
             postServicesServer = data == null ? new List<PostService>() : SerializerUtil.Deserialize<List<PostService>>(data);
         }
 
-
+        public override void Dispose()
+        {
+            base.Dispose();
+            serverChannel = null;
+        }
     }
 }
