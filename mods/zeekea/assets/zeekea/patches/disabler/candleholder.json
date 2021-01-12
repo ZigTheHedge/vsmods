@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/candleholder.json",
+    "condition": { "when": "disableCandleholder", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/smithing/candleholder.json",
+    "condition": { "when": "disableCandleholder", "isValue": "true" }
+  }
+]

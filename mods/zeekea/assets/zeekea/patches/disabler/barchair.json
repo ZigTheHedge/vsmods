@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/barchair.json",
+    "condition": { "when": "disableBarchair", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/barchair.json",
+    "condition": { "when": "disableBarchair", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/barchair2.json",
+    "condition": { "when": "disableBarchair", "isValue": "true" }
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/bell.json",
+    "condition": { "when": "disableBell", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/clay/mold/bellhead_mold.json",
+    "condition": { "when": "disableBell", "isValue": "true" }
+  },  
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/bell.json",
+    "condition": { "when": "disableBell", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/clayforming/bellhead.json",
+    "condition": { "when": "disableBell", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:itemtypes/bellhead.json",
+    "condition": { "when": "disableBell", "isValue": "true" }
+  }
+]

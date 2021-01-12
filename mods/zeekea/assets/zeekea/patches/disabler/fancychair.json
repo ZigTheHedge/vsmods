@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/fancychair.json",
+    "condition": { "when": "disableSoftFancychair", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/fancychair.json",
+    "condition": { "when": "disableSoftFancychair", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/fancychair2.json",
+    "condition": { "when": "disableSoftFancychair", "isValue": "true" }
+  }  
+]

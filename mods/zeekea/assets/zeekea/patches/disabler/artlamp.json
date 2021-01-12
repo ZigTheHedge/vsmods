@@ -1,0 +1,44 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/art_lamp.json",
+    "condition": { "when": "disableArtlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/art_lamp_tall.json",
+    "condition": { "when": "disableArtlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/artlamp-black.json",
+    "condition": { "when": "disableArtlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/artlamp-brown.json",
+    "condition": { "when": "disableArtlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/artlamptall-black.json",
+    "condition": { "when": "disableArtlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/artlamptall-brown.json",
+    "condition": { "when": "disableArtlamp", "isValue": "true" }
+  }  
+]

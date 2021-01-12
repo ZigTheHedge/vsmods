@@ -1,0 +1,30 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/drifter_lamp.json",
+    "condition": { "when": "disableDrifterlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/drifter_lamp_tall.json",
+    "condition": { "when": "disableDrifterlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/drifterlamp.json",
+    "condition": { "when": "disableDrifterlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/drifterlamptall.json",
+    "condition": { "when": "disableDrifterlamp", "isValue": "true" }
+  }
+]

@@ -8,7 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"copper": "block/metal/plate/copper"
+		"copper": "game:block/metal/plate/copper"
 	},
 	"elements": [
 		{

@@ -1,0 +1,37 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/nightlamp.json",
+    "condition": { "when": "disableNightlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/nightlamp.json",
+    "condition": { "when": "disableNightlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/smithing/lampstand.json",
+    "condition": { "when": "disableNightlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:itemtypes/lampstand.json",
+    "condition": { "when": "disableNightlamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:itemtypes/temporal_dust.json",
+    "condition": { "when": "disableNightlamp", "isValue": "true" }
+  }
+]

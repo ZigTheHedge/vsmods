@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/orebox.json",
+    "condition": { "when": "disableOrebox", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/orebox.json",
+    "condition": { "when": "disableOrebox", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/orebox2.json",
+    "condition": { "when": "disableOrebox", "isValue": "true" }
+  }
+]

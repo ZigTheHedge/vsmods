@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/tall_locker.json",
+    "condition": { "when": "disableTalllocker", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/tall_locker.json",
+    "condition": { "when": "disableTalllocker", "isValue": "true" }
+  }
+]

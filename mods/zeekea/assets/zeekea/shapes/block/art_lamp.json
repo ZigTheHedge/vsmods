@@ -1,0 +1,685 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "stand",
+			"from": [ 4.0, 0.0, 5.88 ], 
+			"to": [ 10.75, 0.375, 8.13 ], 
+			"rotationOrigin": [ 8.0, 0.0, 7.0 ],
+			"rotationY": -90.0,
+			"faces": {
+				"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 6.5, 0.5 ] },
+				"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 2.0, 0.5 ] },
+				"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 6.5, 0.5 ] },
+				"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 2.0, 0.5 ] },
+				"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 6.5, 2.0 ] },
+				"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 6.5, 2.0 ] }
+			},
+			"children": [
+				{
+					"name": "stand2",
+					"from": [ 0.3, 0.375, 0.375 ], 
+					"to": [ 6.525, 1.125, 1.95 ], 
+					"rotationOrigin": [ 0.3, 0.375, 0.375 ],
+					"faces": {
+						"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 6.0, 0.75 ] },
+						"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 1.5, 0.75 ] },
+						"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 6.0, 0.75 ] },
+						"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 1.5, 0.75 ] },
+						"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 6.0, 1.5 ] },
+						"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 6.0, 1.5 ] }
+					},
+					"children": [
+						{
+							"name": "leg",
+							"from": [ 0.825, 0.75, 0.375 ], 
+							"to": [ 1.575, 13.5, 1.125 ], 
+							"rotationOrigin": [ 0.825, 0.75, 0.375 ],
+							"faces": {
+								"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 8.0 ], "autoUv": false },
+								"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 8.0 ], "autoUv": false },
+								"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 8.0 ], "autoUv": false },
+								"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 8.0 ], "autoUv": false },
+								"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 0.75 ], "autoUv": false },
+								"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 0.75 ] }
+							},
+							"children": [
+								{
+									"name": "leg2",
+									"from": [ -1.5, 8.325, 0.075 ], 
+									"to": [ 11.25, 9.075, 0.675 ], 
+									"rotationOrigin": [ -1.5, 8.325, 0.075 ],
+									"rotationZ": 45.0,
+									"faces": {
+										"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 8.0, 0.75 ], "autoUv": false },
+										"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.5, 0.75 ] },
+										"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 8.0, 0.75 ], "autoUv": false },
+										"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.5, 0.75 ] },
+										"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 8.0, 0.75 ], "autoUv": false },
+										"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 8.0, 0.75 ], "autoUv": false }
+									},
+									"children": [
+										{
+											"name": "leg3",
+											"from": [ 8.25, -4.5, -0.075 ], 
+											"to": [ 9.0, 3.0, 0.675 ], 
+											"rotationOrigin": [ 8.25, -4.5, -0.05 ],
+											"faces": {
+												"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 7.5 ] },
+												"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 7.5 ] },
+												"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 7.5 ] },
+												"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 7.5 ] },
+												"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 0.75 ] },
+												"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.75, 0.75 ] }
+											},
+											"children": [
+												{
+													"name": "shade",
+													"from": [ -1.2, 0.0, -1.2 ], 
+													"to": [ 2.025, 0.225, 2.025 ], 
+													"rotationOrigin": [ -1.2, 0.0, -1.2 ],
+													"faces": {
+														"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 0.375 ] },
+														"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 0.375 ] },
+														"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 0.375 ] },
+														"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 0.375 ] },
+														"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 3.0 ] },
+														"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 3.0 ] }
+													},
+													"children": [
+														{
+															"name": "bulb1",
+															"from": [ 0.0, -2.325, 0.0 ], 
+															"to": [ 0.225, 0.0, 0.225 ], 
+															"rotationOrigin": [ 0.0, -2.325, 0.0 ],
+															"faces": {
+																"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] },
+																"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] }
+															}
+														},
+														{
+															"name": "bulb2",
+															"from": [ 0.3, -2.25, 0.0 ], 
+															"to": [ 0.525, 0.0, 0.225 ], 
+															"rotationOrigin": [ 0.3, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb3",
+															"from": [ 0.6, -2.25, 0.0 ], 
+															"to": [ 0.825, 0.0, 0.225 ], 
+															"rotationOrigin": [ 0.6, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb4",
+															"from": [ 0.9, -2.25, 0.0 ], 
+															"to": [ 1.125, 0.0, 0.225 ], 
+															"rotationOrigin": [ 0.9, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb5",
+															"from": [ 1.2, -2.25, 0.0 ], 
+															"to": [ 1.425, 0.0, 0.225 ], 
+															"rotationOrigin": [ 1.2, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb6",
+															"from": [ 1.5, -2.25, 0.0 ], 
+															"to": [ 1.725, 0.0, 0.225 ], 
+															"rotationOrigin": [ 1.5, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb7",
+															"from": [ 1.8, -2.25, 0.0 ], 
+															"to": [ 2.025, 0.0, 0.225 ], 
+															"rotationOrigin": [ 1.8, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb8",
+															"from": [ 2.1, -2.25, 0.0 ], 
+															"to": [ 2.325, 0.0, 0.225 ], 
+															"rotationOrigin": [ 2.1, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb9",
+															"from": [ 2.4, -2.25, 0.0 ], 
+															"to": [ 2.625, 0.0, 0.225 ], 
+															"rotationOrigin": [ 2.4, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb10",
+															"from": [ 2.7, -2.25, 0.0 ], 
+															"to": [ 2.925, 0.0, 0.225 ], 
+															"rotationOrigin": [ 2.7, -2.25, 0.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb11",
+															"from": [ 3.0, -2.325, 0.0 ], 
+															"to": [ 3.225, 0.0, 0.225 ], 
+															"rotationOrigin": [ 3.0, -2.325, 0.0 ],
+															"faces": {
+																"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] },
+																"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] }
+															}
+														},
+														{
+															"name": "bulb12",
+															"from": [ 3.0, -2.25, 0.3 ], 
+															"to": [ 3.225, 0.0, 0.525 ], 
+															"rotationOrigin": [ 3.0, -2.25, 0.3 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb13",
+															"from": [ 3.0, -2.25, 0.6 ], 
+															"to": [ 3.225, 0.0, 0.825 ], 
+															"rotationOrigin": [ 3.0, -2.25, 0.6 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb14",
+															"from": [ 3.0, -2.25, 0.9 ], 
+															"to": [ 3.225, 0.0, 1.125 ], 
+															"rotationOrigin": [ 3.0, -2.25, 0.9 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb15",
+															"from": [ 3.0, -2.25, 1.2 ], 
+															"to": [ 3.225, 0.0, 1.425 ], 
+															"rotationOrigin": [ 3.0, -2.25, 1.2 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb16",
+															"from": [ 3.0, -2.25, 1.5 ], 
+															"to": [ 3.225, 0.0, 1.725 ], 
+															"rotationOrigin": [ 3.0, -2.25, 1.5 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb17",
+															"from": [ 3.0, -2.25, 1.8 ], 
+															"to": [ 3.225, 0.0, 2.025 ], 
+															"rotationOrigin": [ 3.0, -2.25, 1.8 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb18",
+															"from": [ 3.0, -2.25, 2.1 ], 
+															"to": [ 3.225, 0.0, 2.325 ], 
+															"rotationOrigin": [ 3.0, -2.25, 2.1 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb19",
+															"from": [ 3.0, -2.25, 2.4 ], 
+															"to": [ 3.225, 0.0, 2.625 ], 
+															"rotationOrigin": [ 3.0, -2.25, 2.4 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb20",
+															"from": [ 3.0, -2.25, 2.7 ], 
+															"to": [ 3.225, 0.0, 2.925 ], 
+															"rotationOrigin": [ 3.0, -2.25, 2.7 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb21",
+															"from": [ 3.0, -2.325, 3.0 ], 
+															"to": [ 3.225, 0.0, 3.225 ], 
+															"rotationOrigin": [ 3.0, -2.325, 3.0 ],
+															"faces": {
+																"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] },
+																"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] }
+															}
+														},
+														{
+															"name": "bulb22",
+															"from": [ 2.7, -2.25, 3.0 ], 
+															"to": [ 2.925, 0.0, 3.225 ], 
+															"rotationOrigin": [ 2.7, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb23",
+															"from": [ 2.4, -2.25, 3.0 ], 
+															"to": [ 2.625, 0.0, 3.225 ], 
+															"rotationOrigin": [ 2.4, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb24",
+															"from": [ 2.1, -2.25, 3.0 ], 
+															"to": [ 2.325, 0.0, 3.225 ], 
+															"rotationOrigin": [ 2.1, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb25",
+															"from": [ 1.8, -2.25, 3.0 ], 
+															"to": [ 2.025, 0.0, 3.225 ], 
+															"rotationOrigin": [ 1.8, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb26",
+															"from": [ 1.5, -2.25, 3.0 ], 
+															"to": [ 1.725, 0.0, 3.225 ], 
+															"rotationOrigin": [ 1.5, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb27",
+															"from": [ 1.2, -2.25, 3.0 ], 
+															"to": [ 1.425, 0.0, 3.225 ], 
+															"rotationOrigin": [ 1.2, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb28",
+															"from": [ 0.9, -2.25, 3.0 ], 
+															"to": [ 1.125, 0.0, 3.225 ], 
+															"rotationOrigin": [ 0.9, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb29",
+															"from": [ 0.6, -2.25, 3.0 ], 
+															"to": [ 0.825, 0.0, 3.225 ], 
+															"rotationOrigin": [ 0.6, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, -0.5, 0.375, -0.125 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb30",
+															"from": [ 0.3, -2.25, 3.0 ], 
+															"to": [ 0.525, 0.0, 3.225 ], 
+															"rotationOrigin": [ 0.3, -2.25, 3.0 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb31",
+															"from": [ 0.0, -2.325, 3.0 ], 
+															"to": [ 0.225, 0.0, 3.225 ], 
+															"rotationOrigin": [ 0.0, -2.325, 3.0 ],
+															"faces": {
+																"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 2.25 ] },
+																"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] },
+																"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 0.375, 0.375 ] }
+															}
+														},
+														{
+															"name": "bulb32",
+															"from": [ 0.0, -2.25, 2.7 ], 
+															"to": [ 0.225, 0.0, 2.925 ], 
+															"rotationOrigin": [ 0.0, -2.25, 2.7 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb33",
+															"from": [ 0.0, -2.25, 2.4 ], 
+															"to": [ 0.225, 0.0, 2.625 ], 
+															"rotationOrigin": [ 0.0, -2.25, 2.4 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb34",
+															"from": [ 0.0, -2.25, 2.1 ], 
+															"to": [ 0.225, 0.0, 2.325 ], 
+															"rotationOrigin": [ 0.0, -2.25, 2.1 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb35",
+															"from": [ 0.0, -2.25, 1.8 ], 
+															"to": [ 0.225, 0.0, 2.025 ], 
+															"rotationOrigin": [ 0.0, -2.25, 1.8 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb36",
+															"from": [ 0.0, -2.25, 1.5 ], 
+															"to": [ 0.225, 0.0, 1.725 ], 
+															"rotationOrigin": [ 0.0, -2.25, 1.5 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb37",
+															"from": [ 0.0, -2.25, 1.2 ], 
+															"to": [ 0.225, 0.0, 1.425 ], 
+															"rotationOrigin": [ 0.0, -2.25, 1.2 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb38",
+															"from": [ 0.0, -2.25, 0.9 ], 
+															"to": [ 0.225, 0.0, 1.125 ], 
+															"rotationOrigin": [ 0.0, -2.25, 0.9 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb39",
+															"from": [ 0.0, -2.25, 0.6 ], 
+															"to": [ 0.225, 0.0, 0.825 ], 
+															"rotationOrigin": [ 0.0, -2.25, 0.6 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "bulb40",
+															"from": [ 0.0, -2.25, 0.3 ], 
+															"to": [ 0.225, 0.0, 0.525 ], 
+															"rotationOrigin": [ 0.0, -2.25, 0.3 ],
+															"faces": {
+																"north": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"east": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"south": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"west": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 2.25 ], "glow": 200 },
+																"up": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 },
+																"down": { "texture": "#meteoriciron", "uv": [ 0.0, 0.0, 0.375, 0.375 ], "glow": 200 }
+															}
+														},
+														{
+															"name": "shade2",
+															"from": [ 0.0, -2.55, 0.0 ], 
+															"to": [ 3.225, -2.325, 3.225 ], 
+															"rotationOrigin": [ 0.0, -2.55, 0.0 ],
+															"faces": {
+																"north": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.19, 0.375 ], "autoUv": false },
+																"east": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 0.25 ] },
+																"south": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 0.25 ] },
+																"west": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 0.25 ] },
+																"up": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 3.0 ] },
+																"down": { "texture": "#basalt", "uv": [ 0.0, 0.0, 3.0, 3.0 ] }
+															}
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]}

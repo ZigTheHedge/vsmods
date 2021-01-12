@@ -1,0 +1,71 @@
+{
+	code: "bell",
+	class: "bell",
+	entityClass: "bebell",
+	entityBehaviors: [{ name: "Animatable" }], 	
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Metal",
+	variantgroups: [
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/bell",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/bell",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/bell",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/bell",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	CollisionBoxes: [
+		{ x1: 0.4, y1: 0.5, z1: 0, x2: 0.6, y2: 0.87, z2: 0.56, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.4, y1: 0, z1: 0.4, x2: 0.6, y2: 0.5, z2: 0.56, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	],
+	selectionBoxes: [
+		{ x1: 0.4, y1: 0.5, z1: 0, x2: 0.6, y2: 0.87, z2: 0.56, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.4, y1: 0, z1: 0.4, x2: 0.6, y2: 0.5, z2: 0.56, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+	],
+	resistance: 1.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: 22, y: -45, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.2 },
+		scale: 1.78
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.25, z: 0.5 },
+		rotation: { x: 0, y: 146, z: 0 }
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.05, z: 0 },
+		rotation: { x: 0, y: -46, z: 90 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 2.94
+	},
+	tpHandTransform: {
+		translation: { x: -1, y: -1, z: -0.75 },
+		rotation: { x: 0, y: 90, z: 0 },
+		scale: 0.66
+	}
+}

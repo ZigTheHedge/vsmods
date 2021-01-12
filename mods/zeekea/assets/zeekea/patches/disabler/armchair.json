@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/armchair.json",
+    "condition": { "when": "disableArmchair", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/armchair.json",
+    "condition": { "when": "disableArmchair", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/armchair2.json",
+    "condition": { "when": "disableArmchair", "isValue": "true" }
+  }  
+]

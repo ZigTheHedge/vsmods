@@ -1,0 +1,37 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/curtain.json",
+    "condition": { "when": "disableCurtains", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/curtain.json",
+    "condition": { "when": "disableCurtains", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/curtain2.json",
+    "condition": { "when": "disableCurtains", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/rod.json",
+    "condition": { "when": "disableCurtains", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/rod.json",
+    "condition": { "when": "disableCurtains", "isValue": "true" }
+  }  
+]

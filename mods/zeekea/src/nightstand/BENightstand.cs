@@ -186,9 +186,16 @@ namespace zeekea.src.nightstand
                             capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
                             nightstandDialog = null;
                         };
+                        nightstandDialog.TryOpen();
+                    }
+                    else
+                    {
+                        (Api.World as IClientWorldAccessor).Player.InventoryManager.CloseInventory(Inventory);
+                        nightstandDialog?.TryClose();
+                        nightstandDialog?.Dispose();
+                        nightstandDialog = null;
                     }
 
-                    nightstandDialog.TryOpen();
                 }
             }
 

@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/bench.json",
+    "condition": { "when": "disableBench", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/bench.json",
+    "condition": { "when": "disableBench", "isValue": "true" }
+  }
+]

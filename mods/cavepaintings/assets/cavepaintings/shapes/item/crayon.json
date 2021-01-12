@@ -10,7 +10,7 @@
 	"textures": {
 		"basalt3": "game:block/stone/rock/basalt3",
 		"bone": "game:block/bone",
-		"charcoal": "block/coal/charcoal"
+		"charcoal": "game:block/coal/charcoal"
 	},
 	"elements": [
 		{

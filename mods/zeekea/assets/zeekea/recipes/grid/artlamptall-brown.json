@@ -1,0 +1,26 @@
+{
+  "ingredientPattern": "_BW,BF_,BT_",
+  "ingredients": {
+    "B": {
+      "type": "block",
+      "code": "game:rock-bauxite"
+    },
+    "W": {
+      "type": "block",
+      "code": "game:plaster-plain"
+    },
+    "F": {
+      "type": "item",
+      "code": "game:fat",
+	  "quantity": 2
+    },
+    "T": {
+      "type": "block",
+      "code": "game:torch-up"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "artlamptall-brown" }
+}

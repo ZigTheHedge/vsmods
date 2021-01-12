@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/fancychairwooden.json",
+    "condition": { "when": "disableWoodenFancychair", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/fancychairwooden.json",
+    "condition": { "when": "disableWoodenFancychair", "isValue": "true" }
+  }
+]

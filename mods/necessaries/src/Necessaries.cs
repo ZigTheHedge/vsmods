@@ -2,6 +2,7 @@
 using Foundation.Extensions;
 using necessaries.src.Mailbox;
 using necessaries.src.Parcel;
+using necessaries.src.Sharpener;
 using necessaries.src.Spikes;
 using necessaries.src.Trashcan;
 using ProtoBuf;
@@ -62,6 +63,8 @@ namespace necessaries.src
             api.RegisterBlockEntityClass("betrashcan", typeof(BETrashcan));
 
             api.RegisterBlockClass("rustyspikes", typeof(RustySpikes));
+
+            api.RegisterBlockClass("grindstone", typeof(Grindstone));
 
             api.RegisterItemClass("branchcutter", typeof(ItemBranchcutter));
 

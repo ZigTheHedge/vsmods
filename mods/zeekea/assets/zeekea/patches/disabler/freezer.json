@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/freezer.json",
+    "condition": { "when": "disableFreezer", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/freezer.json",
+    "condition": { "when": "disableFreezer", "isValue": "true" }
+  }
+]

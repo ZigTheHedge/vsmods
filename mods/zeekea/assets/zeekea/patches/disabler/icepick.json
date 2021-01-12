@@ -1,0 +1,44 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:itemtypes/icepick.json",
+    "condition": { "when": "disableIcepick", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:itemtypes/icepickhead.json",
+    "condition": { "when": "disableIcepick", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/clay/mold/icepickhead_mold.json",
+    "condition": { "when": "disableIcepick", "isValue": "true" }
+  },  
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/icepick.json",
+    "condition": { "when": "disableIcepick", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/clayforming/icepickhead.json",
+    "condition": { "when": "disableIcepick", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/smithing/icepick.json",
+    "condition": { "when": "disableIcepick", "isValue": "true" }
+  }
+]

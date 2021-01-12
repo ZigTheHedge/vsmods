@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "PPP,C_C,CCC",
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+	  "name": "wood",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+    },
+    "C": {
+      "type": "block",
+      "code": "game:cobblestone-*",
+	  "name": "rock",
+	  "allowedVariants": ["andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate"]	  
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "orebox-{wood}-{rock}" }
+}

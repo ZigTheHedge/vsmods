@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/doorbell.json",
+    "condition": { "when": "disableDoorbell", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/doorbell.json",
+    "condition": { "when": "disableDoorbell", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/doorbell2.json",
+    "condition": { "when": "disableDoorbell", "isValue": "true" }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "BBB,_D_,_R_",
+  "ingredients": {
+    "B": {
+      "type": "block",
+      "code": "game:planks-*"
+    },
+    "D": {
+      "type": "item",
+      "code": "zeekea:bellhead-brass"
+    },
+    "R": {
+      "type": "item",
+      "code": "game:rope"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "bell-north" }
+}

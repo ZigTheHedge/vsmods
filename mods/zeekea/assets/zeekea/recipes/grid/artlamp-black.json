@@ -1,0 +1,26 @@
+{
+  "ingredientPattern": "_BW,BFT",
+  "ingredients": {
+    "B": {
+      "type": "block",
+      "code": "game:rock-basalt"
+    },
+    "W": {
+      "type": "block",
+      "code": "game:plaster-plain"
+    },
+    "F": {
+      "type": "item",
+      "code": "game:fat",
+	  "quantity": 2
+    },
+    "T": {
+      "type": "block",
+      "code": "game:torch-up"
+    }
+  },
+  "width": 3,
+  "height": 2,
+  "shapeless": false,
+  "output": { type: "block", code: "artlamp-black" }
+}

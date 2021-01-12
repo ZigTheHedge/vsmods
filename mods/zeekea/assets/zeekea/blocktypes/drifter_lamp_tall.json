@@ -1,0 +1,45 @@
+{
+	code: "drifterlamptall",
+	class: "multirotatable",
+	entityClass: "bemultirotatable",
+	creativeinventory: { "general": ["*"], "decorative": ["*"], "zeekea": ["*"] },	
+	blockmaterial: "Wood",
+	attributes: {
+		"tall": true
+	},
+	drawtype: "json",
+	shape: { 
+		base: "block/drifter_lamp_tall"
+	},
+	lightAbsorption: 0,
+	sideopaque: {
+		all: false
+	},
+	lightHsv: [20, 0, 18],
+	resistance: 1,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	selectionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1 },
+	collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 2, z2: 1 },
+	guiTransform: {
+		translation: { x: 0, y: -4, z: 0 },
+		origin: { x: 0.5, y: 1, z: 0.5 },
+		scale: 0.8
+	},
+	fpHandTransform: {
+		rotation: { x: 0, y: 129, z: 0 }
+	},
+	tpHandTransform: {
+		translation: { x: -0.9, y: -1.1, z: -1.05 },
+		rotation: { x: -90, y: 0, z: -90 },
+		scale: 0.45
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.13, z: 0 },
+		rotation: { x: 0, y: -85, z: 90 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 2.94
+	}
+}

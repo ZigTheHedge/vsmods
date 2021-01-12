@@ -5,6 +5,7 @@
     "value": { 
 		"*-temporal": { grindedStack: { type: "item", code: "zeekea:temporal_dust" }}
 	},
-    "file": "game:itemtypes/resource/gear.json"
+    "file": "game:itemtypes/resource/gear.json",
+	"condition": { "when": "disableNightlamp", "isValue": "false" }
   }
 ]

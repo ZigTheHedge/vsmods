@@ -69,9 +69,12 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\ApiExtensions.cs" />
     <Compile Include="src\armchair\Armchair.cs" />
     <Compile Include="src\candleholder\CandleHolder.cs" />
     <Compile Include="src\curtains\Curtains.cs" />
+    <Compile Include="src\doorbell\BEBell.cs" />
+    <Compile Include="src\doorbell\Bell.cs" />
     <Compile Include="src\doorbell\DoorBell.cs" />
     <Compile Include="src\DummyUP.cs" />
     <Compile Include="src\freezer\BEFreezer.cs" />
@@ -79,8 +82,12 @@
     <Compile Include="src\freezer\FreezerInventory.cs" />
     <Compile Include="src\freezer\IceSlot.cs" />
     <Compile Include="src\IcepickItem.cs" />
+    <Compile Include="src\multirotatable\BEMultiRotatable.cs" />
+    <Compile Include="src\multirotatable\BlockMultiRotatable.cs" />
     <Compile Include="src\nightlamp\Nightlamp.cs" />
     <Compile Include="src\nightstand\BENightstand.cs" />
+    <Compile Include="src\orebox\BEOreBox.cs" />
+    <Compile Include="src\orebox\OreBox.cs" />
     <Compile Include="src\standardInventories\GuiEightSlots.cs" />
     <Compile Include="src\freezer\GuiFreezer.cs" />
     <Compile Include="src\standardInventories\GuiTwentyFourSlots.cs" />

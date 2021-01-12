@@ -158,6 +158,7 @@ namespace zeekea.src.tall_locker
                 updateMesh(slotId);
             MarkDirty(Api.Side != EnumAppSide.Server);
         }
+
         public void Animate(bool start)
         {
             if (start)
@@ -169,6 +170,7 @@ namespace zeekea.src.tall_locker
                 animUtil.StopAnimation("open");
             }
         }
+
         public override void OnReceivedServerPacket(int packetid, byte[] data)
         {
             base.OnReceivedServerPacket(packetid, data);
@@ -198,9 +200,16 @@ namespace zeekea.src.tall_locker
                             capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
                             lockerDialog = null;
                         };
+                        lockerDialog.TryOpen();
+                    }
+                    else
+                    {
+                        (Api.World as IClientWorldAccessor).Player.InventoryManager.CloseInventory(Inventory);
+                        lockerDialog?.TryClose();
+                        lockerDialog?.Dispose();
+                        lockerDialog = null;
                     }
 
-                    lockerDialog.TryOpen();
                 }
             }
 
