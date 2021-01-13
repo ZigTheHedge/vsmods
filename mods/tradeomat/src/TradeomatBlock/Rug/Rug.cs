@@ -10,17 +10,17 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 
-namespace tradeomat.src.TradeomatBlock
+namespace tradeomat.src.TradeomatBlock.Rug
 {
-    class TradeBlock : Block
+    class Rug : Block
     {
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
 
-            BETradeBlock be = null;
+            BERug be = null;
             if (blockSel.Position != null)
             {
-                be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BETradeBlock;
+                be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BERug;
             }
 
             if (byPlayer.WorldData.EntityControls.Sneak && blockSel.Position != null)
@@ -32,7 +32,7 @@ namespace tradeomat.src.TradeomatBlock
 
                 return true;
             }
-            
+
             if (!byPlayer.WorldData.EntityControls.Sneak && blockSel.Position != null)
             {
                 if (be != null)
@@ -54,19 +54,15 @@ namespace tradeomat.src.TradeomatBlock
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
-            BlockPos upperPart = blockSel.Position.UpCopy();
-            bool shouldAffectUpperPart = false;
-            if (itemstack.Collectible.Variant["type"] == "tall") shouldAffectUpperPart = true;
-            if (shouldAffectUpperPart && world.BlockAccessor.GetBlockId(upperPart) != 0) return false;
-            
             if (!Tradeomat.AbleToPlaceTomat(byPlayer, api))
             {
                 if (api.Side == EnumAppSide.Server)
                     ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:nomore"), EnumChatType.CommandError);
                 return false;
-            } else
+            }
+            else
             {
-                if(SDCFileConfig.Current.NumberOfTomatsAllowed != 0)
+                if (SDCFileConfig.Current.NumberOfTomatsAllowed != 0)
                 {
                     if (api.Side == EnumAppSide.Server)
                         ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:count", (Tradeomat.CountTomatoes(byPlayer, api) + 1), SDCFileConfig.Current.NumberOfTomatsAllowed), EnumChatType.CommandSuccess);
@@ -74,8 +70,6 @@ namespace tradeomat.src.TradeomatBlock
             }
             bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
 
-            Block upperBlock = world.GetBlock(new AssetLocation("tradeomat:tomat-up"));
-            if(shouldAffectUpperPart) world.BlockAccessor.SetBlock(upperBlock.BlockId, upperPart);
             if (api.Side == EnumAppSide.Server)
                 Tradeomat.AddTomat((IServerPlayer)byPlayer, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
             return ret;
@@ -86,19 +80,16 @@ namespace tradeomat.src.TradeomatBlock
             bool result = base.DoPlaceBlock(world, byPlayer, blockSel, byItemStack);
             if (blockSel.Position != null)
             {
-                BETradeBlock be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BETradeBlock;
-                if(be != null)
+                BERug be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BERug;
+                if (be != null)
                     be.ownerName = byPlayer.PlayerName;
             }
-            
+
             return result;
         }
 
         public override void OnBlockRemoved(IWorldAccessor world, BlockPos pos)
         {
-            bool shouldAffectUpperPart = false;
-            if (Variant["type"] == "tall") shouldAffectUpperPart = true;
-            if(shouldAffectUpperPart)world.BlockAccessor.SetBlock(0, pos.UpCopy());
             if (api.Side == EnumAppSide.Server)
             {
                 Tradeomat.RemoveTomat(pos.X, pos.Y, pos.Z);
@@ -126,14 +117,13 @@ namespace tradeomat.src.TradeomatBlock
 
         public override string GetPlacedBlockInfo(IWorldAccessor world, BlockPos pos, IPlayer forPlayer)
         {
-            BETradeBlock be = null;
+            BERug be = null;
             string tooltip = "";
-            be = world.BlockAccessor.GetBlockEntity(pos) as BETradeBlock;
+            be = world.BlockAccessor.GetBlockEntity(pos) as BERug;
             if (be != null)
                 tooltip = Lang.Get("tradeomat:owner-tooltip", be.ownerName);
-            
-            return base.GetPlacedBlockInfo(world, pos, forPlayer) + tooltip; 
-        }
 
+            return base.GetPlacedBlockInfo(world, pos, forPlayer) + tooltip;
+        }
     }
 }

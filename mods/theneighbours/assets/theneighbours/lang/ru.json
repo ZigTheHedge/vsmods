@@ -4,5 +4,7 @@
 	"game:prefixandcreature-tickling": "тикающим",
 	"item-creature-shintorickae": "Шинторика",
 	"item-dead-creature-shintorickae": "Мертвая шинторика",
-	"game:prefixandcreature-shintorickae": "шинторикой"
+	"game:prefixandcreature-shintorickae": "шинторикой",
+	"item-scissor": "Скиссор",
+	"item-tickling_head-1": "Шлем из головы Тикающего"	
 }

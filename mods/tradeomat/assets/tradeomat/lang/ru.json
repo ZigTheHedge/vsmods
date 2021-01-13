@@ -14,6 +14,7 @@
 	"deal-notenoughpayment": "Недостаточно предметов оплаты!",
 	"deal-payenterror": "Неверные предметы для оплаты!",
 	"deal-slotnotempty": "Слот выдачи занят!",
+	"deal-notselected": "Сначала выберите товар!",
 	"isnotsetup": "Еще не настроен!",
 	"outofspace": "Закончилось место!",
 	"outofgoods": "Распродано!",
@@ -33,5 +34,13 @@
 	"block-toolmold-burned-coin": "Форма для монет (обожженная)",
 	"block-coinspile-copper": "Стопка медных монет",
 	"block-coinspile-silver": "Стопка серебряных монет",
-	"block-coinspile-gold": "Стопка золотых монет"
+	"block-coinspile-gold": "Стопка золотых монет",
+	
+	"rug-price": "Предмет оплаты",
+	"rug-payment": "Хранилище предметов оплаты",
+	"rug-goods": "Товары",
+	"rug-goodsprices": "Стоимости товаров",
+	"rug-exchange": "Слоты обмена",
+	
+	"block-rug-north": "Торговый коврик"
 }

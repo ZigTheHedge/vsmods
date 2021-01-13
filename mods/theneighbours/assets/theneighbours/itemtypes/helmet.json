@@ -1,0 +1,77 @@
+{
+	code: "helmet",
+	class: "ItemWearable",
+	variantgroups: [
+		{ code: "type",  states: ["tickling"] },
+		{ code: "subtype",  states: [ "1" ] }
+	],
+	shapeByType: {
+		"*-tickling-*": { base: "theneighbours:item/tickling_head-{subtype}" }
+	},
+	storageFlags: 128,
+	attributes: {
+		wearableAttachment: true,
+		clothescategory: "armorhead",
+		disableElements: ["Hair tile upper part", "Ponytail1", "Hair", "hideme"],
+		defaultProtLoss: {
+			perTierRelativeProtectionLoss: [0.03, 0.15],
+			perTierFlatDamageReductionLoss: [0.1, 0.2],
+		},
+		protectionModifiersByType: {
+			"*-tickling-*": {
+				relativeProtection: 0.7,
+				flatDamageReduction: 0.7,
+				protectionTier: 2,
+				highDamageTierResistant: true,
+				perTierRelativeProtectionLoss: [0.015, 0.075],
+				perTierFlatDamageReductionLoss: [0.05, 0.1],
+			}
+		},
+		statModifiersByType: {
+			"*-tickling-*": {
+				hungerrate: 0.08
+			}
+		}
+	},
+	textures: {
+		"seraph": { base: "game:block/transparent" }
+	},
+	creativeinventory: { "general": ["*"], "items": ["*"], "clothing": ["*"] },
+	renderAlphaTest: 0.25,
+	durabilityByType: {
+		"*-tickling-*": 650
+	},
+	
+	fpHandTransformByType: {
+		"*-tickling-*": {
+			translation: { x: 0.4, y: -1.9, z: -0.5 },
+			rotation: { x: 163, y: -111, z: -180 },
+			origin: { x: 0.5, y: 1.7, z: 0.5 },
+			scale: 2.15
+		}
+	},
+	tpHandTransformByType: {
+		"*-tickling-*": {
+			translation: { x: -0.92, y: -3.2, z: -0.8 },
+			rotation: { x: -26, y: -26, z: -34 },
+			origin: { x: 0.5, y: 1.7, z: 0.5 },
+			scale: 0.55
+		}
+	},
+	guiTransformByType: {
+		"*-tickling-*": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -26, y: -46, z: -180 },
+			origin: { x: 0.6, y: 2.12, z: 0.8 },
+			scale: 1.24
+		}
+	},
+	groundTransformByType: {
+		"*-tickling-*": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: 90, y: 0, z: 0 },
+			origin: { x: 0.04, y: 2.31, z: 0.8 },
+			scale: 3.1
+		}
+	}
+}

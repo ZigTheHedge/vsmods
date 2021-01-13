@@ -1,0 +1,67 @@
+{
+	code: "rug",
+	class: "rug",
+	entityClass: "berug",
+	creativeinventory: { "general": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Cloth",
+	variantgroups: [
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/rug",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/rug",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/rug",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/rug",
+			rotateY: 90
+		}	
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } },
+	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1, rotateYByType: {  "*-south": 0, "*-east": 270, "*-west": 90 } },
+	resistance: 1.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1.05
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.45, z: 0.5 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 }
+	},
+	tpHandTransform: {
+		translation: { x: -1.1, y: 0.1, z: -0.9 },
+		rotation: { x: 0, y: 90, z: -90 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 0.43
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: -45, z: -180 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 4.12
+	}
+	
+}

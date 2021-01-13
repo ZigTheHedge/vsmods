@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using tradeomat.src.Coins;
 using tradeomat.src.TradeomatBlock;
+using tradeomat.src.TradeomatBlock.Rug;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
@@ -122,6 +123,8 @@ namespace tradeomat.src
             api.RegisterBlockClass("coinspile", typeof(CoinsPile));
             api.RegisterBlockEntityClass("becoinspile", typeof(BECoinsPile));
             api.RegisterItemClass("itemcoin", typeof(BaseCoin));
+            api.RegisterBlockClass("rug", typeof(Rug));
+            api.RegisterBlockEntityClass("berug", typeof(BERug));
 
             api.Network.RegisterChannel("tradeomat")
                 .RegisterMessageType(typeof(Tomatoes))
@@ -172,8 +175,17 @@ namespace tradeomat.src
             BlockSelection blockSelection = new BlockSelection();
             blockSelection.Position = blockPos;
             
-            TradeBlock block = serverApi.World.BlockAccessor.GetBlock(blockPos) as TradeBlock;
-            block.OnBlockInteractStart(serverApi.World, player, blockSelection);
+            TradeBlock blockTB = serverApi.World.BlockAccessor.GetBlock(blockPos) as TradeBlock;
+            if (blockTB == null)
+            {
+                Rug blockRug = serverApi.World.BlockAccessor.GetBlock(blockPos) as Rug;
+                if(blockRug == null)
+                {
+
+                } else
+                    blockRug.OnBlockInteractStart(serverApi.World, player, blockSelection);
+            } else
+                blockTB.OnBlockInteractStart(serverApi.World, player, blockSelection);
         }
 
         private void OnStallUpdate(StallUpdate msg)

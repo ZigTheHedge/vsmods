@@ -14,6 +14,7 @@
 	"deal-notenoughpayment": "Payment is not enough!",
 	"deal-payenterror": "Wrong payment items!",
 	"deal-slotnotempty": "Output slot is occupied!",
+	"deal-notselected": "Select goods first!",
 	"isnotsetup": "Hasn't been set up yet!",
 	"outofspace": "Out of storage!",
 	"outofgoods": "SOLD OUT: Out of stock!",
@@ -33,6 +34,14 @@
 	"block-toolmold-burned-coin": "Coin mold (burned)",
 	"block-coinspile-copper": "Pile of Copper Coins",
 	"block-coinspile-silver": "Pile of Silver Coins",
-	"block-coinspile-gold": "Pile of Gold Coins"
+	"block-coinspile-gold": "Pile of Gold Coins",
+	
+	"rug-price": "Payment item",
+	"rug-payment": "Payment storage",
+	"rug-goods": "Goods",
+	"rug-goodsprices": "Goods Prices",
+	"rug-exchange": "Exchange slots",
+	
+	"block-rug-north": "Trade'o'rug"
 	
 }

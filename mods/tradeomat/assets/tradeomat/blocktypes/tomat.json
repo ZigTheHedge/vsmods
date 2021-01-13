@@ -4,6 +4,8 @@
 	entityClass: "betomat",
 	creativeinventory: { "general": ["*-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
+	heldTpIdleAnimation: "holdbothhandslarge", 
+	heldTpUseAnimation: "twohandplaceblock",
 	blockmaterial: "Wood",
 	variantgroups: [
 		{ code: "type", states: [ "tall", "crate" ] },
@@ -65,10 +67,47 @@
 		"walk": "game:walk/wood"
 	},
 	
-	guiTransform: {
-		rotation: { x: -22.6, y: -145, z: 0 },
-		origin: { x: 0.5, y: 0.9, z: 0.5 },
-		scale: 0.72
+	guiTransformByType: {
+		"*-tall-*": {
+			rotation: { x: -22.6, y: -145, z: 0 },
+			origin: { x: 0.5, y: 0.9, z: 0.5 },
+			scale: 0.72
+		},
+		"*-crate-*": {
+			rotation: { x: -22.6, y: -145, z: 0 },
+			origin: { x: 0.5, y: 0.9, z: 0.5 },
+			scale: 0.72
+		}		
+	},
+	
+	tpHandTransformByType: {
+		"*-tall-*": {
+			translation: { x: -1.1, y: -2, z: -0.6 },
+			rotation: { x: -81, y: 16, z: -107 },
+			origin: { x: 0.5, y: 0.9, z: 0.5 },
+			scale: 0.45
+		},
+		"*-crate-*": {
+			translation: { x: -1.8, y: -1.8, z: -0.35 },
+			rotation: { x: -80, y: 10, z: -105 },
+			origin: { x: 0.5, y: 0.9, z: 0.5 },
+			scale: 0.51
+		}	
+	},
+	
+	groundTransformByType: {
+		"*-tall-*": {	
+			translation: { x: 0, y: 0.32, z: 0 },
+			rotation: { x: 0, y: -2, z: 90 },
+			origin: { x: 0.5, y: 0.9, z: 0.5 },
+			scale: 3
+		},
+		"*-crate-*": {
+			translation: { x: 0, y: -0.19, z: 0 },
+			rotation: { x: -9, y: -22, z: 180 },
+			origin: { x: 0.5, y: 0.9, z: 0.5 },
+			scale: 3
+		}	
 	}
 	
 }

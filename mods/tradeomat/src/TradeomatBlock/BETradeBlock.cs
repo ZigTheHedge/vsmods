@@ -226,6 +226,8 @@ namespace tradeomat.src.TradeomatBlock
                 curSlot--;
             }
 
+            Api.World.PlaySoundAt(new AssetLocation("tradeomat:sounds/deal.ogg"), Pos.X, Pos.Y, Pos.Z);
+
             /*
             GuiElementDynamicText errorText = customerDialog.SingleComposer.GetDynamicText("errorText");
             if (inventory[0].Itemstack == null || inventory[1].Itemstack == null)

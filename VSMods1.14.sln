@@ -4,6 +4,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLauncher.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
 	ProjectSection(ProjectDependencies) = postProject
+		{4e5393c2-e0a7-41dd-96b3-19211d33fd56} = {4e5393c2-e0a7-41dd-96b3-19211d33fd56}
 		{7CFFB281-9548-44B4-8969-3F32E74CA96B} = {7CFFB281-9548-44B4-8969-3F32E74CA96B}
 		{B21CCD46-8D92-43AA-A676-DFA4FEB84BCE} = {B21CCD46-8D92-43AA-A676-DFA4FEB84BCE}
 		{567FF7CF-3509-410B-A9DE-25394CB77BCD} = {567FF7CF-3509-410B-A9DE-25394CB77BCD}
@@ -13,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLaunc
 		{D44AD856-3962-4940-8AC1-B2F8064D8671} = {D44AD856-3962-4940-8AC1-B2F8064D8671}
 		{59A2ECF8-10C7-4983-9020-5B55C1493585} = {59A2ECF8-10C7-4983-9020-5B55C1493585}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theneighbours", "mods\theneighbours\theneighbours.csproj", "{4e5393c2-e0a7-41dd-96b3-19211d33fd56}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fancydoors", "mods\fancydoors\fancydoors.csproj", "{7CFFB281-9548-44B4-8969-3F32E74CA96B}"
 EndProject
@@ -99,6 +102,12 @@ Global
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release x64|Any CPU.Build.0 = Release|Any CPU
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release|Any CPU.Build.0 = Release|Any CPU
+{4e5393c2-e0a7-41dd-96b3-19211d33fd56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{4e5393c2-e0a7-41dd-96b3-19211d33fd56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{4e5393c2-e0a7-41dd-96b3-19211d33fd56}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
+{4e5393c2-e0a7-41dd-96b3-19211d33fd56}.Release x64|Any CPU.Build.0 = Release|Any CPU
+{4e5393c2-e0a7-41dd-96b3-19211d33fd56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{4e5393c2-e0a7-41dd-96b3-19211d33fd56}.Release|Any CPU.Build.0 = Release|Any CPU}
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

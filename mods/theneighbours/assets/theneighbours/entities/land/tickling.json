@@ -63,6 +63,11 @@
 					},
 					{
 						type: "item", 
+						code: "theneighbours:tickling_head-1", 
+						quantity: { avg: 0.1, var: 0 } 
+					},
+					{
+						type: "item", 
 						code: "bone", 
 						quantity: { avg: 3.0, var: 0.5 } 
 					}

@@ -60,7 +60,12 @@
 						type: "item",
 						code: "fat",
 						quantity: { avg: 0.5, var: 0 }
-					}
+					},
+					{
+						type: "item", 
+						code: "theneighbours:scissor", 
+						quantity: { avg: 0.1, var: 0 } 
+					},
 				],
 			}, 
 			{

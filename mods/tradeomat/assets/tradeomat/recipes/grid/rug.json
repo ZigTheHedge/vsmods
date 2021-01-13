@@ -1,0 +1,38 @@
+[
+	{
+	  "ingredientPattern": "LB",
+	  "ingredients": {
+		"L": {
+		  "type": "block",
+		  "code": "game:linen-*"
+		},
+		"B": {
+		  "type": "block",
+		  "code": "game:stationarybasket-east", 
+		  "attributes": { type: "reed" }
+		}
+	  },
+	  "width": 1,
+	  "height": 2,
+	  "shapeless": false,
+	  "output": { type: "block", code: "rug-north" }
+	},
+	{
+	  "ingredientPattern": "LB",
+	  "ingredients": {
+		"L": {
+		  "type": "block",
+		  "code": "game:linen-*"
+		},
+		"B": {
+		  "type": "block",
+		  "code": "game:stationarybasket-east", 
+		  "attributes": { type: "vine" }
+		}
+	  },
+	  "width": 1,
+	  "height": 2,
+	  "shapeless": false,
+	  "output": { type: "block", code: "rug-north" }
+	}
+]

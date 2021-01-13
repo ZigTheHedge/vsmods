@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using tradeomat.src.TradeomatBlock.Rug;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -69,8 +70,8 @@ namespace tradeomat.src.TradeomatBlock
                 .BeginChildElements(bgBounds)
                     .AddStaticText(Lang.Get("tradeomat:tomat-goods"), CairoFont.WhiteSmallText(), goodsTitleBounds)
                     .AddStaticText(Lang.Get("tradeomat:tomat-price"), CairoFont.WhiteSmallText(), priceTitleBounds)
-                    .AddPassiveItemSlot(goodsSlotsBounds, Inventory, Inventory[1])
-                    .AddPassiveItemSlot(priceSlotsBounds, Inventory, Inventory[0])
+                    .AddItemSlotButton(goodsSlotsBounds, OnPassiveClick, Inventory, Inventory[1])
+                    .AddItemSlotButton(priceSlotsBounds, OnPassiveClick, Inventory, Inventory[0])
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 18 }, paymentInSlotsBounds)
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 19 }, goodsOutSlotsBounds)
                     .AddSmallButton(Lang.Get("tradeomat:agree-button"), OnButtonSend, dealButtonBounds, EnumButtonStyle.Normal, EnumTextOrientation.Center, "sendBtn")
@@ -83,6 +84,10 @@ namespace tradeomat.src.TradeomatBlock
             {
                 SingleComposer.OnMouseMove(new MouseEvent(capi.Input.MouseX, capi.Input.MouseY));
             }
+        }
+
+        private void OnPassiveClick(string tag)
+        {
         }
 
         private bool OnButtonSend()
