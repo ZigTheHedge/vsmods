@@ -39,6 +39,7 @@ namespace zeekea.src.doorbell
         {
             if(packetid == 1001)
             {
+                Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/bell.ogg"), Pos.X, Pos.Y, Pos.Z);
                 ICoreServerAPI sApi = (ICoreServerAPI)Api;
                 sApi.Network.BroadcastBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, 1001);
             } else
@@ -50,7 +51,6 @@ namespace zeekea.src.doorbell
         {
             if(packetid == 1001)
             {
-                Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/bell.ogg"), Pos.X, Pos.Y, Pos.Z);
                 animUtil.StartAnimation(new AnimationMetaData() { Animation = "ring", Code = "ring", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 10F });
             } else
                 base.OnReceivedServerPacket(packetid, data);

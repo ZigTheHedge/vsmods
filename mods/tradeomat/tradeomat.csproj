@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\VintageModding\Lib\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="cairo-sharp">
       <HintPath>G:\VintageModding\Lib\cairo-sharp.dll</HintPath>
     </Reference>
@@ -76,6 +80,8 @@
     <Compile Include="src\Coins\BaseCoin.cs" />
     <Compile Include="src\Coins\BECoinsPile.cs" />
     <Compile Include="src\Coins\CoinsPile.cs" />
+    <Compile Include="src\PatcherClasses.cs" />
+    <Compile Include="src\TradeomatBlock\BadShiftClickSlot.cs" />
     <Compile Include="src\TradeomatBlock\BETradeBlock.cs" />
     <Compile Include="src\TradeomatBlock\DealRenderer.cs" />
     <Compile Include="src\TradeomatBlock\GuiCustomerTradeBlock.cs" />

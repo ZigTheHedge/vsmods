@@ -26,6 +26,15 @@ namespace tradeomat.src.TradeomatBlock
             // slot 18 - payment In
             // slot 19 - goods out
             slots = GenEmptySlots(20);
+            //baseWeight = 0;
+        }
+
+        protected override ItemSlot NewSlot(int i)
+        {
+            if (i != 18)
+                return new BadShiftClickSlot(this);
+            else
+                return base.NewSlot(i);
         }
 
         public override ItemSlot this[int slotId]

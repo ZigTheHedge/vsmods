@@ -1,0 +1,146 @@
+{
+	code: "brower",
+	class: "EntityHumanoid",
+	hitboxSize: { x: 1.6, y: 0.5 },
+	deadHitboxSize: { x: 1.6, y: 0.8 },
+	eyeHeight: 0.5,
+	drops: [],
+	client: {
+		renderer: "Shape",
+		shape: { base: "theneighbours:entity/land/brower" },
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 }, 
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "interpolateposition" },
+			{ code: "harvestable" },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt", 
+				animationSpeed: 1.4,
+				weight: 10,
+				blendMode: "Average" 
+			},
+			{
+				code: "die",
+				animation: "die", 
+				animationSpeed: 1.0,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{ 
+				code: "idle", 
+				animation: "idle",
+				blendMode: "AddAverage",
+				animationSpeed: 0.4,
+				triggeredBy: { defaultAnim: true },
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 },
+			{ code: "health", currenthealth: 30, maxhealth: 30, },
+			{ code: "deaddecay", hoursToDecay: 96, decayedBlock: "carcass-medium" },
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ 
+				code: "emotionstates",
+				states: [
+					{ code: "aggressiveondamage", duration: 30, chance: 0.75, slot: 0, priority: 2, accumType: "noaccum", stressLevel: 0.5 }
+				],
+			},
+			{ code: "harvestable", drops: [
+					{
+						type: "item",
+						code: "fat",
+						quantity: { avg: 1, var: 2 }
+					}
+				],
+			}, 
+			{
+				code: "taskai",
+				aitasks: [
+					{
+						code: "meleeattack",
+						entityCodes: ["player"],
+						priority: 2,
+						damage: 6,
+						damageTier: 2,
+						damageType: "SlashingAttack",
+						slot: 1,
+						mincooldown: 500, 
+						maxcooldown: 1500, 
+						attackDurationMs: 1000,
+						damagePlayerAtMs: 500,
+						animation: "attack",
+						whenInEmotionState: "aggressiveondamage",
+						sound: "theneighbours:creature/brower/attack" 
+					},
+					{
+						code: "seekentity",
+						entityCodes: ["player"],
+						priority: 1.5,
+						mincooldown: 1000, 
+						maxcooldown: 1500, 
+						movespeed: 0.06,
+						seekingRange: 25,
+						animation: "walk",
+						animationSpeed: 4,
+						whenInEmotionState: "aggressiveondamage"
+					},					
+					{
+						code: "wander", 
+						priority: 1.0, 
+						priorityForCancel: 1.35,
+						movespeed: 0.002,
+						animation: "walk",
+						animationSpeed: 1,
+						preferredLightLevel: 20
+					},
+					{ 
+						code: "lookaround", 
+						priority: 0.5
+					}
+				]
+			}
+		],
+		spawnconditions: {
+			worldgen: {
+				TriesPerChunk: { avg: 0.07, var: 0 },
+				tryOnlySurface: true,
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:air", "game:tallgrass-*"],
+				minTemp: 0,
+				maxTemp: 30,
+				minRain: 0.25,
+				minForest: 0.5
+			},
+			runtime: {
+				group: "neutral",
+				tryOnlySurface: true,
+				chance: 0.008,
+				maxQuantity: 4,
+				maxLightLevel: 7,
+				lightLevelType: "onlyBlockLight",					
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:air", "game:tallgrass-*"],
+				minTemp: 0,
+				maxTemp: 30,
+				minRain: 0.25,
+				minForest: 0.5
+			}
+		}
+	},
+	sounds: {
+		hurt: "creature/brower/hurt",
+		death: "creature/brower/death",
+		idle: "creature/brower/idle"
+	},
+	idleSoundChance: 0.1
+}

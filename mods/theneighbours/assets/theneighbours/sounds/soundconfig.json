@@ -1,0 +1,5 @@
+{
+	soundsets: {
+			"theneighbours:creature/turtor/idle": ["theneighbours:creature/turtor/idle1", "theneighbours:creature/turtor/idle2"]
+	}
+}

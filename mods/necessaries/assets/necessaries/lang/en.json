@@ -38,6 +38,26 @@
 	"parcel-message-title": "Message:",
 	"parcel-title": "Parcel",
 	
-	"block-grindstone-north": "Grindstone"
+	"block-grindstone-none-north": "Grindstone Assembly",
+	"block-grindstone-granite-north": "Grindstone Assembly Granite)",
+	"block-grindstone-obsidian-north": "Grindstone Assembly (Obsidian)",
+	"block-grindstone-sandstone-north": "Grindstone Assembly (Sandstone)",
+	"block-grindstone-basalt-north": "Grindstone Assembly (Basalt)",
+	"grindstone-place-tool": "Place tool to sharpen",
+	"grindstone-sharpenerdurability": "Grindstone durability:",
+	"grindstone-place-grindstone": "Place grindstone first",
+	"grindstone-tooldurability": "Tool durability:",
+	"grindstone-place-both": "Place grindstone and a tool",
+	"game:repaired": "(repaired)",
+	
+	"item-sharpener-granite": "Granite grindstone",
+	"item-sharpener-obsidian": "Obsidian grindstone",
+	"item-sharpener-sandstone": "Sandstone grindstone",
+	"item-sharpener-basalt": "Basalt grindstone",
+
+	"item-sharpener_disc-granite": "Granite grindstone disc",
+	"item-sharpener_disc-obsidian": "Obsidian grindstone disc",
+	"item-sharpener_disc-sandstone": "Sandstone grindstone disc",
+	"item-sharpener_disc-basalt": "Basalt grindstone disc"
 
 }

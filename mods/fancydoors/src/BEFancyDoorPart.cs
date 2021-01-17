@@ -429,12 +429,14 @@ namespace fancydoors.src
                 if (meshes[0] != null) mesher.AddMeshData(meshes[0]);
                 if (meshes[1] != null) mesher.AddMeshData(meshes[1]);
                 if(meshState == 0) meshState = 1;
-                return false;
+                if (!Inventory[0].Empty) return true;
+                else return false;
             }
             else
             {
                 meshState = 0;
-                return false;
+                if (!Inventory[0].Empty) return true;
+                else return false;
             }
         }
     }

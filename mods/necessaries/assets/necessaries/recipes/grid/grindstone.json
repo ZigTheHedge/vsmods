@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "_A_,PAP,R_R",
+  "ingredients": {
+    "A": {
+      type: "block", 
+	  code: "game:woodenaxle-ud"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:plank-*"
+    },
+    "R": {
+      "type": "block",
+      "code": "game:cobblestone-*"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "grindstone-none-north" }
+}

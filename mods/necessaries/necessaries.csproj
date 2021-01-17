@@ -32,8 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="protobuf-net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="0Harmony">
+      <HintPath>G:\VintageModding\Lib\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
       <HintPath>g:\VintageModding\Lib\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -70,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\ApiExtensions.cs" />
+    <Compile Include="src\HarmonyStuff\Patches.cs" />
     <Compile Include="src\ItemBranchcutter.cs" />
     <Compile Include="src\Mailbox\BEMailBox.cs" />
     <Compile Include="src\Mailbox\GuiDialogMailbox.cs" />
@@ -81,7 +84,11 @@
     <Compile Include="src\Parcel\Parcel.cs" />
     <Compile Include="src\Parcel\ParcelInventory.cs" />
     <Compile Include="src\Parcel\ParcelSlot.cs" />
-    <Compile Include="src\Sharpener\Grindstone.cs" />
+    <Compile Include="src\SharpenerStuff\BEGrindstone.cs" />
+    <Compile Include="src\SharpenerStuff\Grindstone.cs" />
+    <Compile Include="src\SharpenerStuff\GrindstoneInventory.cs" />
+    <Compile Include="src\SharpenerStuff\Sharpener.cs" />
+    <Compile Include="src\SharpenerStuff\ToolSlot.cs" />
     <Compile Include="src\Spikes\RustySpikes.cs" />
     <Compile Include="src\Trashcan\BETrashcan.cs" />
     <Compile Include="src\Trashcan\GuiTrashcan.cs" />

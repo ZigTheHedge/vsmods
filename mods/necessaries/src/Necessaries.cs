@@ -1,8 +1,8 @@
-﻿
-using Foundation.Extensions;
+﻿using Foundation.Extensions;
+using HarmonyLib;
 using necessaries.src.Mailbox;
 using necessaries.src.Parcel;
-using necessaries.src.Sharpener;
+using necessaries.src.SharpenerStuff;
 using necessaries.src.Spikes;
 using necessaries.src.Trashcan;
 using ProtoBuf;
@@ -44,6 +44,8 @@ namespace necessaries.src
 
     class Necessaries : ModSystem
     {
+        Harmony harmony = new Harmony("com.cwelth.necessaries");
+
         ICoreServerAPI serverApi;
         public static List<PostService> postServicesServer;
         public static List<PostService> postServicesClient = new List<PostService>();
@@ -65,8 +67,10 @@ namespace necessaries.src
             api.RegisterBlockClass("rustyspikes", typeof(RustySpikes));
 
             api.RegisterBlockClass("grindstone", typeof(Grindstone));
+            api.RegisterBlockEntityClass("begrindstone", typeof(BEGrindstone));
 
             api.RegisterItemClass("branchcutter", typeof(ItemBranchcutter));
+            api.RegisterItemClass("sharpener", typeof(Sharpener));
 
         }
 
@@ -80,6 +84,8 @@ namespace necessaries.src
                 .RegisterMessageType(typeof(PostService))
                 .SetMessageHandler<PostService>(OnServerMessage)
             ;
+            //Harmony.DEBUG = true;
+            harmony.PatchAll();
         }
 
         private void OnServerMessage(PostService msg)
@@ -216,6 +222,7 @@ namespace necessaries.src
         {
             base.Dispose();
             serverChannel = null;
+            harmony.UnpatchAll("com.cwelth.necessaries");
         }
     }
 }

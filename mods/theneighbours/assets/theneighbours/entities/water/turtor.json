@@ -1,0 +1,132 @@
+{
+	code: "turtor",
+	class: "EntityAgent",
+	habitat: "Sea",
+	hitboxSize: { x: 0.8, y: 0.4 },
+	eyeHeight: 0.2,
+	client: {
+		renderer: "Shape",
+		shape: { base: "theneighbours:entity/water/turtor" },
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 }, 
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "interpolateposition" },
+			{ code: "harvestable" },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt", 
+				animationSpeed: 1.4,
+				weight: 10,
+				blendMode: "Average" 
+			},
+			{
+				code: "die",
+				animation: "die", 
+				animationSpeed: 1.0,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{ 
+				code: "idle", 
+				animation: "idle",
+				blendMode: "AddAverage",
+				animationSpeed: 0.4,
+				triggeredBy: { defaultAnim: true },
+			},
+			{
+				code: "swim",
+				animation: "swim", 
+				triggeredBy: { onControls: ["Swim"] },
+				blendMode: "Average" 
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 },
+			{ code: "health", currenthealth: 30, maxhealth: 30, },
+			{ code: "deaddecay", hoursToDecay: 96, decayedBlock: "carcass-small" },
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ 
+				code: "emotionstates",
+				states: [
+					{ code: "fleeondamage", duration: 60, chance: 1, slot: 2, priority: 5, accumType: "max", whenHealthRelBelow: 0.8 }
+				],
+			},
+			{ code: "harvestable", drops: [
+					{
+						type: "item",
+						code: "bushmeat",
+						quantity: { avg: 2.0, var: 0.5 }
+					}
+				],
+			}, 
+			{
+				code: "taskai",
+				aitasks: [				
+					{
+						code: "wander", 
+						priority: 1.0, 
+						priorityForCancel: 1.35,
+						movespeed: 0.02,
+						animation: "swim",
+						animationSpeed: 2,
+						preferredLightLevel: 20
+					},
+					{
+						code: "fleeentity",
+						entityCodes: ["player"],
+						priority: 1.6,
+						movespeed: 0.04,
+						seekingRange: 20,
+						animation: "swim",
+						animationSpeed: 4,
+						whenInEmotionState: "fleeondamage"
+					},
+					{ 
+						code: "lookaround", 
+						priority: 0.5
+					}
+				]
+			}
+		],
+		spawnconditions: {
+			worldgen: {
+				TriesPerChunk: { avg: 0.07, var: 0 },
+				tryOnlySurface: true,
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:water-still-7", "game:seaweed-*"],
+				minTemp: -10,
+				maxTemp: 30,
+				minRain: 0.25,
+				minForest: 0.5
+			},
+			runtime: {
+				group: "neutral",
+				tryOnlySurface: true,
+				chance: 0.008,
+				maxQuantity: 4,
+				maxLightLevel: 7,
+				lightLevelType: "onlyBlockLight",					
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:water-still-7", "game:seaweed-*"],
+				minTemp: -10,
+				maxTemp: 30,
+				minRain: 0.25,
+				minForest: 0.5
+			}
+		}
+	},
+	sounds: {
+		hurt: "theneighbours:creature/turtor/hit",
+		idle: "theneighbours:creature/turtor/idle1"
+	},
+	idleSoundChance: 0.1
+}

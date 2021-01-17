@@ -230,8 +230,11 @@ namespace tradeomat.src.TradeomatBlock.Rug
             if (bottomText == null) return;
             
             ElementBounds textBounds = ElementBounds
-                .Fixed(Bounds.fixedX + offset - 1, Bounds.fixedY + unscaledSlotSize + 16, absSlotWidth - offset - 2, unscaledSlotSize)
+                .Fixed(Bounds.fixedX + unscaledSlotSize / 2 - 4, Bounds.fixedY + GuiStyle.SmallFontSize + unscaledSlotSize, unscaledSlotSize, unscaledSlotSize)
                 .WithEmptyParent();
+
+            textBounds.CalcWorldBounds();
+
             ElementBounds bgBounds = ElementBounds
                 .Fixed(scaled(Bounds.fixedX + 2) + absSlotWidth / 2, scaled(Bounds.fixedY + unscaledSlotSize - 8), absSlotWidth - scaled(12), scaled(GuiStyle.SmallFontSize + 6))
                 .WithEmptyParent();

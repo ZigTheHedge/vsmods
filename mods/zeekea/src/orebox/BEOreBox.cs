@@ -49,7 +49,11 @@ namespace zeekea.src.orebox
             if (Api.World.Side == EnumAppSide.Client)
             {
                 animUtil.InitializeAnimator("zeekea:orebox", new Vec3f(0, meshAngle * GameMath.RAD2DEG, 0));
+            } else
+            {
+                ((ICoreServerAPI)Api).Network.BroadcastBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, 1102, BitConverter.GetBytes(meshAngle));
             }
+            MarkDirty();
         }
 
         public override void Initialize(ICoreAPI api)
@@ -103,6 +107,7 @@ namespace zeekea.src.orebox
 
         public void Animate()
         {
+            if (animUtil == null) return;
             if (isOpened)
                 animUtil.StartAnimation(new AnimationMetaData() { Animation = "open", Code = "open", AnimationSpeed = 1F, EaseInSpeed = 3F, EaseOutSpeed = 10F });
             else
@@ -129,6 +134,8 @@ namespace zeekea.src.orebox
             if (packetid == 1101)
             {
                 ICoreServerAPI sApi = (ICoreServerAPI)Api;
+                if(isOpened) Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/orebox_close.ogg"), Pos.X, Pos.Y, Pos.Z);
+                else Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/orebox_open.ogg"), Pos.X, Pos.Y, Pos.Z); 
                 isOpened = !isOpened;
                 sApi.Network.BroadcastBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, 1101, BitConverter.GetBytes(isOpened));
             }
@@ -223,6 +230,11 @@ namespace zeekea.src.orebox
                 Animate();
             }
 
+            if(packetid == 1102)
+            {
+                SetMeshAngle(BitConverter.ToSingle(data, 0));
+            }
+
             if (packetid == (int)EnumBlockStovePacket.OpenGUI)
             {
                 using (MemoryStream ms = new MemoryStream(data))
@@ -237,12 +249,10 @@ namespace zeekea.src.orebox
 
                     if (oreboxDlg == null)
                     {
-                        Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/orebox_open.ogg"), Pos.X, Pos.Y, Pos.Z);
                         Open();
                         oreboxDlg = new GuiEightSlots(Lang.Get("zeekea:orebox-title"), Inventory, Pos, Api as ICoreClientAPI);
                         oreboxDlg.OnClosed += () =>
-                        {
-                            Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/orebox_close.ogg"), Pos.X, Pos.Y, Pos.Z);
+                        {                            
                             UpdateShape();
                             Open();
                             capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);

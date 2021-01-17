@@ -1,4 +1,5 @@
 ﻿using Foundation.Extensions;
+using HarmonyLib;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
@@ -106,6 +107,8 @@ namespace tradeomat.src
     }
     class Tradeomat : ModSystem
     {
+        Harmony harmony = new Harmony("com.cwelth.tradeomat");
+
         ICoreServerAPI serverApi;
         ICoreClientAPI clientApi;
         public static List<Tomatoes> tomatoesServer;
@@ -252,6 +255,8 @@ namespace tradeomat.src
             api.Event.PlayerJoin += PushTomatoes;
 
             serverChannel.SetMessageHandler<OpenBuyerInterface>(OnBuyerInterfaceOpen);
+            
+            harmony.PatchAll();
         }
         public void PushTomatoes(IServerPlayer serverPlayer)
         {
@@ -321,7 +326,8 @@ namespace tradeomat.src
         {
             base.Dispose();
             serverChannel = null;
-            clientChannel = null;            
+            clientChannel = null;
+            harmony.UnpatchAll("com.cwelth.tradeomat");
         }
     }
 }

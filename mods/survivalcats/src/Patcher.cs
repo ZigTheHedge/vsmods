@@ -32,6 +32,18 @@ namespace survivalcats.src
                     bookmarks.Add(bookmark);
             }
 
+            CreativeTabsConfig creativeTabsConfig = ___capi.Assets.TryGet("config/creativetabs.json").ToObject<CreativeTabsConfig>();
+
+            foreach(TabConfig tab in creativeTabsConfig.TabConfigs)
+            {
+                if (tab.code == "general" || tab.code == "meta") continue;
+                creativeTabs.Add(tab.code);
+                ___categoryCodes.Add("#" + tab.code);
+                string translateKey = "game:handbook-category-#" + tab.code;
+                if (Lang.GetIfExists(translateKey) == null)
+                    Lang.Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + tab.code));
+            }
+
             foreach (GuiHandbookPage page in ___allHandbookPages)
             {
                 if (!(page is GuiHandbookItemStackPage)) continue;
@@ -55,6 +67,18 @@ namespace survivalcats.src
 
             foreach (GuiHandbookBookmarkedItemStackPage elem in bookmarkedPages)
                 ___allHandbookPages.Add(elem);
+        }
+
+        private class CreativeTabsConfig
+        {
+            public TabConfig[] TabConfigs = null;
+        }
+
+        private class TabConfig
+        {
+            public string code = "";
+            public float listOrder = 0;
+            public int paddingTop = 0;
         }
     }
 
@@ -370,6 +394,53 @@ namespace survivalcats.src
                 } else
                     yield return instruction;
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(ItemStack), "MatchesSearchText")]
+    class PatcherMatchesSearchText
+    {
+        public static bool Prefix(ref bool __result, ItemStack __instance, ref string searchText)
+        {
+            if (searchText.Length > 3 && searchText.StartsWith("@"))
+            {
+                int spacePos = searchText.IndexOf(' ');
+                string searchDomain;
+                if (spacePos > -1)
+                    searchDomain = searchText.Substring(1, spacePos - 1);
+                else
+                    searchDomain = searchText.Substring(1);
+
+                if (__instance.Collectible.Code.Domain.StartsWith(searchDomain, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    if (spacePos > -1)
+                    {
+                        searchText = searchText.Substring(searchDomain.Length + 2);
+                        return true;
+                    }
+                    else
+                    {
+                        __result = true;
+                        return false;
+                    }
+                }
+
+                __result = false;
+                return false;
+            }
+            else
+                return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(GuiElementItemSlotGridBase), "FilterItemsBySearchText")]
+    class PatcherFilterItemsBySearchText
+    {
+        public static bool Prefix(ref string text, ref Dictionary<int, string> searchCache)
+        {
+            if(text.StartsWith("@"))
+                searchCache = null;
+            return true;
         }
     }
 }

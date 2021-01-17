@@ -27,6 +27,14 @@ namespace tradeomat.src.TradeomatBlock.Rug
             slots = GenEmptySlots(13);
         }
 
+        protected override ItemSlot NewSlot(int i)
+        {
+            if (i == 11)
+                return base.NewSlot(i);
+            else
+                return new BadShiftClickSlot(this);
+        }
+
         public override ItemSlot this[int slotId]
         {
             get

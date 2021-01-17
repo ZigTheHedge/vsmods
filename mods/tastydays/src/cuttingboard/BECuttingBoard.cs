@@ -217,6 +217,7 @@ namespace tastydays.src.cuttingboard
         {
             base.FromTreeAttributes(tree, worldForResolving);
             cutItem = tree.GetItemstack("cutItem");
+            cutItem.ResolveBlockOrItem(worldForResolving);
             numHits = tree.GetInt("numHits");
         }
 

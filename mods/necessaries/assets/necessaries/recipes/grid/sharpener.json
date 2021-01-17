@@ -1,0 +1,19 @@
+{
+  "ingredientPattern": "RDR,RDR,RDR",
+  "ingredients": {
+    "R": {
+      type: "item", 
+	  code: "game:resin"
+    },
+    "D": {
+      "type": "item",
+      "code": "necessaries:sharpener_disc-*",
+	  "name": "rock",
+	  "allowedVariants": ["granite", "obsidian", "basalt", "sandstone"]
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "item", code: "sharpener-{rock}" }
+}

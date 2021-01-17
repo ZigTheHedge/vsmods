@@ -1,0 +1,422 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/axe-metal.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: -0.2, y: 0.3, z: 0.4 },
+		rotation: { x: 50, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/axe-metal.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/chisel.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: 0.3, y: 0.3, z: 0.4 },
+		rotation: { x: 50, y: 90, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/chisel.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/cleaver.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: 0.2, y: 0, z: 0.25 },
+		rotation: { x: 140, y: 180, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/cleaver.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType",
+	"value": {}, 
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*/onGrindstoneTransform",
+    "value": {
+		translation: { x: 0.25, y: 0.55, z: 0.25 },
+		rotation: { x: 110, y: 180, z: -90 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/hoe.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/*-copper",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-tinbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-bismuthbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-blackbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-iron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-gold",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-silver",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-meteoriciron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-steel",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/hoe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType",
+	"value": {}, 
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "attributesByType/*/onGrindstoneTransform",
+    "value": {
+		translation: { x: 0.25, y: 0.4, z: 0.25 },
+		rotation: { x: 140, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/knife.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/*-copper",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-tinbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-bismuthbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-blackbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-iron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-gold",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-silver",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-meteoriciron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-steel",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/knife.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType",
+	"value": {}, 
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "attributesByType/*/onGrindstoneTransform",
+    "value": {
+		translation: { x: -0.3, y: 0.45, z: 0.25 },
+		rotation: { x: 50, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/longblade.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/*-copper",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-tinbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-bismuthbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-blackbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-iron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-gold",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-silver",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-meteoriciron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-steel",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/longblade.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/pickaxe.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: -0.15, y: 0.45, z: 0.35 },
+		rotation: { x: 40, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/pickaxe.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/prospectingpick.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: -0.15, y: 0.45, z: 0.35 },
+		rotation: { x: 40, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/prospectingpick.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/saw.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: 0.2, y: 0, z: 0.25 },
+		rotation: { x: 240, y: 0, z: 0 },
+		origin: { x: 0.48, y: 0.48, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/saw.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/scythe.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: -0.8, y: 0.3, z: 0.4 },
+		rotation: { x: 50, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/scythe.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/sharpenable",
+    "value": true,
+    "file": "itemtypes/tool/shears.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: 0, y: 0.5, z: 0.25 },
+		rotation: { x: 50, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/shears.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType",
+	"value": {}, 
+    "file": "itemtypes/tool/shovel.json"
+  },
+  {
+    "op": "add",
+    "path": "attributes/onGrindstoneTransform",
+    "value": {
+		translation: { x: -0.6, y: 0.35, z: 0.25 },
+		rotation: { x: 230, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1
+	},
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-copper",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-tinbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-bismuthbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-blackbronze",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-iron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-gold",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-silver",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-meteoriciron",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  },  
+  {
+    "op": "add",
+    "path": "/attributesByType/*-steel",
+    "value": { "sharpenable": true },
+    "file": "itemtypes/tool/shovel.json"
+  }
+]

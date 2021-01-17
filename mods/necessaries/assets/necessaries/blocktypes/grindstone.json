@@ -1,10 +1,13 @@
 {
 	code: "grindstone",
 	class: "grindstone",
-	creativeinventory: { "general": ["*-north"] },
+	entityClass: "begrindstone",
+	creativeinventory: { "general": ["*-none-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
+	entityBehaviors: [{ name: "Animatable" }],
 	blockmaterial: "Wood",
 	variantgroups: [
+		{ code: "rock", states: ["none", "granite", "obsidian", "sandstone", "basalt"] },
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
 	drawtype: "json",
@@ -21,9 +24,21 @@
 			base: "block/grindstone",
 			rotateY: 180
 		},
-		"*west": {
+		"*-west": {
 			base: "block/grindstone",
 			rotateY: 90
+		}
+	},
+	texturesByType: {
+		"*-none-*": {
+			"oak3": { base: "game:block/wood/planks/oak3" },
+			"granite1": { base: "game:block/stone/cobblestone/granite1" },
+			"wheel": { base: "game:block/transparent" }
+		},
+		"*": {
+			"oak3": { base: "game:block/wood/planks/oak3" },
+			"granite1": { base: "game:block/stone/cobblestone/granite1" },
+			"wheel": { base: "game:block/stone/rock/{rock}1" }
 		}
 	},
 	lightAbsorption: 0,
@@ -33,8 +48,11 @@
 	sideopaque: {
 		all: "false"
 	},
-	collisionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.7, z2: 1, rotateYByType: { "*-south": 180, "*-east": 270, "*-west": 90 } },
-	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.7, z2: 1, rotateYByType: { "*-south": 180, "*-east": 270, "*-west": 90 } },
+	collisionSelectionBoxes: [
+		{ x1: 0, y1: 0.2, z1: 0.2, x2: 0.125, y2: 0.8, z2: 0.8, rotateYByType: { "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.125, y1: 0, z1: 0, x2: 0.75, y2: 0.7, z2: 1, rotateYByType: { "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.75, y1: 0.3, z1: 0.3, x2: 0.875, y2: 0.7, z2: 0.7, rotateYByType: { "*-south": 180, "*-east": 270, "*-west": 90 } },
+	],
 	resistance: 3.5,
 	sounds: {
 		"place": "game:block/planks",

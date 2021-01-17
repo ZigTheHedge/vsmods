@@ -5,6 +5,12 @@
 	"item-creature-shintorickae": "Шинторика",
 	"item-dead-creature-shintorickae": "Мертвая шинторика",
 	"game:prefixandcreature-shintorickae": "шинторикой",
+	"item-creature-brower": "Брайер",
+	"item-dead-creature-brower": "Мертвый брайер",
+	"game:prefixandcreature-brower": "брайером",	
+	"item-creature-turtor": "Туртор",
+	"item-dead-creature-turtor": "Мертвый туртор",
+	"game:prefixandcreature-turtor": "туртором",	
 	"item-scissor": "Скиссор",
-	"item-tickling_head-1": "Шлем из головы Тикающего"	
+	"item-tickling-helmet-1": "Шлем из головы Тикающего"	
 }

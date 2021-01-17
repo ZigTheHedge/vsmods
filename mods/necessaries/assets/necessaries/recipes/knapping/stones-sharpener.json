@@ -1,0 +1,18 @@
+{
+	ingredient: { type: "item", code: "game:stone-*", name: "rock", allowedVariants: ["granite", "sandstone", "obsidian", "basalt"] },
+
+	pattern: [[
+		"___####___",
+		"__######__",
+		"_########_",
+		"##########",
+		"####__####",
+		"####__####",
+		"##########",
+		"_########_",
+		"__######__",
+		"___####___",
+	]],
+	name: "Sharpener",
+	output: { type: "item", code: "necessaries:sharpener_disc-{rock}"  }
+}

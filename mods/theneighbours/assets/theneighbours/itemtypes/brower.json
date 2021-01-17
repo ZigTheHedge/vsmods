@@ -1,0 +1,37 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxstacksize": 64,
+	"variantgroups": [
+		{
+		  "code": "type",
+		  "states": [ "brower" ]
+		}
+	],
+	"shape": {
+		"base": "theneighbours:entity/land/brower"
+	},
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ],
+		"creatures": [ "*" ]
+	},
+	guiTransform: {
+		translation: { x: 2, y: 0, z: 0 },
+		rotation: { x: 0, y: -120, z: -163 },
+		origin: { x: 0.5, y: 0.4, z: 0.5 },
+		scale: 1.02
+	},
+	fpHandTransform: {
+		translation: { x: 0.1, y: 0.3, z: 0 },
+		rotation: { x: -2, y: 43, z: -85 },
+		origin: { x: 0.5, y: 0.4, z: 0.5 },
+		scale: 0.8
+	},
+	tpHandTransform: {
+		translation: { x: -0.9, y: -0.4, z: -0.7 },
+		rotation: { x: 87, y: -180, z: -5 },
+		origin: { x: 0.5, y: 0.3, z: 0.5 },
+		scale: 0.54
+	}
+}

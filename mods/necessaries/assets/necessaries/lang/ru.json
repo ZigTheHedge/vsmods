@@ -38,5 +38,26 @@
 	"parcel-message-title": "Сообщение:",
 	"parcel-title": "Посылка",
 
-	"block-grindstone-north": "Точильный камень"	
+	"block-grindstone-none-north": "Точильная установка",
+	"block-grindstone-granite-north": "Точильная установка (Гранит)",
+	"block-grindstone-obsidian-north": "Точильная установка (Обсидиан)",
+	"block-grindstone-sandstone-north": "Точильная установка (Песчаник)",
+	"block-grindstone-basalt-north": "Точильная установка (Базальт)",
+	"grindstone-place-tool": "Поместите инструмент для заточки",
+	"grindstone-sharpenerdurability": "Прочность точильного камня:",
+	"grindstone-place-grindstone": "Установите точильный камень",
+	"grindstone-tooldurability": "Прочность инструмента:",
+	"grindstone-place-both": "Установите точильный камень и положите инструмент",	
+	"game:repaired": "(починено)",
+	
+	"item-sharpener-granite": "Гранитный точильный камень",
+	"item-sharpener-obsidian": "Обсидиановый точильный камень",
+	"item-sharpener-sandstone": "Точильный камень из песчаника",
+	"item-sharpener-basalt": "Базальтовый точильный камень",
+
+	"item-sharpener_disc-granite": "Диск гранитного точильного камня",
+	"item-sharpener_disc-obsidian": "Диск обсидианового точильного камня",
+	"item-sharpener_disc-sandstone": "Диск точильного камня из песчаника",
+	"item-sharpener_disc-basalt": "Диск базальтового точильного камня"
+
 }

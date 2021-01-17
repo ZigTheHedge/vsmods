@@ -1,0 +1,35 @@
+{
+	code: "sharpener_disc",
+	shape: { base: "item/grindstone_disc" },
+	creativeinventory: { "general": ["*"], "items": ["*"]},
+	variantgroups: [
+		{ code: "rock", states: ["granite", "obsidian", "basalt", "sandstone"] }
+	],
+	textures: {
+		"wheel": { base: "game:block/stone/rock/{rock}1" }
+	},
+	guiTransform: {
+		translation: { x: 5, y: 3, z: 0 },
+		rotation: { x: 33, y: 59, z: -88 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 3.25
+	},
+	fpHandTransform: {
+		translation: { x: 0.05, y: 0.3, z: 0 },
+		rotation: { x: 0, y: 7, z: 95 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 3.41
+	},
+	tpHandTransform: {
+		translation: { x: -0.6, y: -0.1, z: -0.5 },
+		rotation: { x: 0, y: -90, z: -90 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 0.93
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.01, z: 0 },
+		rotation: { x: 180, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 4.29
+	}
+}

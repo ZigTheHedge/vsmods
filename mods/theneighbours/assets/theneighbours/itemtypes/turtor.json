@@ -1,0 +1,37 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxstacksize": 64,
+	"variantgroups": [
+		{
+		  "code": "type",
+		  "states": [ "turtor" ]
+		}
+	],
+	"shape": {
+		"base": "theneighbours:entity/water/turtor"
+	},
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ],
+		"creatures": [ "*" ]
+	},
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: -120, z: -163 },
+		origin: { x: 0.5, y: 0.2, z: 0.5 },
+		scale: 1.54
+	},
+	fpHandTransform: {
+		translation: { x: 0.1, y: 0.3, z: 0 },
+		rotation: { x: -2, y: 43, z: -85 },
+		origin: { x: 0.5, y: 0.4, z: 0.5 },
+		scale: 1.44
+	},
+	tpHandTransform: {
+		translation: { x: -1.1, y: -0.4, z: -0.5 },
+		rotation: { x: 42, y: -160, z: 71 },
+		origin: { x: 0.5, y: 0.3, z: 0.5 },
+		scale: 0.64
+	}
+}

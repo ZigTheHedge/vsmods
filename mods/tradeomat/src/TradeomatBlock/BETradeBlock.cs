@@ -229,17 +229,20 @@ namespace tradeomat.src.TradeomatBlock
             Api.World.PlaySoundAt(new AssetLocation("tradeomat:sounds/deal.ogg"), Pos.X, Pos.Y, Pos.Z);
 
             /*
-            GuiElementDynamicText errorText = customerDialog.SingleComposer.GetDynamicText("errorText");
-            if (inventory[0].Itemstack == null || inventory[1].Itemstack == null)
+            if (customerDialog.SingleComposer != null)
             {
-                errorText.SetNewText(Lang.Get("tradeomat:isnotsetup"));
-            }
-            else
-            {
-                if (GetStorage(true) < inventory[1].Itemstack.StackSize)
-                    errorText.SetNewText(Lang.Get("tradeomat:outofgoods"));
-                if (GetStorage(false) < inventory[0].Itemstack.StackSize)
-                    errorText.SetNewText(Lang.Get("tradeomat:outofspace"));
+                GuiElementDynamicText errorText = customerDialog.SingleComposer.GetDynamicText("errorText");
+                if (inventory[0].Itemstack == null || inventory[1].Itemstack == null)
+                {
+                    errorText.SetNewText(Lang.Get("tradeomat:isnotsetup"));
+                }
+                else
+                {
+                    if (GetStorage(true) < inventory[1].Itemstack.StackSize)
+                        errorText.SetNewText(Lang.Get("tradeomat:outofgoods"));
+                    if (GetStorage(false) < inventory[0].Itemstack.StackSize)
+                        errorText.SetNewText(Lang.Get("tradeomat:outofspace"));
+                }
             }
             */
         }
@@ -464,17 +467,20 @@ namespace tradeomat.src.TradeomatBlock
 
                             customerDialog.TryOpen();
 
-                            GuiElementDynamicText errorText = customerDialog.SingleComposer.GetDynamicText("errorText");
-                            if (inventory[0].Itemstack == null || inventory[1].Itemstack == null)
+                            if (customerDialog.SingleComposer != null)
                             {
-                                errorText.SetNewText(Lang.Get("tradeomat:isnotsetup"));
-                            }
-                            else
-                            {
-                                if (GetStorage(true) < inventory[1].Itemstack.StackSize)
-                                    errorText.SetNewText(Lang.Get("tradeomat:outofgoods"));
-                                if (GetStorage(false) < inventory[0].Itemstack.StackSize)
-                                    errorText.SetNewText(Lang.Get("tradeomat:outofspace"));
+                                GuiElementDynamicText errorText = customerDialog.SingleComposer.GetDynamicText("errorText");
+                                if (inventory[0].Itemstack == null || inventory[1].Itemstack == null)
+                                {
+                                    errorText.SetNewText(Lang.Get("tradeomat:isnotsetup"));
+                                }
+                                else
+                                {
+                                    if (GetStorage(true) < inventory[1].Itemstack.StackSize)
+                                        errorText.SetNewText(Lang.Get("tradeomat:outofgoods"));
+                                    if (GetStorage(false) < inventory[0].Itemstack.StackSize)
+                                        errorText.SetNewText(Lang.Get("tradeomat:outofspace"));
+                                }
                             }
                         }
                     }
