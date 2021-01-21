@@ -1,0 +1,111 @@
+{
+	code: "turtle_meat",
+	creativeinventory: { "general": ["*"], "items": ["*"]},
+	variantgroups: [
+		{ code: "state", states: ["raw", "cooked"] }
+	],
+	"attributes": {
+        "inFirePitProps": {
+            "transformbytype": {
+                "*": {
+                    "scale": 1,
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0,
+                        "z": 0.5
+                    },
+                    "translation": {
+                        "x": 0,
+                        "y": 0.2,
+                        "z": 0
+                    },
+                    "rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 90
+                    }
+                }
+            },
+            "useFirepitModel": "Spit"
+        },
+        "nutritionPropsWhenInMeal": {
+            "satiety": 300,
+            "foodcategory": "Protein"
+        }
+    },
+	"nutritionPropsByType": {
+        "*-cooked": {
+            "satiety": 250,
+            "foodcategory": "Protein"
+        }
+    },
+	"combustiblePropsByType": {
+        "*-raw": {
+            "meltingPoint": 150,
+            "meltingDuration": 30,
+            "smeltedRatio": 1,
+            "smeltingType": "cook",
+            "smeltedStack": {
+                "type": "item",
+                "code": "theneighbours:turtle_meat-cooked"
+            },
+            "requiresContainer": false
+        }
+    },
+    "transitionablePropsByType": {
+        "*-cooked": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 120 },
+                "spoilHours": { "avg": 36 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ],
+        "*-raw": [
+            {
+                "type": "Perish",
+                "freshHours": { "avg": 48 },
+                "spoilHours": { "avg": 12 },
+                "transitionedStack": {
+                    "type": "item",
+                    "code": "game:rot"
+                },
+                "transitionRatio": 1
+            }
+        ]
+    },
+	maxStackSize: 32,	
+	drawtype: "json",
+	shape: { base: "item/turtle_meat" },
+	textures: {
+		"turtle_raw": { base: "theneighbours:item/turtle_{state}" }
+	},
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 139, y: -26, z: -1 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 3.64
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.2, z: 0 },
+		rotation: { x: 75, y: -84, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.57
+	},
+	tpHandTransform: {
+		translation: { x: -0.9, y: 0, z: -0.7 },
+		rotation: { x: 0, y: 6, z: 18 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 0.65
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 179, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 3.94
+	}	
+}

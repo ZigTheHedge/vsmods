@@ -1,0 +1,20 @@
+{
+	code: "gluten",
+	creativeinventory: { "general": ["*"], "items": ["*"]},
+	texture: { base: "necessaries:item/gluten" },
+	attributes: {
+		handbook: {
+			extraSections: [
+				{ title: "necessaries:madefrom-title-gluten", text: "necessaries:madefrom-gluten" }
+			]			
+		}
+	},
+	maxStackSize: 16,
+	"combustibleProps": {
+		"meltingPoint": 400,
+		"meltingDuration": 10,
+		"smeltedRatio": 1,
+		"smeltedStack": { "type": "item", "code": "necessaries:glue", "quantity": 4 },
+		"requiresContainer": false
+	}
+}

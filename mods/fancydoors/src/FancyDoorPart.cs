@@ -190,5 +190,10 @@ namespace fancydoors.src
                 }
             }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
         }
+
+        public override int GetHeatRetention(BlockPos pos, BlockFacing facing)
+        {
+            return 3;
+        }
     }
 }

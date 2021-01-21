@@ -12,5 +12,12 @@
 	"item-dead-creature-turtor": "Dead Turtor",
 	"game:prefixandcreature-turtor": "a Turtor",	
 	"item-scissor": "Scissor",
-	"item-tickling-helmet-1": "Tickling-head Helmet"
+	"item-helmet-tickling-1": "Tickling-head Helmet",
+	"block-glowshroom": "Glowshroom",
+	
+	"item-turtle_meat-raw": "Turtor Meat (raw)",
+	"item-turtle_meat-cooked": "Turtor Meat (cooked)",
+	"recipeingredient-item-turtle_meat-raw": "Turtor Meat",
+	"recipeingredient-item-turtle_meat-raw-insturmentalcase": "Turtor Meat"
+
 }

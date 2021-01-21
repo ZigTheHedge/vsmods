@@ -74,6 +74,8 @@
     <Compile Include="src\ApiExtensions.cs" />
     <Compile Include="src\HarmonyStuff\Patches.cs" />
     <Compile Include="src\ItemBranchcutter.cs" />
+    <Compile Include="src\LeadVessel\BELeadvessel.cs" />
+    <Compile Include="src\LeadVessel\Leadvessel.cs" />
     <Compile Include="src\Mailbox\BEMailBox.cs" />
     <Compile Include="src\Mailbox\GuiDialogMailbox.cs" />
     <Compile Include="src\Mailbox\MailBox.cs" />

@@ -65,12 +65,15 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Blocks\BEGlowShroom.cs" />
+    <Compile Include="src\Blocks\GlowShroom.cs" />
     <Compile Include="src\TheNeighbours.cs" />
     <Compile Include="src\Weapons\Scissor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
     <Folder Include="src\Equipment\" />
+    <Folder Include="src\Items\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

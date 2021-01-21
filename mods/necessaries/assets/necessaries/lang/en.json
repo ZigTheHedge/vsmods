@@ -58,6 +58,33 @@
 	"item-sharpener_disc-granite": "Granite grindstone disc",
 	"item-sharpener_disc-obsidian": "Obsidian grindstone disc",
 	"item-sharpener_disc-sandstone": "Sandstone grindstone disc",
-	"item-sharpener_disc-basalt": "Basalt grindstone disc"
+	"item-sharpener_disc-basalt": "Basalt grindstone disc",
+
+	"block-toolmold-burned-leadvessel_bottom": "Lead Vessel Mold (Fired)",
+	"block-toolmold-raw-leadvessel_bottom": "Lead Vessel Mold (Raw)",	
+	"block-toolmold-burned-leadvessel_top": "Lead Vessel Cover Mold (Fired)",
+	"block-toolmold-raw-leadvessel_top": "Lead Vessel Cover Mold (Raw)",	
+	
+	"block-leadvessel-empty": "Lead Vessel",
+	"block-leadvessel_cover": "Lead Vessel Cover",
+	"item-sulfurpeter": "Sulfur/Saltpeter mixture",
+	"item-gluten": "Gluten",
+	"item-glue": "Glue",
+	"leadvessel-addwaterandsulfurpeter": "Add Water and Sulfur/Saltpeter mixture",
+	"leadvessel-addwater": "Add Water",
+	"leadvessel-addsulfurpeter": "Add Sulfur/Saltpeter mixture",
+	"leadvessel-setonfire": "Set mixure on fire",
+	"leadvessel-close": "Quick! Cover it up! (you have {0} minutes)",
+	"leadvessel-wait": "Wait until acid will be ready (approx. {0} hours)",
+	"leadvessel-acid": "Open up the Vessel to gain access to Sulfuric Acid",
+	"leadvessel-acid0": "Place three pieces of Bone Meal in Acid to get Gluten",
+	"leadvessel-acid1": "Place two more pieces of Bone Meal in Acid to get Gluten",
+	"leadvessel-acid2": "Place one more piece of Bone Meal in Acid to get Gluten",
+	"leadvessel-acid3": "Take the Gluten and cook it on fire",
+	
+	"madefrom-title-leadvessel": "Special function:",
+	"madefrom-leadvessel": "Used for making Sulfuric Acid and produce Gluten with it.",
+	"madefrom-title-gluten": "Made from:",
+	"madefrom-gluten": "Put a Bone Meal in a Lead Vessel filled with Sulfuric Acid."
 
 }

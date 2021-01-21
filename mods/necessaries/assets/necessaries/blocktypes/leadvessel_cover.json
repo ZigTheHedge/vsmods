@@ -1,0 +1,29 @@
+{
+	code: "leadvessel_cover",
+	behaviors: [ {name: "UnstableFalling"}, {name: "RightClickPickup" } ],	
+	creativeinventory: { "general": ["*"] },
+	blockmaterial: "Metal",
+	drawtype: "json",
+	shape: { 
+		base: "block/leadvessel_top"
+	},
+	lightAbsorption: 0,
+	maxStackSize: 1,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionSelectionBoxes: [
+		{ x1: 0.1, y1: 0, z1: 0.1, x2: 0.9, y2: 0.5, z2: 0.9 }
+	],
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/metal",
+		"walk": "game:walk/metal"
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 }
+	}
+}

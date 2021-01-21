@@ -1,0 +1,6 @@
+{
+	code: "sulfurpeter",
+	creativeinventory: { "general": ["*"], "items": ["*"]},
+	texture: { base: "necessaries:item/sulfurpeter" },
+	maxStackSize: 16
+}

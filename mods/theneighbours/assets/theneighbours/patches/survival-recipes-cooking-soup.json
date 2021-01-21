@@ -1,0 +1,12 @@
+[
+  {
+    "file": "game:recipes/cooking/soup",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "theneighbours:turtle_meat-raw",
+      "shapeElement": "bowl/meat/*"
+    }
+  }
+]

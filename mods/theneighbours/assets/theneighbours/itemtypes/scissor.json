@@ -7,6 +7,14 @@
 	tool: "spear",
 	heldTpHitAnimation: "spearhit",
 	
+	attributes: {
+		toolrackTransform: {
+			translation: { x: 0, y: 0.2, z: 0 },
+			rotation: { x: 90, y: 0, z: 0 },
+			origin: { x: 0.5, y: 0.2, z: 0.5 }
+		}
+	},
+	
 	attackpower: 4,
 
 	durability: 350,

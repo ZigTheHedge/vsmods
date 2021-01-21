@@ -11,6 +11,12 @@
 	"item-creature-turtor": "Туртор",
 	"item-dead-creature-turtor": "Мертвый туртор",
 	"game:prefixandcreature-turtor": "туртором",	
-	"item-scissor": "Скиссор",
-	"item-tickling-helmet-1": "Шлем из головы Тикающего"	
+	"item-scissor": "Скиссор",	
+	"item-helmet-tickling-1": "Шлем из головы Тикающего",
+	"block-glowshroom": "Светогриб",
+	
+	"item-turtle_meat-raw": "Турторовое мясо (сырое)",
+	"item-turtle_meat-cooked": "Турторовое мясо (жареное)",
+	"recipeingredient-item-turtle_meat-raw": "Турторовое мясо",
+	"recipeingredient-item-turtle_meat-raw-insturmentalcase": "Турторовым мясом"
 }

@@ -1,19 +1,88 @@
-{
-  "ingredientPattern": "RDR,RDR,RDR",
-  "ingredients": {
-    "R": {
-      type: "item", 
-	  code: "game:resin"
-    },
-    "D": {
-      "type": "item",
-      "code": "necessaries:sharpener_disc-*",
-	  "name": "rock",
-	  "allowedVariants": ["granite", "obsidian", "basalt", "sandstone"]
-    }
-  },
-  "width": 3,
-  "height": 3,
-  "shapeless": false,
-  "output": { type: "item", code: "sharpener-{rock}" }
-}
+[
+	{
+	  "ingredientPattern": "_D_,RDR,_D_",
+	  "ingredients": {
+		"R": {
+		  type: "item", 
+		  code: "game:resin"
+		},
+		"D": {
+		  "type": "item",
+		  "code": "necessaries:sharpener_disc-granite"
+		}
+	  },
+	  "width": 3,
+	  "height": 3,
+	  "shapeless": false,
+	  "output": { type: "item", code: "sharpener-granite" }
+	},
+	{
+	  "ingredientPattern": "_D_,RDR,_D_",
+	  "ingredients": {
+		"R": {
+		  type: "item", 
+		  code: "game:resin"
+		},
+		"D": {
+		  "type": "item",
+		  "code": "necessaries:sharpener_disc-basalt"
+		}
+	  },
+	  "width": 3,
+	  "height": 3,
+	  "shapeless": false,
+	  "output": { type: "item", code: "sharpener-basalt" }
+	},
+	{
+	  "ingredientPattern": "_D_,RDR,_D_",
+	  "ingredients": {
+		"R": {
+		  type: "item", 
+		  code: "necessaries:glue"
+		},
+		"D": {
+		  "type": "item",
+		  "code": "necessaries:sharpener_disc-basalt"
+		}
+	  },
+	  "width": 3,
+	  "height": 3,
+	  "shapeless": false,
+	  "output": { type: "item", code: "sharpener-basalt" }
+	},
+	{
+	  "ingredientPattern": "_D_,RDR,_D_",
+	  "ingredients": {
+		"R": {
+		  type: "item", 
+		  code: "necessaries:glue"
+		},
+		"D": {
+		  "type": "item",
+		  "code": "necessaries:sharpener_disc-sandstone"
+		}
+	  },
+	  "width": 3,
+	  "height": 3,
+	  "shapeless": false,
+	  "output": { type: "item", code: "sharpener-sandstone" }
+	},
+	{
+	  "ingredientPattern": "_D_,RDR,_D_",
+	  "ingredients": {
+		"R": {
+		  type: "item", 
+		  code: "necessaries:glue",
+		  quantity: 2
+		},
+		"D": {
+		  "type": "item",
+		  "code": "necessaries:sharpener_disc-obsidian"
+		}
+	  },
+	  "width": 3,
+	  "height": 3,
+	  "shapeless": false,
+	  "output": { type: "item", code: "sharpener-obsidian" }
+	}
+]

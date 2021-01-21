@@ -1,5 +1,6 @@
 ﻿using Foundation.Extensions;
 using HarmonyLib;
+using necessaries.src.LeadVessel;
 using necessaries.src.Mailbox;
 using necessaries.src.Parcel;
 using necessaries.src.SharpenerStuff;
@@ -69,6 +70,9 @@ namespace necessaries.src
             api.RegisterBlockClass("grindstone", typeof(Grindstone));
             api.RegisterBlockEntityClass("begrindstone", typeof(BEGrindstone));
 
+            api.RegisterBlockClass("leadvessel", typeof(Leadvessel));
+            api.RegisterBlockEntityClass("beleadvessel", typeof(BELeadvessel));
+            
             api.RegisterItemClass("branchcutter", typeof(ItemBranchcutter));
             api.RegisterItemClass("sharpener", typeof(Sharpener));
 

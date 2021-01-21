@@ -63,7 +63,7 @@
 			{ code: "harvestable", drops: [
 					{
 						type: "item",
-						code: "bushmeat",
+						code: "theneighbours:turtle_meat-raw",
 						quantity: { avg: 2.0, var: 0.5 }
 					}
 				],

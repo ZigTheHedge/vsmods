@@ -58,6 +58,32 @@
 	"item-sharpener_disc-granite": "Диск гранитного точильного камня",
 	"item-sharpener_disc-obsidian": "Диск обсидианового точильного камня",
 	"item-sharpener_disc-sandstone": "Диск точильного камня из песчаника",
-	"item-sharpener_disc-basalt": "Диск базальтового точильного камня"
+	"item-sharpener_disc-basalt": "Диск базальтового точильного камня",
 
+	"block-toolmold-burned-leadvessel_bottom": "Форма свинцового сосуда (обожженная)",
+	"block-toolmold-raw-leadvessel_bottom": "Форма свинцового сосуда (необожженная)",	
+	"block-toolmold-burned-leadvessel_top": "Форма крышки сосуда (обожженная)",
+	"block-toolmold-raw-leadvessel_top": "Форма крышки сосуда (необожженная)",	
+
+	"block-leadvessel-empty": "Свинцовый сосуд",
+	"block-leadvessel_cover": "Крышка свинцового сосуда",
+	"item-sulfurpeter": "Смесь серы и селитры",
+	"item-gluten": "Глютен",
+	"item-glue": "Клей",
+	"leadvessel-addwaterandsulfurpeter": "Добавьте воду и смесь селитры и серы",
+	"leadvessel-addwater": "Добавьте воду",
+	"leadvessel-addsulfurpeter": "Добавьте смесь селитры и серы",
+	"leadvessel-setonfire": "Подожгите смесь",
+	"leadvessel-close": "Скорее! Накройте крышкой! (осталось {0} минут)",
+	"leadvessel-wait": "Дождитесь, пока приготовится кислота (примерно {0} часов)",
+	"leadvessel-acid": "Откройте сосуд, чтобы получить доступ к серной кислоте",
+	"leadvessel-acid0": "Поместите в кислоту три порции костной муки, чтобы получить глютен",
+	"leadvessel-acid1": "Поместите в кислоту еще две порции костной муки, чтобы получить глютен",
+	"leadvessel-acid2": "Поместите в кислоту еще одну порцию костной муки, чтобы получить глютен",
+	"leadvessel-acid3": "Заберите глютен и обжарьте на огне",
+	
+	"madefrom-title-leadvessel": "Особая функция:",
+	"madefrom-leadvessel": "Используется для производства серной кислоты и глютена.",
+	"madefrom-title-gluten": "Производится:",
+	"madefrom-gluten": "Поместите костную муку в Свинцовый сосуд, заполненный серной кислотой."
 }

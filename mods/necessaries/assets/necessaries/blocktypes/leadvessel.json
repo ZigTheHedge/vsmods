@@ -1,0 +1,60 @@
+{
+	code: "leadvessel",
+	class: "leadvessel",
+	entityClass: "beleadvessel",
+	behaviors: [ {name: "UnstableFalling"} ],
+	creativeinventory: { "general": ["*-empty"] },
+	blockmaterial: "Metal",
+	variantgroups: [
+		{ code: "contents", states: [ "empty", "water", "sulfur", "watersulfur", "full", "acid", "acid1", "acid2", "acid3" ] }
+	],
+	attributes: {
+		handbook: {
+			createdBy: "metalmolding",
+			extraSections: [
+				{ title: "necessaries:madefrom-title-leadvessel", text: "necessaries:madefrom-leadvessel" }
+			]			
+		}
+	},
+	drawtype: "json",
+	shape: { 
+		base: "block/leadvessel-{contents}"
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionSelectionBoxes: [
+		{ x1: 0.1, y1: 0, z1: 0.1, x2: 0.9, y2: 0.5, z2: 0.9 }
+	],
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/metal",
+		"walk": "game:walk/metal"
+	},
+	particlePropertiesByType: {
+		"*-watersulfur": [
+			{
+				"__comment": "Smoke quads",
+				hsvaColor: [{ avg: 0, var: 0 }, { avg: 0, var: 0 }, { avg: 70, var: 30 },  { avg: 220, var: 50 }],
+				opacityEvolve: { transform: "linear", factor: -255 },
+				gravityEffect: { avg: 0, var: 0 },
+				posOffset: [ { avg: 0, var: 0.2 }, { avg: -0.4, var: 0 }, { avg: 0, var: 0.2 }],
+				velocity: [ { avg: 0, var: 0.025 }, { avg: 0.2, var: 0.05 }, { avg: 0, var: 0.025 }],
+				quantity: { avg: 0.3 },
+				size: { avg: 0.3, var: 0.05 },
+				sizeEvolve: { transform: "linear", factor: 1.5 },
+				particleModel: "Quad",
+				lifeLength: { avg: 18 },
+				selfPropelled: true,
+				windAffectednes: 0.7
+			}
+		]
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 }
+	}
+}
