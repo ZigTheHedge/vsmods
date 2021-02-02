@@ -85,6 +85,8 @@
 	"madefrom-title-leadvessel": "Special function:",
 	"madefrom-leadvessel": "Used for making Sulfuric Acid and produce Gluten with it.",
 	"madefrom-title-gluten": "Made from:",
-	"madefrom-gluten": "Put a Bone Meal in a Lead Vessel filled with Sulfuric Acid."
-
+	"madefrom-gluten": "Put a Bone Meal in a Lead Vessel filled with Sulfuric Acid.",
+	
+	"sharpener-repair-amount": "Durability restore per cycle: {0}",
+	"sharpener-damage-amount": "Total durability loss per cycle: {0}"
 }

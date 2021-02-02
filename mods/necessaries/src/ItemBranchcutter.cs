@@ -18,8 +18,10 @@ namespace necessaries.src
             {
                 world.SpawnItemEntity(new ItemStack(block, 1), new Vec3d(blockSel.Position.X + 0.5, blockSel.Position.Y + 0.5, blockSel.Position.Z + 0.5));
                 DamageItem(world, byEntity, itemslot);
-            }
-            return base.OnBlockBrokenWith(world, byEntity, itemslot, blockSel, dropQuantityMultiplier);
+                world.BlockAccessor.SetBlock(0, blockSel.Position);
+                return true;
+            } else
+                return base.OnBlockBrokenWith(world, byEntity, itemslot, blockSel, dropQuantityMultiplier);
         }
     }
 }

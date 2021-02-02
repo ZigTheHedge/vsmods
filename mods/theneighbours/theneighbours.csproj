@@ -65,6 +65,7 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\ApiExtensions.cs" />
     <Compile Include="src\Blocks\BEGlowShroom.cs" />
     <Compile Include="src\Blocks\GlowShroom.cs" />
     <Compile Include="src\TheNeighbours.cs" />

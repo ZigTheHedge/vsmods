@@ -188,6 +188,7 @@ namespace zeekea.src.orebox
 
         protected override void translateMesh(MeshData mesh, int index)
         {
+            if (mesh == null) return;
             float x = 5f / 16f + (index % 2) * 6f / 16f;
             float y = 1f / 16f + (index / 4) * 7f / 16f;
             float z = 5f / 16f + ((index % 4) / 2) * 6f / 16f;
@@ -253,7 +254,6 @@ namespace zeekea.src.orebox
                         oreboxDlg = new GuiEightSlots(Lang.Get("zeekea:orebox-title"), Inventory, Pos, Api as ICoreClientAPI);
                         oreboxDlg.OnClosed += () =>
                         {                            
-                            UpdateShape();
                             Open();
                             capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
                             oreboxDlg = null;
@@ -302,6 +302,7 @@ namespace zeekea.src.orebox
                 return true;
             } else
             {
+                if(currentMesh != null)
                 mesher.AddMeshData(currentMesh.Clone().Rotate(new Vec3f(0.5f, 0.5f, 0.5f), 0, meshAngle, 0));
                 return true;
             }

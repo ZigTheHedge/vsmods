@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/rustyspikes.json",
+    "condition": { "when": "rustySpikesEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/rustyspikes.json",
+    "condition": { "when": "rustySpikesEnabled", "isValue": "false" }
+  }
+]

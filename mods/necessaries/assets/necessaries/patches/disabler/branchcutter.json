@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/branchcutter.json",
+    "condition": { "when": "branchcutterEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/branchcutter.json",
+    "condition": { "when": "branchcutterEnabled", "isValue": "false" }
+  }
+]

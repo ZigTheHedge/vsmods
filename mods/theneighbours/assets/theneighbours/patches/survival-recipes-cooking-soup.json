@@ -7,6 +7,7 @@
       "type": "item",
       "code": "theneighbours:turtle_meat-raw",
       "shapeElement": "bowl/meat/*"
-    }
+    },
+    "condition": { "when": "disableTurtor", "isValue": "false" }	
   }
 ]

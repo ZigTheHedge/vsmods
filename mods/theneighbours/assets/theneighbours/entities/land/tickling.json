@@ -63,7 +63,7 @@
 					},
 					{
 						type: "item", 
-						code: "theneighbours:tickling_head-1", 
+						code: "theneighbours:helmet-tickling-1", 
 						quantity: { avg: 0.1, var: 0 } 
 					},
 					{

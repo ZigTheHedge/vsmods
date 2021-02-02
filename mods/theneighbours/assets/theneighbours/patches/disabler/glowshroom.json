@@ -1,0 +1,9 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:blocktypes/shroom_glow.json",
+    "condition": { "when": "disableGlowshroom", "isValue": "true" }
+  }
+]

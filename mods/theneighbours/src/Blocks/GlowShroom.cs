@@ -21,5 +21,11 @@ namespace theneighbours.src.Blocks
             if (!CanPlantStay(blockAccessor, pos)) return false;
             return base.TryPlaceBlockForWorldGen(blockAccessor, pos, onBlockFace, worldGenRand);
         }
+
+        public override bool ShouldReceiveClientParticleTicks(IWorldAccessor world, IPlayer player, BlockPos pos, out bool isWindAffected)
+        {
+            isWindAffected = false;
+            return true;
+        }
     }
 }

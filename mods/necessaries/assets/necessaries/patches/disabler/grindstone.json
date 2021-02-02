@@ -1,0 +1,142 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/grindstone.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/leadvessel.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/leadvessel_cover.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/clay/mold/leadvessel_bottom_toolmold.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/clay/mold/leadvessel_top_toolmold.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/sharpener.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/sharpener_disc.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/glue.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/gluten.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/sulfurpeter.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/grindstone.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/sharpener.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/sharpener.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/2/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/sharpener.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/3/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/sharpener.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/4/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/sharpener.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/sulfurpeter.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/clayforming/leadvessel_bottom.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/clayforming/leadvessel_top.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/knapping/stones-sharpener.json",
+    "condition": { "when": "grindstoneEnabled", "isValue": "false" }
+  }
+]

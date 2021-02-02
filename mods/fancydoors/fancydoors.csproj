@@ -65,12 +65,20 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\BEFancyDoorPart.cs" />
+    <Compile Include="src\DiagonalDoor\DiagonalDoorBE.cs" />
+    <Compile Include="src\DiagonalDoor\DiagonalDoorPart.cs" />
+    <Compile Include="src\DiagonalDoor\DiagonalDoorRenderer.cs" />
+    <Compile Include="src\HorizontalDoor\HorizontalDoorPart.cs" />
+    <Compile Include="src\BEDoorPart.cs" />
     <Compile Include="src\ChiseledInventory.cs" />
     <Compile Include="src\ChiseledSlot.cs" />
     <Compile Include="src\DoorRenderer.cs" />
-    <Compile Include="src\FancyDoorPart.cs" />
+    <Compile Include="src\RegularDoor\BEFancyDoorPart.cs" />
+    <Compile Include="src\DoorPart.cs" />
     <Compile Include="src\FancyDoors.cs" />
+    <Compile Include="src\RegularDoor\FancyDoorPart.cs" />
+    <Compile Include="src\RegularDoor\FancyDoorRenderer.cs" />
+    <Compile Include="src\SlopeBlock\Slope.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />

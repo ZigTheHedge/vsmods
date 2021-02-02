@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:entities/land/tickling.json",
+    "condition": { "when": "disableTickling", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/tickling.json",
+    "condition": { "when": "disableTickling", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/helmet.json",
+    "condition": { "when": "disableTickling", "isValue": "true" }
+  }
+]

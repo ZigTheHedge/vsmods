@@ -1,0 +1,51 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/mailbox.json",
+    "condition": { "when": "mailEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/clay/mold/necss_toolmold.json",
+    "condition": { "when": "mailEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/parcel.json",
+    "condition": { "when": "mailEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/mailflag.json",
+    "condition": { "when": "mailEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/mailbox.json",
+    "condition": { "when": "mailEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/grid/parcel.json",
+    "condition": { "when": "mailEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:recipes/clayforming/mailflag.json",
+    "condition": { "when": "mailEnabled", "isValue": "false" }
+  }
+]

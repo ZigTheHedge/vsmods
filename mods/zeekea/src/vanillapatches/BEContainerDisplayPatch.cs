@@ -129,10 +129,11 @@ namespace zeekea.src.vanillapatches
 
         protected override MeshData genMesh(ItemStack stack, int index)
         {
+
             MeshData mesh;
             ICoreClientAPI capi = Api as ICoreClientAPI;
 
-            if(stack.Class == EnumItemClass.Block && stack.Block is BlockChisel)
+            if (stack.Class == EnumItemClass.Block && stack.Block is BlockChisel)
             {
                 GenMeshOfChiseledBlock(stack, out mesh);
                 return mesh;
@@ -140,7 +141,15 @@ namespace zeekea.src.vanillapatches
 
             if (stack.Class == EnumItemClass.Block)
             {
-                capi.Tesselator.TesselateBlock(stack.Block, out mesh);
+                try
+                {
+                    //capi.Tesselator.TesselateBlock(stack.Block, out mesh);
+                    mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
+                } catch(System.Collections.Generic.KeyNotFoundException e)
+                {
+                    mesh = CubeMeshUtil.GetCubeOnlyScaleXyz(0.5f, 0.5f, new Vec3f(0.5f, 0.5f, 0.5f));
+                    Api.Logger.Error("[ZEEKEA]: Cannot render model of: " + stack.Collectible.Code.ToString() + "! Skipping.");
+                }
                 if (stack.Collectible.Attributes?["onDisplayTransform"].Exists == true)
                 {
                     ModelTransform transform = stack.Collectible.Attributes?["onDisplayTransform"].AsObject<ModelTransform>();

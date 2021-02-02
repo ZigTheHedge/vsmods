@@ -1,4 +1,6 @@
-﻿using System;
+﻿using fancydoors.src.DiagonalDoor;
+using fancydoors.src.RegularDoor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,9 @@ namespace fancydoors.src
         {
             api.RegisterBlockClass("fancydoor", typeof(FancyDoorPart));
             api.RegisterBlockEntityClass("befancydoor", typeof(BEFancyDoorPart));
+
+            api.RegisterBlockClass("diagonaldoor", typeof(DiagonalDoorPart));
+            api.RegisterBlockEntityClass("bediagonaldoor", typeof(DiagonalDoorBE));
         }
     }
 }

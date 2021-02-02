@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:entities/land/brower.json",
+    "condition": { "when": "disableBrayer", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/brower.json",
+    "condition": { "when": "disableBrayer", "isValue": "true" }
+  }
+]

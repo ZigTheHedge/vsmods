@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:entities/land/shintorickae.json",
+    "condition": { "when": "disableShintorikae", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/shintorickae.json",
+    "condition": { "when": "disableShintorikae", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/scissor.json",
+    "condition": { "when": "disableShintorikae", "isValue": "true" }
+  }
+]

@@ -111,6 +111,7 @@ namespace zeekea.src.nightstand
         }
         protected override void translateMesh(MeshData mesh, int index)
         {
+            if (mesh == null) return;
             if(index > 3)
             {
                 mesh.Clear();
@@ -181,7 +182,6 @@ namespace zeekea.src.nightstand
                         nightstandDialog.OnClosed += () =>
                         {
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/shelf_close.ogg"), Pos.X, Pos.Y, Pos.Z);
-                            UpdateShape();
                             ZEEkea.clientChannel.SendPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, new byte[] { 0 }, ZEEContainerEnum.NIGHTSTAND, false));
                             capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
                             nightstandDialog = null;

@@ -13,9 +13,17 @@ namespace survivalcats.src
     {
         Harmony harmony = new Harmony("com.cwelth.survivalcats");
 
+        public override void Start(ICoreAPI api)
+        {
+            base.Start(api);
+            api.RegisterBlockClass("chiselfix", typeof(BlockChiselNameFix));
+
+        }
+
         public override void StartClientSide(ICoreClientAPI api)
         {
             base.Start(api);
+
             //Harmony.DEBUG = true;
             harmony.PatchAll();
         }
@@ -23,7 +31,7 @@ namespace survivalcats.src
         public override void Dispose()
         {
             base.Dispose();
-            harmony.UnpatchAll("com.cwelth.survivalcats");
+            //harmony.UnpatchAll("com.cwelth.survivalcats");
         }
     }
 }

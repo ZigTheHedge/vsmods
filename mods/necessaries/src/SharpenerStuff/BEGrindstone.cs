@@ -77,7 +77,8 @@ namespace necessaries.src.SharpenerStuff
                     animUtil.render?.Dispose();
                     (Api as ICoreClientAPI)?.Event.UnregisterRenderer(animUtil, EnumRenderStage.Opaque);
                 }
-                animUtil.InitializeAnimator("necessaries:grindstone", new Vec3f(0, Block.Shape.rotateY, 0));
+                if(ModConfigFile.Current.grindstoneEnabled)
+                    animUtil.InitializeAnimator("necessaries:grindstone", new Vec3f(0, Block.Shape.rotateY, 0));
             }
         }
 
@@ -188,12 +189,36 @@ namespace necessaries.src.SharpenerStuff
 
                     ItemStack toolstack = Inventory[1].Itemstack;
 
+                    int totalDurabilityLoss = 1;
+                    int totalDurabilityRestored = 2;
+
+                    if(itemstack.Item.Variant["rock"] == "granite")
+                    {
+                        totalDurabilityLoss = ModConfigFile.Current.graniteDiskDamagePerCycle;
+                        totalDurabilityRestored = ModConfigFile.Current.graniteDiskRepairPerCycle;
+                    }
+                    if (itemstack.Item.Variant["rock"] == "basalt")
+                    {
+                        totalDurabilityLoss = ModConfigFile.Current.basaltDiskDamagePerCycle;
+                        totalDurabilityRestored = ModConfigFile.Current.basaltDiskRepairPerCycle;
+                    }
+                    if (itemstack.Item.Variant["rock"] == "sandstone")
+                    {
+                        totalDurabilityLoss = ModConfigFile.Current.sandstoneDiskDamagePerCycle;
+                        totalDurabilityRestored = ModConfigFile.Current.sandstoneDiskRepairPerCycle;
+                    }
+                    if (itemstack.Item.Variant["rock"] == "obsidian")
+                    {
+                        totalDurabilityLoss = ModConfigFile.Current.obsidianDiskDamagePerCycle;
+                        totalDurabilityRestored = ModConfigFile.Current.obsidianDiskRepairPerCycle;
+                    }
+
                     int maxRepair = toolstack.Attributes.GetInt("maxRepair", toolstack.Item.GetDurability(toolstack));
 
                     if (toolstack.Attributes.GetInt("durability", toolstack.Item.GetDurability(toolstack)) < maxRepair)
                     {
-                        toolstack.Attributes.SetInt("maxRepair", maxRepair - 1);
-                        int newDurability = toolstack.Attributes.GetInt("durability") + 2;
+                        toolstack.Attributes.SetInt("maxRepair", maxRepair - totalDurabilityLoss);
+                        int newDurability = toolstack.Attributes.GetInt("durability") + totalDurabilityRestored;
                         if (newDurability > toolstack.Attributes.GetInt("maxRepair")) newDurability = toolstack.Attributes.GetInt("maxRepair");
                         toolstack.Attributes.SetInt("durability", newDurability);
                         if (newDurability < 1)

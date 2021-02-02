@@ -116,6 +116,7 @@ namespace zeekea.src.tall_locker
         }
         protected override void translateMesh(MeshData mesh, int index)
         {
+            if (mesh == null) return;
             float x = (index % 4) * 4f/16f + 2f/16f;
             float y = 2f/16f + 25f/16f - (index / 4) * 5f/16f;
             float z = 8f / 16f;
@@ -195,7 +196,6 @@ namespace zeekea.src.tall_locker
                         lockerDialog.OnClosed += () =>
                         {
                             Api.World.PlaySoundAt(new AssetLocation("zeekea:sounds/locker_close.ogg"), Pos.X, Pos.Y, Pos.Z);
-                            UpdateShape();
                             ZEEkea.clientChannel.SendPacket<AnimatedContainerUpdate>(new AnimatedContainerUpdate(Pos.X, Pos.Y, Pos.Z, new byte[] { 0 }, ZEEContainerEnum.LOCKER, false));
                             capi.Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
                             lockerDialog = null;

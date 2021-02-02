@@ -1,0 +1,22 @@
+[
+  {
+    "op": "remove",
+    "path": "/attributesByType/*",
+    "file": "game:itemtypes/resource/stone.json",
+	"condition": { "when": "grindstoneEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/*-sandstone",
+    "value": { "knappable": true, "displaycaseable": true, "shelvable": true },
+    "file": "game:itemtypes/resource/stone.json",
+	"condition": { "when": "grindstoneEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/*",
+    "value": { "displaycaseable": true, "shelvable": true },
+    "file": "game:itemtypes/resource/stone.json",
+	"condition": { "when": "grindstoneEnabled", "isValue": "true" }
+  }
+]

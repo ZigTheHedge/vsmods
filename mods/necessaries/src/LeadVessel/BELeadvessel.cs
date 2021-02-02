@@ -88,8 +88,9 @@ namespace necessaries.src.LeadVessel
                 } else if(contents == "acid3")
                 {
                     SetBlockState("empty");
-                    ItemStack cover = new ItemStack(Api.World.GetItem(new AssetLocation("necessaries:gluten")));
-                    Api.World.SpawnItemEntity(cover, Pos.ToVec3d().Add(0.5, 0.9, 0.5));
+                    locals = LeadVesselContents.EMPTY;
+                    ItemStack gluten = new ItemStack(Api.World.GetItem(new AssetLocation("necessaries:gluten")));
+                    Api.World.SpawnItemEntity(gluten, Pos.ToVec3d().Add(0.5, 0.9, 0.5));
                 }
                 return true;
             }
@@ -168,7 +169,7 @@ namespace necessaries.src.LeadVessel
                     if (contents != "full")
                     {
                         SetBlockState("full");
-                        if(locals == LeadVesselContents.WATERSULFUR)
+                        if(locals == LeadVesselContents.WATERSULFUR && burnTime > 0)
                         {
                             burnTime = Api.World.Calendar.TotalHours + 12D;
                             MarkDirty();

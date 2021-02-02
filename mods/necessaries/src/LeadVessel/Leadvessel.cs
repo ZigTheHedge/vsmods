@@ -109,10 +109,20 @@ namespace necessaries.src.LeadVessel
 
         public override ItemStack[] GetDrops(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
         {
-            if(Variant["contents"] == "sulfur" || Variant["contents"] == "watersulfur")
+            if (Variant["contents"] == "sulfur" || Variant["contents"] == "watersulfur")
                 return new ItemStack[] { OnPickBlock(world, pos), new ItemStack(world.GetItem(new AssetLocation("necessaries:sulfurpeter"))) };
-            else
-                return new ItemStack[] { OnPickBlock(world, pos) };
+            else if (Variant["contents"] == "full")
+            {
+                BELeadvessel be = world.BlockAccessor.GetBlockEntity(pos) as BELeadvessel;
+                if (be != null)
+                {
+                    if((be.locals == LeadVesselContents.SULFUR || be.locals == LeadVesselContents.WATERSULFUR) && be.burnTime == 0)
+                        return new ItemStack[] { OnPickBlock(world, pos), new ItemStack(world.GetItem(new AssetLocation("necessaries:sulfurpeter"))) };
+                    else
+                        return new ItemStack[] { OnPickBlock(world, pos), new ItemStack(world.GetBlock(new AssetLocation("necessaries:leadvessel_cover"))) };
+                }
+            }
+            return new ItemStack[] { OnPickBlock(world, pos) };
         }
 
         public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)

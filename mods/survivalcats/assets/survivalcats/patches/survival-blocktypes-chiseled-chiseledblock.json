@@ -1,0 +1,8 @@
+[
+  {
+    "file": "game:blocktypes/chiseled/chiseledblock.json",
+    "op": "replace",
+    "path": "/class",
+    "value": "chiselfix"
+  }
+]

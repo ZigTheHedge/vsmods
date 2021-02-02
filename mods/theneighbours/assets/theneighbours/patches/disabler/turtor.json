@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:entities/water/turtor.json",
+    "condition": { "when": "disableTurtor", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/turtor.json",
+    "condition": { "when": "disableTurtor", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/turtle_meat.json",
+    "condition": { "when": "disableTurtor", "isValue": "true" }
+  }
+]

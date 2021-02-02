@@ -3,9 +3,8 @@
   "modid": "survivalcats",
   "name": "Survival Handbook Categories",
   "authors": [ "ZigTheHedge" ],
-  "description": "Client-only. Adds a convinient way of viewing entire mod content in survival and creative",
-  "side": "client",
-  "version": "1.2.2",
+  "description": "Adds a convinient way of viewing entire mod content in survival and creative",
+  "version": "1.2.3",
   "dependency": {
     "game": "1.14.2"
   }

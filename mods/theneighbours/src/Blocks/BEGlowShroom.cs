@@ -17,8 +17,9 @@ namespace theneighbours.src.Blocks
 
         public void Ambiance(float dt)
         {
-            if (Api.World.Rand.Next(50) == 0) 
-                Api.World.PlaySoundAt(new AssetLocation("theneighbours:sounds/block/glowshroom.ogg"), Pos.X, Pos.Y, Pos.Z);
+            if(ModConfigFile.Current.glowShroomPlopping)
+                if (Api.World.Rand.Next(50) == 0) 
+                    Api.World.PlaySoundAt(new AssetLocation("theneighbours:sounds/block/glowshroom.ogg"), Pos.X, Pos.Y, Pos.Z, null, true, 16);
         }
     }
 }

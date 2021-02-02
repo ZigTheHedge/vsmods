@@ -43,6 +43,40 @@ namespace necessaries.src
         }
     }
 
+    public class ModConfigFile
+    {
+        public static ModConfigFile Current { get; set; }
+
+        public string mailEnabledDesc { get; set; } = "Enable mailboxes, flags and parcels";
+        public bool mailEnabled { get; set; } = true;
+        public string trashcanEnabledDesc { get; set; } = "Enable trashcan";
+        public bool trashcanEnabled { get; set; } = true;
+        public string rustySpikesEnabledDesc { get; set; } = "Enable Rusty Spikes";
+        public bool rustySpikesEnabled { get; set; } = true;
+        public string trapdoorPatchEnabledDesc { get; set; } = "Enable trapdoor patch (trapdoors act like a ladder)";
+        public bool trapdoorPatchEnabled { get; set; } = true;
+        public string vinesPatchEnabledDesc { get; set; } = "Enable vines patch (vines act like a ladder)";
+        public bool vinesPatchEnabled { get; set; } = true;
+        public string branchcutterEnabledDesc { get; set; } = "Enable Branchcutter";
+        public bool branchcutterEnabled { get; set; } = true;
+        public string grindstoneEnabledDesc { get; set; } = "Enable Grindstone, Sulfuric Acid and Glue";
+        public bool grindstoneEnabled { get; set; } = true;
+        public string graniteDiskPropertiesDesc { get; set; } = "Granite Sharpener Disk properties";
+        public int graniteDiskRepairPerCycle { get; set; } = 2;
+        public int graniteDiskDamagePerCycle { get; set; } = 2;
+        public string basaltDiskPropertiesDesc { get; set; } = "Basalt Sharpener Disk properties";
+        public int basaltDiskRepairPerCycle { get; set; } = 2;
+        public int basaltDiskDamagePerCycle { get; set; } = 1;
+        public string sandstoneDiskPropertiesDesc { get; set; } = "Sandstone Sharpener Disk properties";
+        public int sandstoneDiskRepairPerCycle { get; set; } = 3;
+        public int sandstoneDiskDamagePerCycle { get; set; } = 1;
+        public string obsidianDiskPropertiesDesc { get; set; } = "Obsidian Sharpener Disk properties";
+        public int obsidianDiskRepairPerCycle { get; set; } = 5;
+        public int obsidianDiskDamagePerCycle { get; set; } = 1;
+
+
+    }
+
     class Necessaries : ModSystem
     {
         Harmony harmony = new Harmony("com.cwelth.necessaries");
@@ -51,6 +85,22 @@ namespace necessaries.src
         public static List<PostService> postServicesServer;
         public static List<PostService> postServicesClient = new List<PostService>();
         public static Dictionary<string, ITreeAttribute> foodParametresOnDeath = new Dictionary<string, ITreeAttribute>();
+
+        public override void StartPre(ICoreAPI api)
+        {
+            ModConfigFile.Current = api.LoadOrCreateConfig<ModConfigFile>("NecessariesConfig.json");
+
+            api.World.Config.SetBool("mailEnabled", ModConfigFile.Current.mailEnabled);
+            api.World.Config.SetBool("trashcanEnabled", ModConfigFile.Current.trashcanEnabled);
+            api.World.Config.SetBool("rustySpikesEnabled", ModConfigFile.Current.rustySpikesEnabled);
+            api.World.Config.SetBool("trapdoorPatchEnabled", ModConfigFile.Current.trapdoorPatchEnabled);
+            api.World.Config.SetBool("vinesPatchEnabled", ModConfigFile.Current.vinesPatchEnabled);
+            api.World.Config.SetBool("branchcutterEnabled", ModConfigFile.Current.branchcutterEnabled);
+            api.World.Config.SetBool("grindstoneEnabled", ModConfigFile.Current.grindstoneEnabled);
+
+
+            base.StartPre(api);
+        }
 
         public override void Start(ICoreAPI api)
         {

@@ -16,7 +16,8 @@
 		minY: 0,
 		maxY: 1
 	},
-    "file": "game:worldgen/blockpatches.json"
+    "file": "game:worldgen/blockpatches.json",
+    "condition": { "when": "disableGlowshroom", "isValue": "false" }	
   }		
 ]
 
