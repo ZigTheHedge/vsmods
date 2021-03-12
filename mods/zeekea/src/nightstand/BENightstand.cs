@@ -140,7 +140,8 @@ namespace zeekea.src.nightstand
         private void OnSlotModified(int slotid)
         {
             if(slotid < 4)
-                UpdateShape();
+                if (Api.World.Side == EnumAppSide.Client)
+                    if (!ModConfigFile.Current.hideContents) UpdateShape();
         }
         public void UpdateShape()
         {

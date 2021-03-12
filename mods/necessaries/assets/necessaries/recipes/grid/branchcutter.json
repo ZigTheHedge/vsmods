@@ -5,13 +5,13 @@
       type: "item", 
 	  code: "game:sawblade-*",
 	  name: "metal",
-	  allowedVariants: ["copper", "blackbronze", "tinbronze", "bismuthbronze", "iron"]
+	  allowedVariants: ["copper", "blackbronze", "tinbronze", "bismuthbronze", "iron", "meteoriciron", "steel" ]
     },
     "K": {
       "type": "item",
       "code": "game:knifeblade-*",
 	  name: "metal",
-	  allowedVariants: ["copper", "blackbronze", "tinbronze", "bismuthbronze", "iron"]
+	  allowedVariants: ["copper", "blackbronze", "tinbronze", "bismuthbronze", "iron", "meteoriciron", "steel"]
 	},
     "T": {
       "type": "item",

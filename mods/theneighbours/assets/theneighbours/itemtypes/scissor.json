@@ -19,6 +19,7 @@
 
 	durability: 350,
 	attackRange: 3,
+	tooltier: 3,	
 
 	guiTransform: {
 		translation: { x: 3, y: 0, z: 0 },

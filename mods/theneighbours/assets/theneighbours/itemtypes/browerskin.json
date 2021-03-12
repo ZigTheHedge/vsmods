@@ -1,0 +1,11 @@
+{
+	"code": "browerskin",
+	"maxstacksize": 16,
+	"texture": {
+		"base": "theneighbours:item/brower-hide"
+	},
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ]
+	}
+}

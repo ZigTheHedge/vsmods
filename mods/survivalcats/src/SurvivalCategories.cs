@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using Foundation.Extensions;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,13 @@ using Vintagestory.API.Common;
 
 namespace survivalcats.src
 {
+    public class ModConfigFile
+    {
+        public static ModConfigFile Current { get; set; }
+
+        public bool addModNameToInfo { get; set; } = true;
+    }
+
     class SurvivalCategories : ModSystem
     {
         Harmony harmony = new Harmony("com.cwelth.survivalcats");
@@ -24,6 +32,8 @@ namespace survivalcats.src
         {
             base.Start(api);
 
+            ModConfigFile.Current = api.LoadOrCreateConfig<ModConfigFile>("SurvivalCatsConfig.json");
+
             //Harmony.DEBUG = true;
             harmony.PatchAll();
         }
@@ -31,7 +41,7 @@ namespace survivalcats.src
         public override void Dispose()
         {
             base.Dispose();
-            //harmony.UnpatchAll("com.cwelth.survivalcats");
+            harmony.UnpatchAll("com.cwelth.survivalcats");
         }
     }
 }

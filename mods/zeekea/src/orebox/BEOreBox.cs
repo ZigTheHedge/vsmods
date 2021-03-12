@@ -174,7 +174,8 @@ namespace zeekea.src.orebox
                     }
                 }
             }
-            UpdateShape();
+            if(Api.World.Side == EnumAppSide.Client)
+                if (!ModConfigFile.Current.hideContents ) UpdateShape();
         }
 
         public void UpdateShape()

@@ -80,6 +80,8 @@
     <Compile Include="src\Mailbox\GuiDialogMailbox.cs" />
     <Compile Include="src\Mailbox\MailBox.cs" />
     <Compile Include="src\Mailbox\MailBoxInventory.cs" />
+    <Compile Include="src\Mailbox\PostRegistry.cs" />
+    <Compile Include="src\Mailbox\RegScroll.cs" />
     <Compile Include="src\Necessaries.cs" />
     <Compile Include="src\Parcel\BEParcel.cs" />
     <Compile Include="src\Parcel\GuiParcel.cs" />

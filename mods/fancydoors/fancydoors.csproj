@@ -73,12 +73,16 @@
     <Compile Include="src\ChiseledInventory.cs" />
     <Compile Include="src\ChiseledSlot.cs" />
     <Compile Include="src\DoorRenderer.cs" />
+    <Compile Include="src\MultiDoor\DoorFrame.cs" />
+    <Compile Include="src\MultiDoor\DoorFrameBE.cs" />
     <Compile Include="src\RegularDoor\BEFancyDoorPart.cs" />
     <Compile Include="src\DoorPart.cs" />
     <Compile Include="src\FancyDoors.cs" />
     <Compile Include="src\RegularDoor\FancyDoorPart.cs" />
     <Compile Include="src\RegularDoor\FancyDoorRenderer.cs" />
-    <Compile Include="src\SlopeBlock\Slope.cs" />
+    <Compile Include="src\Workbench\DoorWorkbench.cs" />
+    <Compile Include="src\Workbench\DoorWorkbenchBE.cs" />
+    <Compile Include="src\Workbench\GuiWorkbench.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />

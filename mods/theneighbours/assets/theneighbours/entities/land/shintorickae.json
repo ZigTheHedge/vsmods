@@ -47,7 +47,7 @@
 			{ code: "controlledphysics", stepHeight: 1.05 },
 			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 },
 			{ code: "health", currenthealth: 40, maxhealth: 40, },
-			{ code: "deaddecay", hoursToDecay: 96, decayedBlock: "carcass-medium" },
+			{ code: "deaddecay", hoursToDecay: 96 },
 			{ code: "floatupwhenstuck", onlyWhenDead: true },
 			{ 
 				code: "emotionstates",

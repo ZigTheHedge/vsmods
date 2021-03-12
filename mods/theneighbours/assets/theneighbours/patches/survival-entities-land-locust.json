@@ -1,0 +1,48 @@
+[
+  {
+    "op": "add",
+    "path": "/dropsByType/locust-bronze",
+    "value": [
+      {
+        "type": "block",
+        "code": "theneighbours:mobpedestal-locust-bronze-north",
+        "quantity": {
+          "avg": 0.01,
+          "var": 0
+        }
+      }
+    ],
+    "file": "game:entities/land/locust.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/dropsByType/locust-corrupt",
+    "value": [
+      {
+        "type": "block",
+        "code": "theneighbours:mobpedestal-locust-corrupt-north",
+        "quantity": {
+          "avg": 0.01,
+          "var": 0
+        }
+      }
+    ],
+    "file": "game:entities/land/locust.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/dropsByType/locust-corrupt-sawblade/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-locust-corrupt-sawblade-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/locust.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  }
+]

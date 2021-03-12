@@ -1,0 +1,30 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "tradeomat:recipes/clayforming/coinmold.json",
+    "condition": { "when": "disableCoins", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "tradeomat:blocktypes/clay/mold/coin.json",
+    "condition": { "when": "disableCoins", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "tradeomat:blocktypes/coinspile.json",
+    "condition": { "when": "disableCoins", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "tradeomat:itemtypes/basecoin.json",
+    "condition": { "when": "disableCoins", "isValue": "true" }
+  }  
+]

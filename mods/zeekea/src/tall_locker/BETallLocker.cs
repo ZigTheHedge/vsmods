@@ -55,7 +55,8 @@ namespace zeekea.src.tall_locker
 
         private void OnSlotModified(int slotid)
         {
-            UpdateShape(slotid);
+            if (Api.World.Side == EnumAppSide.Client)
+                if (!ModConfigFile.Current.hideContents) UpdateShape(slotid);
         }
         public void OnBlockInteract(IPlayer byPlayer, bool isOwner)
         {

@@ -1,0 +1,63 @@
+{
+	code: "doorworkbench",
+	class: "doorworkbench",
+	entityClass: "doorworkbenchbe",
+	creativeinventory: { "general": ["*-pile-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Wood",
+	variantgroups: [
+		{ code: "state", states: ["pile", "empty", "full"] },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	shapeinventory: { base: "block/workbenchpart" },
+	shapebytype: { 
+		"*-empty-*": {
+			base: "game:block/basic/invisible"
+		},
+		"*-pile-north": {
+			base: "block/workbenchpart",
+			rotateY: 0
+		},
+		"*-pile-east": {
+			base: "block/workbenchpart",
+			rotateY: 270
+		},
+		"*-pile-south": {
+			base: "block/workbenchpart",
+			rotateY: 180
+		},
+		"*-pile-west": {
+			base: "block/workbenchpart",
+			rotateY: 90
+		},
+		"*-full-north": {
+			base: "block/doorworkbench",
+			rotateY: 0
+		},
+		"*-full-east": {
+			base: "block/doorworkbench",
+			rotateY: 270
+		},
+		"*-full-south": {
+			base: "block/doorworkbench",
+			rotateY: 180
+		},
+		"*-full-west": {
+			base: "block/doorworkbench",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	}
+}

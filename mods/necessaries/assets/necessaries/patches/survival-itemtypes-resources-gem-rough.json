@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/crushingPropsByType",
+    "value": { 
+		"*-diamond-*": {
+			"crushedStack": { type: "item", code: "necessaries:grounddiamond", stacksize: 4 },
+			"hardnessTier": 3
+		}
+	},
+    "file": "game:itemtypes/resource/gem-rough.json",
+	"condition": { "when": "grindstoneEnabled", "isValue": "true" }
+  }
+]

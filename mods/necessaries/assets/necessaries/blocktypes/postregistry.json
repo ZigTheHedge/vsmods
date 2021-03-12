@@ -1,0 +1,32 @@
+{
+	code: "postregistry",
+	class: "postregistry",
+	creativeinventory: { "general": ["*"] },
+	blockmaterial: "Mantle",
+	drawtype: "json",
+	shape: { 
+		base: "block/postregistry"
+	},
+	replaceable: 0,
+	requiredMiningTier: 196,
+	lightAbsorption: 0,
+	maxStackSize: 1,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionSelectionBoxes: [
+		{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.75, z2: 1 },
+		{ x1: 0.19, y1: 0.69, z1: 0.19, x2: 0.81, y2: 0.94, z2: 0.81 },
+	],
+	resistance: 31337,
+	sounds: {
+		"place": "game:block/metal",
+		"walk": "game:walk/metal"
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 }
+	}
+}

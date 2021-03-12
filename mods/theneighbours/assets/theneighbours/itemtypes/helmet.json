@@ -2,12 +2,10 @@
 	code: "helmet",
 	class: "ItemWearable",
 	variantgroups: [
-		{ code: "type",  states: ["tickling"] },
+		{ code: "type",  states: ["tickling", "brayer"] },
 		{ code: "subtype",  states: [ "1" ] }
 	],
-	shapeByType: {
-		"*-tickling-*": { base: "theneighbours:item/tickling_head-{subtype}" }
-	},
+	shape: { base: "theneighbours:item/{type}-head-{subtype}" },
 	storageFlags: 128,
 	attributes: {
 		wearableAttachment: true,
@@ -25,6 +23,14 @@
 				highDamageTierResistant: true,
 				perTierRelativeProtectionLoss: [0.015, 0.075],
 				perTierFlatDamageReductionLoss: [0.05, 0.1],
+			},
+			"*-brayer-*": {
+				relativeProtection: 0.5,
+				flatDamageReduction: 0.3,
+				protectionTier: 1,
+				highDamageTierResistant: true,
+				perTierRelativeProtectionLoss: [0.015, 0.075],
+				perTierFlatDamageReductionLoss: [0.05, 0.1],
 			}
 		},
 		statModifiersByType: {
@@ -39,11 +45,18 @@
 	creativeinventory: { "general": ["*"], "items": ["*"], "clothing": ["*"] },
 	renderAlphaTest: 0.25,
 	durabilityByType: {
-		"*-tickling-*": 650
+		"*-tickling-*": 650,
+		"*-brayer-*": 350
 	},
 	
 	fpHandTransformByType: {
 		"*-tickling-*": {
+			translation: { x: 0.4, y: -1.9, z: -0.5 },
+			rotation: { x: 163, y: -111, z: -180 },
+			origin: { x: 0.5, y: 1.7, z: 0.5 },
+			scale: 2.15
+		},
+		"*-brayer-*": {
 			translation: { x: 0.4, y: -1.9, z: -0.5 },
 			rotation: { x: 163, y: -111, z: -180 },
 			origin: { x: 0.5, y: 1.7, z: 0.5 },
@@ -56,6 +69,12 @@
 			rotation: { x: -26, y: -26, z: -34 },
 			origin: { x: 0.5, y: 1.7, z: 0.5 },
 			scale: 0.55
+		},
+		"*-brayer-*": {
+			translation: { x: -0.92, y: -3.2, z: -0.8 },
+			rotation: { x: -26, y: -26, z: -34 },
+			origin: { x: 0.5, y: 1.7, z: 0.5 },
+			scale: 0.55
 		}
 	},
 	guiTransformByType: {
@@ -64,6 +83,12 @@
 			rotation: { x: -26, y: -46, z: -180 },
 			origin: { x: 0.6, y: 2.12, z: 0.8 },
 			scale: 1.24
+		},
+		"*-brayer-*": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -26, y: -46, z: -180 },
+			origin: { x: 0.6, y: 1.72, z: 0.5 },
+			scale: 2
 		}
 	},
 	groundTransformByType: {
@@ -71,6 +96,12 @@
 			translation: { x: 0, y: 0, z: 0 },
 			rotation: { x: 90, y: 0, z: 0 },
 			origin: { x: 0.04, y: 2.31, z: 0.8 },
+			scale: 3.1
+		},
+		"*-brayer-*": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: 0, y: 0, z: 0 },
+			origin: { x: 0.34, y: 1.71, z: 0.5 },
 			scale: 3.1
 		}
 	}

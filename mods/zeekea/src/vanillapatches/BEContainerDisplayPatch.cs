@@ -195,5 +195,10 @@ namespace zeekea.src.vanillapatches
             return mesh;
         }
 
+        protected override void updateMeshes()
+        {
+            if (!ModConfigFile.Current.hideContents) base.updateMeshes();
+        }
+
     }
 }

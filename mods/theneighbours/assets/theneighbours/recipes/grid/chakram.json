@@ -1,0 +1,26 @@
+[
+	{
+		"ingredientPattern": "TST,R R",
+		"ingredients": {
+			"T": {
+				"type": "item",
+				"code": "theneighbours:ampeltail"
+			},
+			"S": {
+				"type": "item",
+				"code": "game:stick"
+			},
+			"R": {
+				"type": "item",
+				"code": "game:rope"
+			}
+		},
+		"width": 3,
+		"height": 2,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "theneighbours:chakram"
+		}
+	}
+]

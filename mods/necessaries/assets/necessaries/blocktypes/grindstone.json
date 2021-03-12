@@ -7,7 +7,7 @@
 	entityBehaviors: [{ name: "Animatable" }],
 	blockmaterial: "Wood",
 	variantgroups: [
-		{ code: "rock", states: ["none", "granite", "obsidian", "sandstone", "basalt"] },
+		{ code: "rock", states: ["none", "granite", "obsidian", "sandstone", "basalt", "diamond"] },
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
 	drawtype: "json",
@@ -34,6 +34,11 @@
 			"oak3": { base: "game:block/wood/planks/oak3" },
 			"granite1": { base: "game:block/stone/cobblestone/granite1" },
 			"wheel": { base: "game:block/transparent" }
+		},
+		"*-diamond-*": {
+			"oak3": { base: "game:block/wood/planks/oak3" },
+			"granite1": { base: "game:block/stone/cobblestone/granite1" },
+			"wheel": { base: "item/diamond" }
 		},
 		"*": {
 			"oak3": { base: "game:block/wood/planks/oak3" },

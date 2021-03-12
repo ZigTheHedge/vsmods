@@ -1,0 +1,9 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "tradeomat:recipes/grid/tomat-tall.json",
+    "condition": { "when": "disableVendingMaching", "isValue": "true" }
+  }  
+]

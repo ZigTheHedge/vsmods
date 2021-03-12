@@ -1,5 +1,7 @@
 ﻿using fancydoors.src.DiagonalDoor;
+using fancydoors.src.MultiDoor;
 using fancydoors.src.RegularDoor;
+using fancydoors.src.Workbench;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,12 @@ namespace fancydoors.src
 
             api.RegisterBlockClass("diagonaldoor", typeof(DiagonalDoorPart));
             api.RegisterBlockEntityClass("bediagonaldoor", typeof(DiagonalDoorBE));
+
+            api.RegisterBlockClass("doorframe", typeof(DoorFrame));
+            api.RegisterBlockEntityClass("doorframebe", typeof(DoorFrameBE));
+
+            api.RegisterBlockClass("doorworkbench", typeof(DoorWorkbench));
+            api.RegisterBlockEntityClass("doorworkbenchbe", typeof(DoorWorkbenchBE));
         }
     }
 }

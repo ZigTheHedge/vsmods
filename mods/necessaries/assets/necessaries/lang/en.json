@@ -54,6 +54,8 @@
 	"item-sharpener-obsidian": "Obsidian grindstone",
 	"item-sharpener-sandstone": "Sandstone grindstone",
 	"item-sharpener-basalt": "Basalt grindstone",
+	"item-sharpener-diamond": "Obsidian-diamond grindstone",
+	"item-grounddiamond": "Crushed Diamond",
 
 	"item-sharpener_disc-granite": "Granite grindstone disc",
 	"item-sharpener_disc-obsidian": "Obsidian grindstone disc",
@@ -88,5 +90,11 @@
 	"madefrom-gluten": "Put a Bone Meal in a Lead Vessel filled with Sulfuric Acid.",
 	
 	"sharpener-repair-amount": "Durability restore per cycle: {0}",
-	"sharpener-damage-amount": "Total durability loss per cycle: {0}"
+	"sharpener-damage-amount": "Total durability loss per cycle: {0}",
+	
+	"item-regscroll": "Mailbox Registration Scroll",
+	"block-postregistry": "Post Registry",
+	"scroll-coords": "Validation certificate for mailbox at: {0}, {1}, {2}\nUse it on a Post Registry",
+	"nomore": "You are not allowed to place more mailboxes",
+	"count": "You own {0} out of {1} mailboxes"
 }

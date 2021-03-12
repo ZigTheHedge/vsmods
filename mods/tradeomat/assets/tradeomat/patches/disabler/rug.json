@@ -1,0 +1,9 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "tradeomat:recipes/grid/rug.json",
+    "condition": { "when": "disableTradeorug", "isValue": "true" }
+  }  
+]

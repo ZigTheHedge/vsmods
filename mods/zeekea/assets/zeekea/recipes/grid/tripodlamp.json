@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "_O_,SRS,_S_",
+  "ingredients": {
+    "O": {
+      "type": "block",
+      "code": "game:oillamp-up"
+    },
+    "S": {
+      "type": "item",
+      "code": "game:firewood"
+    },
+    "R": {
+      "type": "item",
+      "code": "game:rope"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "tripodlamp" }
+}

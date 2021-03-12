@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/torchlamp.json",
+    "condition": { "when": "disableTorchLamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/torchlamp.json",
+    "condition": { "when": "disableTorchLamp", "isValue": "true" }
+  }
+]

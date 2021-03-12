@@ -1,0 +1,56 @@
+{
+	code: "mobpedestal",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Stone",
+	variantgroups: [
+		{ code: "mob", states: ["ampel_child", "ampel_female", "ampel_male", "bell", "brower", "deerhorn", "knife", "locust-bell", "locust-bronze", "locust-corrupt-sawblade", "locust-corrupt", "shintorickae", "spiked1", "spiked2", "surface", "tickling", "turtor"] },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock", 
+	drawtype: "json",
+	shapebytype: { 
+		"*-north": {
+			base: "block/pedestals/{mob}",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/pedestals/{mob}",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/pedestals/{mob}",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/pedestals/{mob}",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	resistance: 2.5,
+	collisionSelectionBoxes: [
+		{ x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1 },
+		{ x1: 0.125, y1: 0.0625, z1: 0.125, x2: 0.875, y2: 0.125, z2: 0.875 },
+		{ x1: 0.25, y1: 0.125, z1: 0.25, x2: 0.75, y2: 0.1875, z2: 0.75 },
+		{ x1: 0.4375, y1: 0.1875, z1: 0.4375, x2: 0.5625, y2: 0.25, z2: 0.5625 },
+	],
+	guiTransform: {
+		rotation: { x: -22.6, y: -150, z: 0 }
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.35, z: 0.5 },
+		rotation: { x: 0, y: -93, z: 0 }
+	},
+	tpHandTransform: {
+		translation: { x: -1.4, y: -0.9, z: -0.5 },
+		rotation: { x: -77, y: 12, z: -94 },
+		scale: 0.43
+	}
+}

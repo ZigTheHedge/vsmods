@@ -1,0 +1,18 @@
+[
+	{
+		"ingredientPattern": "LLL,L L",
+		"ingredients": {
+			"L": {
+				"type": "item",
+				"code": "browerskin"
+			}
+		},
+		"width": 3,
+		"height": 2,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "theneighbours:helmet-brayer-1"
+		}
+	}
+]

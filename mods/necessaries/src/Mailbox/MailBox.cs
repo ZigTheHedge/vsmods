@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 
@@ -36,24 +37,53 @@ namespace necessaries.src.Mailbox
             return handled;
         }
 
-        public override void OnBlockPlaced(IWorldAccessor world, BlockPos blockPos, ItemStack byItemStack = null)
+        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
-            base.OnBlockPlaced(world, blockPos, byItemStack);
-            if (world.Side == EnumAppSide.Server)
+            if (!Necessaries.AbleToPlaceMailbox(byPlayer, api))
             {
-                Necessaries.AddMailbox("", blockPos.X, blockPos.Y, blockPos.Z);
+                if (api.Side == EnumAppSide.Server)
+                    ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("necessaries:nomore"), EnumChatType.CommandError);
+                return false;
             }
+            else
+            {
+                if (ModConfigFile.Current.mailboxesAllowed != 0)
+                {
+                    if (api.Side == EnumAppSide.Server)
+                        ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("necessaries:count", (Necessaries.CountMailboxes(byPlayer, api) + 1), ModConfigFile.Current.mailboxesAllowed), EnumChatType.CommandSuccess);
+                }
+            }
+            bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
+
+            if (api.Side == EnumAppSide.Server)
+                Necessaries.AddMailbox((IServerPlayer)byPlayer, "", blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+            return ret;
         }
 
-        public override void OnBlockBroken(IWorldAccessor world, BlockPos blockPos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
+        public override bool DoPlaceBlock(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ItemStack byItemStack)
+        {
+            bool res = base.DoPlaceBlock(world, byPlayer, blockSel, byItemStack);
+            BlockPos blockPos = blockSel.Position;
+            BEMailBox beMailBox = world.BlockAccessor.GetBlockEntity(blockPos) as BEMailBox;
+            if (beMailBox != null && ModConfigFile.Current.mailHardmodeEnabled)
+            {
+                ItemStack itemStack = new ItemStack(world.GetItem(new AssetLocation("necessaries:regscroll")));
+                itemStack.Attributes.SetInt("actX", blockPos.X);
+                itemStack.Attributes.SetInt("actY", blockPos.Y);
+                itemStack.Attributes.SetInt("actZ", blockPos.Z);
+                beMailBox.inventory[0].Itemstack = itemStack;
+                beMailBox.inventory[0].MarkDirty();
+            }
+            return res;
+        }
+
+        public override void OnBlockRemoved(IWorldAccessor world, BlockPos pos)
         {
             if (world.Side == EnumAppSide.Server)
             {
-                Necessaries.RemoveMailbox(blockPos.X, blockPos.Y, blockPos.Z);
+                Necessaries.RemoveMailbox(pos.X, pos.Y, pos.Z);
             }
-            base.OnBlockBroken(world, blockPos, byPlayer, dropQuantityMultiplier);
+            base.OnBlockRemoved(world, pos);
         }
     }
-
-
 }

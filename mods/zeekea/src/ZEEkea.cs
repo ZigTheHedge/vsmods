@@ -22,6 +22,7 @@ using zeekea.src.nightlamp;
 using zeekea.src.nightstand;
 using zeekea.src.orebox;
 using zeekea.src.tall_locker;
+using zeekea.src.torchlamp;
 
 namespace zeekea.src
 {
@@ -79,6 +80,12 @@ namespace zeekea.src
         public bool disableTalllocker { get; set; } = false;
         public bool disableLinen { get; set; } = false;
         public bool disableIcepick { get; set; } = false;
+        public bool disableTikiLamp { get; set; } = false;
+        public bool disableTorchLamp { get; set; } = false;
+        public string icepickModeDesc { get; } = "Should Icepick leave water block when breaking ice?";
+        public bool icepickMode { get; set; } = true;
+        public string hideContentsDesc { get; } = "Should contents of various containers be hidden?";
+        public bool hideContents { get; set; } = false;
     }
 
     class ZEEkea : ModSystem
@@ -110,6 +117,8 @@ namespace zeekea.src
             api.World.Config.SetBool("disableTalllocker", ModConfigFile.Current.disableTalllocker);
             api.World.Config.SetBool("disableLinen", ModConfigFile.Current.disableLinen);
             api.World.Config.SetBool("disableIcepick", ModConfigFile.Current.disableIcepick);
+            api.World.Config.SetBool("disableTikiLamp", ModConfigFile.Current.disableTikiLamp);
+            api.World.Config.SetBool("disableTorchLamp", ModConfigFile.Current.disableTorchLamp);
 
             base.StartPre(api);
         }
@@ -138,6 +147,8 @@ namespace zeekea.src
 
             api.RegisterBlockClass("multirotatable", typeof(BlockMultiRotatable));
             api.RegisterBlockEntityClass("bemultirotatable", typeof(BEMultiRotatable));
+
+            api.RegisterBlockClass("torchlamp", typeof(TorchLamp));
 
             api.RegisterItemClass("icepick", typeof(IcepickItem));
 

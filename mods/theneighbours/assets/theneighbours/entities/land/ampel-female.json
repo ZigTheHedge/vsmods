@@ -1,0 +1,133 @@
+{
+	code: "ampel-female",
+	class: "EntityHumanoid",
+	hitboxSize: { x: 1, y: 1.5 },
+	deadHitboxSize: { x: 2, y: 0.2 },
+	eyeHeight: 1.3,
+	drops: [],
+	client: {
+		renderer: "Shape",
+		shape: { base: "theneighbours:entity/land/ampel_female" },
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.3 }, 
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "interpolateposition" },
+			{ code: "harvestable" },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt", 
+				animationSpeed: 1.4,
+				weight: 10,
+				blendMode: "Average" 
+			},
+			{
+				code: "die",
+				animation: "die", 
+				animationSpeed: 1.0,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{ 
+				code: "idle", 
+				animation: "idle",
+				blendMode: "AddAverage",
+				animationSpeed: 0.4,
+				triggeredBy: { defaultAnim: true },
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.3 },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 },
+			{ code: "health", currenthealth: 50, maxhealth: 50, },
+			{ code: "deaddecay", hoursToDecay: 96 },
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ 
+				code: "emotionstates",
+				states: [
+					{ code: "fleeondamage", duration: 60, chance: 0.75, slot: 2, priority: 5, accumType: "max", whenHealthRelBelow: 0.4 }
+				],
+			},
+			{ code: "harvestable", drops: [
+					{
+						type: "item",
+						code: "game:bushmeat-raw",
+						quantity: { avg: 1.5, var: 4 }
+					},
+					{
+						type: "item",
+						code: "theneighbours:item/ampeltail",
+						quantity: { avg: 0.3, var: 0 }
+					}
+				],
+			}, 
+			{
+				code: "taskai",
+				aitasks: [
+					{
+						code: "meleeattack",
+						entityCodes: ["player", "wolf-*"],
+						priority: 2,
+						damage: 6,
+						damageTier: 2,
+						damageType: "SlashingAttack",
+						slot: 1,
+						mincooldown: 500, 
+						maxcooldown: 1000, 
+						attackDurationMs: 1000,
+						damagePlayerAtMs: 500,
+						animation: "attack",
+						sound: "theneighbours:creature/ampel/attack" 
+					},
+					{
+						code: "seekentity",
+						entityCodes: ["player", "wolf-*"],
+						priority: 1.5,
+						mincooldown: 400, 
+						maxcooldown: 800, 
+						movespeed: 0.028,
+						seekingRange: 15,
+						animationSpeed: 2,
+						animation: "walk"
+					},
+					{
+						code: "fleeentity",
+						entityCodes: ["player"],
+						priority: 1.6,
+						movespeed: 0.042,
+						seekingRange: 20,
+						animation: "walk",
+						animationSpeed: 3,
+						whenInEmotionState: "fleeondamage"
+					},
+					{
+						code: "wander", 
+						priority: 1.0, 
+						priorityForCancel: 1.35,
+						movespeed: 0.007,
+						animation: "walk",
+						animationSpeed: 0.5,
+						preferredLightLevel: 20
+					},
+					{ 
+						code: "lookaround", 
+						priority: 0.5
+					}
+				]
+			}
+		]
+	},
+	sounds: {
+		hurt: "creature/ampel/hurt",
+		death: "creature/ampel/death",
+		idle: "creature/ampel/idle"
+	},
+	idleSoundChance: 0.1
+}

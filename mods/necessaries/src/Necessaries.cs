@@ -16,6 +16,7 @@ using Vintagestory.API.Util;
 
 namespace necessaries.src
 {
+
     [ProtoContract]
     class PostService
     {
@@ -29,17 +30,25 @@ namespace necessaries.src
         public int Z;
         [ProtoMember(5)]
         public bool doRemove = false;
+        [ProtoMember(6)]
+        public bool isValid = false;
+        [ProtoMember(7)]
+        public bool makeValid = false;
+        [ProtoMember(8)]
+        public string owner;
 
         public PostService()
         {
 
         }
-        public PostService(string title, int X, int Y, int Z)
+        public PostService(string owner, string title, int X, int Y, int Z, bool isValid)
         {
+            this.owner = owner;
             this.title = title;
             this.X = X;
             this.Y = Y;
             this.Z = Z;
+            this.isValid = isValid;
         }
     }
 
@@ -49,6 +58,12 @@ namespace necessaries.src
 
         public string mailEnabledDesc { get; set; } = "Enable mailboxes, flags and parcels";
         public bool mailEnabled { get; set; } = true;
+        public string mailHardmodeEnabledDesc { get; set; } = "Enable \"Hard\" mode for post service. Each mailbox should be registered with Creative-Only Post Registry block before use.";
+        public bool mailHardmodeEnabled { get; set; } = false;
+        public string reducedParcelVolumeDesc { get; set; } = "Should parcel volume be reduced to fit only one attachment?";
+        public bool reducedParcelVolume { get; set; } = false;
+        public string mailboxesAllowedDesc { get; set; } = "Maximum number of mailboxes which each player may have (0 - no limit)";
+        public int mailboxesAllowed { get; set; } = 0;
         public string trashcanEnabledDesc { get; set; } = "Enable trashcan";
         public bool trashcanEnabled { get; set; } = true;
         public string rustySpikesEnabledDesc { get; set; } = "Enable Rusty Spikes";
@@ -73,7 +88,9 @@ namespace necessaries.src
         public string obsidianDiskPropertiesDesc { get; set; } = "Obsidian Sharpener Disk properties";
         public int obsidianDiskRepairPerCycle { get; set; } = 5;
         public int obsidianDiskDamagePerCycle { get; set; } = 1;
-
+        public string diamondDiskPropertiesDesc { get; set; } = "Obsidian-Diamond Sharpener Disk properties";
+        public int diamondDiskRepairPerCycle { get; set; } = 15;
+        public int diamondDiskDamagePerCycle { get; set; } = 1;
 
     }
 
@@ -84,13 +101,13 @@ namespace necessaries.src
         ICoreServerAPI serverApi;
         public static List<PostService> postServicesServer;
         public static List<PostService> postServicesClient = new List<PostService>();
-        public static Dictionary<string, ITreeAttribute> foodParametresOnDeath = new Dictionary<string, ITreeAttribute>();
 
         public override void StartPre(ICoreAPI api)
         {
             ModConfigFile.Current = api.LoadOrCreateConfig<ModConfigFile>("NecessariesConfig.json");
 
             api.World.Config.SetBool("mailEnabled", ModConfigFile.Current.mailEnabled);
+            api.World.Config.SetBool("mailHardmodeEnabled", ModConfigFile.Current.mailHardmodeEnabled);
             api.World.Config.SetBool("trashcanEnabled", ModConfigFile.Current.trashcanEnabled);
             api.World.Config.SetBool("rustySpikesEnabled", ModConfigFile.Current.rustySpikesEnabled);
             api.World.Config.SetBool("trapdoorPatchEnabled", ModConfigFile.Current.trapdoorPatchEnabled);
@@ -126,6 +143,10 @@ namespace necessaries.src
             api.RegisterItemClass("branchcutter", typeof(ItemBranchcutter));
             api.RegisterItemClass("sharpener", typeof(Sharpener));
 
+            api.RegisterItemClass("regscroll", typeof(RegScroll));
+
+            api.RegisterBlockClass("postregistry", typeof(PostRegistry));
+
         }
 
         public static IServerNetworkChannel serverChannel;
@@ -147,20 +168,37 @@ namespace necessaries.src
             if (!msg.doRemove)
             {
                 // Edit?
-                bool found = false;
+                int found = -1;
                 for (int i = 0; i < postServicesClient.Count; i++)
                 {
                     if (postServicesClient[i].X == msg.X &&
                         postServicesClient[i].Y == msg.Y &&
                         postServicesClient[i].Z == msg.Z)
                     {
-                        postServicesClient[i].title = msg.title;
-                        found = true;
+                        found = i;
                         break;
                     }
                 }
-                if(!found)
-                    postServicesClient.Add(msg);
+                if (found == -1)
+                {
+                    if (ModConfigFile.Current.mailHardmodeEnabled)
+                    {
+                        if (!msg.makeValid) postServicesClient.Add(msg);
+                        else return;
+                    } else
+                    {
+                        postServicesClient.Add(msg);
+                    }
+                }
+                else
+                {
+                    if (!msg.makeValid)
+                        postServicesClient[found].title = msg.title;
+                    else
+                    {
+                        postServicesClient[found].isValid = true;
+                    }
+                }
             } else
             {
                 for (int i = 0; i < postServicesClient.Count; i++)
@@ -191,16 +229,46 @@ namespace necessaries.src
             api.Event.PlayerJoin += PushPostServices;
         }
 
-        public static void AddMailbox(string title, int X, int Y, int Z)
+        public static int CountMailboxes(IPlayer player, ICoreAPI api)
         {
-            postServicesServer.Add(new PostService(title, X, Y, Z));
+            int count = 0;
+            if (api.Side == EnumAppSide.Client)
+            {
+                for (int i = 0; i < postServicesClient.Count; i++)
+                {
+                    if (postServicesClient[i].owner == player.PlayerName) count++;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < postServicesServer.Count; i++)
+                {
+                    if (postServicesServer[i].owner == player.PlayerName) count++;
+                }
+            }
+            return count;
+        }
+
+        public static bool AbleToPlaceMailbox(IPlayer player, ICoreAPI api)
+        {
+            int count = CountMailboxes(player, api);
+            if (count >= ModConfigFile.Current.mailboxesAllowed && ModConfigFile.Current.mailboxesAllowed != 0) return false;
+            return true;
+        }
+
+        public static void AddMailbox(IServerPlayer player, string title, int X, int Y, int Z)
+        {
+            bool validate = !ModConfigFile.Current.mailHardmodeEnabled;
+            postServicesServer.Add(new PostService(player.PlayerName, title, X, Y, Z, validate));
             serverChannel.BroadcastPacket(new PostService()
             {
+                owner = player.PlayerName,
                 title = title,
                 X = X,
                 Y = Y,
                 Z = Z,
-                doRemove = false
+                doRemove = false,
+                isValid = validate
             });
         }
 
@@ -223,6 +291,28 @@ namespace necessaries.src
                 Y = Y,
                 Z = Z,
                 doRemove = true
+            });
+        }
+
+        public static void ValidateMailbox(int X, int Y, int Z)
+        {
+            for (int i = 0; i < postServicesServer.Count; i++)
+            {
+                if (postServicesServer[i].X == X &&
+                    postServicesServer[i].Y == Y &&
+                    postServicesServer[i].Z == Z)
+                {
+                    postServicesServer[i].isValid = true;
+                    break;
+                }
+            }
+            serverChannel.BroadcastPacket(new PostService()
+            {
+                title = "",
+                X = X,
+                Y = Y,
+                Z = Z,
+                makeValid = true
             });
         }
 
@@ -253,11 +343,14 @@ namespace necessaries.src
             for (int i = 0; i < postServicesServer.Count; i++)
                 serverChannel.SendPacket(new PostService()
                 {
+                    owner = postServicesServer[i].owner,
                     title = postServicesServer[i].title,
                     X = postServicesServer[i].X,
                     Y = postServicesServer[i].Y,
                     Z = postServicesServer[i].Z,
-                    doRemove = false
+                    isValid = postServicesServer[i].isValid,
+                    doRemove = false,
+                    makeValid = false
                 }, serverPlayer);
         }
         public void SavePostServices()

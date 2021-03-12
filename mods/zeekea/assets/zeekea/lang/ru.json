@@ -188,8 +188,8 @@
 	
 	"block-freezer-melted-closed-north": "Морозильник",
 	"block-doorbell-north": "Звонок",
-	"block-toolmold-raw-icepickhead": "Форма для оголовья ледоруба (сырая)",
-	"block-toolmold-burned-icepickhead": "Форма для оголовья ледоруба (обжженная)",
+	"block-toolmold-raw-icepickhead": "Форма для оголовья ледоруба (необож.)",
+	"block-toolmold-burned-icepickhead": "Форма для оголовья ледоруба",
 	
 	"item-icepickhead-copper": "Оголовье ледоруба из меди",
 	"item-icepickhead-tinbronze": "Оголовье ледоруба из оловянной бронзы",
@@ -388,7 +388,12 @@
 	"item-bellhead-brass": "Колокольный купол",
 	"madefrom-title-bellhead-brass": "Важное замечание:",
 	"madefrom-bellhead-brass": "Выплавляется только из Латуни",
-	"block-toolmold-raw-bellhead": "Форма для Колокольного Купола (сырая)",
-	"block-toolmold-burned-bellhead": "Форма для Колокольного Купола (обожженная)"
+	"block-toolmold-raw-bellhead": "Форма для Колокольного Купола (необож.)",
+	"block-toolmold-burned-bellhead": "Форма для Колокольного Купола",
 	
+	"block-tripodlamp": "Лампа на треноге",
+	
+	"block-torchlamp-0": "Факельная лампа",
+	
+	"item-ironthingie-iron": "Железная штучка"
 }

@@ -9,6 +9,11 @@
 		{ code: "state", states: ["on", "off"] }
 	],
 	drawtype: "json",
+	attributes: {
+		handbook: {
+			groupBy: ["nightlamp-*"]
+		}
+	},
 	textures: {
 		"metal": { base: "game:block/metal/plate/{metal}" },
 		"lamp": { base: "game:block/glass/{color}" }

@@ -19,6 +19,8 @@ namespace theneighbours.src
         public bool disableTurtor { get; set; } = false;
         public bool disableGlowshroom { get; set; } = false;
         public bool glowShroomPlopping { get; set; } = true;
+        public bool disableAmpel { get; set; } = false;
+        public bool disablePedestals { get; set; } = false;
     }
 
     class TheNeighbours : ModSystem
@@ -32,6 +34,8 @@ namespace theneighbours.src
             api.World.Config.SetBool("disableBrayer", ModConfigFile.Current.disableBrayer);
             api.World.Config.SetBool("disableTurtor", ModConfigFile.Current.disableTurtor);
             api.World.Config.SetBool("disableGlowshroom", ModConfigFile.Current.disableGlowshroom);
+            api.World.Config.SetBool("disableAmpel", ModConfigFile.Current.disableAmpel);
+            api.World.Config.SetBool("disablePedestals", ModConfigFile.Current.disablePedestals);
 
             base.StartPre(api);
         }

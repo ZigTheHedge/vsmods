@@ -1,0 +1,49 @@
+{
+	code: "torchlamp",
+	class: "torchlamp",
+	creativeinventory: { "general": ["*-0"], "decorative": ["*-0"], "zeekea": ["*-0"] },	
+	blockmaterial: "Metal",
+	attributes: {
+		"tall": true
+	},
+	variantgroups: [
+		{ code: "count", states: [ "0", "1", "2", "3", "4" ] }
+	],
+	drawtype: "json",
+	shape: { 
+		base: "block/torchlamp-{count}"
+	},
+	lightAbsorption: 0,
+	sideopaque: {
+		all: false
+	},
+	lightHsvByType: {
+		"*-0": [0, 0, 0],
+		"*-1": [7, 6, 11],
+		"*-2": [7, 6, 13],
+		"*-3": [7, 6, 15],
+		"*-4": [7, 6, 17]
+	},
+	resistance: 0.5,
+	selectionBox: { x1: 0.3, y1: 0, z1: 0.3, x2: 0.7, y2: 2, z2: 0.7 },
+	collisionBox: { x1: 0.3, y1: 0, z1: 0.3, x2: 0.7, y2: 2, z2: 0.7 },
+	guiTransform: {
+		translation: { x: 0, y: -0.2, z: 0 },
+		origin: { x: 0.5, y: 1, z: 0.5 },
+		scale: 0.79
+	},
+	fpHandTransform: {
+		rotation: { x: 0, y: 129, z: 0 }
+	},
+	tpHandTransform: {
+		translation: { x: -0.4, y: -0.5, z: -0.5 },
+		rotation: { x: -90, y: 0, z: -90 },
+		scale: 0.97
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.13, z: 0 },
+		rotation: { x: 0, y: -85, z: 90 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 2.94
+	}
+}

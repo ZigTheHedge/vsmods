@@ -1,0 +1,32 @@
+[
+	{ 
+		file: "zeekea:blocktypes/orebox", 
+		op: "add", 
+		path: "/behaviors",
+		value: [ { 
+			name: "Carryable",
+			properties: {
+			  rotation: [ 0, 270, 0 ],
+			  slots: {
+				"Hands": {  },
+				"Back": {  }
+			  }
+			}
+		} ]
+	}, 
+	{ 
+		file: "zeekea:blocktypes/nightstand", 
+		op: "add", 
+		path: "/behaviors/-",
+		value: { 
+			name: "Carryable",
+			properties: {
+			  rotation: [ 0, 270, 0 ],
+			  slots: {
+				"Hands": {  },
+				"Back": {  }
+			  }
+			}
+		}
+	}
+]

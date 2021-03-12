@@ -1,0 +1,9 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "tradeomat:recipes/grid/tomat-crate.json",
+    "condition": { "when": "disableMarketStall", "isValue": "true" }
+  }  
+]

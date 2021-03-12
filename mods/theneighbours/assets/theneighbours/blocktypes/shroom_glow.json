@@ -2,12 +2,14 @@
 	code: "glowshroom",
 	class: "glowshroom",
 	entityClass: "beglowshroom",
+	behaviors: [ {name: "UnstableFalling"} ],	
 	creativeinventory: { "general": ["*"] },
 	blockmaterial: "Plant",
 	drawtype: "json",
 	shape: { 
 		base: "block/shroom_glow",
 	},
+	storageFlags: 257,		
 	lightAbsorption: 0,
 	sidesolid: {
 		all: "false"

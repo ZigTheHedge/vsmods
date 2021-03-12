@@ -16,7 +16,7 @@
 	},
 	
 	variantgroups: [
-		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron" ] },
+		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ] },
 	],
 	textures: {
 		"metal": { base: "game:block/metal/ingot/{metal}" }
@@ -24,12 +24,62 @@
 	
 	damagedby: ["blockbreaking", "attacking"],
 	
+	tooltierbytype: {
+		"*-copper": 2,
+		"*-tinbronze": 3,
+		"*-bismuthbronze": 3,
+		"*-blackbronze": 3,
+		"*-iron": 4,
+		"*-meteoriciron": 4,
+		"*-steel": 5
+	},
+
 	attackpowerbytype: {
 		"branchcutter-copper": 1.25,
 		"branchcutter-bismuthbronze": 1.5,
 		"branchcutter-tinbronze": 1.75,
 		"branchcutter-blackbronze": 2,
-		"branchcutter-iron": 2.25
+		"branchcutter-iron": 2.25,
+		"branchcutter-meteoriciron": 3,
+		"branchcutter-steel": 4
+	},
+	
+	miningspeedbytype: {	
+		"*-copper": {
+			"wood": 3,
+			"plant": 2.8,
+			"leaves": 2.4
+		},
+		"*-bismuthbronze": {
+			"wood": 3.4,
+			"plant": 3.5,
+			"leaves": 2.6
+		},
+		"*-tinbronze": {
+			"wood": 3.8,
+			"plant": 3.8,
+			"leaves": 3
+		},
+		"*-blackbronze": {
+			"wood": 4.3,
+			"plant": 4,
+			"leaves": 3.1
+		},
+		"*-iron": {
+			"wood": 5,
+			"plant": 5,
+			"leaves": 3.2
+		},
+		"*-meteoriciron": {
+			"wood": 5.5,
+			"plant": 5.5,
+			"leaves": 3.6
+		},
+		"*-steel": {
+			"wood": 6,
+			"plant": 6,
+			"leaves": 4
+		}
 	},
 
 	durabilitybytype: {
@@ -37,7 +87,9 @@
 		"branchcutter-tinbronze": 300,
 		"branchcutter-bismuthbronze": 350,
 		"branchcutter-blackbronze": 450,
-		"branchcutter-iron": 600
+		"branchcutter-iron": 600,
+		"branchcutter-meteoriciron": 800,
+		"branchcutter-steel": 1200
 	},
 	
 	guiTransform: {

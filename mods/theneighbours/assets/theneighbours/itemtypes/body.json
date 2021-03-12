@@ -1,0 +1,70 @@
+{
+	code: "body",
+	class: "ItemWearable",
+	variantgroups: [
+		{ code: "type",  states: ["brayer"] }
+	],
+	shape: { base: "theneighbours:item/{type}-body" },
+	storageFlags: 128,
+	attributes: {
+		wearableAttachment: true,
+		clothescategory: "armorbody",
+		defaultProtLoss: {
+			perTierRelativeProtectionLoss: [0.03, 0.15],
+			perTierFlatDamageReductionLoss: [0.1, 0.2],
+		},
+		protectionModifiersByType: {
+			"*-brayer": {
+				relativeProtection: 0.6,
+				flatDamageReduction: 0.4,
+				protectionTier: 1,
+				highDamageTierResistant: true,
+				perTierRelativeProtectionLoss: [0.015, 0.075],
+				perTierFlatDamageReductionLoss: [0.05, 0.1],
+			}
+		},
+		statModifiersByType: {
+		}
+	},
+	textures: {
+		"seraph": { base: "game:block/transparent" }
+	},
+	creativeinventory: { "general": ["*"], "items": ["*"], "clothing": ["*"] },
+	renderAlphaTest: 0.25,
+	durabilityByType: {
+		"*-brayer": 500
+	},
+	
+	fpHandTransformByType: {
+		"*-brayer": {
+			translation: { x: 0.4, y: -1.2, z: -0.5 },
+			rotation: { x: 163, y: -111, z: -180 },
+			origin: { x: 0.5, y: 1.6, z: 0.5 },
+			scale: 2.15
+		}
+	},
+	tpHandTransformByType: {
+		"*-brayer": {
+			translation: { x: -1, y: -2.5, z: -0.8 },
+			rotation: { x: -13, y: -80, z: 16 },
+			origin: { x: 0.5, y: 1.5, z: 0.5 },
+			scale: 0.55
+		}
+	},
+	guiTransformByType: {
+		"*-brayer": {
+			translation: { x: 3, y: 0, z: 0 },
+			rotation: { x: -26, y: -46, z: -180 },
+			origin: { x: 0.5, y: 1.11, z: 0.5 },
+			scale: 1.37
+		}
+	},
+	groundTransformByType: {
+		"*-brayer": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: 0, y: 0, z: 90 },
+			origin: { x: 0.34, y: 1.12, z: 0.5 },
+			scale: 3.1
+		}
+	}
+}

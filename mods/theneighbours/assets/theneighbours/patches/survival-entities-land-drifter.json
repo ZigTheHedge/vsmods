@@ -1,0 +1,86 @@
+[
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/dropsByType/*-corrupt/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-deerhorn-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/drifter.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/dropsByType/*-deep/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-surface-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/drifter.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/dropsByType/*-nightmare/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-knife-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/drifter.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/dropsByType/*-normal/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-surface-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/drifter.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/dropsByType/*-tainted/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-spiked1-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/drifter.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/dropsByType/*-tainted/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-spiked2-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/drifter.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  }
+]

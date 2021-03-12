@@ -116,8 +116,15 @@ namespace tradeomat.src.TradeomatBlock.Rug
             using (MemoryStream ms = new MemoryStream())
             {
                 BinaryWriter writer = new BinaryWriter(ms);
-                for(int i = 0; i < 5; i++)
-                    writer.Write(int.Parse(SingleComposer.GetTextInput("price" + i).GetText()));
+                for (int i = 0; i < 5; i++)
+                {
+                    int price = 0;
+                    try
+                    {
+                        price = int.Parse(SingleComposer.GetTextInput("price" + i).GetText());
+                    } catch {}
+                    writer.Write(price);
+                }
                 data = ms.ToArray();
             }
             capi.Network.SendBlockEntityPacket(BlockEntityPosition.X, BlockEntityPosition.Y, BlockEntityPosition.Z, 1101, data);

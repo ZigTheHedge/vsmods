@@ -9,6 +9,11 @@
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
 	drawtype: "json",
+	attributes: {
+		handbook: {
+			groupBy: ["fancychair-*"]
+		}
+	},
 	textures: {
 		"normal1": { base: "zeekea:block/cloth/linen/{color}" },
 		"acacia1": { base: "game:block/wood/planks/{wood}1" }

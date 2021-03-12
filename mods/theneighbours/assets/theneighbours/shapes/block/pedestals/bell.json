@@ -1,0 +1,3570 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": true
+	},
+	"textureWidth": 64,
+	"textureHeight": 64,
+	"textureSizes": {
+	},
+	"textures": {
+		"gold": "game:block/metal/ingot/gold",
+		"obsidian1": "game:block/stone/rock/obsidian1",
+		"bell": "game:entity/bell"
+	},
+	"elements": [
+		{
+			"name": "pedestal",
+			"from": [ 6.0, 3.0, 6.0 ], 
+			"to": [ 10.0, 4.0, 10.0 ], 
+			"uv": [ 42.0, 24.0 ],
+			"rotationOrigin": [ 6.0, 3.0, 6.0 ],
+			"faces": {
+				"north": { "texture": "#obsidian1", "uv": [ 42.0, 28.0, 46.0, 30.0 ] },
+				"east": { "texture": "#obsidian1", "uv": [ 46.0, 28.0, 50.0, 30.0 ] },
+				"south": { "texture": "#obsidian1", "uv": [ 50.0, 28.0, 54.0, 30.0 ] },
+				"west": { "texture": "#obsidian1", "uv": [ 54.0, 28.0, 58.0, 30.0 ] },
+				"up": { "texture": "#obsidian1", "uv": [ 42.0, 24.0, 46.0, 28.0 ] },
+				"down": { "texture": "#obsidian1", "uv": [ 46.0, 24.0, 50.0, 28.0 ] }
+			},
+			"children": [
+				{
+					"name": "1",
+					"from": [ -2.0, -1.0, -2.0 ], 
+					"to": [ 6.0, 0.0, 6.0 ], 
+					"uv": [ 31.5, 8.5 ],
+					"rotationOrigin": [ -2.0, -1.0, -2.0 ],
+					"faces": {
+						"north": { "texture": "#obsidian1", "uv": [ 31.5, 16.5, 39.5, 17.5 ] },
+						"east": { "texture": "#obsidian1", "uv": [ 39.5, 16.5, 47.5, 17.5 ] },
+						"south": { "texture": "#obsidian1", "uv": [ 47.5, 16.5, 55.5, 17.5 ] },
+						"west": { "texture": "#obsidian1", "uv": [ 55.5, 16.5, 63.5, 17.5 ] },
+						"up": { "texture": "#obsidian1", "uv": [ 31.5, 8.5, 39.5, 16.5 ] },
+						"down": { "texture": "#obsidian1", "uv": [ 39.5, 8.5, 47.5, 16.5 ] }
+					},
+					"children": [
+						{
+							"name": "2",
+							"from": [ -2.0, -1.0, -2.0 ], 
+							"to": [ 10.0, 0.0, 10.0 ], 
+							"uv": [ 8.0, 36.5 ],
+							"rotationOrigin": [ -2.0, -1.0, -2.0 ],
+							"faces": {
+								"north": { "texture": "#obsidian1", "uv": [ 8.0, 48.5, 20.0, 49.5 ] },
+								"east": { "texture": "#obsidian1", "uv": [ 20.0, 48.5, 32.0, 49.5 ] },
+								"south": { "texture": "#obsidian1", "uv": [ 32.0, 48.5, 44.0, 49.5 ] },
+								"west": { "texture": "#obsidian1", "uv": [ 44.0, 48.5, 56.0, 49.5 ] },
+								"up": { "texture": "#obsidian1", "uv": [ 8.0, 36.5, 20.0, 48.5 ] },
+								"down": { "texture": "#obsidian1", "uv": [ 20.0, 36.5, 32.0, 48.5 ] }
+							},
+							"children": [
+								{
+									"name": "3",
+									"from": [ -2.0, -1.0, -2.0 ], 
+									"to": [ 14.0, 0.0, 14.0 ], 
+									"uv": [ 0.0, 26.0 ],
+									"rotationOrigin": [ -2.0, -1.0, -2.0 ],
+									"faces": {
+										"north": { "texture": "#obsidian1", "uv": [ 0.0, 42.0, 16.0, 43.0 ] },
+										"east": { "texture": "#obsidian1", "uv": [ 16.0, 42.0, 32.0, 43.0 ] },
+										"south": { "texture": "#obsidian1", "uv": [ 32.0, 42.0, 48.0, 43.0 ] },
+										"west": { "texture": "#obsidian1", "uv": [ 48.0, 42.0, 64.0, 43.0 ] },
+										"up": { "texture": "#obsidian1", "uv": [ 0.0, 26.0, 16.0, 42.0 ] },
+										"down": { "texture": "#obsidian1", "uv": [ 16.0, 26.0, 32.0, 42.0 ] }
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "sign",
+					"from": [ -3.0, -2.0, 9.0 ], 
+					"to": [ 7.0, 0.0, 9.1 ], 
+					"uv": [ 32.5, 31.5 ],
+					"rotationOrigin": [ -3.0, -2.0, 9.0 ],
+					"faces": {
+						"north": { "texture": "#gold", "uv": [ 32.0, 34.0, 42.0, 36.0 ] },
+						"east": { "texture": "#gold", "uv": [ 44.0, 34.0, 46.0, 36.0 ] },
+						"south": { "texture": "#gold", "uv": [ 46.0, 34.0, 56.0, 36.0 ] },
+						"west": { "texture": "#gold", "uv": [ 56.0, 34.0, 58.0, 36.0 ] },
+						"up": { "texture": "#gold", "uv": [ 32.0, 32.0, 42.0, 34.0 ] },
+						"down": { "texture": "#gold", "uv": [ 44.0, 32.0, 54.0, 34.0 ] }
+					}
+				}
+			]
+		},
+		{
+			"name": "origin",
+			"from": [ 4.5, 5.0, 8.0 ], 
+			"to": [ 4.5, 5.0, 8.0 ], 
+			"uv": [ 0.0, 0.0 ],
+			"rotationOrigin": [ 4.5, 9.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+				"east": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+				"south": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+				"west": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+				"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+				"down": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false }
+			},
+			"children": [
+				{
+					"name": "N",
+					"from": [ -1.5, 0.5, -1.5 ], 
+					"to": [ 1.5, 2.5, -1.0 ], 
+					"uv": [ 16.5, 3.5 ],
+					"rotationOrigin": [ 0.0, 2.5, -1.25 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 16.5, 4.5, 19.5, 6.5 ] },
+						"east": { "texture": "#bell", "uv": [ 22.5, 4.5, 23.0, 6.5 ] },
+						"south": { "texture": "#bell", "uv": [ 23.5, 4.5, 26.5, 6.5 ] },
+						"west": { "texture": "#bell", "uv": [ 29.5, 4.5, 30.0, 6.5 ] },
+						"up": { "texture": "#bell", "uv": [ 16.5, 3.5, 19.5, 4.0 ] },
+						"down": { "texture": "#bell", "uv": [ 22.5, 3.5, 25.5, 4.0 ] }
+					},
+					"children": [
+						{
+							"name": "N tip",
+							"from": [ 0.25, -1.45, -0.15 ], 
+							"to": [ 2.75, 0.55, 0.35 ], 
+							"uv": [ 0.0, 0.0 ],
+							"rotationOrigin": [ 1.5, 0.05, 0.1 ],
+							"rotationX": 20.0,
+							"faces": {
+								"north": { "texture": "#bell", "uv": [ 0.0, 1.0, 2.5, 3.0 ] },
+								"east": { "texture": "#bell", "uv": [ 5.0, 1.0, 5.5, 3.0 ] },
+								"south": { "texture": "#bell", "uv": [ 6.0, 1.0, 8.5, 3.0 ] },
+								"west": { "texture": "#bell", "uv": [ 11.0, 1.0, 11.5, 3.0 ] },
+								"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 2.5, 0.5 ] },
+								"down": { "texture": "#bell", "uv": [ 5.0, 0.0, 7.5, 0.5 ] }
+							}
+						}
+					]
+				},
+				{
+					"name": "S",
+					"from": [ -1.5, 0.5, 1.0 ], 
+					"to": [ 1.5, 2.5, 1.5 ], 
+					"uv": [ 16.5, 6.5 ],
+					"rotationOrigin": [ 0.0, 2.5, 1.25 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 16.5, 7.5, 19.5, 9.5 ] },
+						"east": { "texture": "#bell", "uv": [ 22.5, 7.5, 23.0, 9.5 ] },
+						"south": { "texture": "#bell", "uv": [ 23.5, 7.5, 26.5, 9.5 ] },
+						"west": { "texture": "#bell", "uv": [ 29.5, 7.5, 30.0, 9.5 ] },
+						"up": { "texture": "#bell", "uv": [ 16.5, 6.5, 19.5, 7.0 ], "rotation": 180 },
+						"down": { "texture": "#bell", "uv": [ 22.5, 6.5, 25.5, 7.0 ] }
+					},
+					"children": [
+						{
+							"name": "S tip",
+							"from": [ 0.25, -1.45, 0.15 ], 
+							"to": [ 2.75, 0.55, 0.65 ], 
+							"uv": [ 0.0, 0.0 ],
+							"rotationOrigin": [ 1.5, 0.05, 0.4 ],
+							"rotationX": -20.0,
+							"faces": {
+								"north": { "texture": "#bell", "uv": [ 0.0, 1.0, 2.5, 3.0 ] },
+								"east": { "texture": "#bell", "uv": [ 5.0, 1.0, 5.5, 3.0 ] },
+								"south": { "texture": "#bell", "uv": [ 6.0, 1.0, 8.5, 3.0 ] },
+								"west": { "texture": "#bell", "uv": [ 11.0, 1.0, 11.5, 3.0 ] },
+								"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 2.5, 0.5 ] },
+								"down": { "texture": "#bell", "uv": [ 5.0, 0.0, 7.5, 0.5 ] }
+							}
+						}
+					]
+				},
+				{
+					"name": "W",
+					"from": [ -1.5, 0.5, -1.0 ], 
+					"to": [ -1.0, 2.5, 1.0 ], 
+					"uv": [ 3.0, 1.0 ],
+					"rotationOrigin": [ -1.25, 2.5, 0.0 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 16.0, 12.0, 16.5, 14.0 ], "enabled": false },
+						"east": { "texture": "#bell", "uv": [ 3.0, 5.0, 5.0, 7.0 ] },
+						"south": { "texture": "#bell", "uv": [ 21.0, 12.0, 21.5, 14.0 ], "enabled": false },
+						"west": { "texture": "#bell", "uv": [ 7.0, 5.0, 9.0, 7.0 ] },
+						"up": { "texture": "#bell", "uv": [ 3.0, 1.0, 3.5, 3.0 ] },
+						"down": { "texture": "#bell", "uv": [ 4.0, 1.0, 4.5, 3.0 ] }
+					},
+					"children": [
+						{
+							"name": "W tip",
+							"from": [ -0.15, -1.45, -0.255 ], 
+							"to": [ 0.35, 0.55, 2.255 ], 
+							"uv": [ 0.0, 0.0 ],
+							"rotationOrigin": [ 0.1, 0.05, 1.0 ],
+							"rotationZ": -20.0,
+							"faces": {
+								"north": { "texture": "#bell", "uv": [ 0.0, 5.0, 0.5, 7.0 ] },
+								"east": { "texture": "#bell", "uv": [ 1.0, 5.0, 3.5, 7.0 ] },
+								"south": { "texture": "#bell", "uv": [ 6.0, 5.0, 6.5, 7.0 ] },
+								"west": { "texture": "#bell", "uv": [ 7.0, 5.0, 9.5, 7.0 ] },
+								"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.5, 2.5 ] },
+								"down": { "texture": "#bell", "uv": [ 1.0, 0.0, 1.5, 2.5 ] }
+							}
+						}
+					]
+				},
+				{
+					"name": "E",
+					"from": [ 1.0, 0.5, -1.0 ], 
+					"to": [ 1.5, 2.5, 1.0 ], 
+					"uv": [ 13.0, 0.0 ],
+					"rotationOrigin": [ -1.25, 2.5, 0.0 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 0.0, 4.0, 0.5, 6.0 ], "enabled": false },
+						"east": { "texture": "#bell", "uv": [ 13.0, 4.0, 15.0, 6.0 ] },
+						"south": { "texture": "#bell", "uv": [ 5.0, 4.0, 5.5, 6.0 ], "enabled": false },
+						"west": { "texture": "#bell", "uv": [ 17.0, 4.0, 19.0, 6.0 ] },
+						"up": { "texture": "#bell", "uv": [ 13.0, 0.0, 13.5, 2.0 ] },
+						"down": { "texture": "#bell", "uv": [ 14.0, 0.0, 14.5, 2.0 ] }
+					},
+					"children": [
+						{
+							"name": "E tip",
+							"from": [ 0.15, -1.45, -0.35 ], 
+							"to": [ 0.65, 0.55, 2.15 ], 
+							"uv": [ 0.0, 0.0 ],
+							"rotationOrigin": [ 0.4, 0.05, 0.9 ],
+							"rotationZ": 20.0,
+							"faces": {
+								"north": { "texture": "#bell", "uv": [ 0.0, 5.0, 0.5, 7.0 ] },
+								"east": { "texture": "#bell", "uv": [ 1.0, 5.0, 3.5, 7.0 ] },
+								"south": { "texture": "#bell", "uv": [ 6.0, 5.0, 6.5, 7.0 ] },
+								"west": { "texture": "#bell", "uv": [ 7.0, 5.0, 9.5, 7.0 ] },
+								"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.5, 2.5 ] },
+								"down": { "texture": "#bell", "uv": [ 1.0, 0.0, 1.5, 2.5 ] }
+							}
+						}
+					]
+				},
+				{
+					"name": "N small",
+					"from": [ -1.0, 2.0, -1.0 ], 
+					"to": [ 1.0, 3.5, -0.5 ], 
+					"uv": [ 0.0, 0.0 ],
+					"rotationOrigin": [ 0.0, 3.5, -0.75 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 0.0, 1.0, 2.0, 2.5 ] },
+						"east": { "texture": "#bell", "uv": [ 4.0, 1.0, 4.5, 2.5 ] },
+						"south": { "texture": "#bell", "uv": [ 5.0, 1.0, 7.0, 2.5 ] },
+						"west": { "texture": "#bell", "uv": [ 9.0, 1.0, 9.5, 2.5 ] },
+						"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 2.0, 0.5 ] },
+						"down": { "texture": "#bell", "uv": [ 4.0, 0.0, 6.0, 0.5 ] }
+					}
+				},
+				{
+					"name": "S small",
+					"from": [ -1.0, 2.0, 0.5 ], 
+					"to": [ 1.0, 3.5, 1.0 ], 
+					"uv": [ 0.0, 0.0 ],
+					"rotationOrigin": [ 0.0, 3.5, 0.75 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 0.0, 1.0, 2.0, 2.5 ] },
+						"east": { "texture": "#bell", "uv": [ 4.0, 1.0, 4.5, 2.5 ] },
+						"south": { "texture": "#bell", "uv": [ 5.0, 1.0, 7.0, 2.5 ] },
+						"west": { "texture": "#bell", "uv": [ 9.0, 1.0, 9.5, 2.5 ] },
+						"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 2.0, 0.5 ] },
+						"down": { "texture": "#bell", "uv": [ 4.0, 0.0, 6.0, 0.5 ] }
+					}
+				},
+				{
+					"name": "W small",
+					"from": [ -1.0, 2.0, -0.5 ], 
+					"to": [ -0.5, 3.5, 0.5 ], 
+					"uv": [ 0.0, 0.0 ],
+					"rotationOrigin": [ -0.75, 3.5, 0.0 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 0.0, 2.0, 0.5, 3.5 ], "enabled": false },
+						"east": { "texture": "#bell", "uv": [ 0.0, 2.0, 1.0, 3.5 ] },
+						"south": { "texture": "#bell", "uv": [ 3.0, 2.0, 3.5, 3.5 ], "enabled": false },
+						"west": { "texture": "#bell", "uv": [ 2.0, 2.0, 3.0, 3.5 ] },
+						"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+						"down": { "texture": "#bell", "uv": [ 1.0, 0.0, 1.5, 1.0 ] }
+					}
+				},
+				{
+					"name": "E small",
+					"from": [ 0.5, 2.0, -0.5 ], 
+					"to": [ 1.0, 3.5, 0.5 ], 
+					"uv": [ 0.0, 0.0 ],
+					"rotationOrigin": [ -0.75, 3.5, 0.0 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 0.0, 2.0, 0.5, 3.5 ], "enabled": false },
+						"east": { "texture": "#bell", "uv": [ 0.0, 2.0, 1.0, 3.5 ] },
+						"south": { "texture": "#bell", "uv": [ 3.0, 2.0, 3.5, 3.5 ], "enabled": false },
+						"west": { "texture": "#bell", "uv": [ 2.0, 2.0, 3.0, 3.5 ] },
+						"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.5, 1.0 ] },
+						"down": { "texture": "#bell", "uv": [ 1.0, 0.0, 1.5, 1.0 ] }
+					}
+				},
+				{
+					"name": "top",
+					"from": [ -0.5, 3.0, -0.5 ], 
+					"to": [ 0.5, 4.5, 0.5 ], 
+					"uv": [ 0.0, 0.0 ],
+					"rotationOrigin": [ 0.0, 4.5, 0.0 ],
+					"faces": {
+						"north": { "texture": "#bell", "uv": [ 0.0, 2.0, 1.0, 3.5 ] },
+						"east": { "texture": "#bell", "uv": [ 2.0, 2.0, 3.0, 3.5 ] },
+						"south": { "texture": "#bell", "uv": [ 4.0, 2.0, 5.0, 3.5 ] },
+						"west": { "texture": "#bell", "uv": [ 6.0, 2.0, 7.0, 3.5 ] },
+						"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"down": { "texture": "#bell", "uv": [ 2.0, 0.0, 3.0, 1.0 ] }
+					},
+					"children": [
+						{
+							"name": "ORIGIN SPINE",
+							"from": [ -3.4, -4.0, -3.5 ], 
+							"to": [ -3.4, -4.0, -3.5 ], 
+							"uv": [ 0.0, 0.0 ],
+							"rotationOrigin": [ 0.6, 1.5, 0.5 ],
+							"faces": {
+								"north": { "texture": "#bell", "uv": [ 0.0, 0.5, 0.25, 0.75 ], "enabled": false },
+								"east": { "texture": "#bell", "uv": [ 0.5, 0.5, 0.75, 0.75 ], "enabled": false },
+								"south": { "texture": "#bell", "uv": [ 0.5, 0.5, 0.75, 0.75 ], "enabled": false },
+								"west": { "texture": "#bell", "uv": [ 0.5, 0.5, 0.75, 0.75 ], "enabled": false },
+								"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.25, 0.25 ], "enabled": false },
+								"down": { "texture": "#bell", "uv": [ 0.5, 0.0, 0.75, 0.25 ], "enabled": false }
+							},
+							"children": [
+								{
+									"name": "origin vertebrae 1",
+									"from": [ 0.5, 0.45, 0.0 ], 
+									"to": [ 0.5, 0.45, 0.0 ], 
+									"uv": [ 0.0, 0.0 ],
+									"rotationOrigin": [ 3.75, 5.8, 4.0 ],
+									"faces": {
+										"north": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+										"east": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+										"south": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+										"west": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+										"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+										"down": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false }
+									},
+									"children": [
+										{
+											"name": "vertebrae 1",
+											"from": [ 3.25, 4.4, 3.8 ], 
+											"to": [ 4.5, 5.4, 4.3 ], 
+											"uv": [ 18.0, 20.5 ],
+											"rotationOrigin": [ 4.0, 5.4, 4.05 ],
+											"rotationX": -30.0,
+											"rotationZ": 5.0,
+											"faces": {
+												"north": { "texture": "#bell", "uv": [ 18.0, 21.5, 19.25, 22.5 ] },
+												"east": { "texture": "#bell", "uv": [ 20.5, 21.5, 21.0, 22.5 ] },
+												"south": { "texture": "#bell", "uv": [ 21.5, 21.5, 22.75, 22.5 ] },
+												"west": { "texture": "#bell", "uv": [ 24.0, 21.5, 24.5, 22.5 ] },
+												"up": { "texture": "#bell", "uv": [ 18.0, 20.5, 19.25, 21.0 ] },
+												"down": { "texture": "#bell", "uv": [ 20.5, 20.5, 21.75, 21.0 ] }
+											},
+											"children": [
+												{
+													"name": "sensory 1",
+													"from": [ 0.25, 0.85, 0.4 ], 
+													"to": [ 0.5, 1.85, 0.5 ], 
+													"uv": [ 18.5, 25.5 ],
+													"rotationOrigin": [ 0.25, 0.85, 0.4 ],
+													"rotationX": 90.0,
+													"rotationZ": 15.0,
+													"faces": {
+														"north": { "texture": "#bell", "uv": [ 18.5, 26.0, 18.75, 27.0 ] },
+														"east": { "texture": "#bell", "uv": [ 19.0, 26.0, 19.25, 27.0 ] },
+														"south": { "texture": "#bell", "uv": [ 19.5, 26.0, 19.75, 27.0 ] },
+														"west": { "texture": "#bell", "uv": [ 20.0, 26.0, 20.25, 27.0 ] },
+														"up": { "texture": "#bell", "uv": [ 18.5, 25.5, 18.75, 25.75 ] },
+														"down": { "texture": "#bell", "uv": [ 19.0, 25.5, 19.25, 25.75 ] }
+													}
+												},
+												{
+													"name": "sensory 2",
+													"from": [ 0.75, 0.85, 0.4 ], 
+													"to": [ 1.0, 1.85, 0.5 ], 
+													"uv": [ 8.0, 23.5 ],
+													"rotationOrigin": [ 0.75, 0.85, 0.4 ],
+													"rotationX": 90.0,
+													"rotationZ": 5.0,
+													"faces": {
+														"north": { "texture": "#bell", "uv": [ 8.0, 24.0, 8.25, 25.0 ] },
+														"east": { "texture": "#bell", "uv": [ 8.5, 24.0, 8.75, 25.0 ] },
+														"south": { "texture": "#bell", "uv": [ 9.0, 24.0, 9.25, 25.0 ] },
+														"west": { "texture": "#bell", "uv": [ 9.5, 24.0, 9.75, 25.0 ] },
+														"up": { "texture": "#bell", "uv": [ 8.0, 23.5, 8.25, 23.75 ] },
+														"down": { "texture": "#bell", "uv": [ 8.5, 23.5, 8.75, 23.75 ] }
+													}
+												}
+											]
+										},
+										{
+											"name": "vertebrae 2",
+											"from": [ 3.25, 4.4, 3.7 ], 
+											"to": [ 4.5, 5.4, 4.2 ], 
+											"uv": [ 20.5, 23.0 ],
+											"rotationOrigin": [ 4.0, 5.4, 3.95 ],
+											"rotationX": 30.0,
+											"rotationZ": 5.0,
+											"faces": {
+												"north": { "texture": "#bell", "uv": [ 20.5, 24.0, 21.75, 25.0 ] },
+												"east": { "texture": "#bell", "uv": [ 23.0, 24.0, 23.5, 25.0 ] },
+												"south": { "texture": "#bell", "uv": [ 24.0, 24.0, 25.25, 25.0 ] },
+												"west": { "texture": "#bell", "uv": [ 26.5, 24.0, 27.0, 25.0 ] },
+												"up": { "texture": "#bell", "uv": [ 20.5, 23.0, 21.75, 23.5 ] },
+												"down": { "texture": "#bell", "uv": [ 23.0, 23.0, 24.25, 23.5 ] }
+											},
+											"children": [
+												{
+													"name": "sensory 3",
+													"from": [ 0.25, 0.75, 0.15 ], 
+													"to": [ 0.5, 1.75, 0.25 ], 
+													"uv": [ 30.0, 26.5 ],
+													"rotationOrigin": [ 0.25, 0.75, 0.15 ],
+													"rotationX": -90.0,
+													"rotationZ": 15.0,
+													"faces": {
+														"north": { "texture": "#bell", "uv": [ 30.0, 27.0, 30.25, 28.0 ] },
+														"east": { "texture": "#bell", "uv": [ 30.5, 27.0, 30.75, 28.0 ] },
+														"south": { "texture": "#bell", "uv": [ 31.0, 27.0, 31.25, 28.0 ] },
+														"west": { "texture": "#bell", "uv": [ 31.5, 27.0, 31.75, 28.0 ] },
+														"up": { "texture": "#bell", "uv": [ 30.0, 26.5, 30.25, 26.75 ] },
+														"down": { "texture": "#bell", "uv": [ 30.5, 26.5, 30.75, 26.75 ] }
+													}
+												},
+												{
+													"name": "sensory 4",
+													"from": [ 0.75, 0.75, 0.2 ], 
+													"to": [ 1.0, 1.75, 0.3 ], 
+													"uv": [ 30.0, 23.5 ],
+													"rotationOrigin": [ 0.75, 0.75, 0.2 ],
+													"rotationX": -90.0,
+													"rotationZ": 5.0,
+													"faces": {
+														"north": { "texture": "#bell", "uv": [ 30.0, 24.0, 30.25, 25.0 ] },
+														"east": { "texture": "#bell", "uv": [ 30.5, 24.0, 30.75, 25.0 ] },
+														"south": { "texture": "#bell", "uv": [ 31.0, 24.0, 31.25, 25.0 ] },
+														"west": { "texture": "#bell", "uv": [ 31.5, 24.0, 31.75, 25.0 ] },
+														"up": { "texture": "#bell", "uv": [ 30.0, 23.5, 30.25, 23.75 ] },
+														"down": { "texture": "#bell", "uv": [ 30.5, 23.5, 30.75, 23.75 ] }
+													}
+												}
+											]
+										},
+										{
+											"name": "origin vertebrae 2",
+											"from": [ 1.15, 0.0, 0.0 ], 
+											"to": [ 1.15, 0.0, 0.0 ], 
+											"uv": [ 0.0, 0.0 ],
+											"rotationOrigin": [ 4.4, 5.35, 4.0 ],
+											"rotationZ": 9.999998643058069,
+											"faces": {
+												"north": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.25, 0.0 ], "enabled": false, "autoUv": false },
+												"east": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false },
+												"south": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false },
+												"west": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+												"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+												"down": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false }
+											},
+											"children": [
+												{
+													"name": "vertebrae 3",
+													"from": [ 3.25, 4.4, 3.9 ], 
+													"to": [ 4.25, 5.4, 4.15 ], 
+													"uv": [ 23.5, 21.0 ],
+													"rotationOrigin": [ 3.75, 5.4, 3.9 ],
+													"rotationX": -27.0,
+													"rotationZ": 5.0,
+													"faces": {
+														"north": { "texture": "#bell", "uv": [ 23.5, 21.5, 24.5, 22.5 ] },
+														"east": { "texture": "#bell", "uv": [ 25.5, 21.5, 25.75, 22.5 ] },
+														"south": { "texture": "#bell", "uv": [ 26.0, 21.5, 27.0, 22.5 ] },
+														"west": { "texture": "#bell", "uv": [ 28.0, 21.5, 28.25, 22.5 ] },
+														"up": { "texture": "#bell", "uv": [ 23.5, 21.0, 24.5, 21.25 ] },
+														"down": { "texture": "#bell", "uv": [ 25.5, 21.0, 26.5, 21.25 ] }
+													},
+													"children": [
+														{
+															"name": "sensory 5",
+															"from": [ 0.1, 0.9, 0.25 ], 
+															"to": [ 0.35, 1.65, 0.35 ], 
+															"uv": [ 21.5, 25.5 ],
+															"rotationOrigin": [ 0.1, 0.9, 0.25 ],
+															"rotationX": 90.0,
+															"rotationZ": -5.0,
+															"faces": {
+																"north": { "texture": "#bell", "uv": [ 21.5, 26.0, 21.75, 26.75 ] },
+																"east": { "texture": "#bell", "uv": [ 22.0, 26.0, 22.25, 26.75 ] },
+																"south": { "texture": "#bell", "uv": [ 22.5, 26.0, 22.75, 26.75 ] },
+																"west": { "texture": "#bell", "uv": [ 23.0, 26.0, 23.25, 26.75 ] },
+																"up": { "texture": "#bell", "uv": [ 21.5, 25.5, 21.75, 25.75 ] },
+																"down": { "texture": "#bell", "uv": [ 22.0, 25.5, 22.25, 25.75 ] }
+															}
+														},
+														{
+															"name": "sensory 6",
+															"from": [ 0.65, 0.9, 0.15 ], 
+															"to": [ 0.9, 1.65, 0.25 ], 
+															"uv": [ 20.0, 30.0 ],
+															"rotationOrigin": [ 0.65, 0.9, 0.15 ],
+															"rotationX": 90.0,
+															"rotationZ": -10.0,
+															"faces": {
+																"north": { "texture": "#bell", "uv": [ 20.0, 30.5, 20.25, 31.25 ] },
+																"east": { "texture": "#bell", "uv": [ 20.5, 30.5, 20.75, 31.25 ] },
+																"south": { "texture": "#bell", "uv": [ 21.0, 30.5, 21.25, 31.25 ] },
+																"west": { "texture": "#bell", "uv": [ 21.5, 30.5, 21.75, 31.25 ] },
+																"up": { "texture": "#bell", "uv": [ 20.0, 30.0, 20.25, 30.25 ] },
+																"down": { "texture": "#bell", "uv": [ 20.5, 30.0, 20.75, 30.25 ] }
+															}
+														}
+													]
+												},
+												{
+													"name": "vertebrae 4",
+													"from": [ 3.25, 4.4, 3.85 ], 
+													"to": [ 4.25, 5.4, 4.1 ], 
+													"uv": [ 12.0, 23.0 ],
+													"rotationOrigin": [ 3.75, 5.4, 4.1 ],
+													"rotationX": 27.0,
+													"rotationZ": 5.0,
+													"faces": {
+														"north": { "texture": "#bell", "uv": [ 12.0, 23.5, 13.0, 24.5 ] },
+														"east": { "texture": "#bell", "uv": [ 14.0, 23.5, 14.25, 24.5 ] },
+														"south": { "texture": "#bell", "uv": [ 14.5, 23.5, 15.5, 24.5 ] },
+														"west": { "texture": "#bell", "uv": [ 16.5, 23.5, 16.75, 24.5 ] },
+														"up": { "texture": "#bell", "uv": [ 12.0, 23.0, 13.0, 23.25 ] },
+														"down": { "texture": "#bell", "uv": [ 14.0, 23.0, 15.0, 23.25 ] }
+													},
+													"children": [
+														{
+															"name": "sensory 7",
+															"from": [ 0.1, 0.75, 0.05 ], 
+															"to": [ 0.35, 1.5, 0.15 ], 
+															"uv": [ 17.0, 26.0 ],
+															"rotationOrigin": [ 0.1, 0.75, 0.0 ],
+															"rotationX": -90.0,
+															"rotationZ": -5.0,
+															"faces": {
+																"north": { "texture": "#bell", "uv": [ 17.0, 26.5, 17.25, 27.25 ] },
+																"east": { "texture": "#bell", "uv": [ 17.5, 26.5, 17.75, 27.25 ] },
+																"south": { "texture": "#bell", "uv": [ 18.0, 26.5, 18.25, 27.25 ] },
+																"west": { "texture": "#bell", "uv": [ 18.5, 26.5, 18.75, 27.25 ] },
+																"up": { "texture": "#bell", "uv": [ 17.0, 26.0, 17.25, 26.25 ] },
+																"down": { "texture": "#bell", "uv": [ 17.5, 26.0, 17.75, 26.25 ] }
+															}
+														},
+														{
+															"name": "sensory 47",
+															"from": [ 0.65, 0.7, 0.1 ], 
+															"to": [ 0.9, 1.45, 0.2 ], 
+															"uv": [ 8.5, 25.5 ],
+															"rotationOrigin": [ 0.65, 0.75, 0.05 ],
+															"rotationX": -90.0,
+															"rotationZ": -10.0,
+															"faces": {
+																"north": { "texture": "#bell", "uv": [ 8.5, 26.0, 8.75, 26.75 ] },
+																"east": { "texture": "#bell", "uv": [ 9.0, 26.0, 9.25, 26.75 ] },
+																"south": { "texture": "#bell", "uv": [ 9.5, 26.0, 9.75, 26.75 ] },
+																"west": { "texture": "#bell", "uv": [ 10.0, 26.0, 10.25, 26.75 ] },
+																"up": { "texture": "#bell", "uv": [ 8.5, 25.5, 8.75, 25.75 ] },
+																"down": { "texture": "#bell", "uv": [ 9.0, 25.5, 9.25, 25.75 ] }
+															}
+														}
+													]
+												},
+												{
+													"name": "origin vertebrae 3",
+													"from": [ 0.9, -0.05, 0.0 ], 
+													"to": [ 0.9, -0.05, 0.0 ], 
+													"uv": [ 0.0, 0.0 ],
+													"rotationOrigin": [ 4.15, 5.35, 4.0 ],
+													"rotationZ": 12.0,
+													"faces": {
+														"north": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.25, 0.0 ], "enabled": false, "autoUv": false },
+														"east": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false },
+														"south": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false },
+														"west": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+														"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+														"down": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false }
+													},
+													"children": [
+														{
+															"name": "vertebrae 5",
+															"from": [ 3.25, 4.65, 3.9 ], 
+															"to": [ 4.0, 5.4, 4.15 ], 
+															"uv": [ 28.0, 21.5 ],
+															"rotationOrigin": [ 3.6, 5.4, 3.9 ],
+															"rotationX": -22.0,
+															"rotationZ": 5.0,
+															"faces": {
+																"north": { "texture": "#bell", "uv": [ 28.0, 22.0, 28.75, 22.75 ] },
+																"east": { "texture": "#bell", "uv": [ 29.5, 22.0, 29.75, 22.75 ] },
+																"south": { "texture": "#bell", "uv": [ 30.0, 22.0, 30.75, 22.75 ] },
+																"west": { "texture": "#bell", "uv": [ 31.5, 22.0, 31.75, 22.75 ] },
+																"up": { "texture": "#bell", "uv": [ 28.0, 21.5, 28.75, 21.75 ] },
+																"down": { "texture": "#bell", "uv": [ 29.5, 21.5, 30.25, 21.75 ] }
+															},
+															"children": [
+																{
+																	"name": "sensory 9",
+																	"from": [ 0.25, 0.5, 0.0 ], 
+																	"to": [ 0.5, 1.0, 0.1 ], 
+																	"uv": [ 14.0, 30.5 ],
+																	"rotationOrigin": [ 0.5, 0.5, 0.1 ],
+																	"rotationX": 75.0,
+																	"rotationZ": -33.0,
+																	"faces": {
+																		"north": { "texture": "#bell", "uv": [ 14.0, 31.0, 14.25, 31.5 ] },
+																		"east": { "texture": "#bell", "uv": [ 14.5, 31.0, 14.75, 31.5 ] },
+																		"south": { "texture": "#bell", "uv": [ 15.0, 31.0, 15.25, 31.5 ] },
+																		"west": { "texture": "#bell", "uv": [ 15.5, 31.0, 15.75, 31.5 ] },
+																		"up": { "texture": "#bell", "uv": [ 14.0, 30.5, 14.25, 30.75 ] },
+																		"down": { "texture": "#bell", "uv": [ 14.5, 30.5, 14.75, 30.75 ] }
+																	}
+																}
+															]
+														},
+														{
+															"name": "vertebrae 6",
+															"from": [ 3.25, 4.65, 3.85 ], 
+															"to": [ 4.0, 5.4, 4.1 ], 
+															"uv": [ 25.5, 24.5 ],
+															"rotationOrigin": [ 3.6, 5.4, 4.1 ],
+															"rotationX": 22.0,
+															"rotationZ": 5.0,
+															"faces": {
+																"north": { "texture": "#bell", "uv": [ 25.5, 25.0, 26.25, 25.75 ] },
+																"east": { "texture": "#bell", "uv": [ 27.0, 25.0, 27.25, 25.75 ] },
+																"south": { "texture": "#bell", "uv": [ 27.5, 25.0, 28.25, 25.75 ] },
+																"west": { "texture": "#bell", "uv": [ 29.0, 25.0, 29.25, 25.75 ] },
+																"up": { "texture": "#bell", "uv": [ 25.5, 24.5, 26.25, 24.75 ] },
+																"down": { "texture": "#bell", "uv": [ 27.0, 24.5, 27.75, 24.75 ] }
+															},
+															"children": [
+																{
+																	"name": "sensory 10",
+																	"from": [ 0.25, 0.5, 0.1 ], 
+																	"to": [ 0.5, 1.0, 0.2 ], 
+																	"uv": [ 22.0, 27.5 ],
+																	"rotationOrigin": [ 0.5, 0.5, 0.1 ],
+																	"rotationX": -75.0,
+																	"rotationZ": -33.0,
+																	"faces": {
+																		"north": { "texture": "#bell", "uv": [ 22.0, 28.0, 22.25, 28.5 ] },
+																		"east": { "texture": "#bell", "uv": [ 22.5, 28.0, 22.75, 28.5 ] },
+																		"south": { "texture": "#bell", "uv": [ 23.0, 28.0, 23.25, 28.5 ] },
+																		"west": { "texture": "#bell", "uv": [ 23.5, 28.0, 23.75, 28.5 ] },
+																		"up": { "texture": "#bell", "uv": [ 22.0, 27.5, 22.25, 27.75 ] },
+																		"down": { "texture": "#bell", "uv": [ 22.5, 27.5, 22.75, 27.75 ] }
+																	}
+																}
+															]
+														},
+														{
+															"name": "origin vertebrae 4",
+															"from": [ 0.65, -0.1, 0.0 ], 
+															"to": [ 0.65, -0.1, 0.0 ], 
+															"uv": [ 0.0, 0.0 ],
+															"rotationOrigin": [ 3.9, 5.3, 4.0 ],
+															"rotationZ": 13.0,
+															"faces": {
+																"north": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.25, 0.0 ], "enabled": false, "autoUv": false },
+																"east": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false },
+																"south": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false },
+																"west": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+																"up": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false },
+																"down": { "texture": "#bell", "uv": [ 0.0, 0.0, 0.0, 0.0 ], "enabled": false, "autoUv": false }
+															},
+															"children": [
+																{
+																	"name": "vertebrae 7",
+																	"from": [ 3.25, 4.9, 3.9 ], 
+																	"to": [ 4.0, 5.4, 4.15 ], 
+																	"uv": [ 14.5, 20.5 ],
+																	"rotationOrigin": [ 3.6, 5.4, 3.9 ],
+																	"rotationX": -19.0,
+																	"rotationZ": 5.0,
+																	"faces": {
+																		"north": { "texture": "#bell", "uv": [ 14.5, 21.0, 15.25, 21.5 ] },
+																		"east": { "texture": "#bell", "uv": [ 16.0, 21.0, 16.25, 21.5 ] },
+																		"south": { "texture": "#bell", "uv": [ 16.5, 21.0, 17.25, 21.5 ] },
+																		"west": { "texture": "#bell", "uv": [ 18.0, 21.0, 18.25, 21.5 ] },
+																		"up": { "texture": "#bell", "uv": [ 14.5, 20.5, 15.25, 20.75 ] },
+																		"down": { "texture": "#bell", "uv": [ 16.0, 20.5, 16.75, 20.75 ] }
+																	}
+																},
+																{
+																	"name": "vertebrae 8",
+																	"from": [ 3.25, 4.9, 3.85 ], 
+																	"to": [ 4.0, 5.4, 4.1 ], 
+																	"uv": [ 15.5, 29.5 ],
+																	"rotationOrigin": [ 3.6, 5.4, 4.1 ],
+																	"rotationX": 19.0,
+																	"rotationZ": 5.0,
+																	"faces": {
+																		"north": { "texture": "#bell", "uv": [ 15.5, 30.0, 16.25, 30.5 ] },
+																		"east": { "texture": "#bell", "uv": [ 17.0, 30.0, 17.25, 30.5 ] },
+																		"south": { "texture": "#bell", "uv": [ 17.5, 30.0, 18.25, 30.5 ] },
+																		"west": { "texture": "#bell", "uv": [ 19.0, 30.0, 19.25, 30.5 ] },
+																		"up": { "texture": "#bell", "uv": [ 15.5, 29.5, 16.25, 29.75 ] },
+																		"down": { "texture": "#bell", "uv": [ 17.0, 29.5, 17.75, 29.75 ] }
+																	}
+																},
+																{
+																	"name": "funnel origin",
+																	"from": [ 3.8, 5.15, 3.85 ], 
+																	"to": [ 4.8, 5.4, 4.1 ], 
+																	"uv": [ 11.5, 26.0 ],
+																	"rotationOrigin": [ 3.8, 5.25, 4.0 ],
+																	"rotationZ": 10.0,
+																	"faces": {
+																		"north": { "texture": "#bell", "uv": [ 11.5, 28.0, 11.75, 29.0 ], "rotation": 270 },
+																		"east": { "texture": "#bell", "uv": [ 12.0, 28.0, 12.25, 28.25 ], "rotation": 180 },
+																		"south": { "texture": "#bell", "uv": [ 12.5, 28.0, 12.75, 29.0 ], "rotation": 90 },
+																		"west": { "texture": "#bell", "uv": [ 13.0, 28.0, 13.25, 28.25 ] },
+																		"up": { "texture": "#bell", "uv": [ 11.5, 26.0, 11.75, 27.0 ], "rotation": 90 },
+																		"down": { "texture": "#bell", "uv": [ 12.0, 26.0, 12.25, 27.0 ], "rotation": 270 }
+																	},
+																	"children": [
+																		{
+																			"name": "funnel 1",
+																			"from": [ 0.9, 0.05, -0.1 ], 
+																			"to": [ 3.4, 0.55, 0.4 ], 
+																			"uv": [ 11.0, 27.0 ],
+																			"rotationOrigin": [ 0.9, 0.3, 0.15 ],
+																			"rotationZ": -97.0,
+																			"faces": {
+																				"north": { "texture": "#bell", "uv": [ 11.0, 28.0, 13.5, 28.5 ] },
+																				"east": { "texture": "#bell", "uv": [ 16.0, 28.0, 16.5, 28.5 ] },
+																				"south": { "texture": "#bell", "uv": [ 17.0, 28.0, 19.5, 28.5 ] },
+																				"west": { "texture": "#bell", "uv": [ 22.0, 28.0, 22.5, 28.5 ] },
+																				"up": { "texture": "#bell", "uv": [ 11.0, 27.0, 13.5, 27.5 ] },
+																				"down": { "texture": "#bell", "uv": [ 16.0, 27.0, 18.5, 27.5 ] }
+																			},
+																			"children": [
+																				{
+																					"name": "funnel 2",
+																					"from": [ 2.05, 0.0, 0.0 ], 
+																					"to": [ 6.05, 0.5, 0.5 ], 
+																					"uv": [ 14.0, 27.5 ],
+																					"rotationOrigin": [ 2.05, 0.0, 0.25 ],
+																					"rotationX": 1.0,
+																					"rotationZ": -72.0,
+																					"faces": {
+																						"north": { "texture": "#bell", "uv": [ 14.0, 28.5, 18.0, 29.0 ] },
+																						"east": { "texture": "#bell", "uv": [ 22.0, 28.5, 22.5, 29.0 ] },
+																						"south": { "texture": "#bell", "uv": [ 23.0, 28.5, 27.0, 29.0 ] },
+																						"west": { "texture": "#bell", "uv": [ 31.0, 28.5, 31.5, 29.0 ] },
+																						"up": { "texture": "#bell", "uv": [ 14.0, 27.5, 18.0, 28.0 ] },
+																						"down": { "texture": "#bell", "uv": [ 22.0, 27.5, 26.0, 28.0 ] }
+																					},
+																					"children": [
+																						{
+																							"name": "funnel 3",
+																							"from": [ 3.95, 0.15, 0.15 ], 
+																							"to": [ 5.45, 0.4, 0.4 ], 
+																							"uv": [ 9.0, 22.5 ],
+																							"rotationOrigin": [ 3.95, 0.15, 0.3 ],
+																							"rotationZ": 40.0,
+																							"faces": {
+																								"north": { "texture": "#bell", "uv": [ 9.0, 23.0, 10.5, 23.25 ] },
+																								"east": { "texture": "#bell", "uv": [ 12.0, 23.0, 12.25, 23.25 ] },
+																								"south": { "texture": "#bell", "uv": [ 12.5, 23.0, 14.0, 23.25 ] },
+																								"west": { "texture": "#bell", "uv": [ 15.5, 23.0, 15.75, 23.25 ] },
+																								"up": { "texture": "#bell", "uv": [ 9.0, 22.5, 10.5, 22.75 ] },
+																								"down": { "texture": "#bell", "uv": [ 12.0, 22.5, 13.5, 22.75 ] }
+																							},
+																							"children": [
+																								{
+																									"name": "funnel 4",
+																									"from": [ 1.4, -0.1, 0.0 ], 
+																									"to": [ 2.65, 0.15, 0.25 ], 
+																									"uv": [ 24.0, 31.0 ],
+																									"rotationOrigin": [ 1.4, 0.0, 0.15 ],
+																									"rotationX": 1.0,
+																									"rotationZ": 58.0,
+																									"faces": {
+																										"north": { "texture": "#bell", "uv": [ 24.0, 31.5, 25.25, 31.75 ] },
+																										"east": { "texture": "#bell", "uv": [ 26.5, 31.5, 26.75, 31.75 ] },
+																										"south": { "texture": "#bell", "uv": [ 27.0, 31.5, 28.25, 31.75 ] },
+																										"west": { "texture": "#bell", "uv": [ 29.5, 31.5, 29.75, 31.75 ] },
+																										"up": { "texture": "#bell", "uv": [ 24.0, 31.0, 25.25, 31.25 ] },
+																										"down": { "texture": "#bell", "uv": [ 26.5, 31.0, 27.75, 31.25 ] }
+																									}
+																								}
+																							]
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "string",
+							"from": [ 0.4, -1.25, 0.4 ], 
+							"to": [ 0.65, 0.25, 0.65 ], 
+							"uv": [ 0.0, 22.0 ],
+							"rotationOrigin": [ 0.55, 0.25, 0.55 ],
+							"faces": {
+								"north": { "texture": "#bell", "uv": [ 0.0, 22.0, 0.25, 23.5 ] },
+								"east": { "texture": "#bell", "uv": [ 0.5, 22.0, 0.75, 23.5 ] },
+								"south": { "texture": "#bell", "uv": [ 1.0, 22.0, 1.25, 23.5 ] },
+								"west": { "texture": "#bell", "uv": [ 1.5, 22.0, 1.75, 23.5 ] },
+								"up": { "texture": "#bell", "uv": [ 29.0, 16.5, 29.25, 16.75 ], "enabled": false },
+								"down": { "texture": "#bell", "uv": [ 3.5, 28.5, 3.75, 28.75 ], "enabled": false }
+							},
+							"children": [
+								{
+									"name": "stone",
+									"from": [ -0.4, -1.0, -0.4 ], 
+									"to": [ 0.6, 0.0, 0.6 ], 
+									"uv": [ 0.0, 28.0 ],
+									"rotationOrigin": [ 0.1, 0.0, 0.1 ],
+									"faces": {
+										"north": { "texture": "#bell", "uv": [ 0.0, 30.0, 1.0, 31.0 ] },
+										"east": { "texture": "#bell", "uv": [ 2.0, 30.0, 3.0, 31.0 ] },
+										"south": { "texture": "#bell", "uv": [ 4.0, 30.0, 5.0, 31.0 ] },
+										"west": { "texture": "#bell", "uv": [ 6.0, 30.0, 7.0, 31.0 ] },
+										"up": { "texture": "#bell", "uv": [ 0.0, 28.0, 1.0, 29.0 ] },
+										"down": { "texture": "#bell", "uv": [ 2.0, 28.0, 3.0, 29.0 ] }
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Shamble",
+			"code": "shamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Party",
+			"code": "null",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Low Shamble",
+			"code": "lowshamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Attack",
+			"code": "attack",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Idle",
+			"code": "idle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Stun",
+			"code": "stun",
+			"quantityframes": 5,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Die",
+			"code": "die",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Despair",
+			"code": "despair",
+			"quantityframes": 180,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Cry",
+			"code": "cry",
+			"quantityframes": 110,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlRun",
+			"code": "crawlrun",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlWalk",
+			"code": "crawlwalk",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlIdle",
+			"code": "crawlidle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlEmote",
+			"code": "crawlemote",
+			"quantityframes": 95,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlStun",
+			"code": "crawlstun",
+			"quantityframes": 5,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlAttack",
+			"code": "crawlattack",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlHurt",
+			"code": "crawlhurt",
+			"quantityframes": 20,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlDie",
+			"code": "crawldie",
+			"quantityframes": 50,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Run",
+			"code": "run",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Shamble",
+			"code": "shamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Party",
+			"code": "null",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Low Shamble",
+			"code": "lowshamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Attack",
+			"code": "attack",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Idle",
+			"code": "idle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Stun",
+			"code": "stun",
+			"quantityframes": 5,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Die",
+			"code": "die",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Despair",
+			"code": "despair",
+			"quantityframes": 180,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Cry",
+			"code": "cry",
+			"quantityframes": 110,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlRun",
+			"code": "crawlrun",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlWalk",
+			"code": "crawlwalk",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlIdle",
+			"code": "crawlidle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlEmote",
+			"code": "crawlemote",
+			"quantityframes": 95,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlStun",
+			"code": "crawlstun",
+			"quantityframes": 5,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlAttack",
+			"code": "crawlattack",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlHurt",
+			"code": "crawlhurt",
+			"quantityframes": 20,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlDie",
+			"code": "crawldie",
+			"quantityframes": 50,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Run",
+			"code": "run",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Shamble",
+			"code": "shamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Party",
+			"code": "null",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Low Shamble",
+			"code": "lowshamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Attack",
+			"code": "attack",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Idle",
+			"code": "idle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Stun",
+			"code": "stun",
+			"quantityframes": 5,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Die",
+			"code": "die",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Despair",
+			"code": "despair",
+			"quantityframes": 180,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Cry",
+			"code": "cry",
+			"quantityframes": 110,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlRun",
+			"code": "crawlrun",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlWalk",
+			"code": "crawlwalk",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlIdle",
+			"code": "crawlidle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlEmote",
+			"code": "crawlemote",
+			"quantityframes": 95,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlStun",
+			"code": "crawlstun",
+			"quantityframes": 5,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlAttack",
+			"code": "crawlattack",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlHurt",
+			"code": "crawlhurt",
+			"quantityframes": 20,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlDie",
+			"code": "crawldie",
+			"quantityframes": 50,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Run",
+			"code": "run",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Shamble",
+			"code": "shamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Party",
+			"code": "null",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Low Shamble",
+			"code": "lowshamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Attack",
+			"code": "attack",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Idle",
+			"code": "idle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Stun",
+			"code": "stun",
+			"quantityframes": 5,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Die",
+			"code": "die",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Despair",
+			"code": "despair",
+			"quantityframes": 180,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Cry",
+			"code": "cry",
+			"quantityframes": 110,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlRun",
+			"code": "crawlrun",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlWalk",
+			"code": "crawlwalk",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlIdle",
+			"code": "crawlidle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlEmote",
+			"code": "crawlemote",
+			"quantityframes": 95,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlStun",
+			"code": "crawlstun",
+			"quantityframes": 5,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlAttack",
+			"code": "crawlattack",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlHurt",
+			"code": "crawlhurt",
+			"quantityframes": 20,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlDie",
+			"code": "crawldie",
+			"quantityframes": 50,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Run",
+			"code": "run",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Shamble",
+			"code": "shamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Party",
+			"code": "null",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Low Shamble",
+			"code": "lowshamble",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlRun",
+			"code": "crawlrun",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlWalk",
+			"code": "crawlwalk",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlIdle",
+			"code": "crawlidle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlEmote",
+			"code": "crawlemote",
+			"quantityframes": 95,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlStun",
+			"code": "crawlstun",
+			"quantityframes": 5,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlAttack",
+			"code": "crawlattack",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlHurt",
+			"code": "crawlhurt",
+			"quantityframes": 20,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "CrawlDie",
+			"code": "crawldie",
+			"quantityframes": 50,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Attack",
+			"code": "attack",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Idle",
+			"code": "idle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Stun",
+			"code": "stun",
+			"quantityframes": 5,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Die",
+			"code": "die",
+			"quantityframes": 30,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Despair",
+			"code": "despair",
+			"quantityframes": 180,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Cry",
+			"code": "cry",
+			"quantityframes": 110,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Hurt",
+			"code": "hurt",
+			"quantityframes": 23,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Run",
+			"code": "run",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+
+			]
+		},
+
+		{
+			"name": "Idle",
+			"code": "idle",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"top": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 2,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 4,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 13.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 7,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": -8.0, "rotationY": -3.0, "rotationZ": 3.0 }
+					}
+				},
+				{
+					"frame": 8,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": -10.0, "rotationY": 5.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 11,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 12.0, "rotationY": 4.0, "rotationZ": 8.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"origin": { "offsetX": -0.075, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0 },
+						"top": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0 },
+						"origin vertebrae 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 }
+					}
+				},
+				{
+					"frame": 19,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 25.0, "rotationY": -22.0, "rotationZ": 8.0 },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": -3.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Run",
+			"code": "run",
+			"quantityframes": 40,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 1.0, "offsetY": 2.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -39.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 130.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 86.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -28.0 },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0 }
+					}
+				},
+				{
+					"frame": 2,
+					"elements": {
+						"origin": { "offsetX": -1.5, "offsetY": 1.25, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"origin": { "offsetX": -2.0, "offsetY": 1.0, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 35.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 9,
+					"elements": {
+						"origin": { "offsetX": -1.5, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -66.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 58.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 55.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 53.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -28.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -58.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 35.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 35.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 18,
+					"elements": {
+						"origin": { "offsetX": -5.5, "offsetY": -0.6, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 30.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -75.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 53.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 39.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 64.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": -64.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.0 }
+					}
+				},
+				{
+					"frame": 19,
+					"elements": {
+						"origin": { "offsetX": -5.0, "offsetY": -0.5, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": -35.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 35.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 23,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 64.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": -64.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 28,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 64.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": -64.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": -0.15, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 30.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -58.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 28.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -36.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.0 }
+					}
+				},
+				{
+					"frame": 33,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 64.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": -64.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 38,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 64.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": -64.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Hide",
+			"code": "hide",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 3.75, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -100.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 102.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 19.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.0 },
+						"funnel 2": { "offsetX": -0.5, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -50.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 102.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -28.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Alarm",
+			"code": "alarm",
+			"quantityframes": 30,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 0.25, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -42.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -50.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 42.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 72.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -39.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 }
+					}
+				},
+				{
+					"frame": 1,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 19.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"origin": { "offsetX": -1.25, "offsetY": 1.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -42.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 36.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 64.0 }
+					}
+				},
+				{
+					"frame": 4,
+					"elements": {
+						"origin": { "offsetX": -1.75, "offsetY": 1.25, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 36.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": -19.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 6,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 19.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 39.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 9,
+					"elements": {
+						"origin": { "offsetX": -4.15, "offsetY": -0.75, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": -44.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 12,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 30.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 13,
+					"elements": {
+						"origin": { "offsetX": -3.9, "offsetY": -4.4, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -19.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"origin": { "offsetX": -2.5, "offsetY": -6.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -220.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 102.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 89.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -36.0 },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 44.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": -19.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 19.0 }
+					}
+				},
+				{
+					"frame": 16,
+					"elements": {
+						"origin": { "offsetX": -2.0, "offsetY": -5.5, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -39.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 17,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": -17.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 18,
+					"elements": {
+						"origin": { "offsetX": -2.75, "offsetY": -3.75, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -220.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 163.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -89.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 47.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 64.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 111.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -50.0 },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": -39.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 28.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 19,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": -17.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"origin": { "offsetX": -3.25, "offsetY": -2.0, "offsetZ": 0.0 },
+						"top": {  },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 22.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"origin": { "offsetX": -3.1, "offsetY": -0.5, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 25.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 24,
+					"elements": {
+						"origin": { "offsetX": -2.35, "offsetY": 0.5, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": -28.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 27,
+					"elements": {
+						"origin": { "offsetX": -1.0, "offsetY": 1.0, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 25.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Listen",
+			"code": "listen",
+			"quantityframes": 110,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"origin": { "offsetX": -1.0, "offsetY": -1.0, "offsetZ": 0.5 }
+					}
+				},
+				{
+					"frame": 7,
+					"elements": {
+						"origin": { "offsetX": -1.0, "offsetY": -1.0, "offsetZ": 0.5 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 17.0, "rotationY": -14.0, "rotationZ": 14.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"funnel origin": {  },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"funnel 3": {  },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"origin": { "offsetX": -1.0, "offsetY": -1.0, "offsetZ": 1.0 }
+					}
+				},
+				{
+					"frame": 12,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"origin": { "offsetX": -1.4, "offsetY": -2.0, "offsetZ": 0.5, "rotationX": -19.0, "rotationY": 58.0, "rotationZ": -61.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 25.0, "rotationY": -8.0, "rotationZ": 28.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 3": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 86.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0 },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": -10.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": -11.0 }
+					}
+				},
+				{
+					"frame": 18,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": -11.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 15.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 23,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 11.0 }
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 11.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"vertebrae 8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 37,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": 11.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"vertebrae 8": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 45,
+					"elements": {
+						"origin": { "offsetX": -1.4, "offsetY": -2.0, "offsetZ": 0.5, "rotationX": -22.0, "rotationY": 60.0, "rotationZ": -61.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 25.0, "rotationY": -7.0, "rotationZ": 30.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 3": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 85.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0 },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 11.0, "rotationY": 0.0, "rotationZ": -6.0 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"origin": { "offsetX": -1.4, "offsetY": -2.0, "offsetZ": 0.5, "rotationX": -6.0, "rotationY": 0.0, "rotationZ": -53.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -6.0, "rotationY": 6.0, "rotationZ": 30.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.25, "offsetZ": 0.0, "rotationX": -8.0, "rotationY": -6.0, "rotationZ": 85.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0 },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"origin": { "offsetX": -1.4, "offsetY": -2.0, "offsetZ": 0.5, "rotationX": 19.0, "rotationY": -47.0, "rotationZ": -66.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -25.0, "rotationY": 7.0, "rotationZ": 30.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 3": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": -8.0, "rotationY": 6.0, "rotationZ": 14.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.25, "offsetZ": 0.0, "rotationX": -11.0, "rotationY": -30.0, "rotationZ": 91.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0 },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 6.0, "rotationY": 0.0, "rotationZ": -3.0 }
+					}
+				},
+				{
+					"frame": 73,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": 6.0, "rotationY": 0.0, "rotationZ": -3.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": -15.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 78,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": -7.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"vertebrae 7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 81,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"vertebrae 7": { "rotationX": -10.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 87,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"string": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": -7.0 },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 95,
+					"elements": {
+						"origin": { "offsetX": -1.4, "offsetY": -2.0, "offsetZ": 0.5, "rotationX": 20.0, "rotationY": -49.0, "rotationZ": -66.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -27.0, "rotationY": 6.0, "rotationZ": 30.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": -5.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": -8.0, "rotationY": 6.0, "rotationZ": 14.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel 3": { "offsetX": 0.0, "offsetY": -0.25, "offsetZ": 0.0, "rotationX": -11.0, "rotationY": -30.0, "rotationZ": 91.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0 }
+					}
+				},
+				{
+					"frame": 102,
+					"elements": {
+						"origin": { "offsetX": -1.5, "offsetY": -1.0, "offsetZ": -1.25 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 10.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Walk",
+			"code": "walk",
+			"quantityframes": 40,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 72.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 69.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -39.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0 }
+					}
+				},
+				{
+					"frame": 7,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 8,
+					"elements": {
+						"origin": { "offsetX": -1.0, "offsetY": 1.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -28.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 50.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 30.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 42.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -30.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -36.0, "rotationY": 11.0, "rotationZ": -8.0 }
+					}
+				},
+				{
+					"frame": 16,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 17,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 19,
+					"elements": {
+						"origin": { "offsetX": -2.0, "offsetY": -0.25, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 39.0, "rotationY": 0.0, "rotationZ": 6.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"origin": { "offsetX": -2.0, "offsetY": -0.3, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -50.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 21.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 50.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -30.0 },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 25.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 21,
+					"elements": {
+						"origin": { "offsetX": -2.0, "offsetY": -0.25, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 24,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -47.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0 }
+					}
+				},
+				{
+					"frame": 26,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 27,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 30.0, "rotationY": 8.0, "rotationZ": -17.0 }
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": -33.0, "rotationY": 28.0, "rotationZ": 19.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"origin": { "offsetX": 1.0, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -28.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Hurt",
+			"code": "hurt",
+			"quantityframes": 20,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Stop",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"top": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"origin": { "offsetX": 1.75, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -32.0 },
+						"top": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 66.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -53.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 55.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0 },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": -47.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 55.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0 },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 44.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -39.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -25.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -58.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"origin": { "offsetX": 2.0, "offsetY": 1.0, "offsetZ": 0.0 },
+						"top": {  },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 19.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Die",
+			"code": "die",
+			"quantityframes": 95,
+			"onActivityStopped": "Stop",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"top": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"sensory 6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"sensory 47": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"sensory 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 2,
+					"elements": {
+						"origin": { "offsetX": 2.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -2.0, "rotationY": 0.0, "rotationZ": 38.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": -50.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": -50.0, "rotationY": 28.0, "rotationZ": 22.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"origin": { "rotationX": 2.0, "rotationY": 0.0, "rotationZ": -20.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 42.0, "rotationY": 0.0, "rotationZ": 8.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0 }
+					}
+				},
+				{
+					"frame": 4,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": -66.0, "rotationY": 0.0, "rotationZ": -8.0 },
+						"sensory 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 6,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -3.0, "rotationY": 0.0, "rotationZ": -21.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 3.0, "rotationY": 0.0, "rotationZ": 12.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"sensory 4": { "rotationX": 24.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 }
+					}
+				},
+				{
+					"frame": 9,
+					"elements": {
+						"origin": { "rotationX": 4.0, "rotationY": 0.0, "rotationZ": -22.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -4.0, "rotationY": 0.0, "rotationZ": 16.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 11,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 47.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"string": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 12,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -5.0, "rotationY": 0.0, "rotationZ": -23.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 22.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -44.0, "rotationY": 0.0, "rotationZ": 22.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 27.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"sensory 47": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": {  },
+						"vertebrae 6": {  },
+						"sensory 10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.5, "rotationX": 6.0, "rotationY": 0.0, "rotationZ": -24.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -6.0, "rotationY": 0.0, "rotationZ": 24.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"sensory 47": { "rotationX": -50.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 18,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": -4.0, "rotationX": -7.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 30.0, "rotationY": -14.0, "rotationZ": 26.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 36.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": {  },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 21,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.5, "rotationX": 8.0, "rotationY": 0.0, "rotationZ": -7.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 27.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": -50.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 14.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 44.0, "rotationZ": 30.0 },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 47": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": {  },
+						"vertebrae 5": {  },
+						"sensory 9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 24,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -8.0, "rotationY": 0.0, "rotationZ": -8.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 8.0, "rotationY": 0.0, "rotationZ": 28.0 },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 44.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"vertebrae 2": {  },
+						"sensory 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 18.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
+						"funnel 3": {  },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 40.0 },
+						"string": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 26,
+					"elements": {
+						"origin": { "offsetX": 1.0, "offsetY": 2.0, "offsetZ": 2.0, "rotationX": 8.0, "rotationY": 0.0, "rotationZ": -9.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": -14.0, "rotationY": 17.0, "rotationZ": 11.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"vertebrae 3": {  },
+						"sensory 6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"funnel 3": {  },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"string": { "rotationX": 19.0, "rotationY": 0.0, "rotationZ": -14.0 }
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"origin": { "offsetX": -2.5, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -8.0, "rotationY": 0.0, "rotationZ": -10.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 8.0, "rotationY": 0.0, "rotationZ": 30.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0 },
+						"origin vertebrae 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0 },
+						"origin vertebrae 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 18.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0 },
+						"funnel 3": {  },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 40.0 },
+						"string": { "rotationX": -14.0, "rotationY": 0.0, "rotationZ": 14.0 }
+					}
+				},
+				{
+					"frame": 34,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 6.0, "rotationY": 0.0, "rotationZ": -13.0 },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"vertebrae 1": {  },
+						"sensory 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 38,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -8.0, "rotationY": 0.0, "rotationZ": -13.0 },
+						"top": {  },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0 },
+						"top": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 36.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0 },
+						"origin vertebrae 3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0 },
+						"origin vertebrae 4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.0 },
+						"funnel origin": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.0 },
+						"funnel 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -28.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -83.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 66.0 }
+					}
+				},
+				{
+					"frame": 41,
+					"elements": {
+						"origin": { "offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0 }
+					}
+				},
+				{
+					"frame": 43,
+					"elements": {
+						"origin": { "offsetX": -3.0, "offsetY": -0.5, "offsetZ": 0.5, "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 47.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -42.0 },
+						"origin vertebrae 3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 },
+						"funnel origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"funnel 1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -19.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 50.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -50.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0 }
+					}
+				},
+				{
+					"frame": 59,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"funnel origin": {  },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -19.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 50.0 },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"funnel origin": {  },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": -15.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 63,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"origin vertebrae 3": {  },
+						"origin vertebrae 4": {  },
+						"funnel origin": {  },
+						"funnel 1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -19.0 },
+						"funnel 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 50.0 },
+						"vertebrae 1": {  },
+						"sensory 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 64,
+					"elements": {
+						"origin": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 47.0 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"origin": { "rotationX": 5.0, "rotationY": 2.0, "rotationZ": 15.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": -1.0, "rotationZ": 47.0 }
+					}
+				},
+				{
+					"frame": 68,
+					"elements": {
+						"origin": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"top": {  },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 47.0 }
+					}
+				},
+				{
+					"frame": 76,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 77,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 14.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 79,
+					"elements": {
+						"origin": {  },
+						"top": {  },
+						"ORIGIN SPINE": {  },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": {  },
+						"vertebrae 4": {  },
+						"sensory 7": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 94,
+					"elements": {
+						"origin": { "offsetX": -3.0, "offsetY": -0.5, "offsetZ": 0.5, "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"top": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ORIGIN SPINE": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 47.0 },
+						"origin vertebrae 1": {  },
+						"origin vertebrae 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -42.0 },
+						"origin vertebrae 3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"origin vertebrae 4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0 },
+						"funnel origin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0 },
+						"funnel 1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -19.0 },
+						"funnel 2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 50.0 },
+						"funnel 3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -50.0 },
+						"funnel 4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"string": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0 }
+					}
+				}
+			]
+		}
+	]
+}

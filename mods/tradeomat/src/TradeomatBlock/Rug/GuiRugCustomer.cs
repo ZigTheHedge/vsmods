@@ -86,11 +86,18 @@ namespace tradeomat.src.TradeomatBlock.Rug
                 SingleComposer.OnMouseMove(new MouseEvent(capi.Input.MouseX, capi.Input.MouseY));
             }
 
+            if(selectedTag != "-1")
+                SingleComposer.GetItemSlotButton(selectedTag).IsChecked = true;
         }
 
         private bool DealClick()
         {            
             capi.Network.SendBlockEntityPacket(BlockEntityPosition.X, BlockEntityPosition.Y, BlockEntityPosition.Z, 1102, BitConverter.GetBytes(int.Parse(selectedTag)));
+            if (selectedTag != "-1")
+            {
+                SingleComposer.GetItemSlotButton(selectedTag).IsChecked = false;
+                selectedTag = "-1";
+            }
             return true;
         }
 

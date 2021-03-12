@@ -1,0 +1,22 @@
+[
+	{
+		"ingredientPattern": "LTL,LLL,LTL",
+		"ingredients": {
+			"L": {
+				"type": "item",
+				"code": "browerskin"
+			},
+			"T": {
+				"type": "item",
+				"code": "game:flaxtwine"
+			}
+		},
+		"width": 3,
+		"height": 3,
+		"shapeless": false,
+		"output": {
+			"type": "item",
+			"code": "theneighbours:body-brayer"
+		}
+	}
+]

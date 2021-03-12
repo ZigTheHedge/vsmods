@@ -34,5 +34,27 @@ namespace zeekea.src
         {
             return world.BlockAccessor.GetBlock(pos.DownCopy()).GetPlacedBlockInfo(world, pos.DownCopy(), forPlayer);
         }
+
+        public override Cuboidf[] GetSelectionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
+        {
+            Cuboidf[] cuboidfs = blockAccessor.GetBlock(pos.DownCopy()).GetSelectionBoxes(blockAccessor, pos.DownCopy());
+            Cuboidf[] cuboidret = new Cuboidf[cuboidfs.Length];
+            for(int i = 0; i < cuboidfs.Length; i++)
+            {
+                cuboidret[i] = cuboidfs[i].OffsetCopy(0, -1, 0);
+            }
+            return cuboidret;
+        }
+
+        public override Cuboidf[] GetCollisionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
+        {
+            Cuboidf[] cuboidfs = blockAccessor.GetBlock(pos.DownCopy()).GetCollisionBoxes(blockAccessor, pos.DownCopy());
+            Cuboidf[] cuboidret = new Cuboidf[cuboidfs.Length];
+            for (int i = 0; i < cuboidfs.Length; i++)
+            {
+                cuboidret[i] = cuboidfs[i].OffsetCopy(0, -1, 0);
+            }
+            return cuboidret;
+        }
     }
 }

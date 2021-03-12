@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-bell-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "game:entities/land/bell.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  }
+]

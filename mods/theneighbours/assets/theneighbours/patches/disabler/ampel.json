@@ -1,0 +1,30 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:entities/land/ampel_child.json",
+    "condition": { "when": "disableAmpel", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:entities/land/ampel_male.json",
+    "condition": { "when": "disableAmpel", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:entities/land/ampel_female.json",
+    "condition": { "when": "disableAmpel", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "theneighbours:itemtypes/ampel.json",
+    "condition": { "when": "disableAmpel", "isValue": "true" }
+  }
+]

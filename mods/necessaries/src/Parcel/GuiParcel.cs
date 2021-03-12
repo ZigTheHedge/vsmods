@@ -103,7 +103,19 @@ namespace necessaries.src.Parcel
                 .WithFixedAlignmentOffset(-GuiStyle.DialogToScreenPadding, 0);
 
 
-            int listLen = Necessaries.postServicesClient.Count;
+            int listLen = 0;
+
+            for (int i = 0; i < Necessaries.postServicesClient.Count; i++)
+            {
+                PostService postService = Necessaries.postServicesClient[i];
+                if (postService.isValid) listLen++;
+            }
+
+            if(listLen == 0)
+            {
+                listLen = 1;
+            }
+
             string[] rcptIdx = new string[listLen];
             string[] rcptAddr = new string[listLen];
             int rcptCount = 0;
@@ -111,9 +123,17 @@ namespace necessaries.src.Parcel
             for (int i = 0; i < Necessaries.postServicesClient.Count; i++)
             {
                 PostService postService = Necessaries.postServicesClient[i];
+                if (!postService.isValid) continue;
                 rcptIdx[rcptCount] = i.ToString();
                 rcptAddr[rcptCount++] = postService.title;
             }
+
+            if(rcptCount == 0)
+            {
+                rcptIdx[0] = "-1";
+                rcptAddr[0] = Lang.Get("mailbox-no-destinations");
+            }
+
 
             ClearComposers();
             SingleComposer = capi.Gui
@@ -126,7 +146,12 @@ namespace necessaries.src.Parcel
                     .AddStaticText(Lang.Get("necessaries:mailbox-recipient"), CairoFont.WhiteSmallText(), destTitleBounds)
                     .AddDropDown(rcptIdx, rcptAddr, 0, null, destBounds, "destination")
                     .AddStaticText(Lang.Get("necessaries:parcel-message-title"), CairoFont.WhiteSmallText(), messageTitleBounds)
+                    .AddIf(ModConfigFile.Current.reducedParcelVolume)
+                    .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 0 }, containsSlotsBounds)
+                    .EndIf()
+                    .AddIf(!ModConfigFile.Current.reducedParcelVolume)
                     .AddItemSlotGrid(Inventory, SendInvPacket, 2, new int[] { 0, 1 }, containsSlotsBounds)
+                    .EndIf()
                     .BeginClip(messageClippingBounds)
                     .AddTextArea(messageBounds, OnMessageChanged, CairoFont.WhiteDetailText(), "message")
                     .EndClip()

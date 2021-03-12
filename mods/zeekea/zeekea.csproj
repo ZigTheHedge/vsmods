@@ -97,6 +97,7 @@
     <Compile Include="src\standardInventories\StandardSlot.cs" />
     <Compile Include="src\tall_locker\BETallLocker.cs" />
     <Compile Include="src\tall_locker\TallLocker.cs" />
+    <Compile Include="src\torchlamp\TorchLamp.cs" />
     <Compile Include="src\vanillapatches\BEContainerDisplayPatch.cs" />
     <Compile Include="src\ZEEkea.cs" />
   </ItemGroup>

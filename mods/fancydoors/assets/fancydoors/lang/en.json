@@ -1,8 +1,8 @@
 {
-	"block-fancydoor-2wide-right-north": "Chiseled door 2-wide",
-	"block-fancydoor-3wide-right-north": "Chiseled door 3-wide",
-	"block-fancydoor-4wide-right-north": "Chiseled door 4-wide",
-	"block-fancydoor-5wide-right-north": "Chiseled door 5-wide",
+	"block-fancydoor-2wide-right-north": "Chiseled door hinge (thickness 2)",
+	"block-fancydoor-3wide-right-north": "Chiseled door hinge (thickness 3)",
+	"block-fancydoor-4wide-right-north": "Chiseled door hinge (thickness 4)",
+	"block-fancydoor-5wide-right-north": "Chiseled door hinge (thickness 5)",
 	
 	"removestatic-sneak-help": "Remove static part",
 	"remove-sneak-help": "Remove door panel",
@@ -13,5 +13,8 @@
 	"nonchiseled-help": "Only chiseled blocks can be used as a panel",
 	"placedoor-help": "Install door panel",
 	"placestatic-help": "Install static part",
-	"interact-help": "Open/Close this and all adjacent doors"
+	"interact-help": "Open/Close this and all adjacent doors",
+	
+	"block-doorworkbench-pile-north": "Door workbench construction component",
+	"block-doorworkbench-complete-north": "Door workbench"
 }

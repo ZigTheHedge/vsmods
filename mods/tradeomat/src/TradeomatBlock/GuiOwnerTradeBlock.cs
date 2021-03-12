@@ -12,9 +12,11 @@ namespace tradeomat.src.TradeomatBlock
 {
     class GuiOwnerTradeBlock : GuiDialogBlockEntity
     {
-        public GuiOwnerTradeBlock(string dialogTitle, InventoryBase inventory, BlockPos blockEntityPos, ICoreClientAPI capi) : base(dialogTitle, inventory, blockEntityPos, capi)
+        bool isCreative;
+        public GuiOwnerTradeBlock(bool isCreative, string dialogTitle, InventoryBase inventory, BlockPos blockEntityPos, ICoreClientAPI capi) : base(dialogTitle, inventory, blockEntityPos, capi)
         {
             if (IsDuplicate) return;
+            this.isCreative = isCreative;
             Inventory.SlotModified += OnInventorySlotModified;
             capi.World.Player.InventoryManager.OpenInventory(Inventory);
 
@@ -32,7 +34,7 @@ namespace tradeomat.src.TradeomatBlock
                 hoveredSlot = null;
             }
 
-            ElementBounds mainBounds = ElementBounds.Fixed(0, 0, 200, 150);
+            ElementBounds mainBounds = ElementBounds.Fixed(0, 0, 240, 390);
 
             ElementBounds priceTitleBounds = ElementBounds.Fixed(30, 12, 100, 35);
             ElementBounds goodsTitleBounds = ElementBounds.Fixed(140, 12, 100, 35);
@@ -46,7 +48,10 @@ namespace tradeomat.src.TradeomatBlock
 
             ElementBounds paymentInSlotsBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 24, 295, 1, 1);
             ElementBounds goodsOutSlotsBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 144, 295, 1, 1);
-            
+
+            ElementBounds isCreativeSwitchBounds = ElementStdBounds.ToggleButton(24, 350, 30, 30);
+            ElementBounds isCreativeTextBounds = ElementStdBounds.ToggleButton(60, 355, 170, 30);
+
             // 2. Around all that is 10 pixel padding
             ElementBounds bgBounds = ElementBounds.Fill.WithFixedPadding(GuiStyle.ElementToDialogPadding);
             bgBounds.BothSizing = ElementSizing.FitToChildren;
@@ -58,6 +63,12 @@ namespace tradeomat.src.TradeomatBlock
 
 
             //ClearComposers();
+            bool displayAdminShop = false;
+            if (capi.World.Player != null)
+            {
+                displayAdminShop = capi.World.Player.HasPrivilege("gamemode");
+            }
+
             SingleComposer = capi.Gui
                 .CreateCompo("blockentitytradeomat" + BlockEntityPosition, dialogBounds)
                 .AddShadedDialogBG(bgBounds)
@@ -72,14 +83,31 @@ namespace tradeomat.src.TradeomatBlock
                     .AddItemSlotGrid(Inventory, SendInvPacket, 2, new int[] { 10, 11, 12, 13, 14, 15, 16, 17 }, goodsStorageSlotsBounds)
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 18 }, paymentInSlotsBounds)
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 19 }, goodsOutSlotsBounds)
+                    .AddIf(displayAdminShop)
+                    .AddSwitch(onCreativeToggle, isCreativeSwitchBounds, "isCreative")
+                    .AddStaticText(Lang.Get("tradeomat:tomat-creative"), CairoFont.WhiteSmallText(), isCreativeTextBounds)
+                    .EndIf()
                 .EndChildElements()
                 .Compose()
             ;
+
+            if (displayAdminShop)
+            {
+                if (isCreative)
+                    SingleComposer.GetSwitch("isCreative").SetValue(true);
+                else
+                    SingleComposer.GetSwitch("isCreative").SetValue(false);
+            }
 
             if (hoveredSlot != null)
             {
                 SingleComposer.OnMouseMove(new MouseEvent(capi.Input.MouseX, capi.Input.MouseY));
             }
+        }
+
+        private void onCreativeToggle(bool onOff)
+        {
+            capi.Network.SendBlockEntityPacket(BlockEntityPosition.X, BlockEntityPosition.Y, BlockEntityPosition.Z, 1102, BitConverter.GetBytes(onOff));
         }
 
         private void SendInvPacket(object p)

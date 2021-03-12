@@ -1,12 +1,16 @@
-﻿using HarmonyLib;
+﻿using Cairo;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
+using Vintagestory.API.Util;
+using Vintagestory.Client.NoObf;
 using Vintagestory.GameContent;
 
 namespace survivalcats.src
@@ -23,7 +27,7 @@ namespace survivalcats.src
 
             ___categoryCodes.Add("bookmark");
 
-            string path = Path.Combine(GamePaths.DataPath, "ModData", "bookmarks." + ___capi.World.Seed.ToString() + ".json");
+            string path = System.IO.Path.Combine(GamePaths.DataPath, "ModData", "bookmarks." + ___capi.World.Seed.ToString() + ".json");
             PatcherinitDetailGui.bookmarksPath = path;
 
             if (File.Exists(path))
@@ -143,6 +147,36 @@ namespace survivalcats.src
                             }
 
                         }
+                    }
+                }
+
+                __result = 0;
+                return false;
+            }
+            else if (searchText.Length > 3 && searchText.StartsWith("$"))
+            {
+                int spacePos = searchText.IndexOf(' ');
+                string searchCode;
+                if (spacePos > -1)
+                    searchCode = searchText.Substring(1, spacePos - 1);
+                else
+                    searchCode = searchText.Substring(1);
+
+                if (___Stack != null && ___Stack.Collectible != null)
+                {
+                    if (___Stack.Collectible.Code.ToString().CaseInsensitiveContains(searchCode))
+                    {
+                        if (spacePos > -1)
+                        {
+                            searchText = searchText.Substring(searchCode.Length + 2);
+                            return true;
+                        }
+                        else
+                        {
+                            __result = 1;
+                            return false;
+                        }
+
                     }
                 }
 
@@ -428,6 +462,33 @@ namespace survivalcats.src
                 __result = false;
                 return false;
             }
+            else if (searchText.Length > 3 && searchText.StartsWith("$"))
+            {
+                int spacePos = searchText.IndexOf(' ');
+                string searchCode;
+                if (spacePos > -1)
+                    searchCode = searchText.Substring(1, spacePos - 1);
+                else
+                    searchCode = searchText.Substring(1);
+
+                if (__instance.Collectible.Code.ToString().CaseInsensitiveContains(searchCode))
+                {
+                    if (spacePos > -1)
+                    {
+                        searchText = searchText.Substring(searchCode.Length + 2);
+                        return true;
+                    }
+                    else
+                    {
+                        __result = true;
+                        return false;
+                    }
+
+                }
+
+                __result = false;
+                return false;
+            }
             else
                 return true;
         }
@@ -438,9 +499,46 @@ namespace survivalcats.src
     {
         public static bool Prefix(ref string text, ref Dictionary<int, string> searchCache)
         {
-            if(text.StartsWith("@"))
+            if(text.StartsWith("@") || text.StartsWith("$"))
                 searchCache = null;
             return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(CollectibleObject), "GetHandbookInfo")]
+    class PatcherGetHandbookInfo2
+    {
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            bool patched = false;
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (instruction.LoadsConstant(0) && !patched)
+                {
+                    if(ClientSettings.ExtendedDebugInfo)
+                        yield return new CodeInstruction(OpCodes.Ldc_I4_1);
+                    else
+                        yield return new CodeInstruction(OpCodes.Ldc_I4_0);
+                    patched = true;
+                }
+                else
+                    yield return instruction;
+            }
+        }
+    }
+
+
+    [HarmonyPatch(typeof(CollectibleObject), "GetHeldItemInfo")]
+    class PatcherGetHeldItemInfo
+    {
+        public static void Postfix(ICoreAPI ___api, ref ItemSlot inSlot, ref StringBuilder dsc)
+        {
+            if (!ModConfigFile.Current.addModNameToInfo) return;
+            Mod stackMod = ___api.ModLoader.GetMod(inSlot.Itemstack.Collectible.Code.Domain);
+            if (stackMod != null)
+            {
+                dsc.Insert(0, "<font color=\"#88FF88\"><strong>Mod: " + stackMod.Info.Name + " (@" + stackMod.Info.ModID + ")</strong></font>\n");
+            }
         }
     }
 }

@@ -55,6 +55,11 @@ namespace necessaries.src.SharpenerStuff
                 totalDurabilityLoss = ModConfigFile.Current.obsidianDiskDamagePerCycle;
                 totalDurabilityRestored = ModConfigFile.Current.obsidianDiskRepairPerCycle;
             }
+            if (inSlot.Itemstack.Item.Variant["rock"] == "diamond")
+            {
+                totalDurabilityLoss = ModConfigFile.Current.diamondDiskDamagePerCycle;
+                totalDurabilityRestored = ModConfigFile.Current.diamondDiskRepairPerCycle;
+            }
 
             dsc.AppendLine("\n" + Lang.Get("necessaries:sharpener-repair-amount", totalDurabilityRestored));
             dsc.AppendLine(Lang.Get("necessaries:sharpener-damage-amount", totalDurabilityLoss));

@@ -7,6 +7,11 @@
 		{ loadFromProperties: "block/wood" },
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
+	attributes: {
+		handbook: {
+			groupBy: ["fancychairwooden-*"]
+		}
+	},
 	drawtype: "json",
 	textures: {
 		"normal1": { base: "game:block/wood/planks/{wood}1" },

@@ -1,8 +1,0 @@
-[
-  {
-    "file": "game:itemtypes/resource/charcoal.json",
-    "op": "replace",
-    "path": "/class",
-    "value": "testitem"
-  }
-]

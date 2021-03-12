@@ -14,10 +14,44 @@
 	"item-scissor": "Scissor",
 	"item-helmet-tickling-1": "Tickling-head Helmet",
 	"block-glowshroom": "Glowshroom",
+	"item-creature-ampel-child": "Ampel Child",
+	"item-dead-creature-ampel-child": "Dead Ampel Child",
+	"item-creature-ampel-male": "Ampel (male)",
+	"item-dead-creature-ampel-male": "Dead Ampel (male)",
+	"game:prefixandcreature-ampel-male": "an Ampel",	
+	"item-creature-ampel-female": "Ampel (female)",
+	"item-dead-creature-ampel-female": "Dead Ampel (female)",
+	"game:prefixandcreature-ampel-female": "an Ampel",	
 	
 	"item-turtle_meat-raw": "Turtor Meat (raw)",
 	"item-turtle_meat-cooked": "Turtor Meat (cooked)",
 	"recipeingredient-item-turtle_meat-raw": "Turtor Meat",
-	"recipeingredient-item-turtle_meat-raw-insturmentalcase": "Turtor Meat"
-
+	"recipeingredient-item-turtle_meat-raw-insturmentalcase": "Turtor Meat",
+	
+	"item-body-brayer": "Reptile Skin Body Armor",
+	"item-legs-brayer": "Reptile Skin Legs Armor",
+	"item-helmet-brayer-1": "Reptile Skin Helmet",
+	"item-browerskin": "Reptile Skin",
+	
+	"item-ampeltail": "Ampel Tail",
+	"item-chakram": "Chakram",
+	
+	"block-mobpedestal-ampel_child-north": "Ampel Child Pedestal",
+	"block-mobpedestal-ampel_female-north": "Ampel Female Pedestal", 
+	"block-mobpedestal-ampel_male-north": "Ampel Male Pedestal", 
+	"block-mobpedestal-bell-north": "Bell Pedestal", 
+	"block-mobpedestal-brower-north": "Brayer Pedestal", 
+	"block-mobpedestal-deerhorn-north": "Corrupt Drifter Pedestal", 
+	"block-mobpedestal-knife-north": "Nightmare Drifter Pedestal", 
+	"block-mobpedestal-locust-bell-north": "Locust Bell Pedestal", 
+	"block-mobpedestal-locust-bronze-north": "Bronze Locust Pedestal", 
+	"block-mobpedestal-locust-corrupt-sawblade-north": "Corrupt Sawblade Locust Pedestal", 
+	"block-mobpedestal-locust-corrupt-north": "Corrupt Locust Pedestal", 
+	"block-mobpedestal-shintorickae-north": "Shintorickae Pedestal", 
+	"block-mobpedestal-spiked1-north": "Tainted Drifter Pedestal", 
+	"block-mobpedestal-spiked2-north": "Tainted Drifter Pedestal", 
+	"block-mobpedestal-surface-north": "Surface Drifter Pedestal", 
+	"block-mobpedestal-tickling-north": "Tickling Pedestal", 
+	"block-mobpedestal-turtor-north": "Turtor Pedestal"
+	
 }

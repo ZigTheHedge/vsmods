@@ -84,5 +84,27 @@
 	  "height": 3,
 	  "shapeless": false,
 	  "output": { type: "item", code: "sharpener-obsidian" }
+	},
+	{
+	  "ingredientPattern": "XDX,RDR,XDX",
+	  "ingredients": {
+		"R": {
+		  type: "item", 
+		  code: "necessaries:glue",
+		  quantity: 2
+		},
+		"D": {
+		  "type": "item",
+		  "code": "necessaries:sharpener_disc-obsidian"
+		},
+		"X": {
+		  "type": "item",
+		  "code": "necessaries:grounddiamond"
+		}
+	  },
+	  "width": 3,
+	  "height": 3,
+	  "shapeless": false,
+	  "output": { type: "item", code: "sharpener-diamond" }
 	}
 ]

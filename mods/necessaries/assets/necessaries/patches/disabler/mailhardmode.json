@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:blocktypes/postregistry.json",
+    "condition": { "when": "mailHardmodeEnabled", "isValue": "false" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "necessaries:itemtypes/regscroll.json",
+    "condition": { "when": "mailHardmodeEnabled", "isValue": "false" }
+  }
+]

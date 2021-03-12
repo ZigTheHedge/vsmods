@@ -1,0 +1,100 @@
+[
+  {
+    "op": "add",
+    "path": "/server/behaviors/6/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-ampel_child-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "entities/land/ampel-child.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-ampel_female-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "entities/land/ampel-female.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-ampel_male-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "entities/land/ampel-male.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-brower-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "entities/land/brower.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-shintorickae-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "entities/land/shintorickae.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-tickling-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "entities/land/tickling.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/drops/-",
+    "value": {
+      "type": "block",
+      "code": "theneighbours:mobpedestal-turtor-north",
+      "quantity": {
+        "avg": 0.01,
+        "var": 0
+      }
+    },
+    "file": "entities/water/turtor.json",
+    "condition": { "when": "disablePedestals", "isValue": "false" }	
+  }
+]

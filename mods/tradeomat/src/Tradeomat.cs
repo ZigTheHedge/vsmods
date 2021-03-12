@@ -1,13 +1,8 @@
 ﻿using Foundation.Extensions;
 using HarmonyLib;
 using ProtoBuf;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using tradeomat.src.Coins;
 using tradeomat.src.TradeomatBlock;
 using tradeomat.src.TradeomatBlock.Rug;
@@ -104,6 +99,11 @@ namespace tradeomat.src
 
         public string NumberOfTomatsAllowedVariants { get; set; } = "Number of Trade'o'mats which every player allowed to place. Set to 0 to disable the limit.";
         public int NumberOfTomatsAllowed { get; set; } = 0;
+        public bool disableVendingMaching { get; set; } = false;
+        public bool disableMarketStall { get; set; } = false;
+        public bool disableTradeorug { get; set; } = false;
+        public bool disableCoins { get; set; } = false;
+        public bool disableCoinCasting { get; set; } = false;
     }
     class Tradeomat : ModSystem
     {
@@ -309,6 +309,12 @@ namespace tradeomat.src
         public override void StartPre(ICoreAPI api)
         {
             SDCFileConfig.Current = api.LoadOrCreateConfig<SDCFileConfig>("TradeomatConfig.json");
+
+            api.World.Config.SetBool("disableVendingMaching", SDCFileConfig.Current.disableVendingMaching);
+            api.World.Config.SetBool("disableMarketStall", SDCFileConfig.Current.disableMarketStall);
+            api.World.Config.SetBool("disableTradeorug", SDCFileConfig.Current.disableTradeorug);
+            api.World.Config.SetBool("disableCoins", SDCFileConfig.Current.disableCoins);
+            api.World.Config.SetBool("disableCoinCasting", SDCFileConfig.Current.disableCoinCasting);
         }
         public void SavePlayerTomatoes()
         {

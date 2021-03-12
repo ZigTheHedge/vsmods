@@ -60,7 +60,12 @@
 						type: "item",
 						code: "fat",
 						quantity: { avg: 1, var: 2 }
-					}
+					},
+					{
+						type: "item",
+						code: "theneighbours:browerskin",
+						quantity: { avg: 0.8, var: 0.8 }
+					}					
 				],
 			}, 
 			{

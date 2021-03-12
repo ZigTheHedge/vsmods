@@ -1,0 +1,30 @@
+{
+	code: "regscroll",
+	class: "regscroll",	
+	shape: { base: "item/regscroll" },
+	creativeinventory: { "general": ["*"], "items": ["*"]},
+	fpHandTransform: {
+		translation: { x: -0.2, y: 0.3, z: 0.4 },
+		rotation: { x: 90, y: 0, z: 46 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.5
+	},
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 136, y: -145, z: -12 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1.59
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.05, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 3.5
+	},
+	tpHandTransform: {
+		translation: { x: -0.7, y: 0, z: -0.8 },
+		rotation: { x: -85, y: -85, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 0.62
+	}
+}

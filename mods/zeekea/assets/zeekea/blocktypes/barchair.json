@@ -7,6 +7,11 @@
 		{ code:"color", states: ["normal1", "carbon_black", "verdigris", "ultramarine", "cinnabar", "chalk_white"] }
 	],
 	drawtype: "json",
+	attributes: {
+		handbook: {
+			groupBy: ["barchair-*"]
+		}
+	},
 	textures: {
 		"normal1": { base: "zeekea:block/cloth/linen/{color}" },
 		"acacia3": { base: "game:block/wood/debarked/{wood}" },

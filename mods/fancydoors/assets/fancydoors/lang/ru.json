@@ -1,8 +1,8 @@
 {
-	"block-fancydoor-2wide-right-north": "Резная дверь шириной 2",
-	"block-fancydoor-3wide-right-north": "Резная дверь шириной 3",
-	"block-fancydoor-4wide-right-north": "Резная дверь шириной 4",
-	"block-fancydoor-5wide-right-north": "Резная дверь шириной 5",
+	"block-fancydoor-2wide-right-north": "Петля резнай двери (ширина 2)",
+	"block-fancydoor-3wide-right-north": "Петля резнай двери (ширина 3)",
+	"block-fancydoor-4wide-right-north": "Петля резнай двери (ширина 4)",
+	"block-fancydoor-5wide-right-north": "Петля резнай двери (ширина 5)",
 	
 	"removestatic-sneak-help": "Вытащить статичную часть",
 	"remove-sneak-help": "Вытащить дверную панель",
@@ -13,5 +13,8 @@
 	"nonchiseled-help": "В качестве панелей можно использовать только резные блоки",
 	"placedoor-help": "Установить дверную панель",
 	"placestatic-help": "Установить статичную часть",
-	"interact-help": "Открыть/Закрыть эту и присоединенные двери"
+	"interact-help": "Открыть/Закрыть эту и присоединенные двери",
+	
+	"block-doorworkbench-pile-north": "Строительный компонент для дверного рабочего стола",
+	"block-doorworkbench-complete-north": "Дверной рабочий стол"
 }

@@ -1,0 +1,124 @@
+{
+	code: "ampel-child",
+	class: "EntityHumanoid",
+	hitboxSize: { x: 0.6, y: 0.9 },
+	deadHitboxSize: { x: 2, y: 0.2 },
+	eyeHeight: 0.8,
+	drops: [],
+	client: {
+		renderer: "Shape",
+		shape: { base: "theneighbours:entity/land/ampel_child" },
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 }, 
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "interpolateposition" },
+			{ code: "harvestable" },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt", 
+				animationSpeed: 1.4,
+				weight: 10,
+				blendMode: "Average" 
+			},
+			{
+				code: "die",
+				animation: "die", 
+				animationSpeed: 1.0,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{ 
+				code: "idle", 
+				animation: "idle",
+				blendMode: "AddAverage",
+				animationSpeed: 0.4,
+				triggeredBy: { defaultAnim: true },
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 },
+			{ code: "health", currenthealth: 20, maxhealth: 20, },
+			{ code: "deaddecay", hoursToDecay: 96 },
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "harvestable", drops: [
+					{
+						type: "item",
+						code: "game:bushmeat-raw",
+						quantity: { avg: 0.5, var: 1 }
+					}
+				],
+			},
+			{ code: "breathe" }, 
+			{ 
+				code: "emotionstates",
+				states: [
+					{ code: "alarmherdondamage", chance: 1, slot: 1, priority: 1, accumType: "max" }
+				],
+			},
+			{ 
+				code: "grow",
+				hoursToGrow: 336,
+				adultEntityCodes: ["ampel-male", "ampel-female"],
+			}, 
+			{
+				code: "taskai",
+				aitasks: [
+					{
+						code: "fleeentity",
+						entityCodes: ["player"],
+						priority: 1.5,
+						movespeed: 0.020,
+						seekingRange: 11,
+						animationSpeed: 2,
+						animation: "walk"
+					},
+					{
+						code: "getoutofwater",
+						priority: 1.4,
+						movespeed: 0.020,
+						animation: "walk",
+						animationSpeed: 2
+					},
+					{
+						code: "stayclosetoentity",
+						priority: 1.4,
+						entityCodes: [ "ampel-female", "ampel-male" ],
+						movespeed: 0.020,
+						maxDistance: 7,
+						searchRange: 25,
+						animation: "walk",
+						animationSpeed: 2
+					},
+					{
+						code: "wander", 
+						priority: 1.0, 
+						priorityForCancel: 1.35,
+						movespeed: 0.010,
+						animation: "walk",
+						animationSpeed: 1,
+						preferredLightLevel: 20
+					},
+					{ 
+						code: "lookaround", 
+						priority: 0.5
+					}
+				]
+			}
+		]
+	},
+	sounds: {
+		hurt: "creature/ampel/hurt",
+		death: "creature/ampel/death",
+		idle: "creature/ampel/idle"
+	},
+	idleSoundChance: 0.1
+}

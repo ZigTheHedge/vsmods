@@ -1,0 +1,13 @@
+{
+  "ingredientPattern": "T_T,TTT,_T_",
+  "ingredients": {
+    "T": {
+      "type": "item",
+      "code": "zeekea:ironthingie-iron"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "torchlamp-0" }
+}

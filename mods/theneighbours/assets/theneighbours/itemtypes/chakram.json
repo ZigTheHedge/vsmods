@@ -1,0 +1,46 @@
+{
+	code: "chakram",
+	shape: { base: "item/chakram" },
+	creativeinventory: { "general": ["*"], "items": ["*"], "tools": ["*"]},
+	damagedby: ["attacking"],
+	tool: "sword",
+	heldTpHitAnimation: "swordhit",
+	
+	attributes: {
+		toolrackTransform: {
+			translation: { x: 0, y: 0.2, z: 0 },
+			origin: { x: 0.5, y: 0.2, z: 0.5 }
+		}
+	},
+	
+	attackpower: 3.75,
+
+	durability: 350,
+	attackRange: 2.5,
+	tooltier: 3,
+	
+	guiTransform: {
+		translation: { x: 3, y: 0, z: 0 },
+		rotation: { x: 133, y: -50, z: 0 },
+		origin: { x: 0.5, y: 0.2, z: 0.5 },
+		scale: 1.75
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.5, z: 0 },
+		rotation: { x: 5, y: -5, z: -100 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.45
+	},
+	tpHandTransform: {
+		translation: { x: -0.6, y: -0.6, z: -0.5 },
+		rotation: { x: 92, y: -6, z: 5 },
+		origin: { x: 0.5, y: 0.2, z: 0.5 },
+		scale: 0.8
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3.4
+	}
+}

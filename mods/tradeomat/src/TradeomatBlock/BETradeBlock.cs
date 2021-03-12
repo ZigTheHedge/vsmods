@@ -23,6 +23,8 @@ namespace tradeomat.src.TradeomatBlock
 
         DealRenderer dealRenderer;
 
+        public bool isCreative = false;
+
         public override InventoryBase Inventory
         {
             get { return inventory; }
@@ -95,6 +97,7 @@ namespace tradeomat.src.TradeomatBlock
                         {
                             BinaryWriter writer = new BinaryWriter(ms);
                             writer.Write(true);
+                            //writer.Write(isCreative);
                             TreeAttribute tree = new TreeAttribute();
                             inventory.ToTreeAttributes(tree);
                             tree.ToBytes(writer);
@@ -141,6 +144,7 @@ namespace tradeomat.src.TradeomatBlock
         {
             base.FromTreeAttributes(tree, worldForResolving);
             ownerName = tree.GetString("ownerName", "");
+            isCreative = tree.GetBool("isCreative", false);
             //dealRenderer.UpdateDeal(Inventory[0], Inventory[1], GetFullness());
         }
 
@@ -148,6 +152,7 @@ namespace tradeomat.src.TradeomatBlock
         {
             base.ToTreeAttributes(tree);
             tree.SetString("ownerName", ownerName);
+            tree.SetBool("isCreative", isCreative);
         }
 
         private void Deal(int numberOfDeals)
@@ -157,41 +162,44 @@ namespace tradeomat.src.TradeomatBlock
             if (inventory[18].Itemstack.StackSize == 0) inventory[18].Itemstack = null;
             inventory[18].MarkDirty();
 
-            int curSlot = 2;
-            //Passing the payment
-            while(toPlace > 0)
+            if (!isCreative)
             {
-                int placeThisIteration = toPlace;
-                if (placeThisIteration > inventory[0].Itemstack.Collectible.MaxStackSize) placeThisIteration = inventory[0].Itemstack.Collectible.MaxStackSize;
-                if (inventory[curSlot].Itemstack == null || inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes))
+                int curSlot = 2;
+                //Passing the payment
+                while (toPlace > 0)
                 {
-                    if (inventory[curSlot].Itemstack == null)
+                    int placeThisIteration = toPlace;
+                    if (placeThisIteration > inventory[0].Itemstack.Collectible.MaxStackSize) placeThisIteration = inventory[0].Itemstack.Collectible.MaxStackSize;
+                    if (inventory[curSlot].Itemstack == null || inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes))
                     {
-                        inventory[curSlot].Itemstack = inventory[0].Itemstack.GetEmptyClone();
-                        inventory[curSlot].Itemstack.StackSize = placeThisIteration;
-                        inventory[curSlot].MarkDirty();
-                        toPlace -= placeThisIteration;
-                    }
-                    else
-                    {
-                        if (inventory[curSlot].Itemstack.StackSize < inventory[curSlot].Itemstack.Collectible.MaxStackSize)
+                        if (inventory[curSlot].Itemstack == null)
                         {
-                            if(inventory[curSlot].Itemstack.StackSize + placeThisIteration > inventory[curSlot].Itemstack.Collectible.MaxStackSize)
+                            inventory[curSlot].Itemstack = inventory[0].Itemstack.GetEmptyClone();
+                            inventory[curSlot].Itemstack.StackSize = placeThisIteration;
+                            inventory[curSlot].MarkDirty();
+                            toPlace -= placeThisIteration;
+                        }
+                        else
+                        {
+                            if (inventory[curSlot].Itemstack.StackSize < inventory[curSlot].Itemstack.Collectible.MaxStackSize)
                             {
-                                toPlace -= (inventory[curSlot].Itemstack.Collectible.MaxStackSize - inventory[curSlot].Itemstack.StackSize);
-                                inventory[curSlot].Itemstack.StackSize = inventory[curSlot].Itemstack.Collectible.MaxStackSize;
-                                inventory[curSlot].MarkDirty();
-                            }
-                            else
-                            {
-                                toPlace -= placeThisIteration;
-                                inventory[curSlot].Itemstack.StackSize += placeThisIteration;
-                                inventory[curSlot].MarkDirty();
+                                if (inventory[curSlot].Itemstack.StackSize + placeThisIteration > inventory[curSlot].Itemstack.Collectible.MaxStackSize)
+                                {
+                                    toPlace -= (inventory[curSlot].Itemstack.Collectible.MaxStackSize - inventory[curSlot].Itemstack.StackSize);
+                                    inventory[curSlot].Itemstack.StackSize = inventory[curSlot].Itemstack.Collectible.MaxStackSize;
+                                    inventory[curSlot].MarkDirty();
+                                }
+                                else
+                                {
+                                    toPlace -= placeThisIteration;
+                                    inventory[curSlot].Itemstack.StackSize += placeThisIteration;
+                                    inventory[curSlot].MarkDirty();
+                                }
                             }
                         }
                     }
+                    curSlot++;
                 }
-                curSlot++;
             }
 
             toPlace = inventory[1].Itemstack.StackSize * numberOfDeals;
@@ -199,31 +207,35 @@ namespace tradeomat.src.TradeomatBlock
                 inventory[19].Itemstack = inventory[1].Itemstack.GetEmptyClone();
             inventory[19].Itemstack.StackSize += toPlace;
             inventory[19].MarkDirty();
-            curSlot = 17;
-            //Passing the goods
-            while (toPlace > 0)
-            {
-                if (inventory[curSlot].Itemstack != null)
-                {
-                    if (inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
-                    {
 
-                        if (inventory[curSlot].Itemstack.StackSize < toPlace)
+            if (!isCreative)
+            {
+                int curSlot = 17;
+                //Passing the goods
+                while (toPlace > 0)
+                {
+                    if (inventory[curSlot].Itemstack != null)
+                    {
+                        if (inventory[curSlot].Itemstack.Collectible.Equals(inventory[curSlot].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
                         {
-                            toPlace -= inventory[curSlot].Itemstack.StackSize;
-                            inventory[curSlot].Itemstack = null;
-                            inventory[curSlot].MarkDirty();
-                        }
-                        else
-                        {
-                            inventory[curSlot].Itemstack.StackSize -= toPlace;
-                            if (inventory[curSlot].Itemstack.StackSize == 0) inventory[curSlot].Itemstack = null;
-                            inventory[curSlot].MarkDirty();
-                            toPlace = 0;
+
+                            if (inventory[curSlot].Itemstack.StackSize < toPlace)
+                            {
+                                toPlace -= inventory[curSlot].Itemstack.StackSize;
+                                inventory[curSlot].Itemstack = null;
+                                inventory[curSlot].MarkDirty();
+                            }
+                            else
+                            {
+                                inventory[curSlot].Itemstack.StackSize -= toPlace;
+                                if (inventory[curSlot].Itemstack.StackSize == 0) inventory[curSlot].Itemstack = null;
+                                inventory[curSlot].MarkDirty();
+                                toPlace = 0;
+                            }
                         }
                     }
+                    curSlot--;
                 }
-                curSlot--;
             }
 
             Api.World.PlaySoundAt(new AssetLocation("tradeomat:sounds/deal.ogg"), Pos.X, Pos.Y, Pos.Z);
@@ -265,6 +277,7 @@ namespace tradeomat.src.TradeomatBlock
             if(goodsStorage)
             {
                 if (inventory[1].Itemstack == null) return 0;
+                if (isCreative) return inventory[1].Itemstack.Collectible.MaxStackSize * 8;
                 for (int i = 10; i < 18; i++)
                 {
                     if (inventory[i].Itemstack != null && inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[1].Itemstack, GlobalConstants.IgnoredStackAttributes))
@@ -275,6 +288,7 @@ namespace tradeomat.src.TradeomatBlock
             } else
             {
                 if (inventory[0].Itemstack == null) return 0;
+                if (isCreative) return inventory[0].Itemstack.Collectible.MaxStackSize * 8;
                 for (int i = 2; i < 10; i++)
                 {
                     if (inventory[i].Itemstack == null || inventory[i].Itemstack.Collectible.Equals(inventory[i].Itemstack, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes))
@@ -418,6 +432,12 @@ namespace tradeomat.src.TradeomatBlock
                     serverPlayer.SendMessage(0, Lang.Get("tradeomat:deal-payenterror"), EnumChatType.CommandError);
             }
 
+            if (packetid == 1102)
+            {
+                isCreative = BitConverter.ToBoolean(data, 0);
+                MarkDirty();
+            }
+
             if (packetid == (int)EnumBlockEntityPacketId.Close)
             {
                 if (fromPlayer.InventoryManager != null)
@@ -446,7 +466,7 @@ namespace tradeomat.src.TradeomatBlock
                     {
                         if (ownerDialog == null || !ownerDialog.IsOpened())
                         {
-                            ownerDialog = new GuiOwnerTradeBlock(Lang.Get("tradeomat:owner-title", ownerName), Inventory, Pos, Api as ICoreClientAPI);
+                            ownerDialog = new GuiOwnerTradeBlock(isCreative, Lang.Get("tradeomat:owner-title", ownerName), Inventory, Pos, Api as ICoreClientAPI);
                             ownerDialog.OnClosed += () =>
                             {
                                 ownerDialog = null;

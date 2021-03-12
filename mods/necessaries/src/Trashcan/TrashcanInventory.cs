@@ -26,6 +26,7 @@ namespace necessaries.src.Trashcan
             // 1-3 - out only slots
             this.onNewSlot = (id, inv) => new TrashSlot(inv);
             slots = GenEmptySlots(4);
+            baseWeight = 4;
         }
 
         public TrashcanInventory(string className, string instanceID, ICoreAPI api) : base(className, instanceID, api)

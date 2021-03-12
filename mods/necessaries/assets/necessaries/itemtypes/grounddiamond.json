@@ -1,0 +1,40 @@
+{
+	code: "grounddiamond",
+	creativeinventory: { "general": ["*"], "items": ["*"]},
+	shape: { base: "game:item/resource/crushed/quartz" },
+	textures: { 
+		"quartz": { base: "necessaries:item/grounddiamond" }
+	},
+	attributes: {
+		handbook: {
+			extraSections: [
+				{ title: "game:handbooktitle-crushed", text: "game:handbooktext-crushed" }
+			]
+		}
+	},	
+	maxStackSize: 64,
+	materialDensity: 500,	
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 171, y: 57, z: -20 },
+		origin: { x: 0.46, y: 0.11, z: 0.39 },
+		scale: 2.64
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.16, z: 0 },
+		rotation: { x: 1, y: 88, z: -5 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.63
+	},
+	tpHandTransform: {
+		translation: { x: -1.25, y: -0.7, z: -0.8 },
+		rotation: { x: 0, y: -12, z: -83 },
+		scale: 0.66
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 3, y: 1, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 2.65
+	}
+}

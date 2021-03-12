@@ -9,6 +9,11 @@
 		{ code: "wood", loadFromProperties: "block/wood" },
 		{ code: "rock", loadFromProperties: "block/rock" }
 	],
+	attributes: {
+		handbook: {
+			groupBy: ["orebox-*"]
+		}
+	},
 	drawtype: "json",
 	textures: {
 		"basalt4": { base: "game:block/stone/cobblestone/{rock}4" },

@@ -4,17 +4,23 @@
 	shape: { base: "item/grindstone" },
 	creativeinventory: { "general": ["*"], "items": ["*"]},
 	variantgroups: [
-		{ code: "rock", states: ["granite", "obsidian", "basalt", "sandstone"] }
+		{ code: "rock", states: ["granite", "obsidian", "basalt", "sandstone", "diamond"] }
 	],
-	textures: {
-		"wheel": { base: "game:block/stone/rock/{rock}1" }
+	texturesByType: {
+		"*-diamond": {
+			"wheel": { base: "item/diamond" }
+		},
+		"*": {
+			"wheel": { base: "game:block/stone/rock/{rock}1" }
+		}
 	},
 	storageFlags: 257,	
 	durabilitybytype: {
 		"*-granite": 250,
 		"*-basalt": 450,
 		"*-sandstone": 600,
-		"*-obsidian": 1000
+		"*-obsidian": 1000,
+		"*-diamond": 1000
 	},
 	guiTransform: {
 		rotation: { x: 33, y: 59, z: -88 },

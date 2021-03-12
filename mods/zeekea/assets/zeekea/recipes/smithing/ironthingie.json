@@ -1,0 +1,15 @@
+{
+	ingredient: { 
+		type: "item", 
+		code: "game:ingot-iron"
+	},
+	pattern: [[
+		"#########",
+		"##_###_##",
+		"_________",
+		"##_###_##",
+		"#########"
+	]],
+	name: "Iron Thingie",
+	output: { type: "item", code: "zeekea:ironthingie-iron", quantity: 2 }
+}

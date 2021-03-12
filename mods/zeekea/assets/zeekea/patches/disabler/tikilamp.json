@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:blocktypes/tripod_lamp.json",
+    "condition": { "when": "disableTikiLamp", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": false,
+    "file": "zeekea:recipes/grid/tripodlamp.json",
+    "condition": { "when": "disableTikiLamp", "isValue": "true" }
+  }
+]

@@ -212,6 +212,11 @@ namespace necessaries.src.SharpenerStuff
                         totalDurabilityLoss = ModConfigFile.Current.obsidianDiskDamagePerCycle;
                         totalDurabilityRestored = ModConfigFile.Current.obsidianDiskRepairPerCycle;
                     }
+                    if (itemstack.Item.Variant["rock"] == "diamond")
+                    {
+                        totalDurabilityLoss = ModConfigFile.Current.diamondDiskDamagePerCycle;
+                        totalDurabilityRestored = ModConfigFile.Current.diamondDiskRepairPerCycle;
+                    }
 
                     int maxRepair = toolstack.Attributes.GetInt("maxRepair", toolstack.Item.GetDurability(toolstack));
 

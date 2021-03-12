@@ -188,8 +188,8 @@
 	
 	"block-freezer-melted-closed-north": "Freezer",
 	"block-doorbell-north": "Door bell",
-	"block-toolmold-raw-icepickhead": "Icepick Head mold (raw)",
-	"block-toolmold-burned-icepickhead": "Icepick Head mold (burned)",
+	"block-toolmold-raw-icepickhead": "Raw Icepick Head mold",
+	"block-toolmold-burned-icepickhead": "Icepick Head mold",
 	
 	"item-icepickhead-copper": "Icepick Head made of Copper",
 	"item-icepickhead-tinbronze": "Icepick Head made of Tin Bronze",
@@ -388,8 +388,14 @@
 	"item-bellhead-brass": "Bell dome",
 	"madefrom-title-bellhead-brass": "Important note:",
 	"madefrom-bellhead-brass": "Only Brass can be used to mold this item",
-	"block-toolmold-raw-bellhead": "Bell Dome mold (raw)",
-	"block-toolmold-burned-bellhead": "Bell Dome mold (burned)",
+	"block-toolmold-raw-bellhead": "Raw Bell Dome mold",
+	"block-toolmold-burned-bellhead": "Bell Dome mold",
 	
+	"block-tripodlamp": "Tiki Lamp",
+	
+	"block-torchlamp-0": "Torch Lamp",
+	
+	"item-ironthingie-iron": "Iron Thingie",
+
 	"game:tabname-zeekea": "ZEEkea"
 }

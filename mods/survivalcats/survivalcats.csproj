@@ -34,6 +34,12 @@
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>G:\VintageModding\Lib\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="cairo-sharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\VintageModding\Lib\cairo-sharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,6 +51,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="VintagestoryAPI">
       <HintPath>g:\vintageModding\VintagestoryAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VintagestoryLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\VintageModding\VintagestoryLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
@@ -68,6 +79,7 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\ApiExtensions.cs" />
     <Compile Include="src\BlockChiselNameFix.cs" />
     <Compile Include="src\GuiDialogHandbookBookmarks.cs" />
     <Compile Include="src\GuiHandbookBookmarkedItemStackPage.cs" />

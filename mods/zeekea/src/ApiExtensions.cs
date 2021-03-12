@@ -18,6 +18,7 @@ namespace Foundation.Extensions
                 var loadedConfig = api.LoadModConfig<TConfig>(filename);
                 if (loadedConfig != null)
                 {
+                    api.StoreModConfig(loadedConfig, filename);
                     return loadedConfig;
                 }
             }

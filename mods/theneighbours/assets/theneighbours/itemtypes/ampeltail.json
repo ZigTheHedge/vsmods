@@ -1,0 +1,32 @@
+{
+	"code": "ampeltail",
+	"maxstacksize": 1,
+	"shape": {
+		"base": "theneighbours:item/ampel_tail"
+	},
+
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ]
+	},
+	guiTransform: {
+		translation: { x: 3, y: 0, z: 0 },
+		rotation: { x: 133, y: -50, z: 0 },
+		origin: { x: 0.5, y: 0.2, z: 0.5 },
+		scale: 1.75
+	},
+	fpHandTransform: {
+		rotation: { x: -106, y: -95, z: -30 }
+	},
+	tpHandTransform: {
+		translation: { x: -1.8, y: -1.6, z: -1.1 },
+		rotation: { x: 0, y: -180, z: 180 },
+		scale: 0.41
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 90, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.5299 },
+		scale: 2.8
+	}
+}
