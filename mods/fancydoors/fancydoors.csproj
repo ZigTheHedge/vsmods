@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>fancydoors</RootNamespace>
     <AssemblyName>fancydoors</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,23 +42,23 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VintagestoryAPI">
-      <HintPath>g:\vintagemodding\VintagestoryAPI.dll</HintPath>
+      <HintPath>g:\VintageModding-1.15-pre.1\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>g:\vintagemodding\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>g:\VintageModding-1.15-pre.1\Mods\VSSurvivalMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>g:\vintagemodding\Mods\VSEssentials.dll</HintPath>
+      <HintPath>g:\VintageModding-1.15-pre.1\Mods\VSEssentials.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>g:\vintagemodding\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>g:\VintageModding-1.15-pre.1\Mods\VSCreativeMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>g:\vintagemodding\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>g:\VintageModding-1.15-pre.1\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

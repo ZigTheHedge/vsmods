@@ -4,8 +4,8 @@
   "name": "Fancy Doors",
   "authors": [ "ZigTheHedge" ],
   "description": "Use chiseled blocks to make various-looking doors",
-  "version": "1.0.4-B",
+  "version": "1.0.5-B",
   "dependency": {
-    "game": "1.14.2"
+    "game": "1.15.0"
   }
 }

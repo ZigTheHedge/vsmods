@@ -11,6 +11,7 @@
 		"red2": "game:block/clay/brick/red2",
 		"bituminous": "game:block/coal/bituminous",
 		"normal1": "game:block/snow/normal1",
+		"null": "game:block/snow/normal1",		
 		"soil": "game:block/clay/planter/soil"
 	},
 	"elements": [

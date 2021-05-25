@@ -8,7 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"wheel": "block/stone/rock/granite1"
+		"wheel": "game:block/stone/rock/granite1"
 	},
 	"elements": [
 		{

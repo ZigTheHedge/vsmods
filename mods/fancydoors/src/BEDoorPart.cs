@@ -89,8 +89,8 @@ namespace fancydoors.src
 
             for (int index = 0; index < mesh.RenderPassCount; ++index)
             {
-                if (mesh.RenderPasses[index] != 3)
-                    mesh.RenderPasses[index] = 1;
+                if (mesh.RenderPassesAndExtraBits[index] != 3)
+                    mesh.RenderPassesAndExtraBits[index] = 1;
             }
             //mesh.GetRgba
 

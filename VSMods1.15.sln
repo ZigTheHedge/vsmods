@@ -3,37 +3,56 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLauncher.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4E5393C2-E0A7-41DD-96B3-19211D33FD56} = {4E5393C2-E0A7-41DD-96B3-19211D33FD56}
-		{7CFFB281-9548-44B4-8969-3F32E74CA96B} = {7CFFB281-9548-44B4-8969-3F32E74CA96B}
-		{B21CCD46-8D92-43AA-A676-DFA4FEB84BCE} = {B21CCD46-8D92-43AA-A676-DFA4FEB84BCE}
-		{567FF7CF-3509-410B-A9DE-25394CB77BCD} = {567FF7CF-3509-410B-A9DE-25394CB77BCD}
-		{8C220E59-61E6-4FE4-9F7F-B296C6D7D741} = {8C220E59-61E6-4FE4-9F7F-B296C6D7D741}
-		{9FDDC15A-1A07-4C81-8108-D5C1AE7B751E} = {9FDDC15A-1A07-4C81-8108-D5C1AE7B751E}
-		{5BA31455-9604-495D-B036-47EB4E866BE0} = {5BA31455-9604-495D-B036-47EB4E866BE0}
-		{D44AD856-3962-4940-8AC1-B2F8064D8671} = {D44AD856-3962-4940-8AC1-B2F8064D8671}
-		{59A2ECF8-10C7-4983-9020-5B55C1493585} = {59A2ECF8-10C7-4983-9020-5B55C1493585}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theneighbours", "mods\theneighbours\theneighbours.csproj", "{4E5393C2-E0A7-41DD-96B3-19211D33FD56}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fancydoors", "mods\fancydoors\fancydoors.csproj", "{7CFFB281-9548-44B4-8969-3F32E74CA96B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "survivalcats", "mods\survivalcats\survivalcats.csproj", "{529E5C60-D29E-494D-91D0-29945C5278C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tastydays", "mods\tastydays\tastydays.csproj", "{B21CCD46-8D92-43AA-A676-DFA4FEB84BCE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cavepaintings", "mods\cavepaintings\cavepaintings.csproj", "{567FF7CF-3509-410B-A9DE-25394CB77BCD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xmastime", "mods\xmastime\xmastime.csproj", "{8C220E59-61E6-4FE4-9F7F-B296C6D7D741}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zeekea", "mods\zeekea\zeekea.csproj", "{9FDDC15A-1A07-4C81-8108-D5C1AE7B751E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tradeomat", "mods\tradeomat\tradeomat.csproj", "{5BA31455-9604-495D-B036-47EB4E866BE0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "necessaries", "mods\necessaries\necessaries.csproj", "{D44AD856-3962-4940-8AC1-B2F8064D8671}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "streamdc", "mods\streamdc\streamdc.csproj", "{59A2ECF8-10C7-4983-9020-5B55C1493585}"
+	ProjectSection(ProjectDependencies) = postProject
+		{203DFBF1-3599-43FD-8487-E1C79C2B788F} = {203DFBF1-3599-43FD-8487-E1C79C2B788F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

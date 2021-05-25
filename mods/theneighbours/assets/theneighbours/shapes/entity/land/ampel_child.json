@@ -11,6 +11,7 @@
 		"bituminous": "game:block/coal/bituminous",
 		"cheddarjack": "game:block/dairy/cheddarjack",
 		"normal1": "game:block/snow/normal1",
+		"null": "game:block/snow/normal1",
 		"acacia": "game:block/wood/bark/acacia"
 	},
 	"elements": [

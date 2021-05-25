@@ -108,7 +108,7 @@ namespace necessaries.src.Parcel
             for (int i = 0; i < Necessaries.postServicesClient.Count; i++)
             {
                 PostService postService = Necessaries.postServicesClient[i];
-                if (postService.isValid) listLen++;
+                if (postService.isValid && postService.title != "") listLen++;
             }
 
             if(listLen == 0)
@@ -123,7 +123,7 @@ namespace necessaries.src.Parcel
             for (int i = 0; i < Necessaries.postServicesClient.Count; i++)
             {
                 PostService postService = Necessaries.postServicesClient[i];
-                if (!postService.isValid) continue;
+                if (!postService.isValid || postService.title == "") continue;
                 rcptIdx[rcptCount] = i.ToString();
                 rcptAddr[rcptCount++] = postService.title;
             }

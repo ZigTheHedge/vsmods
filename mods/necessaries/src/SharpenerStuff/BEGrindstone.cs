@@ -403,7 +403,7 @@ namespace necessaries.src.SharpenerStuff
             nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
             capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
 
-            mesh.RenderPasses.Fill((short)EnumChunkRenderPass.BlendNoCull);
+            mesh.RenderPassesAndExtraBits.Fill((short)EnumChunkRenderPass.BlendNoCull);
 
 
             ModelTransform transform;

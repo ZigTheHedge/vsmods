@@ -33,6 +33,7 @@
 	"mailbox-sent": "Посылка отправлена",
 	"mailbox-nodest": "Не задан адрес получателя",
 	"mailbox-nomailbox": "Отсутствует почтовый ящик по адресу",
+	"mailbox-addressexists": "Такой адрес уже зарегистрирован",	
 	
 	"parcel-rcpt-title": "Адрес отправителя:",
 	"parcel-message-title": "Сообщение:",

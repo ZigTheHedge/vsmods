@@ -37,7 +37,9 @@ namespace zeekea.src
 
         public override Cuboidf[] GetSelectionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            Cuboidf[] cuboidfs = blockAccessor.GetBlock(pos.DownCopy()).GetSelectionBoxes(blockAccessor, pos.DownCopy());
+            Block biq = blockAccessor.GetBlock(pos.DownCopy());
+            if (biq.Id == 0) return SelectionBoxes;
+            Cuboidf[] cuboidfs = biq.GetSelectionBoxes(blockAccessor, pos.DownCopy());
             Cuboidf[] cuboidret = new Cuboidf[cuboidfs.Length];
             for(int i = 0; i < cuboidfs.Length; i++)
             {
@@ -48,7 +50,9 @@ namespace zeekea.src
 
         public override Cuboidf[] GetCollisionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            Cuboidf[] cuboidfs = blockAccessor.GetBlock(pos.DownCopy()).GetCollisionBoxes(blockAccessor, pos.DownCopy());
+            Block biq = blockAccessor.GetBlock(pos.DownCopy());
+            if (biq.Id == 0) return CollisionBoxes;
+            Cuboidf[] cuboidfs = biq.GetCollisionBoxes(blockAccessor, pos.DownCopy());
             Cuboidf[] cuboidret = new Cuboidf[cuboidfs.Length];
             for (int i = 0; i < cuboidfs.Length; i++)
             {

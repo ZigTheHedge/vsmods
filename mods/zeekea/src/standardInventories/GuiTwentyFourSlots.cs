@@ -27,7 +27,6 @@ namespace zeekea.src.standardInventories
         void SetupDialog()
         {
             ItemSlot hoveredSlot = capi.World.Player.InventoryManager.CurrentHoveredSlot;
-
             if (hoveredSlot != null && hoveredSlot.Inventory?.InventoryID != Inventory?.InventoryID)
             {
                 hoveredSlot = null;

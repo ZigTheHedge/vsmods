@@ -11,6 +11,7 @@
 		"tenmoku": "game:block/clay/planter/tenmoku",
 		"bituminous": "game:block/coal/bituminous",
 		"normal1": "game:block/snow/normal1",
+		"null": "game:block/snow/normal1",		
 		"scoria2": "game:block/stone/rock/scoria2"
 	},
 	"elements": [

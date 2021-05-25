@@ -127,6 +127,17 @@ namespace tradeomat.src.TradeomatBlock.Rug
             currentlyMouseDownOnElement = false;
         }
 
+        public override void OnKeyDown(ICoreClientAPI api, KeyEvent args)
+        {
+            if (isOver) { api.Input.TriggerOnMouseLeaveSlot(slot); isOver = false; }
+            //base.OnKeyDown(api, args);
+        }
+
+        public override void OnKeyPress(ICoreClientAPI api, KeyEvent args)
+        {
+            //base.OnKeyPress(api, args);
+        }
+
         /// <summary>
         /// Sets the button as active or inactive.
         /// </summary>

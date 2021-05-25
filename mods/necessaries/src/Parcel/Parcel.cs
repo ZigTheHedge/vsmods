@@ -43,18 +43,18 @@ namespace necessaries.src.Parcel
                     droppedItem.Attributes.SetString("rcpt", be.rcptAddress);
                     droppedItem.Attributes.SetString("destAddressIdx", be.destAddress);
                     droppedItem.Attributes.SetString("message", be.message);
-                }
 
-                if (!byPlayer.InventoryManager.TryGiveItemstack(droppedItem))
-                {
-                    world.SpawnItemEntity(droppedItem, be.Pos.ToVec3d().Add(0.5, 0.2, 0.5));
-                }
+                    if (!byPlayer.InventoryManager.TryGiveItemstack(droppedItem))
+                    {
+                        world.SpawnItemEntity(droppedItem, be.Pos.ToVec3d().Add(0.5, 0.2, 0.5));
+                    }
 
-                world.BlockAccessor.SetBlock(0, be.Pos);
+                    world.BlockAccessor.SetBlock(0, be.Pos);
 
-                if (this.Sounds?.Place != null)
-                {
-                    world.PlaySoundAt(this.Sounds.Place, be.Pos.X, be.Pos.Y, be.Pos.Z, byPlayer, false);
+                    if (this.Sounds?.Place != null)
+                    {
+                        world.PlaySoundAt(this.Sounds.Place, be.Pos.X, be.Pos.Y, be.Pos.Z, byPlayer, false);
+                    }
                 }
 
                 handled = true;

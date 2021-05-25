@@ -121,8 +121,8 @@ namespace tradeomat.src.Utils
 
             for (int index = 0; index < mesh.RenderPassCount; ++index)
             {
-                if (mesh.RenderPasses[index] != 3)
-                    mesh.RenderPasses[index] = 1;
+                if (mesh.RenderPassesAndExtraBits[index] != 3)
+                    mesh.RenderPassesAndExtraBits[index] = 1;
             }
             return true;
         }
@@ -140,7 +140,8 @@ namespace tradeomat.src.Utils
 
             if (stack.Class == EnumItemClass.Block)
             {
-                capi.Tesselator.TesselateBlock(stack.Block, out mesh);
+                //capi.Tesselator.TesselateBlock(stack.Block, out mesh);
+                mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
                 if (stack.Collectible.Attributes?["onDisplayTransform"].Exists == true)
                 {
                     ModelTransform transform = stack.Collectible.Attributes?["onDisplayTransform"].AsObject<ModelTransform>();
@@ -180,7 +181,7 @@ namespace tradeomat.src.Utils
                     mesh.Translate(0, -7.5f / 16f, 0f);
                 }
 
-                mesh.RenderPasses.Fill((byte)EnumChunkRenderPass.BlendNoCull);
+                mesh.RenderPassesAndExtraBits.Fill((byte)EnumChunkRenderPass.BlendNoCull);
 
 
             }

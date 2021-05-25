@@ -9,7 +9,7 @@
 	},
 	"textures": {
 		"copper": "game:block/metal/plate/copper",
-		"vertical": "game:block/wood/fence/oak/vertical",
+		"vertical": "game:block/wood/oak",
 		"ferthigh": "game:block/soil/ferthigh"
 	},
 	"elements": [

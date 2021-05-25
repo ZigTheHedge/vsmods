@@ -13,7 +13,6 @@ namespace necessaries.src.Mailbox
 {
     class MailBox : Block
     {
-
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             BEMailBox be = null;

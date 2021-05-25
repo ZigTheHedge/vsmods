@@ -227,6 +227,30 @@ namespace necessaries.src
             api.Event.SaveGameLoaded += LoadPostServices;
             api.Event.GameWorldSave += SavePostServices;
             api.Event.PlayerJoin += PushPostServices;
+
+            if(ModConfigFile.Current.mailEnabled)
+                api.RegisterCommand("listmailboxes", "Prints a list of all registered mailboxes on a server", "", ListMailboxes, Privilege.readlists);
+        }
+
+        private void ListMailboxes(IServerPlayer player, int groupId, CmdArgs args)
+        {
+            serverApi.SendMessage(player, groupId, "List of all registered mailboxes:", EnumChatType.Notification);
+            if (ModConfigFile.Current.mailHardmodeEnabled) serverApi.SendMessage(player, groupId, "Mail HARD MODE is enabled!", EnumChatType.Notification);
+            serverApi.SendMessage(player, groupId, "------------------------------", EnumChatType.Notification);
+            //deathData.PrintTopFive(serverApi, player, groupId);
+            int centerX = player.WorldData.EntityPlayer.World.BlockAccessor.MapSizeX / 2;
+            int centerZ = player.WorldData.EntityPlayer.World.BlockAccessor.MapSizeZ / 2;
+            for (int i = 0; i < postServicesServer.Count; i++)
+            {
+                string mailbox = (i + 1) + ". [" + postServicesServer[i].title + "] at: " + (postServicesServer[i].X - centerX) + ", " + postServicesServer[i].Y + ", " + (postServicesServer[i].Z - centerZ);
+                if (ModConfigFile.Current.mailHardmodeEnabled)
+                    if (postServicesServer[i].isValid) mailbox += " [registered]";
+                    else mailbox += "[UNregistered]";
+                mailbox += " Owned by: " + postServicesServer[i].owner;
+                serverApi.SendMessage(player, groupId, mailbox, EnumChatType.Notification);
+            }
+            if(postServicesServer.Count == 0)
+                serverApi.SendMessage(player, groupId, "There are none.", EnumChatType.Notification);
         }
 
         public static int CountMailboxes(IPlayer player, ICoreAPI api)
@@ -316,8 +340,20 @@ namespace necessaries.src
             });
         }
 
-        public static void EditMailbox(string title, int X, int Y, int Z)
+        public static bool EditMailbox(string title, int X, int Y, int Z)
         {
+            for (int i = 0; i < postServicesServer.Count; i++)
+            {
+                if(postServicesServer[i].title.Equals(title, System.StringComparison.CurrentCultureIgnoreCase))
+                {
+                    if (postServicesServer[i].X == X &&
+                    postServicesServer[i].Y == Y &&
+                    postServicesServer[i].Z == Z) continue;
+                    
+                    return false;
+                }
+            }
+
             for (int i = 0; i < postServicesServer.Count; i++)
             {
                 if (postServicesServer[i].X == X &&
@@ -336,6 +372,7 @@ namespace necessaries.src
                 Z = Z,
                 doRemove = false
             });
+            return true;
         }
 
         public void PushPostServices(IServerPlayer serverPlayer)

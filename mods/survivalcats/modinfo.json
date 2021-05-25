@@ -4,8 +4,8 @@
   "name": "Survival Handbook Categories",
   "authors": [ "ZigTheHedge" ],
   "description": "Adds a convinient way of viewing entire mod content in survival and creative",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "dependency": {
-    "game": "1.14.2"
+    "game": "1.15.0"
   }
 }

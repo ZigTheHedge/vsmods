@@ -13,6 +13,7 @@
 		"normal1": "game:block/snow/normal1",
 		"obsidian1": "game:block/stone/rock/obsidian1",
 		"cheddarjack": "game:block/dairy/cheddarjack",
+		"null": "game:block/snow/normal1",		
 		"acacia": "game:block/wood/bark/acacia"		
 	},
 	"elements": [

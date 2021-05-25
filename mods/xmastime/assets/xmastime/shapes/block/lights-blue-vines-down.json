@@ -9,7 +9,7 @@
 	},
 	"textures": {
 		"glowworm": "game:block/glowworm/glowworm",
-		"branch": "game:block/wood/leaves/branch"
+		"branch": "game:block/plant/leaves/large/branch"
 	},
 	"elements": [
 		{

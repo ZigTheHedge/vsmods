@@ -121,15 +121,14 @@ namespace zeekea.src.vanillapatches
 
             for (int index = 0; index < mesh.RenderPassCount; ++index)
             {
-                if (mesh.RenderPasses[index] != 3)
-                    mesh.RenderPasses[index] = 1;
+                if (mesh.RenderPassesAndExtraBits[index] != 3)
+                    mesh.RenderPassesAndExtraBits[index] = 1;
             }
             return true;
         }
 
         protected override MeshData genMesh(ItemStack stack, int index)
         {
-
             MeshData mesh;
             ICoreClientAPI capi = Api as ICoreClientAPI;
 
@@ -187,7 +186,7 @@ namespace zeekea.src.vanillapatches
                     mesh.Translate(0, -7.5f / 16f, 0f);
                 }
 
-                mesh.RenderPasses.Fill((byte)EnumChunkRenderPass.BlendNoCull);
+                mesh.RenderPassesAndExtraBits.Fill((byte)EnumChunkRenderPass.BlendNoCull);
 
 
             }

@@ -4,8 +4,8 @@
   "name": "The Neighbours",
   "authors": [ "NatElfa", "ZigTheHedge" ],
   "description": "Evil beings from parallel plane",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "dependency": {
-    "game": "1.14.0"
+    "game": "1.15.0"
   }
 }

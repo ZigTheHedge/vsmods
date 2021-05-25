@@ -62,31 +62,6 @@ namespace necessaries.src.Mailbox
         {
             if (Api.Side == EnumAppSide.Client)
             {
-                /*
-                if (clientDialog == null)
-                {
-                    clientDialog = new GuiDialogMailbox(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
-                    clientDialog.OnClosed += () =>
-                    {
-                        clientDialog = null;
-                        (Api as ICoreClientAPI).Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
-                        byPlayer.InventoryManager.CloseInventory(inventory);
-                    };
-                }
-
-                clientDialog.TryOpen();
-
-                (Api as ICoreClientAPI).Network.SendPacketClient(inventory.Open(byPlayer));
-
-                int foundCount = 0;
-                for(int i = 0; i < Necessaries.postServicesClient.Count; i++)
-                {
-                    if (Necessaries.postServicesClient[i].title.StartsWith(byPlayer.PlayerName)) foundCount++;
-                }
-                
-                if (address == "") address = byPlayer.PlayerName + ", " + (foundCount + 1);
-                clientDialog.DefAddress = address;
-                */
             }
             else
             {
@@ -148,9 +123,14 @@ namespace necessaries.src.Mailbox
                     using (MemoryStream ms = new MemoryStream(data))
                     {
                         BinaryReader reader = new BinaryReader(ms);
-                        address = reader.ReadString();
-                        if (address == null) address = "";
-                        Necessaries.EditMailbox(address, Pos.X, Pos.Y, Pos.Z);
+                        string newaddress = reader.ReadString();
+                        if (newaddress == null) newaddress = "";
+                        if (!Necessaries.EditMailbox(newaddress, Pos.X, Pos.Y, Pos.Z))
+                        {
+                            ((ICoreServerAPI)Api).SendMessage(fromPlayer, 0, Lang.Get("necessaries:mailbox-addressexists"), EnumChatType.CommandError);
+                        }
+                        else
+                            address = newaddress;
                     }
                     MarkDirty();
                 }
@@ -279,19 +259,34 @@ namespace necessaries.src.Mailbox
                         clientDialog = new GuiDialogMailbox(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
                         clientDialog.OnClosed += () =>
                         {
+                            ((ICoreClientAPI)Api).Network.SendBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, (int)EnumBlockEntityPacketId.Close, null);
                             clientDialog = null;
                         };
                     }
 
                     clientDialog.TryOpen();
 
-                    int foundCount = 0;
+                    int maxAddress = 0;
                     for (int i = 0; i < Necessaries.postServicesClient.Count; i++)
                     {
-                        if (Necessaries.postServicesClient[i].title.StartsWith(playerName)) foundCount++;
+                        if (Necessaries.postServicesClient[i].title.StartsWith(playerName))
+                        {
+                            int numPad = -1;
+                            for(int j = Necessaries.postServicesClient[i].title.Length - 1; j >= 0; j--)
+                            {
+                                char isnum = Necessaries.postServicesClient[i].title[j];
+                                if (isnum >= '0' && isnum <= '9') numPad = j;
+                                else break;
+                            }
+                            if (numPad != -1)
+                            {
+                                int curAddress = int.Parse(Necessaries.postServicesClient[i].title.Substring(numPad));
+                                if (curAddress > maxAddress) maxAddress = curAddress;
+                            }
+                        }
                     }
 
-                    if (address == "") address = playerName + ", " + (foundCount + 1);
+                    if (address == "") address = playerName + ", " + (maxAddress + 1);
                     clientDialog.DefAddress = address;
                 }
             }

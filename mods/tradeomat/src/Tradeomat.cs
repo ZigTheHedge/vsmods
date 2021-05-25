@@ -107,7 +107,7 @@ namespace tradeomat.src
     }
     class Tradeomat : ModSystem
     {
-        Harmony harmony = new Harmony("com.cwelth.tradeomat");
+        //Harmony harmony = new Harmony("com.cwelth.tradeomat");
 
         ICoreServerAPI serverApi;
         ICoreClientAPI clientApi;
@@ -256,7 +256,7 @@ namespace tradeomat.src
 
             serverChannel.SetMessageHandler<OpenBuyerInterface>(OnBuyerInterfaceOpen);
             
-            harmony.PatchAll();
+            //harmony.PatchAll();
         }
         public void PushTomatoes(IServerPlayer serverPlayer)
         {
@@ -333,7 +333,7 @@ namespace tradeomat.src
             base.Dispose();
             serverChannel = null;
             clientChannel = null;
-            harmony.UnpatchAll("com.cwelth.tradeomat");
+            //harmony.UnpatchAll("com.cwelth.tradeomat");
         }
     }
 }

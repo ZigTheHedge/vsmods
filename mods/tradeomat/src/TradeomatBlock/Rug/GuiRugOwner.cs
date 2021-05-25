@@ -40,12 +40,12 @@ namespace tradeomat.src.TradeomatBlock.Rug
 
             ElementBounds priceTitleBounds = ElementBounds.Fixed(5, 35, 105, 35);
             ElementBounds priceSlotsBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 116, 20, 1, 1);
-            ElementBounds paymentTitleBounds = ElementBounds.Fixed(15, 80, 120, 35);
+            ElementBounds paymentTitleBounds = ElementBounds.Fixed(15, 80, 250, 35);
             ElementBounds paymentSlotsBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 15, 100, 5, 1);
 
-            ElementBounds goodsTitleBounds = ElementBounds.Fixed(15, 160, 120, 35);
+            ElementBounds goodsTitleBounds = ElementBounds.Fixed(15, 160, 250, 35);
             ElementBounds goodsSlotsBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 15, 180, 5, 1);
-            ElementBounds goodsPricesTitleBounds = ElementBounds.Fixed(15, 230, 120, 35);
+            ElementBounds goodsPricesTitleBounds = ElementBounds.Fixed(15, 230, 200, 35);
             ElementBounds[] goodPrice = { ElementBounds.Fixed(15, 250, 48, 35), ElementBounds.Fixed(66, 250, 48, 35), ElementBounds.Fixed(117, 250, 48, 35), ElementBounds.Fixed(168, 250, 48, 35), ElementBounds.Fixed(219, 250, 48, 35) };
 
             ElementBounds exchangeTitleBounds = ElementBounds.Fixed(0, 290, 280, 35);

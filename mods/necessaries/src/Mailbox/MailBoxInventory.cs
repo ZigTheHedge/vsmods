@@ -23,11 +23,24 @@ namespace necessaries.src.Mailbox
             // slot 4 = Envelope/Package
             // slot 5, 6 = Package inventory
             slots = GenEmptySlots(5);
+            baseWeight = 4;
         }
 
         public MailBoxInventory(string className, string instanceID, ICoreAPI api) : base(className, instanceID, api)
         {
             slots = GenEmptySlots(5);
+            baseWeight = 4;
+        }
+
+        protected override ItemSlot NewSlot(int i)
+        {
+            if (i == 4) return new ItemSlotSurvival (this);
+            return new ItemSlotOutput(this);
+        }
+
+        public override WeightedSlot GetBestSuitedSlot(ItemSlot sourceSlot, List<ItemSlot> skipSlots = null)
+        {
+            return base.GetBestSuitedSlot(sourceSlot, skipSlots);
         }
 
         public override ItemSlot this[int slotId]

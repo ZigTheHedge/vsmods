@@ -33,6 +33,7 @@
 	"mailbox-sent": "Parcel has been sent",
 	"mailbox-nodest": "Parcel has no destination set",
 	"mailbox-nomailbox": "Recipient mailbox doesn't exist",
+	"mailbox-addressexists": "That address already exists",
 
 	"parcel-rcpt-title": "Sender Address:",
 	"parcel-message-title": "Message:",

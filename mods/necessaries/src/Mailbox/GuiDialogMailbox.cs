@@ -31,7 +31,7 @@ namespace necessaries.src.Mailbox
             if (IsDuplicate) return;
 
             capi.World.Player.InventoryManager.OpenInventory(Inventory);
-
+            Inventory.SlotModified += OnInventorySlotModified;
             SetupDialog();
         }
 
@@ -50,11 +50,7 @@ namespace necessaries.src.Mailbox
         void SetupDialog()
         {
             ItemSlot hoveredSlot = capi.World.Player.InventoryManager.CurrentHoveredSlot;
-            if (hoveredSlot != null && hoveredSlot.Inventory == Inventory)
-            {
-                capi.Input.TriggerOnMouseLeaveSlot(hoveredSlot);
-            }
-            else
+            if (hoveredSlot != null && hoveredSlot.Inventory?.InventoryID != Inventory?.InventoryID)
             {
                 hoveredSlot = null;
             }
@@ -90,9 +86,9 @@ namespace necessaries.src.Mailbox
                 .AddDialogTitleBar(DialogTitle, OnTitleBarClose)
                 .BeginChildElements(bgBounds)
                     .AddStaticText(Lang.Get("necessaries:mailbox-select-address"), CairoFont.WhiteSmallText(), addressTitleBounds)
-                    .AddTextInput(addressBounds, OnAddressChanged, null, "address")
                     .AddItemSlotGrid(Inventory, SendInvPacket, 4, new int[] { 0, 1, 2, 3 }, inboxSlotsBounds)
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 4 }, mediaSlotBounds, "mediumSlot")
+                    .AddTextInput(addressBounds, OnAddressChanged, null, "address")
                     .AddStaticText(Lang.Get("necessaries:mailbox-send-to"), CairoFont.WhiteSmallText(), sendDetailsBounds)
                     .AddSmallButton(Lang.Get("necessaries:mailbox-send"), OnButtonSend, sendButtonBounds, EnumButtonStyle.Normal, EnumTextOrientation.Center, "sendBtn")
                 .EndChildElements()
@@ -136,6 +132,7 @@ namespace necessaries.src.Mailbox
         private void OnTitleBarClose()
         {
             byte[] data;
+            Inventory.SlotModified -= OnInventorySlotModified;
 
             using (MemoryStream ms = new MemoryStream())
             {
@@ -151,14 +148,13 @@ namespace necessaries.src.Mailbox
         public override void OnGuiOpened()
         {
             base.OnGuiOpened();
-            Inventory.SlotModified += OnInventorySlotModified;
+            //Inventory.SlotModified += OnInventorySlotModified;
         }
 
         public override bool OnEscapePressed()
         {
-            base.OnEscapePressed();
             OnTitleBarClose();
-            return TryClose();
+            return base.OnEscapePressed();
         }
     }
 }
