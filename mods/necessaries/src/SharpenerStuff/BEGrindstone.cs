@@ -74,7 +74,7 @@ namespace necessaries.src.SharpenerStuff
             {
                 if (animUtil != null)
                 {
-                    animUtil.render?.Dispose();
+                    animUtil.renderer?.Dispose();
                     (Api as ICoreClientAPI)?.Event.UnregisterRenderer(animUtil, EnumRenderStage.Opaque);
                 }
                 if(ModConfigFile.Current.grindstoneEnabled)

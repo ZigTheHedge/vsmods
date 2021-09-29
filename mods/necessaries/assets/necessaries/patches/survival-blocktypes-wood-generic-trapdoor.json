@@ -3,7 +3,7 @@
     "op": "add",
     "path": "/climbable",
     "value": "true",
-    "file": "game:blocktypes/wood/generic/trapdoor.json",
+    "file": "game:blocktypes/wood/trapdoor.json",
 	"condition": { "when": "trapdoorPatchEnabled", "isValue": "true" }	
   }
 ]

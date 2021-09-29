@@ -288,7 +288,7 @@ namespace survivalcats.src
                 if (foundStage == 1 && instruction.opcode == OpCodes.Ldstr && instruction.operand.Equals("\n"))
                 {
                     yield return new CodeInstruction(OpCodes.Ldstr, " (");
-                    yield return new CodeInstruction(OpCodes.Ldloc, 14);
+                    yield return new CodeInstruction(OpCodes.Ldloc, 18);
                     yield return new CodeInstruction(OpCodes.Call, m_BuildQuantities);
                     yield return new CodeInstruction(OpCodes.Ldstr, ")");
                     yield return new CodeInstruction(OpCodes.Call, m_conCatOriginal);
