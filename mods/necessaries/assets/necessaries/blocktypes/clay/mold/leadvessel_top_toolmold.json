@@ -30,7 +30,7 @@
 			meltingPoint: 650,
 			meltingDuration: 45,
 			smeltedRatio: 1,
-			smeltingType: "bake",
+			smeltingType: "fire",
 			smeltedStack: { type: "block", code: "toolmold-burned-{tooltype}" },
 			requiresContainer: false
 		}

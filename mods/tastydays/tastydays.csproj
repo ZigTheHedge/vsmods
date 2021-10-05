@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="protobuf-net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>g:\VintageModding-1.15-pre.1\Lib\protobuf-net.dll</HintPath>
@@ -46,23 +50,19 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VintagestoryAPI">
-      <HintPath>g:\VintageModding-1.15-pre.1\VintagestoryAPI.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>g:\VintageModding-1.15-pre.1\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>g:\VintageModding-1.15-pre.1\Mods\VSEssentials.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\Mods\VSEssentials.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>g:\VintageModding-1.15-pre.1\Mods\VSCreativeMod.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>g:\VintageModding-1.15-pre.1\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

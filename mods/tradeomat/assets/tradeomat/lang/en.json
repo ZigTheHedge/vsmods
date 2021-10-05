@@ -31,8 +31,8 @@
 	"item-coin-silver": "Silver Coin",
 	"item-coin-gold": "Gold Coin",
 	
-	"block-toolmold-raw-coin": "Coin mold (raw)",
-	"block-toolmold-burned-coin": "Coin mold (burned)",
+	"block-toolmold-raw-coin": "Raw Coin mold",
+	"block-toolmold-burned-coin": "Coin mold",
 	"block-coinspile-copper": "Pile of Copper Coins",
 	"block-coinspile-silver": "Pile of Silver Coins",
 	"block-coinspile-gold": "Pile of Gold Coins",

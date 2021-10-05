@@ -11,14 +11,14 @@
       "type": "item",
       "code": "game:plank-*",
 	  "name": "wood",
-	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart"]
     },
     "L": {
       "type": "block",
       "code": "game:log-placed-*-ud",
 	  "quantity": 2,
 	  "name": "wood",
-	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart"]
     },
   },
   "width": 1,

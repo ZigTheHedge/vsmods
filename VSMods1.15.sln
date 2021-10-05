@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLauncher.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488} = {3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}
-		{15af4100-b58a-4188-8f33-13cded914597} = {15af4100-b58a-4188-8f33-13cded914597}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "allmytech", "mods\allmytech\allmytech.csproj", "{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theneighbours", "mods\theneighbours\theneighbours.csproj", "{4E5393C2-E0A7-41DD-96B3-19211D33FD56}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -133,18 +127,6 @@ Global
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release x64|Any CPU.Build.0 = Release|Any CPU
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release|Any CPU.Build.0 = Release|Any CPU
-{15af4100-b58a-4188-8f33-13cded914597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-{15af4100-b58a-4188-8f33-13cded914597}.Debug|Any CPU.Build.0 = Debug|Any CPU
-{15af4100-b58a-4188-8f33-13cded914597}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
-{15af4100-b58a-4188-8f33-13cded914597}.Release x64|Any CPU.Build.0 = Release|Any CPU
-{15af4100-b58a-4188-8f33-13cded914597}.Release|Any CPU.ActiveCfg = Release|Any CPU
-{15af4100-b58a-4188-8f33-13cded914597}.Release|Any CPU.Build.0 = Release|Any CPU}
-{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}.Debug|Any CPU.Build.0 = Debug|Any CPU
-{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
-{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}.Release x64|Any CPU.Build.0 = Release|Any CPU
-{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}.Release|Any CPU.ActiveCfg = Release|Any CPU
-{3f1cb2b7-aafd-438c-8d5c-d41f8ffa2488}.Release|Any CPU.Build.0 = Release|Any CPU}
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

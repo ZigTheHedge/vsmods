@@ -342,3 +342,13 @@ healthchecksdb
 mods/mousefix/
 /Gfx
 /mods/allmytech
+mods/cavepaintings/cavepaintings.csproj
+mods/fancydoors/fancydoors.csproj
+mods/necessaries/necessaries.csproj
+mods/streamdc/streamdc.csproj
+mods/survivalcats/survivalcats.csproj
+mods/theneighbours/theneighbours.csproj
+mods/tradeomat/tradeomat.csproj
+mods/xmastime/xmastime.csproj
+mods/zeekea/zeekea.csproj
+VSModLauncher.csproj

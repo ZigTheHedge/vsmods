@@ -14,8 +14,8 @@
 	"item-branchcutter-blackbronze": "Веткорез из черной бронзы",
 	"item-branchcutter-iron": "Веткорез из железа",
 
-	"block-toolmold-burned-mailflag": "Форма для флажка почтового ящика (обожженная)",
-	"block-toolmold-raw-mailflag": "Форма для флажка почтового ящика (необожженная)",	
+	"block-toolmold-burned-mailflag": "Форма для флажка почтового ящика",
+	"block-toolmold-raw-mailflag": "Форма для флажка почтового ящика (необож.)",	
 	
 	"blockhelp-parcel-sneakopen": "Открыть посылку",
 
@@ -63,10 +63,10 @@
 	"item-sharpener_disc-sandstone": "Диск точильного камня из песчаника",
 	"item-sharpener_disc-basalt": "Диск базальтового точильного камня",
 
-	"block-toolmold-burned-leadvessel_bottom": "Форма свинцового сосуда (обожженная)",
-	"block-toolmold-raw-leadvessel_bottom": "Форма свинцового сосуда (необожженная)",	
-	"block-toolmold-burned-leadvessel_top": "Форма крышки сосуда (обожженная)",
-	"block-toolmold-raw-leadvessel_top": "Форма крышки сосуда (необожженная)",	
+	"block-toolmold-burned-leadvessel_bottom": "Форма свинцового сосуда",
+	"block-toolmold-raw-leadvessel_bottom": "Форма свинцового сосуда (необож.)",	
+	"block-toolmold-burned-leadvessel_top": "Форма крышки сосуда",
+	"block-toolmold-raw-leadvessel_top": "Форма крышки сосуда (необож.)",	
 
 	"block-leadvessel-empty": "Свинцовый сосуд",
 	"block-leadvessel_cover": "Крышка свинцового сосуда",

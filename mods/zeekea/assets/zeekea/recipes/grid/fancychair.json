@@ -11,7 +11,7 @@
       "type": "item",
       "code": "game:plank-*",
 	  "name": "wood",
-	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine"]
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart"]
     },
   },
   "width": 3,
