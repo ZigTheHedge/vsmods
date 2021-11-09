@@ -26,7 +26,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
         }
         public void OnInventorySlotModified(int slotid)
         {
-            capi.Event.EnqueueMainThreadTask(SetupDialog, "setuprugdlg");
+            SetupDialog();
         }
         void SetupDialog()
         {
@@ -62,7 +62,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
                 .WithFixedAlignmentOffset(-GuiStyle.DialogToScreenPadding, 0);
 
 
-            ClearComposers();
+            //ClearComposers();
             SingleComposer = capi.Gui
                 .CreateCompo("berug" + BlockEntityPosition, dialogBounds)
                 .AddShadedDialogBG(bgBounds)
@@ -133,26 +133,9 @@ namespace tradeomat.src.TradeomatBlock.Rug
 
         public override bool OnEscapePressed()
         {
-            Inventory.SlotModified -= OnInventorySlotModified;
-            byte[] data;
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                BinaryWriter writer = new BinaryWriter(ms);
-                for (int i = 0; i < 5; i++)
-                {
-                    int price = 0;
-                    try
-                    {
-                        price = int.Parse(SingleComposer.GetTextInput("price" + i).GetText());
-                    }
-                    catch { }
-                    writer.Write(price);
-                }
-                data = ms.ToArray();
-            }
-            capi.Network.SendBlockEntityPacket(BlockEntityPosition.X, BlockEntityPosition.Y, BlockEntityPosition.Z, 1101, data);
-            return base.OnEscapePressed();
+            base.OnEscapePressed();
+            OnTitleBarClose();
+            return TryClose();
         }
     }
 }

@@ -12,13 +12,6 @@
 			rotation: { y: 90 },
 			translation: { x: -0.1, y: 0.59 },
 			scale: 1.25,
-		},
-		sharpenable: true,
-		onGrindstoneTransform: {
-			translation: { x: 0, y: 0.4, z: 0.25 },
-			rotation: { x: 40, y: 270, z: 180 },
-			origin: { x: 0.5, y: 0.1, z: 0.5 },
-			scale: 1
 		}
 	},
 	

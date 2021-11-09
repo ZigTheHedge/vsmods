@@ -5,11 +5,7 @@
 		"toolmold-burned-*": "BlockToolMold",
 	},
 	behaviorsByType: {
-		"*-raw-*": [
-			{ name: "GroundStorable", properties: { layout: 'SingleCenter' } },
-			{ name: "Unplaceable", "__comment": "The ground storable obsoletes this being a block. Should be an item, but is kept a block for backwards compatibility" },  
-			{ name: "RightClickPickup" }
-		],
+		"*-raw-*": [{name: "UnstableFalling"}, {name: "RightClickPickup" }],
 		"*": [{name: "UnstableFalling"}],
 	},
 	variantgroups: [

@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLauncher.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C} = {8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "omd", "mods\omd\omd.csproj", "{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theneighbours", "mods\theneighbours\theneighbours.csproj", "{4E5393C2-E0A7-41DD-96B3-19211D33FD56}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -72,12 +67,6 @@ Global
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release x64|Any CPU.Build.0 = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release x64|Any CPU.Build.0 = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E5393C2-E0A7-41DD-96B3-19211D33FD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4E5393C2-E0A7-41DD-96B3-19211D33FD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E5393C2-E0A7-41DD-96B3-19211D33FD56}.Release x64|Any CPU.ActiveCfg = Release|Any CPU

@@ -21,8 +21,7 @@ namespace zeekea.src.standardInventories
         }
         public void OnInventorySlotModified(int slotid)
         {
-            //SetupDialog();
-            capi.Event.EnqueueMainThreadTask(SetupDialog, "setuptwentyfourdlg");
+            SetupDialog();
         }
 
         void SetupDialog()
@@ -47,7 +46,7 @@ namespace zeekea.src.standardInventories
                 .WithFixedAlignmentOffset(-GuiStyle.DialogToScreenPadding, 0);
 
 
-            ClearComposers();
+            //ClearComposers();
             SingleComposer = capi.Gui
                 .CreateCompo("beeightslots" + BlockEntityPosition, dialogBounds)
                 .AddShadedDialogBG(bgBounds)

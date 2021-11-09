@@ -157,9 +157,7 @@ namespace zeekea.src.tall_locker
                 }
             }
             else
-            {
                 updateMesh(slotId);
-            }
             MarkDirty(Api.Side != EnumAppSide.Server);
         }
 

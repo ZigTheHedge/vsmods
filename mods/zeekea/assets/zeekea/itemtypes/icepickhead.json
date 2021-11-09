@@ -1,7 +1,7 @@
 {
 	code: "icepickhead",
 	variantgroups: [
-		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ] },
+		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron" ] },
 	],
 	shape: { base: "item/icepick" },
 	attributes: {

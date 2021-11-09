@@ -162,8 +162,7 @@ namespace tradeomat.src.Utils
                 nowTesselatingItem = stack.Item;
                 if (stack.Item.Shape != null)
                 {
-                    if (stack.Item.Shape.Base != null)
-                        nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
+                    nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
                 }
 
                 capi.Tesselator.TesselateItem(stack.Item, out mesh, this);

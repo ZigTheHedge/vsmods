@@ -17,24 +17,18 @@ namespace zeekea.src.nightstand
 
             capi.World.Player.InventoryManager.OpenInventory(Inventory); 
             Inventory.SlotModified += OnInventorySlotModified;
-            
 
             SetupDialog();
         }
         public void OnInventorySlotModified(int slotid)
         {
-            //SetupDialog();
-            capi.Event.EnqueueMainThreadTask(SetupDialog, "setupeightslotdlg");
+            SetupDialog();
         }
 
         void SetupDialog()
         {
             ItemSlot hoveredSlot = capi.World.Player.InventoryManager.CurrentHoveredSlot;
-            if (hoveredSlot != null && hoveredSlot.Inventory == Inventory)
-            {
-                capi.Input.TriggerOnMouseLeaveSlot(hoveredSlot);
-            }
-            else
+            if (hoveredSlot != null && hoveredSlot.Inventory?.InventoryID != Inventory?.InventoryID)
             {
                 hoveredSlot = null;
             }
@@ -53,7 +47,7 @@ namespace zeekea.src.nightstand
                 .WithFixedAlignmentOffset(-GuiStyle.DialogToScreenPadding, 0);
 
 
-            ClearComposers();
+            //ClearComposers();
             SingleComposer = capi.Gui
                 .CreateCompo("beeightslots" + BlockEntityPosition, dialogBounds)
                 .AddShadedDialogBG(bgBounds)
@@ -69,8 +63,6 @@ namespace zeekea.src.nightstand
                 SingleComposer.OnMouseMove(new MouseEvent(capi.Input.MouseX, capi.Input.MouseY));
             }
         }
-
-        
 
         private void SendInvPacket(object p)
         {
