@@ -149,7 +149,13 @@ namespace zeekea.src.vanillapatches
                     mesh = CubeMeshUtil.GetCubeOnlyScaleXyz(0.5f, 0.5f, new Vec3f(0.5f, 0.5f, 0.5f));
                     Api.Logger.Error("[ZEEKEA]: Cannot render model of: " + stack.Collectible.Code.ToString() + "! Skipping.");
                 }
-                if (stack.Collectible.Attributes?["onDisplayTransform"].Exists == true)
+                if (stack.Collectible.Attributes?["onZEEDisplayTransform"].Exists == true)
+                {
+                    ModelTransform transform = stack.Collectible.Attributes?["onZEEDisplayTransform"].AsObject<ModelTransform>();
+                    transform.EnsureDefaultValues();
+                    mesh.ModelTransform(transform);
+                }
+                else if (stack.Collectible.Attributes?["onDisplayTransform"].Exists == true)
                 {
                     ModelTransform transform = stack.Collectible.Attributes?["onDisplayTransform"].AsObject<ModelTransform>();
                     transform.EnsureDefaultValues();
@@ -167,7 +173,8 @@ namespace zeekea.src.vanillapatches
                 nowTesselatingItem = stack.Item;
                 if (stack.Item.Shape != null)
                 {
-                    nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
+                    if(stack.Item.Shape.Base != null)
+                        nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
                 }
 
                 capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
@@ -197,6 +204,11 @@ namespace zeekea.src.vanillapatches
         protected override void updateMeshes()
         {
             if (!ModConfigFile.Current.hideContents) base.updateMeshes();
+        }
+
+        protected void clearMesh(int index)
+        {
+            meshes[index] = null;
         }
 
     }

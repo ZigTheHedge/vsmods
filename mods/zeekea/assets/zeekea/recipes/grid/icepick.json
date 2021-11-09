@@ -5,7 +5,7 @@
       "type": "item",
       "code": "zeekea:icepickhead-*",
 	  "name": "metal",
-	  "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron" ]
+	  "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ]
     },
     "S": {
       "type": "item",

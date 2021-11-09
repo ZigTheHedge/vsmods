@@ -352,3 +352,4 @@ mods/tradeomat/tradeomat.csproj
 mods/xmastime/xmastime.csproj
 mods/zeekea/zeekea.csproj
 VSModLauncher.csproj
+/mods/omd

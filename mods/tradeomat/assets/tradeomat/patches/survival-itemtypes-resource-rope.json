@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/texture",
+    "value": {
+      "base": "item/resource/rope-flat"
+    },
+    "file": "itemtypes/resource/rope.json"
+  }
+]

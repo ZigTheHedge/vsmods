@@ -26,7 +26,8 @@ namespace tradeomat.src.TradeomatBlock
         }
         public void OnInventorySlotModified(int slotid)
         {
-            SetupDialog();
+            //SetupDialog();
+            capi.Event.EnqueueMainThreadTask(SetupDialog, "setuptradedlg");
         }
         void SetupDialog()
         {
@@ -62,7 +63,7 @@ namespace tradeomat.src.TradeomatBlock
                 .WithFixedAlignmentOffset(-GuiStyle.DialogToScreenPadding, 0);
 
 
-            //ClearComposers();
+            ClearComposers();
             SingleComposer = capi.Gui
                 .CreateCompo("blockentitytradeomat" + BlockEntityPosition, dialogBounds)
                 .AddShadedDialogBG(bgBounds)
@@ -109,9 +110,8 @@ namespace tradeomat.src.TradeomatBlock
 
         public override bool OnEscapePressed()
         {
-            base.OnEscapePressed();
-            OnTitleBarClose();
-            return TryClose();
+            Inventory.SlotModified -= OnInventorySlotModified;
+            return base.OnEscapePressed();
         }
     }
 }

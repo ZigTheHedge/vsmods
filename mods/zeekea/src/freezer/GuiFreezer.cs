@@ -16,8 +16,15 @@ namespace zeekea.src.standardInventories
             if (IsDuplicate) return;
 
             capi.World.Player.InventoryManager.OpenInventory(Inventory);
+            Inventory.SlotModified += OnInventorySlotModified;
 
             SetupDialog();
+        }
+
+        public void OnInventorySlotModified(int slotid)
+        {
+            //SetupDialog();
+            capi.Event.EnqueueMainThreadTask(SetupDialog, "setupfreezerslotdlg");
         }
 
         void SetupDialog()
@@ -79,13 +86,13 @@ namespace zeekea.src.standardInventories
         private void OnTitleBarClose()
         {
             TryClose();
+            Inventory.SlotModified -= OnInventorySlotModified;
         }
 
         public override bool OnEscapePressed()
         {
-            base.OnEscapePressed();
-            OnTitleBarClose();
-            return TryClose();
+            Inventory.SlotModified -= OnInventorySlotModified;
+            return base.OnEscapePressed();
         }
     }
 }

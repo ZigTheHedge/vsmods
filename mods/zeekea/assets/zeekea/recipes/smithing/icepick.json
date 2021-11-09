@@ -1,7 +1,9 @@
 {
 	ingredient: { 
 		type: "item", 
-		code: "game:ingot-iron"
+		code: "game:ingot-*",
+		name: "metal", 
+		allowedVariants: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"]
 	},
 	pattern: [[
 		"_____####____#",
@@ -9,6 +11,6 @@
 		"#####______###",
 		"____________##"
 	]],
-	name: "Iron Icepick",
-	output: { type: "item", code: "zeekea:icepickhead-iron"  }
+	name: "Metal Icepick",
+	output: { type: "item", code: "zeekea:icepickhead-{metal}"  }
 }

@@ -12,7 +12,8 @@
 				"Back": {  }
 			  }
 			}
-		} ]
+		} ],
+		"dependsOn": [{"modid": "carrycapacity"}]
 	}, 
 	{ 
 		file: "zeekea:blocktypes/nightstand", 
@@ -27,6 +28,7 @@
 				"Back": {  }
 			  }
 			}
-		}
+		},
+		"dependsOn": [{"modid": "carrycapacity"}]
 	}
 ]

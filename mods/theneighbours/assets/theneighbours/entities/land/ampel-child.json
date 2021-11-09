@@ -67,7 +67,7 @@
 			{ 
 				code: "grow",
 				hoursToGrow: 336,
-				adultEntityCodes: ["ampel-male", "ampel-female"],
+				adultEntityCodes: ["theneighbours:ampel-male", "theneighbours:ampel-female"],
 			}, 
 			{
 				code: "taskai",

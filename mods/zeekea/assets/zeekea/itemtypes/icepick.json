@@ -11,11 +11,18 @@
 		toolrackTransform: {
 			translation: { x: -0.1, y: 0.59 },
 			scale: 1.25,
+		},
+		sharpenable: true,
+		onGrindstoneTransform: {
+			translation: { x: -0.15, y: 0.45, z: 0.35 },
+			rotation: { x: 40, y: 0, z: 0 },
+			origin: { x: 0.5, y: 0.1, z: 0.5 },
+			scale: 1
 		}
 	},
 	
 	variantgroups: [
-		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron" ] },
+		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel" ] },
 	],
 	textures: {
 		"metal": { base: "game:block/metal/ingot/{metal}" }
@@ -30,7 +37,9 @@
 		"icepick-bismuthbronze": 1.5,
 		"icepick-tinbronze": 1.75,
 		"icepick-blackbronze": 2,
-		"icepick-iron": 2.25
+		"icepick-iron": 2.25,
+		"icepick-meteoriciron": 2.4,
+		"icepick-steel": 2.4
 	},
 
 	durabilitybytype: {
@@ -38,7 +47,9 @@
 		"icepick-tinbronze": 300,
 		"icepick-bismuthbronze": 350,
 		"icepick-blackbronze": 450,
-		"icepick-iron": 600
+		"icepick-iron": 600,
+		"icepick-meteoriciron": 900,
+		"icepick-steel": 2000
 	},
 	
 	guiTransform: {

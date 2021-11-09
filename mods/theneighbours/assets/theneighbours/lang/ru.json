@@ -18,10 +18,10 @@
 	"item-dead-creature-ampel-child": "Дохлый детеныш Ампеля",
 	"item-creature-ampel-male": "Самец Ампеля",
 	"item-dead-creature-ampel-male": "Дохлый самец Ампеля",
-	"game:prefixandcreature-ampel-male": "ампелем",	
+	"game:prefixandcreature-ampelmale": "ампелем",	
 	"item-creature-ampel-female": "Самка Ампеля",
 	"item-dead-creature-ampel-female": "Дохлая самка Ампеля",
-	"game:prefixandcreature-ampel-female": "ампелем",		
+	"game:prefixandcreature-ampelfemale": "ампелем",		
 	
 	"item-turtle_meat-raw": "Турторовое мясо (сырое)",
 	"item-turtle_meat-cooked": "Турторовое мясо (жареное)",

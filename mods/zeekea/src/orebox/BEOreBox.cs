@@ -152,6 +152,7 @@ namespace zeekea.src.orebox
 
         private void OnSlotModified(int slotid)
         {
+            //Api.World.BlockAccessor.GetChunkAtBlockPos(Pos)?.MarkModified();
             if (Api.World.Side == EnumAppSide.Server)
             {
                 if (slotid > 3)
@@ -176,6 +177,7 @@ namespace zeekea.src.orebox
             }
             if(Api.World.Side == EnumAppSide.Client)
                 if (!ModConfigFile.Current.hideContents ) UpdateShape();
+
         }
 
         public void UpdateShape()
@@ -232,7 +234,7 @@ namespace zeekea.src.orebox
                 Animate();
             }
 
-            if(packetid == 1102)
+            if (packetid == 1102)
             {
                 SetMeshAngle(BitConverter.ToSingle(data, 0));
             }

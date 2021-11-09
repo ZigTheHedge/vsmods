@@ -15,6 +15,7 @@
 	sideopaque: {
 		all: false
 	},
+	"faceCullMode": "neverCull",
 	lightHsv: [20, 0, 18],
 	resistance: 1,
 	sounds: {
