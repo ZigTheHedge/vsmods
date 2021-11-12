@@ -17,6 +17,8 @@ using zeekea.src.candleholder;
 using zeekea.src.curtains;
 using zeekea.src.doorbell;
 using zeekea.src.freezer;
+using zeekea.src.kitchen.cabinets;
+using zeekea.src.kitchen.winerack;
 using zeekea.src.multirotatable;
 using zeekea.src.nightlamp;
 using zeekea.src.nightstand;
@@ -144,7 +146,12 @@ namespace zeekea.src
             api.RegisterBlockEntityClass("bebell", typeof(BEBell));
             api.RegisterBlockClass("orebox", typeof(OreBox));
             api.RegisterBlockEntityClass("beorebox", typeof(BEOreBox));
-
+            //ADD CONFIGS!!!
+            api.RegisterBlockClass("winerack", typeof(WineRack));
+            api.RegisterBlockEntityClass("bewinerack", typeof(BEWineRack));
+            api.RegisterBlockClass("cabinetbottom", typeof(Cabinets));
+            api.RegisterBlockEntityClass("becabinetbottom", typeof(BECabinets));
+            //-----------------
             api.RegisterBlockClass("multirotatable", typeof(BlockMultiRotatable));
             api.RegisterBlockEntityClass("bemultirotatable", typeof(BEMultiRotatable));
 

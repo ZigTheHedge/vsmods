@@ -1,0 +1,71 @@
+{
+	code: "winerack",
+	class: "winerack",
+	entityClass: "bewinerack",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	blockmaterial: "Wood",
+	variantgroups: [
+		{ code: "box", loadFromProperties: "block/wood" },
+		{ code: "internals", loadFromProperties: "block/wood" },
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	attributes: {
+		handbook: {
+			groupBy: ["winerack-*"]
+		}
+	},
+	drawtype: "json",
+	textures: {
+		"0": { base: "game:block/wood/debarked/{box}" },
+		"1": { base: "game:block/wood/debarked/{internals}" }
+	},
+	shapebytype: { 
+		"*-north": {
+			base: "block/kitchen/winerack",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/kitchen/winerack",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/kitchen/winerack",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/kitchen/winerack",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	collisionSelectionBoxes: [
+		{ x1: 0.3125, y1: 0.09375, z1: 0, x2: 0.6875, y2: 0.4375, z2: 0.55, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.125, y1: 0.3125, z1: 0, x2: 0.4375, y2: 0.65625, z2: 0.55, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.5625, y1: 0.3125, z1: 0, x2: 0.875, y2: 0.65625, z2: 0.55, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.3125, y1: 0.53125, z1: 0, x2: 0.6875, y2: 0.875, z2: 0.55, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.125, y1: 0.75, z1: 0, x2: 0.4375, y2: 1, z2: 0.55, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } },
+		{ x1: 0.5625, y1: 0.75, z1: 0, x2: 0.875, y2: 1, z2: 0.55, rotateYByType: {  "*-south": 180, "*-east": 270, "*-west": 90 } }
+	],
+	resistance: 2.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		translation: { x: 0, y: -2, z: 0 },
+		rotation: { x: -22.6, y: -133, z: 0 },
+		scale: 1.16
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.25, z: 0.5 },
+		rotation: { x: 0, y: -71, z: 0 },
+		scale: 1.66
+	}
+}
