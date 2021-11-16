@@ -1,0 +1,93 @@
+{
+	code: "wallpanel",
+	creativeinventory: { "general": ["*-south"], "decorative": ["*-south"], "zeekea": ["*-south"] },
+	behaviors: [ {name: "Decor", properties: {sides: ["north", "east", "south", "west", "up", "down"], sidedVariants: true, thickness: 0.078125, removable:true }} ],
+	variantgroups: [
+		{ code: "canvas", states: ["plain"] },
+		{ code: "faces", loadFromProperties: "block/rock" },
+		{ code: "side", states: ["north", "east", "south", "west", "up", "down"] }
+	],
+	attributes: {
+		handbook: {
+			groupBy: ["wallpanel-*"]
+		}
+	},
+	drawtype: "json",
+	textures: {
+		"0": { base: "game:block/stone/plaster/{canvas}" },
+		"1": { base: "game:block/stone/polishedrock/{faces}" }
+	},
+	shapebytype: {
+		"*-down": { base: "block/kitchen/wallpanel" },
+		"*-up": { base: "block/kitchen/wallpanel", rotateX: 180 },
+		"*-north": { base: "block/kitchen/wallpanel", rotateX: 90 },
+		"*-east": { base: "block/kitchen/wallpanel", rotateX: 90, rotateY: 180, rotateZ: 270 },
+		"*-west": { base: "block/kitchen/wallpanel", rotateX: 90, rotateY: 0, rotateZ: 270 },
+		"*-south": { base: "block/kitchen/wallpanel", rotateX: 270 },
+	},
+	sidesolidByType: {
+		"*-down": { all: false, down: true },
+		"*-up": { all: false, up: true },
+		"*-north": { all: false, north: true },
+		"*-east": { all: false, east: true },
+		"*-west": { all: false, west: true },
+		"*-south": { all: false, south: true },
+	},
+	sideopaqueByType: {
+		"*-down": { all: false, down: true },
+		"*-up": { all: false, up: true },
+		"*-north": { all: false, north: true },
+		"*-east": { all: false, east: true },
+		"*-west": { all: false, west: true },
+		"*-south": { all: false, south: true },
+	},
+	resistance: 1,
+	lightAbsorption: 1,
+	vertexFlags: {
+		zOffset: 1
+	},
+	selectionbox: {
+		x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1,
+		rotateXByType: {
+			"*-up": 180,
+			"*-north": 90,
+			"*-east": 90,
+			"*-west": 90,
+			"*-south": 270,
+		},
+		rotateYByType: {
+			"*-east": 180,
+			"*-west": 0,
+		},
+		rotateZByType: {
+			"*-east": 270,
+			"*-west": 270
+		},
+	},
+	collisionbox: {
+		x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1,
+		rotateXByType: {
+			"*-up": 180,
+			"*-north": 90,
+			"*-east": 90,
+			"*-west": 90,
+			"*-south": 270,
+		},
+		rotateYByType: {
+			"*-east": 180,
+			"*-west": 0,
+		},
+		rotateZByType: {
+			"*-east": 270,
+			"*-west": 270
+		},
+	},
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		translation: { x: 0, y: 3, z: 0 },
+		origin: { x: 0.5, y: 0.0625, z: 0.5 }
+	}
+}

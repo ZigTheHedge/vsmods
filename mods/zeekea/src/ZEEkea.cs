@@ -149,8 +149,8 @@ namespace zeekea.src
             //ADD CONFIGS!!!
             api.RegisterBlockClass("winerack", typeof(WineRack));
             api.RegisterBlockEntityClass("bewinerack", typeof(BEWineRack));
-            api.RegisterBlockClass("cabinetbottom", typeof(Cabinets));
-            api.RegisterBlockEntityClass("becabinetbottom", typeof(BECabinets));
+            api.RegisterBlockClass("cabinets", typeof(Cabinets));
+            api.RegisterBlockEntityClass("becabinets", typeof(BECabinets));
             //-----------------
             api.RegisterBlockClass("multirotatable", typeof(BlockMultiRotatable));
             api.RegisterBlockEntityClass("bemultirotatable", typeof(BEMultiRotatable));

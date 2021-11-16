@@ -1,0 +1,116 @@
+{
+	code: "cabinettop",
+	class: "cabinets",
+	entityClass: "becabinets",
+	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
+	behaviors: [{ name: "HorizontalOrientable" }],
+	entityBehaviors: [{ name: "Animatable" }], 	
+	blockmaterial: "Wood",
+	variantgroups: [
+		{ code: "tabletop", loadFromProperties: "block/wood" },
+		{ code: "internals", loadFromProperties: "block/wood" },
+		{ code: "type", states: ["doors", "drawers"] },		
+		{ loadFromProperties: "abstract/horizontalorientation" }
+	],
+	drawtype: "json",
+	textures: {
+		"0": { base: "game:block/wood/debarked/{tabletop}" },
+		"1": { base: "game:block/wood/debarked/{internals}" },
+		"2": { base: "game:block/wood/planks/{tabletop}1" }
+	},
+	shapebytype: { 
+		"*-north": {
+			base: "block/kitchen/cabinet_top_{type}",
+			rotateY: 0
+		},
+		"*-east": {
+			base: "block/kitchen/cabinet_top_{type}",
+			rotateY: 270
+		},
+		"*-south": {
+			base: "block/kitchen/cabinet_top_{type}",
+			rotateY: 180
+		},
+		"*-west": {
+			base: "block/kitchen/cabinet_top_{type}",
+			rotateY: 90
+		}
+	},
+	lightAbsorption: 0,
+	sidesolid: {
+		all: "false",
+		up: "true"
+	},
+	sideopaque: {
+		all: "false",
+		up: "true"
+	},
+	collisionselectionboxesByType: {
+		"*-doors-*": [
+				{
+					x1: 0, y1: 0, z1: 0, x2: 0.5, y2: 0.5, z2: 0.4125, 
+					rotateYByType: {
+						"*-north": 0,
+						"*-east": 270,
+						"*-west": 90,
+						"*-south": 180,
+					}
+				}, 
+				{
+					x1: 0.5, y1: 0, z1: 0, x2: 1, y2: 0.5, z2: 0.4125, 
+					rotateYByType: {
+						"*-north": 0,
+						"*-east": 270,
+						"*-west": 90,
+						"*-south": 180,
+					}
+				}, 
+				{
+					x1: 0, y1: 0.5, z1: 0, x2: 0.5, y2: 1, z2: 0.4125,
+					rotateYByType: {
+						"*-north": 0,
+						"*-east": 270,
+						"*-west": 90,
+						"*-south": 180,
+					}
+				},
+				{
+					x1: 0.5, y1: 0.5, z1: 0, x2: 1, y2: 1, z2: 0.4125,
+					rotateYByType: {
+						"*-north": 0,
+						"*-east": 270,
+						"*-west": 90,
+						"*-south": 180,
+					}
+				}
+			],
+		"*-drawers-*": [
+				{
+					x1: 0, y1: 0.5, z1: 0, x2: 0.5, y2: 1, z2: 0.4125,
+					rotateYByType: {
+						"*-north": 0,
+						"*-east": 270,
+						"*-west": 90,
+						"*-south": 180,
+					}
+				},
+				{
+					x1: 0.5, y1: 0.5, z1: 0, x2: 1, y2: 1, z2: 0.4125,
+					rotateYByType: {
+						"*-north": 0,
+						"*-east": 270,
+						"*-west": 90,
+						"*-south": 180,
+					}
+				}
+			]
+	},
+	resistance: 3.5,
+	sounds: {
+		"place": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	guiTransform: {
+		rotation: { x: -22.6, y: -145, z: 0 }
+	}
+}

@@ -1,38 +1,39 @@
 {
 	code: "cabinetbottom",
-	class: "cabinetbottom",
-	entityClass: "becabinetbottom",
+	class: "cabinets",
+	entityClass: "becabinets",
 	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
 	entityBehaviors: [{ name: "Animatable" }], 	
 	blockmaterial: "Wood",
 	variantgroups: [
-		{ code: "tabletop", loadFromProperties: "block/wood" },
+		{ code: "tabletop", loadFromProperties: "block/rock" },
+		{ code: "doors", loadFromProperties: "block/wood" },
 		{ code: "internals", loadFromProperties: "block/wood" },
 		{ code: "type", states: ["doors", "drawers"] },
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
 	drawtype: "json",
 	textures: {
-		"0": { base: "game:block/wood/debarked/{tabletop}" },
+		"0": { base: "game:block/stone/polishedrock/{tabletop}" },
 		"1": { base: "game:block/wood/debarked/{internals}" },
-		"2": { base: "game:block/wood/planks/{tabletop}1" }
+		"2": { base: "game:block/wood/planks/{doors}1" }
 	},
 	shapebytype: { 
-		"*-doors-north": {
-			base: "block/kitchen/cabinet_bottom_doors",
+		"*-north": {
+			base: "block/kitchen/cabinet_bottom_{type}",
 			rotateY: 0
 		},
 		"*-east": {
-			base: "block/kitchen/cabinet_bottom_doors",
+			base: "block/kitchen/cabinet_bottom_{type}",
 			rotateY: 270
 		},
 		"*-south": {
-			base: "block/kitchen/cabinet_bottom_doors",
+			base: "block/kitchen/cabinet_bottom_{type}",
 			rotateY: 180
 		},
 		"*-west": {
-			base: "block/kitchen/cabinet_bottom_doors",
+			base: "block/kitchen/cabinet_bottom_{type}",
 			rotateY: 90
 		}
 	},

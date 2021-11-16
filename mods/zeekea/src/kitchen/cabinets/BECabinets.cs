@@ -27,16 +27,28 @@ namespace zeekea.src.kitchen.cabinets
 
         public BECabinets()
         {
-            inv = new InventoryGeneric(8, "cabinetinventory-0", null, null);
+            inv = new InventoryGeneric(8, "cabinetinventory-bottom", null, null);
             meshes = new MeshData[8];
         }
 
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
+            /*
+            if (Block.FirstCodePart().Equals("cabinetbottom"))
+            {
+                inv = new InventoryGeneric(8, "cabinetinventory-bottom", null, null);
+                meshes = new MeshData[8];
+            }
+            else
+            {
+                inv = new InventoryGeneric(4, "cabinetinventory-top", null, null);
+                meshes = new MeshData[4];
+            }
+            */
             if (Api.World.Side == EnumAppSide.Client)
             {
-                animUtil.InitializeAnimator("zeekea:cabinet", new Vec3f(0, Block.Shape.rotateY, 0));
+                animUtil.InitializeAnimator("zeekea:cabinet_" + Block.FirstCodePart() + "_" + Block.Variant["type"], new Vec3f(0, Block.Shape.rotateY, 0));
                 Animate();
             }
         }
@@ -142,20 +154,52 @@ namespace zeekea.src.kitchen.cabinets
 
         private bool TryPut(ItemSlot slot, BlockSelection blockSel)
         {
-            bool up = blockSel.SelectionBoxIndex > 1;
-            bool left = (blockSel.SelectionBoxIndex % 2) == 0;
-
-            int start = (up ? 4 : 0) + (left ? 0 : 2);
-            int end = start + 2;
-
-            for (int i = start; i < end; i++)
+            if (Block.FirstCodePart().Equals("cabinetbottom"))
             {
-                if (inv[i].Empty)
+                bool up = blockSel.SelectionBoxIndex > 1;
+                bool left = (blockSel.SelectionBoxIndex % 2) == 0;
+
+                int start = (up ? 4 : 0) + (left ? 0 : 2);
+                int end = start + 2;
+
+                for (int i = start; i < end; i++)
                 {
-                    int moved = slot.TryPutInto(Api.World, inv[i]);
-                    updateMeshes();
-                    MarkDirty(true);
-                    return moved > 0;
+                    if (inv[i].Empty)
+                    {
+                        int moved = slot.TryPutInto(Api.World, inv[i]);
+                        updateMeshes();
+                        MarkDirty(true);
+                        return moved > 0;
+                    }
+                }
+            } else
+            {
+                if (Block.Variant["type"] == "doors")
+                {
+                    if (inv[blockSel.SelectionBoxIndex].Empty)
+                    {
+                        bool up = blockSel.SelectionBoxIndex > 1;
+                        bool left = (blockSel.SelectionBoxIndex % 2) == 0;
+                        int start = (up ? 4 : 0) + (left ? 0 : 2);
+
+                        int moved = slot.TryPutInto(Api.World, inv[start]);
+                        updateMeshes();
+                        MarkDirty(true);
+                        return moved > 0;
+                    }
+                } else
+                {
+                    if (inv[blockSel.SelectionBoxIndex].Empty)
+                    {
+                        bool up = true;
+                        bool left = (blockSel.SelectionBoxIndex % 2) == 0;
+                        int start = (up ? 4 : 0) + (left ? 0 : 2);
+
+                        int moved = slot.TryPutInto(Api.World, inv[start]);
+                        updateMeshes();
+                        MarkDirty(true);
+                        return moved > 0;
+                    }
                 }
             }
 
@@ -164,30 +208,85 @@ namespace zeekea.src.kitchen.cabinets
 
         private bool TryTake(IPlayer byPlayer, BlockSelection blockSel)
         {
-            bool up = blockSel.SelectionBoxIndex > 1;
-            bool left = (blockSel.SelectionBoxIndex % 2) == 0;
-
-            int start = (up ? 4 : 0) + (left ? 0 : 2);
-            int end = start + 2;
-
-            for (int i = end - 1; i >= start; i--)
+            if (Block.FirstCodePart().Equals("cabinetbottom"))
             {
-                if (!inv[i].Empty)
-                {
-                    ItemStack stack = inv[i].TakeOut(1);
-                    if (byPlayer.InventoryManager.TryGiveItemstack(stack))
-                    {
-                        AssetLocation sound = stack.Block?.Sounds?.Place;
-                        Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
-                    }
 
-                    if (stack.StackSize > 0)
+                bool up = blockSel.SelectionBoxIndex > 1;
+                bool left = (blockSel.SelectionBoxIndex % 2) == 0;
+
+                int start = (up ? 4 : 0) + (left ? 0 : 2);
+                int end = start + 2;
+
+                for (int i = end - 1; i >= start; i--)
+                {
+                    if (!inv[i].Empty)
                     {
-                        Api.World.SpawnItemEntity(stack, Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                        ItemStack stack = inv[i].TakeOut(1);
+                        if (byPlayer.InventoryManager.TryGiveItemstack(stack))
+                        {
+                            AssetLocation sound = stack.Block?.Sounds?.Place;
+                            Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
+                        }
+
+                        if (stack.StackSize > 0)
+                        {
+                            Api.World.SpawnItemEntity(stack, Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                        }
+                        MarkDirty(true);
+                        updateMeshes();
+                        return true;
                     }
-                    MarkDirty(true);
-                    updateMeshes();
-                    return true;
+                }
+            } else
+            {
+                if (Block.Variant["type"] == "doors")
+                {
+                    bool up = blockSel.SelectionBoxIndex > 1;
+                    bool left = (blockSel.SelectionBoxIndex % 2) == 0;
+                    int start = (up ? 4 : 0) + (left ? 0 : 2);
+
+                    if (!inv[start].Empty)
+                    {
+
+                        ItemStack stack = inv[start].TakeOut(1);
+                        if (byPlayer.InventoryManager.TryGiveItemstack(stack))
+                        {
+                            AssetLocation sound = stack.Block?.Sounds?.Place;
+                            Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
+                        }
+
+                        if (stack.StackSize > 0)
+                        {
+                            Api.World.SpawnItemEntity(stack, Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                        }
+                        MarkDirty(true);
+                        updateMeshes();
+                        return true;
+                    }
+                } else
+                {
+                    bool up = true;
+                    bool left = (blockSel.SelectionBoxIndex % 2) == 0;
+                    int start = (up ? 4 : 0) + (left ? 0 : 2);
+
+                    if (!inv[start].Empty)
+                    {
+
+                        ItemStack stack = inv[start].TakeOut(1);
+                        if (byPlayer.InventoryManager.TryGiveItemstack(stack))
+                        {
+                            AssetLocation sound = stack.Block?.Sounds?.Place;
+                            Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
+                        }
+
+                        if (stack.StackSize > 0)
+                        {
+                            Api.World.SpawnItemEntity(stack, Pos.ToVec3d().Add(0.5, 0.5, 0.5));
+                        }
+                        MarkDirty(true);
+                        updateMeshes();
+                        return true;
+                    }
                 }
             }
 
