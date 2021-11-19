@@ -1,8 +1,10 @@
 {
 	code: "wallpanel",
+	class: "wallpanels",
 	creativeinventory: { "general": ["*-south"], "decorative": ["*-south"], "zeekea": ["*-south"] },
 	behaviors: [ {name: "Decor", properties: {sides: ["north", "east", "south", "west", "up", "down"], sidedVariants: true, thickness: 0.078125, removable:true }} ],
 	variantgroups: [
+		{ code: "tiles", states: ["four", "ten", "sixteen"] },
 		{ code: "canvas", states: ["plain"] },
 		{ code: "faces", loadFromProperties: "block/rock" },
 		{ code: "side", states: ["north", "east", "south", "west", "up", "down"] }
@@ -18,12 +20,12 @@
 		"1": { base: "game:block/stone/polishedrock/{faces}" }
 	},
 	shapebytype: {
-		"*-down": { base: "block/kitchen/wallpanel" },
-		"*-up": { base: "block/kitchen/wallpanel", rotateX: 180 },
-		"*-north": { base: "block/kitchen/wallpanel", rotateX: 90 },
-		"*-east": { base: "block/kitchen/wallpanel", rotateX: 90, rotateY: 180, rotateZ: 270 },
-		"*-west": { base: "block/kitchen/wallpanel", rotateX: 90, rotateY: 0, rotateZ: 270 },
-		"*-south": { base: "block/kitchen/wallpanel", rotateX: 270 },
+		"*-down": { base: "block/kitchen/wallpanel-{tiles}" },
+		"*-up": { base: "block/kitchen/wallpanel-{tiles}", rotateX: 180 },
+		"*-north": { base: "block/kitchen/wallpanel-{tiles}", rotateX: 90 },
+		"*-east": { base: "block/kitchen/wallpanel-{tiles}", rotateX: 90, rotateY: 180, rotateZ: 270 },
+		"*-west": { base: "block/kitchen/wallpanel-{tiles}", rotateX: 90, rotateY: 0, rotateZ: 270 },
+		"*-south": { base: "block/kitchen/wallpanel-{tiles}", rotateX: 270 },
 	},
 	sidesolidByType: {
 		"*-down": { all: false, down: true },
@@ -87,7 +89,8 @@
 		"walk": "game:walk/wood"
 	},
 	guiTransform: {
-		translation: { x: 0, y: 3, z: 0 },
-		origin: { x: 0.5, y: 0.0625, z: 0.5 }
+		translation: { x: 10, y: 15, z: 0 },
+		origin: { x: 0.5, y: 0.0625, z: 0.5 },
+		scale: 1.3
 	}
 }

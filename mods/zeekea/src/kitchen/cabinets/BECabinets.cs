@@ -34,18 +34,6 @@ namespace zeekea.src.kitchen.cabinets
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
-            /*
-            if (Block.FirstCodePart().Equals("cabinetbottom"))
-            {
-                inv = new InventoryGeneric(8, "cabinetinventory-bottom", null, null);
-                meshes = new MeshData[8];
-            }
-            else
-            {
-                inv = new InventoryGeneric(4, "cabinetinventory-top", null, null);
-                meshes = new MeshData[4];
-            }
-            */
             if (Api.World.Side == EnumAppSide.Client)
             {
                 animUtil.InitializeAnimator("zeekea:cabinet_" + Block.FirstCodePart() + "_" + Block.Variant["type"], new Vec3f(0, Block.Shape.rotateY, 0));
@@ -376,6 +364,11 @@ namespace zeekea.src.kitchen.cabinets
             mesh.Translate(offset.XYZ);
 
             return mesh;
+        }
+
+        public override float GetPerishRate()
+        {
+            return base.GetPerishRate() * 0.8f;
         }
 
         protected override float Inventory_OnAcquireTransitionSpeed(EnumTransitionType transType, ItemStack stack, float baseMul)

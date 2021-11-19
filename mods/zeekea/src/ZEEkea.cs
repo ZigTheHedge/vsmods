@@ -18,6 +18,7 @@ using zeekea.src.curtains;
 using zeekea.src.doorbell;
 using zeekea.src.freezer;
 using zeekea.src.kitchen.cabinets;
+using zeekea.src.kitchen.decor;
 using zeekea.src.kitchen.winerack;
 using zeekea.src.multirotatable;
 using zeekea.src.nightlamp;
@@ -151,6 +152,7 @@ namespace zeekea.src
             api.RegisterBlockEntityClass("bewinerack", typeof(BEWineRack));
             api.RegisterBlockClass("cabinets", typeof(Cabinets));
             api.RegisterBlockEntityClass("becabinets", typeof(BECabinets));
+            api.RegisterBlockClass("wallpanels", typeof(WallPanels));
             //-----------------
             api.RegisterBlockClass("multirotatable", typeof(BlockMultiRotatable));
             api.RegisterBlockEntityClass("bemultirotatable", typeof(BEMultiRotatable));

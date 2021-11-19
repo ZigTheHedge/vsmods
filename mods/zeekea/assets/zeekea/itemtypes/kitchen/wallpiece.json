@@ -1,0 +1,75 @@
+{
+	code: "wallpiece",
+	behaviors: [{ 
+		name: "GroundStorable",
+		properties: {
+			layout: 'Stacking',
+			placeRemoveSound: 'game:sounds/block/ingot',
+			stackingModel: 'block/kitchen/wallpiecespile-{size}',
+			stackingTextures: {
+				"1": "game:block/stone/polishedrock/{faces}"
+			},
+			tessQuantityElements: 1,
+			stackingCapacityByType: {
+				"*-four-*": 64, 
+				"*-ten-*": 128, 
+				"*-sixteen-*": 256
+			},
+			transferQuantity: 1,
+			bulkTransferQuantity: 4,
+			collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1 },
+			cbScaleYByLayerByType: {
+				"*-four-*": 0.25, 
+				"*-ten-*": 0.125, 
+				"*-sixteen-*": 0.0625
+			}
+		}
+	}],
+	variantgroups: [
+		{ code: "size", states: ["four", "ten", "sixteen"] },
+		{ code: "faces", loadFromProperties: "block/rock" }
+	],
+	attributes: {
+		handbook: {
+			groupBy: ["wallpanel-*"]
+		},
+		displaycaseable: true, 
+		shelvable: true
+	},
+	maxstacksizeByType: {
+		"*-four-*": 64, 
+		"*-ten-*": 128, 
+		"*-sixteen-*": 256
+	},
+	storageFlags: 5,
+
+	shape: { base: "item/kitchen/wallpiece-{size}" },
+	textures: {
+		"1": { base: "game:block/stone/polishedrock/{faces}" }
+	},
+	creativeinventory: { "general": ["*"], "decorative": ["*"], "zeekea": ["*"] },
+	guiTransform: {
+		translation: { x: 2, y: 0, z: 0 },
+		rotation: { x: 149, y: -36, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 3.5
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.1, z: 0 },
+		rotation: { x: 65, y: 21, z: -6 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.15
+	},
+	tpHandTransform: {
+		translation: { x: -0.77, y: -0.15, z: -0.64 },
+		rotation: { x: 0, y: -71, z: 18 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 0.75
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 4.8
+	}
+}

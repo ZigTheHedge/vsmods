@@ -1,0 +1,52 @@
+{
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "cube0",
+			"from": [4.5, -2.5, -7],
+			"to": [11.5, 4.5, -6.75],
+			"rotationOrigin": [8, 8, 1],
+			"faces": {
+				"north": {
+					"texture": "#1",
+					"uv": [0, 0, 7, 7],
+					"autoUv": false
+				},
+				"east": {
+					"texture": "#1",
+					"uv": [0, 0, 0.25, 7],
+					"autoUv": false
+				},
+				"south": {
+					"texture": "#1",
+					"uv": [0, 0, 16, 16],
+					"autoUv": false
+				},
+				"west": {
+					"texture": "#1",
+					"uv": [0, 0, 0.25, 7],
+					"autoUv": false
+				},
+				"up": {
+					"texture": "#1",
+					"uv": [0, 0, 7, 0.25],
+					"autoUv": false
+				},
+				"down": {
+					"texture": "#1",
+					"uv": [0, 0, 7, 0.25],
+					"autoUv": false
+				}
+			},
+			"parent": null,
+			"rotationX": -90,
+			"children": []
+		}
+	],
+	"animations": []
+}

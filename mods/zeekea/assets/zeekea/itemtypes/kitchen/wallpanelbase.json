@@ -1,0 +1,68 @@
+{
+	code: "wallpanelbase",
+	behaviors: [{ 
+		name: "GroundStorable",
+		properties: {
+			layout: 'Stacking',
+			stackingModel: 'block/kitchen/wallpanelbasepile-{size}',
+			stackingTexturesByType: {
+				"*-raw": {
+					"0": "game:block/clay/blueclay"
+				},
+				"*-burned": {
+					"0": "game:block/stone/plaster/plain"
+				}
+			},
+			tessQuantityElementsByType: {
+				"*-four-*": 17,
+				"*-ten-*": 17,
+				"*-sixteen-*": 27,
+			},
+			stackingCapacity: 16,
+			transferQuantity: 1,
+			bulkTransferQuantity: 4,
+			collisionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1 },
+			cbScaleYByLayer: 1,
+			maxFireable: 8
+		}
+	}],
+	variantgroups: [
+		{ code: "size", states: ["four", "ten", "sixteen"] },
+		{ code: "state", states: ["raw", "burned"] }
+	],
+	attributes: {
+		handbook: {
+			groupBy: ["wallpanelbase-*"]
+		},
+		displaycaseable: true, 
+		shelvable: true
+	},
+	maxstacksize: 16,
+	storageFlags: 5,
+
+	shape: { base: "item/kitchen/wallpanelbase-{size}" },
+	texturesByType: {
+		"*-raw": {
+			"0": { base: "game:block/clay/blueclay" }
+		},
+		"*-burned": {
+			"0": { base: "game:block/stone/plaster/plain" }
+		}
+	},
+	combustiblePropsByType: {
+		"*-raw": {
+			meltingPoint: 850,
+			meltingDuration: 7.5,
+			smeltingType: "fire",
+			smeltedStack: { type: "item", code: "wallpanelbase-{size}-burned" },
+			requiresContainer: false
+		}
+	},
+	creativeinventory: { "general": ["*"], "decorative": ["*"], "zeekea": ["*"] },
+	guiTransform: {
+		translation: { x: 3, y: 0, z: 0 },
+		rotation: { x: -22.5, y: -44.6875, z: 0 },
+		origin: { x: 0.5, y: 0.43, z: 0.51 },
+		scale: 1.45
+	}
+}
