@@ -1,0 +1,15 @@
+{
+	code: "bigshroom",
+	creativeinventory: { "general": ["*"] },
+	drawtype: "json",
+	shape: { 
+		base: "block/faceless",
+	},
+	sidesolid: {
+		all: "false"
+	},
+	sideopaque: {
+		all: "false"
+	},
+	"faceCullMode": "neverCull"
+}

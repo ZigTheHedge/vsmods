@@ -1,0 +1,23 @@
+{
+  "ingredientPattern": "C,P,D",
+  "ingredients": {
+    "C": {
+      "type": "block",
+      "code": "game:log-placed-*-ud",
+	  "name": "carcass",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart"]
+    },
+	"P": {
+      "type": "item",
+      "code": "game:plank-*"
+    },
+	"D": {
+      "type": "block",
+      "code": "game:planks-redwood"
+    },
+  },
+  "width": 1,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "cabinettop-redwood-{carcass}-drawers-north" }
+}
