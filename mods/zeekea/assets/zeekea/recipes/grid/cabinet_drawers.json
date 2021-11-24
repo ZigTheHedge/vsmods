@@ -1,0 +1,15 @@
+{
+  "ingredientPattern": "PPP,___,PPP",
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+	  "name": "material",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart"]
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "item", code: "zeekea:cabinetdrawers-{material}" }
+}

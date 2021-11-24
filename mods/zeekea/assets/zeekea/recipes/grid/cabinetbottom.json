@@ -1,0 +1,19 @@
+{
+  "ingredientPattern": "_W_,WSW,_W_",
+  "ingredients": {
+    "W": {
+      "type": "block",
+      "code": "game:log-placed-*-ud",
+	  "name": "carcass",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart"]
+    },
+	"S": {
+      "type": "block",
+      "code": "game:shelf-normal-east"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "cabinetbottomcase-{carcass}-none-north" }
+}

@@ -11,5 +11,5 @@
   "width": 1,
   "height": 3,
   "shapeless": false,
-  "output": { type: "block", code: "zeekea:curtain-{color}-no-left-shut-north", quantity: 2 }
+  "output": { type: "block", code: "zeekea:curtain-{color}-no-left-shut-north", quantity: 4 }
 }

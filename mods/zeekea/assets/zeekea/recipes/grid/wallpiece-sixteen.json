@@ -1,0 +1,20 @@
+{
+  "ingredientPattern": "T,S",
+  "ingredients": {
+    "T": {
+      "type": "item",
+      "code": "game:chisel-*", 
+	  "isTool": true
+    },
+    "S": {
+      "type": "item",
+      "code": "zeekea:wallpiece-ten-*",
+	  "name": "rock",
+	  "allowedVariants": ["andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite"]
+    }
+  },
+  "width": 1,
+  "height": 2,
+  "shapeless": false,
+  "output": { type: "item", code: "wallpiece-sixteen-{rock}", quantity: 2 }
+}

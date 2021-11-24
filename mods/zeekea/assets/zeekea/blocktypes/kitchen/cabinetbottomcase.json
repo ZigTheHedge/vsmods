@@ -1,55 +1,67 @@
 {
-	code: "cabinetbottom",
-	class: "cabinets",
-	entityClass: "becabinets",
+	code: "cabinetbottomcase",
+	class: "cabinetcase",
 	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "zeekea": ["*-north"] },
 	behaviors: [{ name: "HorizontalOrientable" }],
-	entityBehaviors: [{ name: "Animatable" }], 	
-	attributes: {
-		handbook: {
-			exclude: true
-		}
-	},
 	blockmaterial: "Wood",
 	variantgroups: [
-		{ code: "tabletop", loadFromProperties: "block/rock" },
-		{ code: "doors", loadFromProperties: "block/wood" },
 		{ code: "internals", loadFromProperties: "block/wood" },
-		{ code: "type", states: ["doors", "drawers"] },
+		{ code: "tabletop", states: ["none", "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite"] },
 		{ loadFromProperties: "abstract/horizontalorientation" }
 	],
+	attributes: {
+		handbook: {
+			excludeByType: {
+				"*-none-*": false,
+				"*": true
+			}
+		}
+	},
 	drawtype: "json",
 	textures: {
 		"0": { base: "game:block/stone/polishedrock/{tabletop}" },
 		"1": { base: "game:block/wood/debarked/{internals}" },
-		"2": { base: "game:block/wood/planks/{doors}1" }
 	},
 	shapebytype: { 
+		"*-none-north": {
+			base: "block/kitchen/cabinet_bottom_case_notop",
+			rotateY: 0
+		},
+		"*-none-east": {
+			base: "block/kitchen/cabinet_bottom_case_notop",
+			rotateY: 270
+		},
+		"*-none-south": {
+			base: "block/kitchen/cabinet_bottom_case_notop",
+			rotateY: 180
+		},
+		"*-none-west": {
+			base: "block/kitchen/cabinet_bottom_case_notop",
+			rotateY: 90
+		},
 		"*-north": {
-			base: "block/kitchen/cabinet_bottom_{type}",
+			base: "block/kitchen/cabinet_bottom_case",
 			rotateY: 0
 		},
 		"*-east": {
-			base: "block/kitchen/cabinet_bottom_{type}",
+			base: "block/kitchen/cabinet_bottom_case",
 			rotateY: 270
 		},
 		"*-south": {
-			base: "block/kitchen/cabinet_bottom_{type}",
+			base: "block/kitchen/cabinet_bottom_case",
 			rotateY: 180
 		},
 		"*-west": {
-			base: "block/kitchen/cabinet_bottom_{type}",
+			base: "block/kitchen/cabinet_bottom_case",
 			rotateY: 90
 		}
 	},
 	lightAbsorption: 0,
 	sidesolid: {
 		all: "false",
-		up: "true"
 	},
 	sideopaque: {
 		all: "false",
-		up: "true"
 	},
 	collisionselectionboxes: [
 		{
