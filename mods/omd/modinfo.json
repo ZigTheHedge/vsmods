@@ -1,11 +1,11 @@
 {
   "type": "code",
   "modid": "omd",
-  "name": "Oh my donation!",
+  "name": "Oh my Donation!",
   "author": "ZigTheHedge",
-  "description": "This client-only mod allows to execute certain commands depending on donation amounts",
+  "description": "Script mod that connects with donation services and performs certain actions depending on donation amount.",
   "version": "1.0.0",
   "dependency": {
-    "game": "1.15.5"
+    "game": "1.15.9"
   }
 }

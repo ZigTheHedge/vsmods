@@ -4,7 +4,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLauncher.csproj", "{203DFBF1-3599-43FD-8487-E1C79C2B788F}"
 	ProjectSection(ProjectDependencies) = postProject
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C} = {8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}
+		{3b5e721d-6020-4728-a606-bf1c3417ccd2} = {3b5e721d-6020-4728-a606-bf1c3417ccd2}
 		{5BA31455-9604-495D-B036-47EB4E866BE0} = {5BA31455-9604-495D-B036-47EB4E866BE0}
 		{D44AD856-3962-4940-8AC1-B2F8064D8671} = {D44AD856-3962-4940-8AC1-B2F8064D8671}
 		{8C220E59-61E6-4FE4-9F7F-B296C6D7D741} = {8C220E59-61E6-4FE4-9F7F-B296C6D7D741}
@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSModLauncher", "VSModLaunc
 		{59A2ECF8-10C7-4983-9020-5B55C1493585} = {59A2ECF8-10C7-4983-9020-5B55C1493585}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "omd", "mods\omd\omd.csproj", "{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "omd", "mods\omd\omd.csproj", "{3b5e721d-6020-4728-a606-bf1c3417ccd2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theneighbours", "mods\theneighbours\theneighbours.csproj", "{4E5393C2-E0A7-41DD-96B3-19211D33FD56}"
 EndProject
@@ -54,12 +54,6 @@ Global
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release x64|Any CPU.Build.0 = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{203DFBF1-3599-43FD-8487-E1C79C2B788F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release x64|Any CPU.Build.0 = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F1CE94C-E8E3-409E-B6EE-05ABAD12A34C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E5393C2-E0A7-41DD-96B3-19211D33FD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4E5393C2-E0A7-41DD-96B3-19211D33FD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E5393C2-E0A7-41DD-96B3-19211D33FD56}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
@@ -120,6 +114,12 @@ Global
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release x64|Any CPU.Build.0 = Release|Any CPU
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A2ECF8-10C7-4983-9020-5B55C1493585}.Release|Any CPU.Build.0 = Release|Any CPU
+{3b5e721d-6020-4728-a606-bf1c3417ccd2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{3b5e721d-6020-4728-a606-bf1c3417ccd2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{3b5e721d-6020-4728-a606-bf1c3417ccd2}.Release x64|Any CPU.ActiveCfg = Release|Any CPU
+{3b5e721d-6020-4728-a606-bf1c3417ccd2}.Release x64|Any CPU.Build.0 = Release|Any CPU
+{3b5e721d-6020-4728-a606-bf1c3417ccd2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{3b5e721d-6020-4728-a606-bf1c3417ccd2}.Release|Any CPU.Build.0 = Release|Any CPU}
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
