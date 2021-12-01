@@ -1,0 +1,32 @@
+{
+  "ingredientPattern": "T_T,C_C,SPS",
+  "ingredients": {
+    "T": {
+      "type": "item",
+      "code": "zeekea:wallpiece-ten-*",
+	  "name": "rock",
+	  "allowedVariants": ["andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite"],
+	  "quantity": 3	  
+    },
+    "S": {
+      "type": "item",
+      "code": "zeekea:wallpiece-sixteen-*",
+	  "name": "rock",
+	  "allowedVariants": ["andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite"],
+	  "quantity": 2	  
+    },
+	"C": {
+      "type": "item",
+	  "quantity": 5,
+      "code": "game:mortar"
+    },
+	"P": {
+      "type": "item",
+      "code": "zeekea:wallpanelbase-ten-burned"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "wallpanel-ten-plain-{rock}-south" }
+}

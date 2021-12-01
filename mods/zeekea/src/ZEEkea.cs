@@ -153,6 +153,7 @@ namespace zeekea.src
             api.RegisterBlockClass("cabinets", typeof(Cabinets));
             api.RegisterBlockEntityClass("becabinets", typeof(BECabinets));
             api.RegisterBlockClass("wallpanels", typeof(WallPanels));
+            api.RegisterBlockClass("cabinetcase", typeof(CabinetCase));
             //-----------------
             api.RegisterBlockClass("multirotatable", typeof(BlockMultiRotatable));
             api.RegisterBlockEntityClass("bemultirotatable", typeof(BEMultiRotatable));

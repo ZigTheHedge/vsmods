@@ -1,0 +1,25 @@
+{
+  "ingredientPattern": "T_T,C_C,_P_",
+  "ingredients": {
+    "T": {
+      "type": "item",
+      "code": "zeekea:wallpiece-four-*",
+	  "name": "rock",
+	  "allowedVariants": ["andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate", "bauxite"],
+	  "quantity": 2	  
+    },
+	"C": {
+      "type": "item",
+	  "quantity": 2,
+      "code": "game:mortar"
+    },
+	"P": {
+      "type": "item",
+      "code": "zeekea:wallpanelbase-four-burned"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "wallpanel-four-plain-{rock}-south" }
+}

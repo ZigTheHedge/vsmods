@@ -1,0 +1,26 @@
+{
+	code: "cabinetdrawers",
+	creativeinventory: { "general": ["*"], "items": ["*"], "zeekea": ["*"]},
+	variantgroups: [
+		{ code: "wood", loadFromProperties: "block/wood" },
+	],
+	maxStackSize: 16,
+	shape: { base: "item/kitchen/cabinet_drawers" },
+	textures: {
+		"2": { base: "game:block/wood/planks/{wood}1" }
+	},
+	guiTransform: {
+		translation: { x: 18, y: -6, z: 0 },
+		rotation: { x: -39, y: -43, z: 0 },
+		scale: 1.35
+	},
+	fpHandTransform: {
+		scale: 1.67
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 90, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.8299 },
+		scale: 1.53
+	}
+}

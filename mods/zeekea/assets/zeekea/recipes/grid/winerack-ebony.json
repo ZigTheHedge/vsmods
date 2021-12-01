@@ -1,0 +1,19 @@
+{
+  "ingredientPattern": "CIC,ICI,CIC",
+  "ingredients": {
+    "C": {
+      "type": "block",
+      "code": "game:log-placed-*-ud",
+	  "name": "carcass",
+	  "allowedVariants": ["acacia", "birch", "kapok", "maple", "oak", "pine", "baldcypress", "larch", "redwood", "ebony", "walnut", "purpleheart"]
+    },
+	"I": {
+      "type": "item",
+      "code": "game:plank-ebony"
+    }
+  },
+  "width": 3,
+  "height": 3,
+  "shapeless": false,
+  "output": { type: "block", code: "winerack-{carcass}-ebony-north" }
+}
