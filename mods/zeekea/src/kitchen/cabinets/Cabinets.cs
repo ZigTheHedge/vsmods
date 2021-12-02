@@ -40,7 +40,7 @@ namespace zeekea.src.kitchen.cabinets
             {
                 drops = new ItemStack[2];
                 drops[0] = new ItemStack(world.Api.World.GetBlock(new AssetLocation("zeekea:cabinettopcase-" + Variant["internals"] + "-" + Variant["type"] + "-north")));
-                drops[1] = new ItemStack(world.Api.World.GetItem(new AssetLocation("zeekea:cabinet" + Variant["type"] + "-" + Variant["internals"])));
+                drops[1] = new ItemStack(world.Api.World.GetItem(new AssetLocation("zeekea:cabinet" + Variant["type"] + "-" + Variant["tabletop"])));
             }
 
             return drops;
