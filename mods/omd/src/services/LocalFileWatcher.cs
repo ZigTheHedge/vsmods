@@ -14,11 +14,11 @@ namespace omd.src.services
 {
     class LocalFileWatcher : DonationService
     {
-        public new string serviceName = "Local File Watcher";
 
         public override void Start()
         {
             base.Start();
+            serviceName = "Local File Watcher";
             OMD.clientApi.Event.RegisterGameTickListener(OMD.LOCAL.Tick, 50);
 
         }
@@ -33,12 +33,19 @@ namespace omd.src.services
                     var content = File.ReadAllText(path);
                     Reward reward = JsonUtil.FromString<Reward>(content);
                     ThresholdItem threshold = OMD.thresholds.GetSuitableThreshold(reward.amount);
+                    File.Delete(path);
+                    if (threshold == null)
+                    {
+                        OMD.clientApi.Event.EnqueueMainThreadTask(() => {
+                            OMD.clientApi.World.Player.ShowChatNotification(reward.name + " has donated " + reward.amount.ToString() + ", but no action is defined for this amount.");
+                        }, "rewardmsg");
+                        return;
+                    }
                     string msg = threshold.GetMessage(reward);
                     OMD.clientApi.Event.EnqueueMainThreadTask(() => {
                         OMD.clientApi.World.Player.ShowChatNotification(msg);
                     }, "rewardmsg");
                     threshold.RunCommands();
-                    File.Delete(path);
                 }
             }
             catch (Exception e)
@@ -48,6 +55,7 @@ namespace omd.src.services
 
         public override void Execute()
         {
+            base.Execute();
             Task.Run(() => Executor());
         }
 

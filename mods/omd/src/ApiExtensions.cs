@@ -4,14 +4,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 
-namespace theneighbours.src
+namespace omd.src
 {
     public static class ApiExtensions
     {
-        public static TConfig LoadOrCreateConfig<TConfig>(this ICoreAPI api, string filename) where TConfig : new()
+        public static TConfig LoadOrCreateConfig<TConfig>(this ICoreClientAPI api, string filename) where TConfig : new()
         {
             try
             {
@@ -37,7 +38,7 @@ namespace theneighbours.src
         /// <summary>
         /// These data files are per world 
         /// </summary>
-        public static TData LoadOrCreateDataFile<TData>(this ICoreAPI api, string filename) where TData : new()
+        public static TData LoadOrCreateDataFile<TData>(this ICoreClientAPI api, string filename) where TData : new()
         {
             var path = Path.Combine(GamePaths.DataPath, "ModData", GetWorldId(api), filename);
             try
@@ -60,7 +61,7 @@ namespace theneighbours.src
         /// <summary>
         /// These data files are per world 
         /// </summary>
-        public static void SaveDataFile<TData>(this ICoreAPI api, string filename, TData data) where TData : new()
+        public static void SaveDataFile<TData>(this ICoreClientAPI api, string filename, TData data) where TData : new()
         {
             var path = Path.Combine(GamePaths.DataPath, "ModData", GetWorldId(api), filename);
             try

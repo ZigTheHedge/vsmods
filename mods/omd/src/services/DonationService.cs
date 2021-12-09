@@ -15,6 +15,7 @@ namespace omd.src.services
         public int tickInterval = 5 * 20;
         public int ticks = 0;
         public bool isStarted = false;
+        public bool isValid = false;
 
         virtual public void Start()
         {
@@ -40,7 +41,16 @@ namespace omd.src.services
             }
         }
 
-        public abstract void Execute();
+        public virtual void Execute()
+        {
+            if (!isValid)
+            {
+                isValid = true;
+                OMD.clientApi.Event.EnqueueMainThreadTask(() => {
+                    OMD.clientApi.World.Player.ShowChatNotification("OMD started for service \"" + serviceName + "\"");
+                }, "rewardservicestart_" + serviceName);
+            }
+        }
 
         public string PerformSyncJSONRequest(string uri, string method, Dictionary<string, string> headers, string body)
         {
@@ -52,6 +62,7 @@ namespace omd.src.services
                 {
                     if (header.Key.Equals("Content-Type")) request.ContentType = header.Value;
                     else if (header.Key.Equals("Accept")) request.Accept = header.Value;
+                    else if (header.Key.Equals("User-Agent")) request.UserAgent = header.Value;
                     else request.Headers.Add(header.Key, header.Value);
                 }
                 if (body != "")
