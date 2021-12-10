@@ -61,7 +61,14 @@ namespace omd.src
             thresholds.SortByAmounts();
             clientApi = api;
             //Start services
-            if(ModConfigFile.Current.localEnabled) LOCAL.Start();
+            /*
+            clientApi.Input.RegisterHotKey("walkleft", "walkleft", GlKeys.D);
+            clientApi.Input.RegisterHotKey("walkright", "walkright", GlKeys.A);
+            clientApi.Input.RegisterHotKey("walkforward", "walkforward", GlKeys.S);
+            clientApi.Input.RegisterHotKey("walkbackward", "walkbackward", GlKeys.W);
+            */
+
+            if (ModConfigFile.Current.localEnabled) LOCAL.Start();
             if (ModConfigFile.Current.daEnabled && ModConfigFile.Current.daOATH != "") DA.Start();
             if (ModConfigFile.Current.slEnabled && ModConfigFile.Current.slOATH != "") SL.Start();
         }

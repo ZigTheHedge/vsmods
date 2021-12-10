@@ -42,19 +42,19 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VintagestoryAPI">
-      <HintPath>g:\vintagestory\VintagestoryAPI.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>g:\vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>g:\vintagestory\Mods\VSEssentials.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\Mods\VSEssentials.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>g:\vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>..\..\..\..\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -66,9 +66,14 @@
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Behaviors\ControlsMessup.cs" />
+    <Compile Include="src\CommandHandlers\ClearAll.cs" />
+    <Compile Include="src\CommandHandlers\Disarm.cs" />
     <Compile Include="src\CommandHandlers\HungerSet.cs" />
+    <Compile Include="src\CommandHandlers\SetSpawn.cs" />
     <Compile Include="src\CommandHandlers\SpawnRandom.cs" />
     <Compile Include="src\CommandHandlers\TemporalSet.cs" />
+    <Compile Include="src\CommandHandlers\TpBottom.cs" />
     <Compile Include="src\CommandHandlers\Tpx.cs" />
     <Compile Include="src\edc.cs" />
   </ItemGroup>

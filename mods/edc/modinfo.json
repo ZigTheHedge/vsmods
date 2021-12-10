@@ -4,7 +4,7 @@
   "name": "Everyday Commands",
   "authors": [ "ZigTheHedge" ],
   "description": "Server-only mod which adds a bunch of useful commands",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "side": "server",
   "dependencies": {
     "game": "1.15.7"
