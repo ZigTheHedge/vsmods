@@ -6,7 +6,7 @@
   "description": "Server-only mod which adds a bunch of useful commands",
   "version": "1.0.0",
   "side": "server",
-  "dependencies": {
+  "dependency": {
     "game": "1.15.7"
   }
 }
