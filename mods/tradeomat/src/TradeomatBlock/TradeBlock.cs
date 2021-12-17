@@ -58,26 +58,16 @@ namespace tradeomat.src.TradeomatBlock
             bool shouldAffectUpperPart = false;
             if (itemstack.Collectible.Variant["type"] == "tall") shouldAffectUpperPart = true;
             if (shouldAffectUpperPart && world.BlockAccessor.GetBlockId(upperPart) != 0) return false;
-            
+
             if (!Tradeomat.AbleToPlaceTomat(byPlayer, api))
             {
                 if (api.Side == EnumAppSide.Server)
                     ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:nomore"), EnumChatType.CommandError);
                 return false;
-            } else
-            {
-                if(SDCFileConfig.Current.NumberOfTomatsAllowed != 0)
-                {
-                    if (api.Side == EnumAppSide.Server)
-                        ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:count", (Tradeomat.CountTomatoes(byPlayer, api) + 1), SDCFileConfig.Current.NumberOfTomatsAllowed), EnumChatType.CommandSuccess);
-                }
-            }
+            } 
+
             bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
 
-            Block upperBlock = world.GetBlock(new AssetLocation("tradeomat:tomat-up"));
-            if(shouldAffectUpperPart) world.BlockAccessor.SetBlock(upperBlock.BlockId, upperPart);
-            if (api.Side == EnumAppSide.Server)
-                Tradeomat.AddTomat((IServerPlayer)byPlayer, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
             return ret;
         }
 
@@ -86,9 +76,24 @@ namespace tradeomat.src.TradeomatBlock
             bool result = base.DoPlaceBlock(world, byPlayer, blockSel, byItemStack);
             if (blockSel.Position != null)
             {
+                BlockPos upperPart = blockSel.Position.UpCopy();
+                bool shouldAffectUpperPart = false;
+                if (byItemStack.Collectible.Variant["type"] == "tall") shouldAffectUpperPart = true;
+                Block upperBlock = world.GetBlock(new AssetLocation("tradeomat:tomat-up"));
+                if (shouldAffectUpperPart) world.BlockAccessor.SetBlock(upperBlock.BlockId, upperPart);
+
                 BETradeBlock be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BETradeBlock;
-                if(be != null)
+                if (be != null)
+                {
                     be.ownerName = byPlayer.PlayerName;
+                    if (SDCFileConfig.Current.NumberOfTomatsAllowed != 0)
+                    {
+                        if (api.Side == EnumAppSide.Server)
+                            ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:count", (Tradeomat.CountTomatoes(byPlayer, api) + 1), SDCFileConfig.Current.NumberOfTomatsAllowed), EnumChatType.CommandSuccess);
+                    }
+                    if (api.Side == EnumAppSide.Server)
+                        Tradeomat.AddTomat((IServerPlayer)byPlayer, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                }
             }
             
             return result;

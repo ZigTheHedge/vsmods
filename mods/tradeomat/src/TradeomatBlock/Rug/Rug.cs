@@ -60,18 +60,9 @@ namespace tradeomat.src.TradeomatBlock.Rug
                     ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:nomore"), EnumChatType.CommandError);
                 return false;
             }
-            else
-            {
-                if (SDCFileConfig.Current.NumberOfTomatsAllowed != 0)
-                {
-                    if (api.Side == EnumAppSide.Server)
-                        ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:count", (Tradeomat.CountTomatoes(byPlayer, api) + 1), SDCFileConfig.Current.NumberOfTomatsAllowed), EnumChatType.CommandSuccess);
-                }
-            }
+            
             bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
 
-            if (api.Side == EnumAppSide.Server)
-                Tradeomat.AddTomat((IServerPlayer)byPlayer, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
             return ret;
         }
 
@@ -82,7 +73,16 @@ namespace tradeomat.src.TradeomatBlock.Rug
             {
                 BERug be = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BERug;
                 if (be != null)
+                {
                     be.ownerName = byPlayer.PlayerName;
+                    if (SDCFileConfig.Current.NumberOfTomatsAllowed != 0)
+                    {
+                        if (api.Side == EnumAppSide.Server)
+                            ((IServerPlayer)byPlayer).SendMessage(0, Lang.Get("tradeomat:count", (Tradeomat.CountTomatoes(byPlayer, api) + 1), SDCFileConfig.Current.NumberOfTomatsAllowed), EnumChatType.CommandSuccess);
+                    }
+                    if (api.Side == EnumAppSide.Server)
+                        Tradeomat.AddTomat((IServerPlayer)byPlayer, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+                }
             }
 
             return result;

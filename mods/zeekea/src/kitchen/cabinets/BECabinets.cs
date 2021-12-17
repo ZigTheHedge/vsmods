@@ -310,7 +310,21 @@ namespace zeekea.src.kitchen.cabinets
 
             BlockCrock crockblock = stack.Collectible as BlockCrock;
             BlockMeal mealblock = stack.Collectible as BlockMeal;
-            MeshData mesh;
+            MeshData mesh = null;
+
+            if (capi.ModLoader.IsModEnabled("expandedfoods"))
+            {
+                if (stack.Collectible.FirstCodePart().Equals("bottle") && !stack.Collectible.Code.Path.Contains("clay"))
+                {
+                    dynamic blockBottleType = stack.Block;
+                    if (blockBottleType != null)
+                    {
+                        ItemStack content = blockBottleType.GetContent(capi.World, stack);
+                        if (content == null) return null;
+                        mesh = blockBottleType.GenMesh(capi, content, Pos);
+                    }
+                }
+            }
 
             if (crockblock != null)
             {
@@ -328,7 +342,8 @@ namespace zeekea.src.kitchen.cabinets
                 ICoreClientAPI capi = Api as ICoreClientAPI;
                 if (stack.Class == EnumItemClass.Block)
                 {
-                    mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
+                    if(mesh == null)
+                        mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
                 }
                 else
                 {
@@ -395,6 +410,7 @@ namespace zeekea.src.kitchen.cabinets
         {
             base.GetBlockInfo(forPlayer, sb);
 
+            bool expFoods = Api.ModLoader.IsModEnabled("expandedfoods");
 
             float ripenRate = GameMath.Clamp(((1 - GetPerishRate()) - 0.5f) * 3, 0, 1);
             if (ripenRate > 0)
@@ -419,6 +435,14 @@ namespace zeekea.src.kitchen.cabinets
                 if (stack.Collectible is BlockCrock)
                 {
                     sb.Append(CrockInfoCompact(inv[i]));
+                }
+                else if(expFoods && stack.Collectible.FirstCodePart().Equals("bottle"))
+                {
+                    dynamic blockBottleType = stack.Block;
+                    if (blockBottleType != null)
+                    {
+                        blockBottleType.GetShelfInfo(Inventory[i], sb, Api.World);
+                    }
                 }
                 else
                 {

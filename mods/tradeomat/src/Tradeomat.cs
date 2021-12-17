@@ -4,6 +4,7 @@ using ProtoBuf;
 using System.Collections.Generic;
 using System.IO;
 using tradeomat.src.Coins;
+using tradeomat.src.Commands;
 using tradeomat.src.TradeomatBlock;
 using tradeomat.src.TradeomatBlock.Rug;
 using Vintagestory.API.Client;
@@ -109,8 +110,8 @@ namespace tradeomat.src
     {
         //Harmony harmony = new Harmony("com.cwelth.tradeomat");
 
-        ICoreServerAPI serverApi;
-        ICoreClientAPI clientApi;
+        public static ICoreServerAPI serverApi;
+        public static ICoreClientAPI clientApi;
         public static List<Tomatoes> tomatoesServer;
         public static List<Tomatoes> tomatoesClient = new List<Tomatoes>();
         public static IServerNetworkChannel serverChannel;
@@ -255,6 +256,8 @@ namespace tradeomat.src
             api.Event.PlayerJoin += PushTomatoes;
 
             serverChannel.SetMessageHandler<OpenBuyerInterface>(OnBuyerInterfaceOpen);
+
+            api.RegisterCommand("tomatcheck", "Checks for Bogus Tradeomats", "/tomatcheck", TomatFixBogus.Execute, Privilege.gamemode);
             
             //harmony.PatchAll();
         }

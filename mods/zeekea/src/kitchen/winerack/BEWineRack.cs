@@ -132,12 +132,26 @@ namespace zeekea.src.kitchen.winerack
 
         protected override MeshData genMesh(ItemStack stack, int index)
         {
-            MeshData mesh;
+            MeshData mesh = null;
 
             ICoreClientAPI capi = Api as ICoreClientAPI;
             if (stack.Class == EnumItemClass.Block)
             {
-                mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
+                if (capi.ModLoader.IsModEnabled("expandedfoods"))
+                {
+                    if (stack.Collectible.FirstCodePart().Equals("bottle") && !stack.Collectible.Code.Path.Contains("clay"))
+                    {
+                        dynamic blockBottleType = stack.Block;
+                        if (blockBottleType != null)
+                        {
+                            ItemStack content = blockBottleType.GetContent(capi.World, stack);
+                            if (content == null) return null;
+                            mesh = blockBottleType.GenMeshSideways(capi, content, Pos);
+                        }
+                    }
+                }
+                if(mesh == null)
+                    mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
             }
             else
             {
@@ -148,17 +162,15 @@ namespace zeekea.src.kitchen.winerack
                 mesh.RenderPassesAndExtraBits.Fill((short)EnumChunkRenderPass.BlendNoCull);
             }
 
-            if (stack.Collectible.Attributes?["onWinerackTransform"].Exists == true)
-            {
-                ModelTransform transform = stack.Collectible.Attributes?["onWinerackTransform"].AsObject<ModelTransform>();
-                transform.EnsureDefaultValues();
+            if(block.Shape.rotateY == 0)
+                mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 1.57f, block.Shape.rotateY * 0.017453f, 0);
+            if (block.Shape.rotateY == 90)
+                mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), -1.57f, (block.Shape.rotateY + 90) * 0.017453f, 1.57f);
+            if (block.Shape.rotateY == 180)
+                mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), -1.57f, block.Shape.rotateY * 0.017453f, 0);
+            if (block.Shape.rotateY == 270)
+                mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 1.57f, (block.Shape.rotateY + 90) * 0.017453f, 1.57f);
 
-                transform.Rotation.X = 0;
-                transform.Rotation.Y = block.Shape.rotateY + 90;
-                transform.Rotation.Z = 90;
-
-                mesh.ModelTransform(transform);
-            }
 
             Vec2f[] positions = new Vec2f[]
             {
@@ -196,7 +208,16 @@ namespace zeekea.src.kitchen.winerack
             }
             else
             {
-                sb.AppendLine(slot.Itemstack.GetName());
+                bool expFoods = Api.ModLoader.IsModEnabled("expandedfoods");
+                if (expFoods && slot.Itemstack.Collectible.FirstCodePart().Equals("bottle"))
+                {
+                    dynamic blockBottleType = slot.Itemstack.Block;
+                    if (blockBottleType != null)
+                    {
+                        blockBottleType.GetShelfInfo(slot, sb, Api.World);
+                    }
+                } else
+                    sb.AppendLine(slot.Itemstack.GetName());
             }
         }
     }

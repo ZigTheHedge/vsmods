@@ -389,6 +389,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
             float z = 5f / 16f + ((index - 6) % 2) * 6f / 16f;
             bool isWearable = false;
 
+            
             if (!Inventory[index].Empty)
             {
                 if (Inventory[index].Itemstack.Class == EnumItemClass.Block)
@@ -403,6 +404,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
                     if (Inventory[index].Itemstack.Item is ItemWearable) isWearable = true;
                 }
             }
+            
             if (isWearable)
             {
                 mesh.Rotate(new Vec3f(3f / 16f, 0, 4f / 16f), 0, 90 * GameMath.DEG2RAD, 0);

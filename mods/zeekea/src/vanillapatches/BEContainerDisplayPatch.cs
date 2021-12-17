@@ -129,7 +129,7 @@ namespace zeekea.src.vanillapatches
 
         protected override MeshData genMesh(ItemStack stack, int index)
         {
-            MeshData mesh;
+            MeshData mesh = null;
             ICoreClientAPI capi = Api as ICoreClientAPI;
 
             if (stack.Class == EnumItemClass.Block && stack.Block is BlockChisel)
@@ -143,7 +143,22 @@ namespace zeekea.src.vanillapatches
                 try
                 {
                     //capi.Tesselator.TesselateBlock(stack.Block, out mesh);
-                    mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
+
+                    if (capi.ModLoader.IsModEnabled("expandedfoods"))
+                    {
+                        if (stack.Collectible.FirstCodePart().Equals("bottle") && !stack.Collectible.Code.Path.Contains("clay"))
+                        {
+                            dynamic blockBottleType = stack.Block;
+                            if (blockBottleType != null)
+                            {
+                                ItemStack content = blockBottleType.GetContent(capi.World, stack);
+                                if (content == null) return null;
+                                mesh = blockBottleType.GenMesh(capi, content, Pos);
+                            }
+                        }
+                    }
+                    if(mesh == null)
+                        mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
                 } catch(System.Collections.Generic.KeyNotFoundException e)
                 {
                     mesh = CubeMeshUtil.GetCubeOnlyScaleXyz(0.5f, 0.5f, new Vec3f(0.5f, 0.5f, 0.5f));

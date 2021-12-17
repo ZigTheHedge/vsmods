@@ -129,7 +129,7 @@ namespace tradeomat.src.Utils
 
         protected override MeshData genMesh(ItemStack stack, int index)
         {
-            MeshData mesh;
+            MeshData mesh = null;
             ICoreClientAPI capi = Api as ICoreClientAPI;
 
             if (stack.Class == EnumItemClass.Block && stack.Block is BlockChisel)
@@ -140,8 +140,33 @@ namespace tradeomat.src.Utils
 
             if (stack.Class == EnumItemClass.Block)
             {
-                //capi.Tesselator.TesselateBlock(stack.Block, out mesh);
-                mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
+                if(capi.ModLoader.IsModEnabled("expandedfoods"))
+                {
+                    if (stack.Collectible.FirstCodePart().Equals("bottle") && !stack.Collectible.Code.Path.Contains("clay"))
+                    {
+                        dynamic blockBottleType = stack.Block;
+                        if(blockBottleType != null)
+                        {
+                            ItemStack content = blockBottleType.GetContent(capi.World, stack);
+                            if (content == null) return null;
+                            mesh = blockBottleType.GenMesh(capi, content, Pos);
+                        }
+                    }
+                }
+
+                if (stack.Collectible is BlockCrock crockblock)
+                {
+                    Vec3f rot = new Vec3f(0, Block.Shape.rotateY, 0);
+                    mesh = BlockEntityCrock.GetMesh(capi.Tesselator, Api, crockblock, crockblock.GetContents(Api.World, stack), crockblock.GetRecipeCode(Api.World, stack), rot).Clone();
+                }
+                else if (stack.Collectible is BlockMeal mealblock)
+                {
+                    MealMeshCache meshCache = capi.ModLoader.GetModSystem<MealMeshCache>();
+                    mesh = meshCache.GenMealInContainerMesh(mealblock, mealblock.GetCookingRecipe(capi.World, stack), mealblock.GetNonEmptyContents(capi.World, stack));
+                }
+                else if (mesh == null)
+                    mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
+
                 if (stack.Collectible.Attributes?["onDisplayTransform"].Exists == true)
                 {
                     ModelTransform transform = stack.Collectible.Attributes?["onDisplayTransform"].AsObject<ModelTransform>();
