@@ -393,7 +393,12 @@ namespace tradeomat.src.TradeomatBlock.Rug
             if (!Inventory[index].Empty)
             {
                 if (Inventory[index].Itemstack.Class == EnumItemClass.Block)
-                    mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.25f, 0.25f, 0.25f);
+                {
+                    if(Inventory[index].Itemstack.Collectible is BlockPie)
+                        mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.15f, 0.15f, 0.15f);
+                    else
+                        mesh.Scale(new Vec3f(0.5f, 0, 0.5f), 0.25f, 0.25f, 0.25f);
+                }
                 else
                 {
                     string itmCode = Inventory[index].Itemstack.Item.Code.FirstPathPart();
