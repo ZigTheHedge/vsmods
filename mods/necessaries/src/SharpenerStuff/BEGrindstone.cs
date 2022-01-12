@@ -384,7 +384,7 @@ namespace necessaries.src.SharpenerStuff
             return base.OnTesselation(mesher, tessThreadTesselator);
         }
 
-        protected override void updateMeshes()
+        public override void updateMeshes()
         {
             mat.Identity();
             mat.RotateYDeg(Block.Shape.rotateY);
@@ -392,14 +392,13 @@ namespace necessaries.src.SharpenerStuff
             base.updateMeshes();
         }
 
-        protected override MeshData genMesh(ItemStack stack, int index)
+        protected override MeshData genMesh(ItemStack stack)
         {
-            if (index == 0) return null;
             
             MeshData mesh;
 
             ICoreClientAPI capi = Api as ICoreClientAPI;
-            nowTesselatingItem = stack.Item;
+            nowTesselatingObj = stack.Item;
             nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
             capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
 

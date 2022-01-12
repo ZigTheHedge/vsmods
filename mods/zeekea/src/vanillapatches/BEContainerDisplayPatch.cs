@@ -18,76 +18,35 @@ namespace zeekea.src.vanillapatches
         {
             get
             {
+                Dictionary<string, CompositeTexture> textures = nowTesselatingObj is Item item ? item.Textures : (nowTesselatingObj as Block).Textures;
                 AssetLocation texturePath = null;
                 CompositeTexture tex;
-                if (nowTesselatingItem.Textures.TryGetValue(textureCode, out tex))
+
+                // Prio 1: Get from collectible textures
+                if (textures.TryGetValue(textureCode, out tex))
                 {
                     texturePath = tex.Baked.BakedName;
                 }
-                else
+
+                // Prio 2: Get from collectible textures, use "all" code
+                if (texturePath == null && textures.TryGetValue("all", out tex))
+                {
+                    texturePath = tex.Baked.BakedName;
+                }
+
+                // Prio 3: Get from currently tesselating shape
+                if (texturePath == null)
                 {
                     nowTesselatingShape?.Textures.TryGetValue(textureCode, out texturePath);
                 }
 
+                // Prio 4: The code is the path
                 if (texturePath == null)
                 {
                     texturePath = new AssetLocation(textureCode);
                 }
 
-                TextureAtlasPosition texpos = capi.BlockTextureAtlas[texturePath];
-
-
-
-                if (texpos == null)
-                {
-                    IAsset texAsset = capi.Assets.TryGet(texturePath.Clone().WithPathPrefixOnce("textures/").WithPathAppendixOnce(".png"));
-                    if (texAsset != null)
-                    {
-                        BitmapRef bmp = texAsset.ToBitmap(capi);
-                        capi.BlockTextureAtlas.InsertTextureCached(texturePath, bmp, out _, out texpos);
-                    }
-                    else
-                    {
-                        textureCode = "all";
-                        if (nowTesselatingItem.Textures.TryGetValue(textureCode, out tex))
-                        {
-                            texturePath = tex.Baked.BakedName;
-                        }
-                        else
-                        {
-                            nowTesselatingShape?.Textures.TryGetValue(textureCode, out texturePath);
-                        }
-
-                        if (texturePath == null)
-                        {
-                            texturePath = new AssetLocation(textureCode);
-                        }
-
-                        texpos = capi.BlockTextureAtlas[texturePath];
-
-                        if (texpos == null)
-                        {
-                            texAsset = capi.Assets.TryGet(texturePath.Clone().WithPathPrefixOnce("textures/").WithPathAppendixOnce(".png"));
-                            if (texAsset != null)
-                            {
-                                BitmapRef bmp = texAsset.ToBitmap(capi);
-                                capi.BlockTextureAtlas.InsertTextureCached(texturePath, bmp, out _, out texpos);
-                            }
-                            else
-                            {
-                                texAsset = capi.Assets.TryGet(new AssetLocation("game", "textures/unknown.png"));
-                                if (texAsset != null)
-                                {
-                                    BitmapRef bmp = texAsset.ToBitmap(capi);
-                                    capi.BlockTextureAtlas.InsertTextureCached(texturePath, bmp, out _, out texpos);
-                                }
-                                capi.World.Logger.Warning("Display cased item {0} defined texture {1}, not no such texture found. 'All' is also absent.", nowTesselatingItem.Code, texturePath);
-                            }
-                        }
-                    }
-                }
-
-                return texpos;
+                return getOrCreateTexPos(texturePath);
             }
         }
 
@@ -127,7 +86,7 @@ namespace zeekea.src.vanillapatches
             return true;
         }
 
-        protected override MeshData genMesh(ItemStack stack, int index)
+        protected override MeshData genMesh(ItemStack stack)
         {
             MeshData mesh = null;
             ICoreClientAPI capi = Api as ICoreClientAPI;
@@ -185,7 +144,7 @@ namespace zeekea.src.vanillapatches
             }
             else
             {
-                nowTesselatingItem = stack.Item;
+                nowTesselatingObj = stack.Item;
                 if (stack.Item.Shape != null)
                 {
                     if(stack.Item.Shape.Base != null)
@@ -216,7 +175,7 @@ namespace zeekea.src.vanillapatches
             return mesh;
         }
 
-        protected override void updateMeshes()
+        public override void updateMeshes()
         {
             if (!ModConfigFile.Current.hideContents) base.updateMeshes();
         }

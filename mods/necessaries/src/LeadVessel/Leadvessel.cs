@@ -25,7 +25,7 @@ namespace necessaries.src.LeadVessel
                         if (activeSlot.Itemstack.Block is BlockLiquidContainerBase)
                         {
                             BlockLiquidContainerBase container = activeSlot.Itemstack.Block as BlockLiquidContainerBase;
-                            ItemStack contents = container.GetContent(world, activeSlot.Itemstack);
+                            ItemStack contents = container.GetContent(activeSlot.Itemstack);
                             if (contents != null)
                             {
                                 if (contents.Class == EnumItemClass.Item)

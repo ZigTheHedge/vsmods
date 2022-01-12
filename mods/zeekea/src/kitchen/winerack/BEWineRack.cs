@@ -122,7 +122,7 @@ namespace zeekea.src.kitchen.winerack
             return base.OnTesselation(mesher, tessThreadTesselator);
         }
 
-        protected override void updateMeshes()
+        public override void updateMeshes()
         {
             mat.Identity();
             mat.RotateYDeg(block.Shape.rotateY);
@@ -130,7 +130,7 @@ namespace zeekea.src.kitchen.winerack
             base.updateMeshes();
         }
 
-        protected override MeshData genMesh(ItemStack stack, int index)
+        protected override MeshData genMesh(ItemStack stack)
         {
             MeshData mesh = null;
 
@@ -155,7 +155,7 @@ namespace zeekea.src.kitchen.winerack
             }
             else
             {
-                nowTesselatingItem = stack.Item;
+                nowTesselatingObj = stack.Item;
                 nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
                 capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
 
@@ -171,7 +171,11 @@ namespace zeekea.src.kitchen.winerack
             if (block.Shape.rotateY == 270)
                 mesh.Rotate(new Vec3f(0.5f, 0, 0.5f), 1.57f, (block.Shape.rotateY + 90) * 0.017453f, 1.57f);
 
+            return mesh;
+        }
 
+        public override void TranslateMesh(MeshData mesh, int index)
+        {
             Vec2f[] positions = new Vec2f[]
             {
                 new Vec2f(0f, 0.27f),
@@ -189,7 +193,6 @@ namespace zeekea.src.kitchen.winerack
             Vec4f offset = mat.TransformVector(new Vec4f(x, y, z, 0));
             mesh.Translate(offset.XYZ);
 
-            return mesh;
         }
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)

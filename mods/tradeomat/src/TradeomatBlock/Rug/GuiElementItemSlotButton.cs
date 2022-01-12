@@ -12,7 +12,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
 {
     public class GuiElementItemSlotButton : GuiElement
     {
-        public Vintagestory.API.Common.Action<string> OnClick;
+        public Action<string> OnClick;
         public string tag;
         public string bottomText;
         public static double unscaledItemSize = 32 * 0.8f;
@@ -44,7 +44,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
             }
         }
 
-        public GuiElementItemSlotButton(ICoreClientAPI capi, ElementBounds bounds, Vintagestory.API.Common.Action<string> onClick, IInventory inventory, ItemSlot slot, bool drawBackground = true, string bottomText = null, string tag = null) : base(capi, bounds)
+        public GuiElementItemSlotButton(ICoreClientAPI capi, ElementBounds bounds, Action<string> onClick, IInventory inventory, ItemSlot slot, bool drawBackground = true, string bottomText = null, string tag = null) : base(capi, bounds)
         {
             this.slot = slot;
             this.inventory = inventory;
@@ -290,7 +290,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
         /// <param name="inventory">The inventory attached to the slot.</param>
         /// <param name="slot">The internal slot of the slot.</param>
         /// <param name="drawBackground">Do we draw the background for this slot? (Default: true)</param>
-        public static GuiComposer AddItemSlotButton(this GuiComposer composer, ElementBounds bounds, Vintagestory.API.Common.Action<string> onClick, IInventory inventory, ItemSlot slot, bool drawBackground = true, string bottomText = null, string tag = null)
+        public static GuiComposer AddItemSlotButton(this GuiComposer composer, ElementBounds bounds, Action<string> onClick, IInventory inventory, ItemSlot slot, bool drawBackground = true, string bottomText = null, string tag = null)
         {
             composer.AddInteractiveElement(new GuiElementItemSlotButton(composer.Api, bounds, onClick, inventory, slot, drawBackground, bottomText, tag), tag);
 

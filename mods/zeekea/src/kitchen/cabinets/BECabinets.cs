@@ -295,7 +295,7 @@ namespace zeekea.src.kitchen.cabinets
             return false;
         }
 
-        protected override void updateMeshes()
+        public override void updateMeshes()
         {
             mat.Identity();
             mat.RotateYDeg(Block.Shape.rotateY);
@@ -303,7 +303,7 @@ namespace zeekea.src.kitchen.cabinets
             base.updateMeshes();
         }
 
-        protected override MeshData genMesh(ItemStack stack, int index)
+        protected override MeshData genMesh(ItemStack stack)
         {
             mat.Identity();
             mat.RotateYDeg(Block.Shape.rotateY);
@@ -347,7 +347,7 @@ namespace zeekea.src.kitchen.cabinets
                 }
                 else
                 {
-                    nowTesselatingItem = stack.Item;
+                    nowTesselatingObj = stack.Item;
                     nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
                     capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
 
@@ -370,15 +370,17 @@ namespace zeekea.src.kitchen.cabinets
                 mesh.Translate(0, -7.5f / 16f, 0f);
             }
 
+            return mesh;
+        }
 
+        public override void TranslateMesh(MeshData mesh, int index)
+        {
             float x = ((index % 4) >= 2) ? 12 / 16f : 4 / 16f;
             float y = index >= 4 ? 9 / 16f : 2 / 16f;
             float z = (index % 2 == 0) ? 4 / 16f : 10 / 16f;
 
             Vec4f offset = mat.TransformVector(new Vec4f(x - 0.5f, y, z - 0.5f, 0));
             mesh.Translate(offset.XYZ);
-
-            return mesh;
         }
 
         public override float GetPerishRate()

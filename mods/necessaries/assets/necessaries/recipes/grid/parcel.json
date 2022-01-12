@@ -7,7 +7,7 @@
     },
     "L": {
       "type": "item",
-      "code": "game:leather"
+      "code": "game:leather-*"
     }
   },
   "width": 3,

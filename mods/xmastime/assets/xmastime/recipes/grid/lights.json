@@ -4,7 +4,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -32,7 +32,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -56,7 +56,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -84,7 +84,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -112,7 +112,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -140,7 +140,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -168,7 +168,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -196,7 +196,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -224,7 +224,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -252,7 +252,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -280,7 +280,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",
@@ -304,7 +304,7 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up"
+				"code": "game:torch-*-lit-up"
 			},
 			"R": {
 				"type": "item",

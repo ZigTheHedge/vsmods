@@ -127,7 +127,7 @@ namespace tastydays.src.kebabbrazier
             return base.OnTesselation(mesher, tessThreadTesselator);
         }
 
-        protected override void updateMeshes()
+        public override void updateMeshes()
         {
             mat.Identity();
             mat.RotateYDeg(Block.Shape.rotateY);
@@ -135,9 +135,8 @@ namespace tastydays.src.kebabbrazier
             base.updateMeshes();
         }
 
-        protected override MeshData genMesh(ItemStack stack, int index)
+        protected override MeshData genMesh(ItemStack stack)
         {
-            if (index == 0) return null;
 
             MeshData mesh;
 
@@ -148,7 +147,7 @@ namespace tastydays.src.kebabbrazier
             }
             else
             {
-                nowTesselatingItem = stack.Item;
+                nowTesselatingObj = stack.Item;
                 nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
                 capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
 
@@ -171,6 +170,12 @@ namespace tastydays.src.kebabbrazier
             mesh.ModelTransform(transform);
 
 
+
+            return mesh;
+        }
+
+        public override void TranslateMesh(MeshData mesh, int index)
+        {
             float x = 3 / 16f + 3 / 16f * (index) - 0.655f;
             float y = 0.47f;
             float z = 0;
@@ -178,7 +183,6 @@ namespace tastydays.src.kebabbrazier
             Vec4f offset = mat.TransformVector(new Vec4f(x, y, z, 0));
             mesh.Translate(offset.XYZ);
 
-            return mesh;
         }
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)

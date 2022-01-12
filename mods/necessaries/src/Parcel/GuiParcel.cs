@@ -142,7 +142,7 @@ namespace necessaries.src.Parcel
                 .AddDialogTitleBar(DialogTitle, OnTitleBarClose)
                 .BeginChildElements(bgBounds)
                     .AddStaticText(Lang.Get("necessaries:parcel-rcpt-title"), CairoFont.WhiteSmallText(), rcptTitleBounds)
-                    .AddDynamicText("", CairoFont.WhiteSmallText(), EnumTextOrientation.Left, rcptBounds, "rcpt")
+                    .AddDynamicText("", CairoFont.WhiteSmallText(), rcptBounds, "rcpt")
                     .AddStaticText(Lang.Get("necessaries:mailbox-recipient"), CairoFont.WhiteSmallText(), destTitleBounds)
                     .AddDropDown(rcptIdx, rcptAddr, 0, null, destBounds, "destination")
                     .AddStaticText(Lang.Get("necessaries:parcel-message-title"), CairoFont.WhiteSmallText(), messageTitleBounds)

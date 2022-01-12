@@ -115,7 +115,7 @@ namespace zeekea.src.tall_locker
                 }
             }
         }
-        protected override void translateMesh(MeshData mesh, int index)
+        public override void TranslateMesh(MeshData mesh, int index)
         {
             if (mesh == null) return;
             float x = (index % 4) * 4f/16f + 2f/16f;

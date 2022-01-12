@@ -381,7 +381,7 @@ namespace tradeomat.src.TradeomatBlock.Rug
             base.updateMesh(index);
         }
 
-        protected override void translateMesh(MeshData mesh, int index)
+        public override void TranslateMesh(MeshData mesh, int index)
         {
             if (index < 6 || index > 10) return;
             float x = 2f / 16f + (index - 6) * 3f / 16f;

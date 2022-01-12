@@ -1,7 +1,7 @@
 {
 	code: "grounddiamond",
 	creativeinventory: { "general": ["*"], "items": ["*"]},
-	shape: { base: "game:item/resource/crushed/quartz" },
+	shape: { base: "game:item/resource/crushed/crushed" },
 	textures: { 
 		"quartz": { base: "necessaries:item/grounddiamond" }
 	},

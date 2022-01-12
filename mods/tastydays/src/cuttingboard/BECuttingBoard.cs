@@ -128,7 +128,7 @@ namespace tastydays.src.cuttingboard
             return base.OnTesselation(mesher, tessThreadTesselator);
         }
 
-        protected override void updateMeshes()
+        public override void updateMeshes()
         {
             mat.Identity();
             mat.RotateYDeg(Block.Shape.rotateY);
@@ -136,7 +136,7 @@ namespace tastydays.src.cuttingboard
             base.updateMeshes();
         }
 
-        protected override MeshData genMesh(ItemStack stack, int index)
+        protected override MeshData genMesh(ItemStack stack)
         {
             MeshData mesh;
 
@@ -147,7 +147,7 @@ namespace tastydays.src.cuttingboard
             }
             else
             {
-                nowTesselatingItem = stack.Item;
+                nowTesselatingObj = stack.Item;
                 nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
                 capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
 

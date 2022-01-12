@@ -109,7 +109,7 @@ namespace zeekea.src.nightstand
                 }
             }
         }
-        protected override void translateMesh(MeshData mesh, int index)
+        public override void TranslateMesh(MeshData mesh, int index)
         {
             if (mesh == null) return;
             if(index > 3)

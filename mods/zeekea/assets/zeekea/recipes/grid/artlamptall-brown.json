@@ -16,7 +16,7 @@
     },
     "T": {
       "type": "block",
-      "code": "game:torch-up"
+      "code": "game:torch-*-lit-up"
     }
   },
   "width": 3,

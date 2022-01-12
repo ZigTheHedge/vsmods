@@ -54,13 +54,14 @@ namespace necessaries.src.Mailbox
             }
             bool ret = base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref failureCode);
 
-            if (api.Side == EnumAppSide.Server)
-                Necessaries.AddMailbox((IServerPlayer)byPlayer, "", blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
             return ret;
         }
 
         public override bool DoPlaceBlock(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ItemStack byItemStack)
         {
+            if (api.Side == EnumAppSide.Server)
+                Necessaries.AddMailbox((IServerPlayer)byPlayer, "", blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z);
+
             bool res = base.DoPlaceBlock(world, byPlayer, blockSel, byItemStack);
             BlockPos blockPos = blockSel.Position;
             BEMailBox beMailBox = world.BlockAccessor.GetBlockEntity(blockPos) as BEMailBox;

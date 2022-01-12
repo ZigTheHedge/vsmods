@@ -4,12 +4,12 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up",
+				"code": "game:torch-*-lit-up",
 				"quantity": 2
 			},
 			"X": {
 				"type": "block",
-				"code": "game:torch-up",
+				"code": "game:torch-*-lit-up",
 				"quantity": 3
 			},
 			"W": { 
@@ -34,12 +34,12 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up",
+				"code": "game:torch-*-lit-up",
 				"quantity": 2
 			},
 			"X": {
 				"type": "block",
-				"code": "game:torch-up",
+				"code": "game:torch-*-lit-up",
 				"quantity": 3
 			},
 			"W": { 
@@ -64,12 +64,12 @@
 		"ingredients": {
 			"T": {
 				"type": "block",
-				"code": "game:torch-up",
+				"code": "game:torch-*-lit-up",
 				"quantity": 2
 			},
 			"X": {
 				"type": "block",
-				"code": "game:torch-up",
+				"code": "game:torch-*-lit-up",
 				"quantity": 3
 			},
 			"W": { 

@@ -76,7 +76,7 @@ namespace tradeomat.src.TradeomatBlock
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 18 }, paymentInSlotsBounds)
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 19 }, goodsOutSlotsBounds)
                     .AddSmallButton(Lang.Get("tradeomat:agree-button"), OnButtonSend, dealButtonBounds, EnumButtonStyle.Normal, EnumTextOrientation.Center, "sendBtn")
-                    .AddDynamicText("", CairoFont.WhiteSmallText(), EnumTextOrientation.Center, errorTitleBounds, "errorText")
+                    .AddDynamicText("", CairoFont.WhiteSmallText(), errorTitleBounds, "errorText")
                 .EndChildElements()
                 .Compose()
             ;

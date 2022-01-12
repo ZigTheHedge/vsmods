@@ -189,7 +189,7 @@ namespace zeekea.src.orebox
             MarkDirty(Api.Side != EnumAppSide.Server);
         }
 
-        protected override void translateMesh(MeshData mesh, int index)
+        public override void TranslateMesh(MeshData mesh, int index)
         {
             if (mesh == null) return;
             float x = 5f / 16f + (index % 2) * 6f / 16f;

@@ -35,7 +35,8 @@ namespace survivalcats.src
             ModConfigFile.Current = api.LoadOrCreateConfig<ModConfigFile>("SurvivalCatsConfig.json");
 
             //Harmony.DEBUG = true;
-            harmony.PatchAll();
+            
+            //harmony.PatchAll();
         }
 
         public override void Dispose()

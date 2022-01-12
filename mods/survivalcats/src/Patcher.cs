@@ -44,8 +44,10 @@ namespace survivalcats.src
                 creativeTabs.Add(tab.code);
                 ___categoryCodes.Add("#" + tab.code);
                 string translateKey = "game:handbook-category-#" + tab.code;
+                /*
                 if (Lang.GetIfExists(translateKey) == null)
-                    Lang.Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + tab.code));
+                    Lang.AvailableLanguages. Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + tab.code));
+                */
             }
 
             foreach (GuiHandbookPage page in ___allHandbookPages)
@@ -60,8 +62,10 @@ namespace survivalcats.src
                         creativeTabs.Add(category);
                         ___categoryCodes.Add("#" + category);
                         string translateKey = "game:handbook-category-#" + category;
+                        /*
                         if (Lang.GetIfExists(translateKey) == null)
                             Lang.Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + category));
+                        */
                     }
                 }
                 foreach (string bookmark in bookmarks)
@@ -340,7 +344,7 @@ namespace survivalcats.src
         {
             LocalBuilder l_bookmarkBounds = generator.DeclareLocal(typeof(ElementBounds));
 
-            MethodInfo m_AddSmallButton = AccessTools.Method(typeof(GuiComposerHelpers), "AddSmallButton");
+            MethodInfo m_AddSmallButton = AccessTools.Method(typeof(Vintagestory.API.Client.GuiComposerHelpers), "AddSmallButton");
             MethodInfo m_patchButtonIn = AccessTools.Method(typeof(PatcherinitDetailGui), "patchButtonIn");
             MethodInfo m_ButtonCallback = AccessTools.Method(typeof(GuiDialogHandbookBookmarks), "OnBookmarkClick");
             ConstructorInfo m_ActionConsumable = AccessTools.Constructor(typeof(ActionConsumable), new Type[] { typeof(object), typeof(IntPtr) });
