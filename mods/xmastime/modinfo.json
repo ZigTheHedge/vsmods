@@ -4,7 +4,7 @@
   "name": "Xmas Time",
   "authors": [ "NatElfa", "ZigTheHedge" ],
   "description": "Various Xmas stuff for your Vintage Home and Garden",
-  "version": "0.2.1-B",
+  "version": "0.2.2",
   "dependency": {
     "game": "1.15.0"
   }
