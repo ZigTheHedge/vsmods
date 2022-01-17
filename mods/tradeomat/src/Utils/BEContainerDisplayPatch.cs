@@ -159,6 +159,11 @@ namespace tradeomat.src.Utils
                     Vec3f rot = new Vec3f(0, Block.Shape.rotateY, 0);
                     mesh = BlockEntityCrock.GetMesh(capi.Tesselator, Api, crockblock, crockblock.GetContents(Api.World, stack), crockblock.GetRecipeCode(Api.World, stack), rot).Clone();
                 }
+                else if (stack.Collectible is BlockPie)
+                {
+                    MealMeshCache meshCache = capi.ModLoader.GetModSystem<MealMeshCache>();
+                    mesh = meshCache.GetPieMesh(stack);
+                }
                 else if (stack.Collectible is BlockMeal mealblock)
                 {
                     MealMeshCache meshCache = capi.ModLoader.GetModSystem<MealMeshCache>();
