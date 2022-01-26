@@ -15,6 +15,8 @@ namespace survivalcats.src
         public static ModConfigFile Current { get; set; }
 
         public bool addModNameToInfo { get; set; } = true;
+        public bool displayVanillaTabsAsCategories { get; set; } = true;
+        public bool displayModsAsCategories { get; set; } = true;
     }
 
     class SurvivalCategories : ModSystem

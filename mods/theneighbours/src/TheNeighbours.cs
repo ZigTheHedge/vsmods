@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using theneighbours.src.Blocks;
+using theneighbours.src.Entities;
 using theneighbours.src.Weapons;
 using Vintagestory.API.Common;
 
@@ -46,6 +47,9 @@ namespace theneighbours.src
             api.RegisterBlockEntityClass("beglowshroom", typeof(BEGlowShroom));
 
             api.RegisterItemClass("scissor", typeof(Scissor));
+
+
+            api.RegisterEntity("glowingentity", typeof(GlowingEntity));
 
         }
     }

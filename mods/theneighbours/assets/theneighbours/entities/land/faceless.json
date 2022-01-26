@@ -1,0 +1,140 @@
+{
+	code: "faceless",
+	class: "glowingentity",
+	hitboxSize: { x: 1, y: 2 },
+	deadHitboxSize: { x: 1.1, y: 0.8 },
+	eyeHeight: 1.7,
+	drops: [],
+	attributes: {
+		spawnDamageParticles: true
+	},	
+	client: {
+		renderer: "Shape",
+		shape: { base: "theneighbours:entity/land/faceless" },
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 }, 
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "interpolateposition" },
+			{ code: "harvestable" },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt", 
+				animationSpeed: 1.4,
+				weight: 10,
+				blendMode: "Average" 
+			},
+			{
+				code: "die",
+				animation: "die", 
+				animationSpeed: 0.6,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{ 
+				code: "idle", 
+				animation: "idle",
+				blendMode: "AddAverage",
+				animationSpeed: 0.4,
+				triggeredBy: { defaultAnim: true },
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" }, 
+			{ code: "controlledphysics", stepHeight: 1.05 },
+			{ code: "despawn", minPlayerDistance: 24, minSeconds: 600 },
+			{ code: "health", currenthealth: 40, maxhealth: 40, },
+			{ code: "deaddecay", hoursToDecay: 96, decayedBlock: "carcass-medium" },
+			{ code: "floatupwhenstuck", onlyWhenDead: true },
+			{ code: "harvestable", drops: [
+					{
+						type: "item", 
+						code: "game:ore-cinnabar", 
+						quantity: { avg: 0.1, var: 1 } 
+					},
+					{
+						type: "item", 
+						code: "game:ore-lapislazuli", 
+						quantity: { avg: 0.1, var: 1 } 
+					},
+					{
+						type: "item", 
+						code: "game:ore-olivine", 
+						quantity: { avg: 0.2, var: 1 } 
+					},
+					{
+						type: "item", 
+						code: "game:smokyquartz", 
+						quantity: { avg: 0.1, var: 1 } 
+					},
+					{
+						type: "block",
+						code: "game:lantern-up",
+						attributes: {
+							material: "brass",
+							lining: "plain",
+							glass: "quartz"
+						},
+						quantity: { avg: 0.2, var: 0 }
+					}					
+				],
+			}, 
+			{
+				code: "taskai",
+				aitasks: [				
+					{
+						code: "wander", 
+						priority: 1.0, 
+						movespeed: 0.0014,
+						animation: "walk",
+						animationSpeed: 0.1,
+						preferredLightLevel: 20
+					},
+					{ 
+						code: "lookaround", 
+						priorityForCancel: 1.35,
+						priority: 1.0
+					}
+				]
+			}
+		],
+		spawnconditions: {
+			worldgen: {
+				TriesPerChunk: { avg: 0.07, var: 0 },
+				tryOnlySurface: true,
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:air", "game:tallgrass-*"],
+				minTemp: 0,
+				maxTemp: 30,
+				minRain: 0.25,
+				minForest: 0.5
+			},
+			runtime: {
+				group: "neutral",
+				tryOnlySurface: true,
+				chance: 0.008,
+				maxQuantity: 4,
+				maxLightLevel: 7,
+				lightLevelType: "onlyBlockLight",					
+				groupSize: { dist: "verynarrowgaussian", avg: 2, var: 3 },
+				insideBlockCodes: ["game:air", "game:tallgrass-*"],
+				minTemp: 0,
+				maxTemp: 30,
+				minRain: 0.25,
+				minForest: 0.5
+			}
+		}
+	},
+	sounds: {
+		hurt: "creature/brower/hurt",
+		death: "creature/brower/death",
+		idle: "creature/brower/idle"
+	},
+	idleSoundChance: 0.1
+}

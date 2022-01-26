@@ -36,40 +36,49 @@ namespace survivalcats.src
                     bookmarks.Add(bookmark);
             }
 
-            /*
+            
             CreativeTabsConfig creativeTabsConfig = ___capi.Assets.TryGet("config/creativetabs.json").ToObject<CreativeTabsConfig>();
 
-            foreach(TabConfig tab in creativeTabsConfig.TabConfigs)
+            foreach (TabConfig tab in creativeTabsConfig.TabConfigs)
             {
                 if (tab.code == "general" || tab.code == "meta") continue;
                 creativeTabs.Add(tab.code);
-                ___categoryCodes.Add("#" + tab.code);
-                string translateKey = "game:handbook-category-#" + tab.code;
-                if (Lang.GetIfExists(translateKey) == null)
-                    Lang.AvailableLanguages. Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + tab.code));
+                if (ModConfigFile.Current.displayVanillaTabsAsCategories) ___categoryCodes.Add("#" + tab.code);
             }
 
-            foreach (GuiHandbookPage page in ___allHandbookPages)
+            if (ModConfigFile.Current.displayModsAsCategories)
             {
-                if (!(page is GuiHandbookItemStackPage)) continue;
-                GuiHandbookItemStackPage isp = (GuiHandbookItemStackPage)page;
-
-                foreach (string category in isp.Stack.Collectible.CreativeInventoryTabs)
+                foreach (GuiHandbookPage page in ___allHandbookPages)
                 {
-                    if (!creativeTabs.Contains(category) && category != "general")
+                    if (!(page is GuiHandbookItemStackPage)) continue;
+                    GuiHandbookItemStackPage isp = (GuiHandbookItemStackPage)page;
+
+                    foreach (string category in isp.Stack.Collectible.CreativeInventoryTabs)
                     {
-                        creativeTabs.Add(category);
-                        ___categoryCodes.Add("#" + category);
-                        string translateKey = "game:handbook-category-#" + category;
-                        if (Lang.GetIfExists(translateKey) == null)
-                            Lang.Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + category));
+                        if (!creativeTabs.Contains(category) && category != "general" && category != "meta")
+                        {
+                            creativeTabs.Add(category);
+                            ___categoryCodes.Add("#" + category);
+                        }
                     }
+
+                    foreach (string bookmark in bookmarks)
+                        if (isp.PageCode.Equals(bookmark))
+                            bookmarkedPages.Add(new GuiHandbookBookmarkedItemStackPage(___capi, isp.Stack));
                 }
-                foreach (string bookmark in bookmarks)
-                    if (isp.PageCode.Equals(bookmark))
-                        bookmarkedPages.Add(new GuiHandbookBookmarkedItemStackPage(___capi, isp.Stack));
             }
-            */
+            else
+            {
+                foreach (GuiHandbookPage page in ___allHandbookPages)
+                {
+                    if (!(page is GuiHandbookItemStackPage)) continue;
+                    GuiHandbookItemStackPage isp = (GuiHandbookItemStackPage)page;
+
+                    foreach (string bookmark in bookmarks)
+                        if (isp.PageCode.Equals(bookmark))
+                            bookmarkedPages.Add(new GuiHandbookBookmarkedItemStackPage(___capi, isp.Stack));
+                }
+            }
 
             foreach (GuiHandbookBookmarkedItemStackPage elem in bookmarkedPages)
                 ___allHandbookPages.Add(elem);
@@ -544,4 +553,55 @@ namespace survivalcats.src
             }
         }
     }
+
+    [HarmonyPatch(typeof(GuiDialogHandbook), "genTabs")]
+    class PatchergenTabs
+    {
+
+        static string GetProperTranslation(string langCode)
+        {
+            if (Lang.GetIfExists(langCode) == null)
+                return Lang.Get("game:tabname-" + langCode.Substring(19));
+            else
+                return Lang.GetIfExists(langCode);
+        }
+
+
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            MethodInfo m_GetProperTranslation = AccessTools.Method(typeof(PatchergenTabs), "GetProperTranslation");
+
+            bool found = false, next = false;
+            int count = 14, skipnext = 0;
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (skipnext == 0) yield return instruction;
+                else skipnext--;
+                if (instruction.opcode == OpCodes.Ldloc_0) 
+                    next = true;
+                else
+                {
+                    if (next && instruction.opcode == OpCodes.Ldloc_1)
+                    {
+                        //Found LdLoc_0 LdLoc_1
+                        found = true;
+                        next = false;
+                    }
+                    else next = false;
+                }
+                if(found)
+                {
+                    count--;
+                    if(count == 0)
+                    {
+                        yield return new CodeInstruction(OpCodes.Call, m_GetProperTranslation);
+                        skipnext = 2;
+                        found = false;
+                    }
+                }
+            }
+        }
+
+    }
+
 }
