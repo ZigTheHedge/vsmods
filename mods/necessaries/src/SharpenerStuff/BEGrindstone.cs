@@ -398,6 +398,9 @@ namespace necessaries.src.SharpenerStuff
             MeshData mesh;
 
             ICoreClientAPI capi = Api as ICoreClientAPI;
+
+            if (stack.Collectible.FirstCodePart().Equals("sharpener")) return null;
+            
             nowTesselatingObj = stack.Item;
             nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
             capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
