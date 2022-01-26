@@ -36,6 +36,7 @@ namespace survivalcats.src
                     bookmarks.Add(bookmark);
             }
 
+            /*
             CreativeTabsConfig creativeTabsConfig = ___capi.Assets.TryGet("config/creativetabs.json").ToObject<CreativeTabsConfig>();
 
             foreach(TabConfig tab in creativeTabsConfig.TabConfigs)
@@ -44,10 +45,8 @@ namespace survivalcats.src
                 creativeTabs.Add(tab.code);
                 ___categoryCodes.Add("#" + tab.code);
                 string translateKey = "game:handbook-category-#" + tab.code;
-                /*
                 if (Lang.GetIfExists(translateKey) == null)
                     Lang.AvailableLanguages. Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + tab.code));
-                */
             }
 
             foreach (GuiHandbookPage page in ___allHandbookPages)
@@ -62,16 +61,15 @@ namespace survivalcats.src
                         creativeTabs.Add(category);
                         ___categoryCodes.Add("#" + category);
                         string translateKey = "game:handbook-category-#" + category;
-                        /*
                         if (Lang.GetIfExists(translateKey) == null)
                             Lang.Inst.LangEntries.Add(translateKey, Lang.Get("game:tabname-" + category));
-                        */
                     }
                 }
                 foreach (string bookmark in bookmarks)
                     if (isp.PageCode.Equals(bookmark))
                         bookmarkedPages.Add(new GuiHandbookBookmarkedItemStackPage(___capi, isp.Stack));
             }
+            */
 
             foreach (GuiHandbookBookmarkedItemStackPage elem in bookmarkedPages)
                 ___allHandbookPages.Add(elem);
@@ -256,7 +254,7 @@ namespace survivalcats.src
         }
     }
 
-    [HarmonyPatch(typeof(CollectibleObject), "GetHandbookInfo")]
+    [HarmonyPatch(typeof(CollectibleBehaviorHandbookTextAndExtraInfo), "GetHandbookInfo")]
     class PatcherGetHandbookInfo
     {
         static string BuildQuantities(List<GridRecipe> recipes)
@@ -292,7 +290,7 @@ namespace survivalcats.src
                 if (foundStage == 1 && instruction.opcode == OpCodes.Ldstr && instruction.operand.Equals("\n"))
                 {
                     yield return new CodeInstruction(OpCodes.Ldstr, " (");
-                    yield return new CodeInstruction(OpCodes.Ldloc, 18);
+                    yield return new CodeInstruction(OpCodes.Ldloc, 19); //gridRecipeList1
                     yield return new CodeInstruction(OpCodes.Call, m_BuildQuantities);
                     yield return new CodeInstruction(OpCodes.Ldstr, ")");
                     yield return new CodeInstruction(OpCodes.Call, m_conCatOriginal);
@@ -308,7 +306,7 @@ namespace survivalcats.src
             }
         }
     }
-
+    
     [HarmonyPatch(typeof(GuiDialogHandbook), "initDetailGui")]
     static class PatcherinitDetailGui
     {
@@ -509,7 +507,8 @@ namespace survivalcats.src
         }
     }
 
-    [HarmonyPatch(typeof(CollectibleObject), "GetHandbookInfo")]
+    /*
+    [HarmonyPatch(typeof(CollectibleBehaviorHandbookTextAndExtraInfo), "GetHandbookInfo")]
     class PatcherGetHandbookInfo2
     {
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -530,7 +529,7 @@ namespace survivalcats.src
             }
         }
     }
-
+    */
 
     [HarmonyPatch(typeof(CollectibleObject), "GetHeldItemInfo")]
     class PatcherGetHeldItemInfo

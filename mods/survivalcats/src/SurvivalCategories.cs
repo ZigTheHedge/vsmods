@@ -24,7 +24,6 @@ namespace survivalcats.src
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
-            api.RegisterBlockClass("chiselfix", typeof(BlockChiselNameFix));
 
         }
 
@@ -36,7 +35,7 @@ namespace survivalcats.src
 
             //Harmony.DEBUG = true;
             
-            //harmony.PatchAll();
+            harmony.PatchAll();
         }
 
         public override void Dispose()
