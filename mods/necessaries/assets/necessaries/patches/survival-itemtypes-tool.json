@@ -38,7 +38,7 @@
     "path": "/attributes/sharpenable",
     "value": true,
     "file": "game:itemtypes/tool/cleaver.json"
-  },  
+  },
   {
     "op": "add",
     "path": "/attributes/onGrindstoneTransform",
@@ -53,9 +53,9 @@
   {
     "op": "add",
     "path": "/attributes/sharpenable",
-	"value": true, 
+	"value": true,
     "file": "game:itemtypes/tool/hoe.json"
-  },  
+  },
   {
     "op": "add",
     "path": "/attributes/onGrindstoneTransform",
@@ -70,9 +70,9 @@
   {
     "op": "add",
     "path": "/attributes/sharpenable",
-	"value": true, 
+	"value": true,
     "file": "game:itemtypes/tool/knife.json"
-  },  
+  },
   {
     "op": "add",
     "path": "/attributes/onGrindstoneTransform",
@@ -87,9 +87,9 @@
   {
     "op": "add",
     "path": "/attributes/sharpenable",
-	"value": true, 
-    "file": "game:itemtypes/tool/longblade.json"
-  },  
+	"value": true,
+    "file": "game:itemtypes/tool/blade.json"
+  },
   {
     "op": "add",
     "path": "/attributes/onGrindstoneTransform",
@@ -99,7 +99,7 @@
 		origin: { x: 0.5, y: 0.1, z: 0.5 },
 		scale: 1
 	},
-    "file": "game:itemtypes/tool/longblade.json"
+    "file": "game:itemtypes/tool/blade.json"
   },
   {
     "op": "add",
@@ -140,7 +140,7 @@
     "path": "/attributes/sharpenable",
     "value": true,
     "file": "game:itemtypes/tool/saw.json"
-  },  
+  },
   {
     "op": "add",
     "path": "/attributes/onGrindstoneTransform",
@@ -157,7 +157,7 @@
     "path": "/attributes/sharpenable",
     "value": true,
     "file": "game:itemtypes/tool/scythe.json"
-  },  
+  },
   {
     "op": "add",
     "path": "/attributes/onGrindstoneTransform",
@@ -174,7 +174,7 @@
     "path": "/attributes/sharpenable",
     "value": true,
     "file": "game:itemtypes/tool/shears.json"
-  },  
+  },
   {
     "op": "add",
     "path": "/attributes/onGrindstoneTransform",
@@ -189,7 +189,7 @@
   {
     "op": "add",
     "path": "/attributes/sharpenable",
-	"value": true, 
+	"value": true,
     "file": "game:itemtypes/tool/shovel.json"
   },
   {

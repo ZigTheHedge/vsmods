@@ -11,3 +11,6 @@ vsmodtools.exe
 LICENSE
 /modtools.temp
 *.csproj
+/mods/necessaries/necessaries.dll
+/mods/necessaries/necessaries.pdb
+/mods/necessaries/necessaries.csproj.user

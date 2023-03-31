@@ -59,12 +59,12 @@ namespace necessaries.src.SharpenerStuff
             get { return "grindstone"; }
         }
 
-        private BlockEntityAnimationUtil animUtil => ((BEBehaviorAnimatable)GetBehavior<BEBehaviorAnimatable>())?.animUtil;
+        private BlockEntityAnimationUtil animUtil => (GetBehavior<BEBehaviorAnimatable>())?.animUtil;
 
         public BEGrindstone()
         {
             inventory = new GrindstoneInventory(null, null);
-            meshes = new MeshData[2];
+            //meshes = new MeshData[2];
 
         }
 
@@ -74,11 +74,11 @@ namespace necessaries.src.SharpenerStuff
             {
                 if (animUtil != null)
                 {
-                    animUtil.renderer?.Dispose();
-                    (Api as ICoreClientAPI)?.Event.UnregisterRenderer(animUtil, EnumRenderStage.Opaque);
+                    //animUtil.renderer?.Dispose();
+                    //(Api as ICoreClientAPI)?.Event.UnregisterRenderer(animUtil, EnumRenderStage.Opaque);
                 }
-                if(ModConfigFile.Current.grindstoneEnabled)
-                    animUtil.InitializeAnimator("necessaries:grindstone", new Vec3f(0, Block.Shape.rotateY, 0));
+                if (ModConfigFile.Current.grindstoneEnabled)
+                    animUtil.InitializeAnimator("necessaries:grindstone", null, null, new Vec3f(0, Block.Shape.rotateY, 0));
             }
         }
 
@@ -86,6 +86,10 @@ namespace necessaries.src.SharpenerStuff
         {
             base.Initialize(api);
 
+            // Hack to stop infinitely rotating grindstone after reload.
+            // If IAmRotating is loaded from FromTreeAttributes and is true, it won't be changed until the next interaction.
+            // Initialize is called aftger FromTreeAttributes, so it can set IAmRotating to false.
+            this.IAmRotating = false;
             inventory.LateInitialize("grindstone-1", api);
             InitAnimator();
             RegisterGameTickListener(Tick, 500);
@@ -170,7 +174,7 @@ namespace necessaries.src.SharpenerStuff
                 {
                     ItemStack itemstack = Inventory[0].Itemstack;
 
-                    int leftDurability = itemstack.Attributes.GetInt("durability", itemstack.Item.GetDurability(itemstack));
+                    int leftDurability = itemstack.Attributes.GetInt("durability", itemstack.Item.GetMaxDurability(itemstack));
                     leftDurability -= 1;
                     itemstack.Attributes.SetInt("durability", leftDurability);
 
@@ -218,9 +222,9 @@ namespace necessaries.src.SharpenerStuff
                         totalDurabilityRestored = ModConfigFile.Current.diamondDiskRepairPerCycle;
                     }
 
-                    int maxRepair = toolstack.Attributes.GetInt("maxRepair", toolstack.Item.GetDurability(toolstack));
+                    int maxRepair = toolstack.Attributes.GetInt("maxRepair", toolstack.Item.GetMaxDurability(toolstack));
 
-                    if (toolstack.Attributes.GetInt("durability", toolstack.Item.GetDurability(toolstack)) < maxRepair)
+                    if (toolstack.Attributes.GetInt("durability", toolstack.Item.GetMaxDurability(toolstack)) < maxRepair)
                     {
                         toolstack.Attributes.SetInt("maxRepair", maxRepair - totalDurabilityLoss);
                         int newDurability = toolstack.Attributes.GetInt("durability") + totalDurabilityRestored;
@@ -240,7 +244,7 @@ namespace necessaries.src.SharpenerStuff
                     }
 
                     Inventory[1].MarkDirty();
-                } 
+                }
             }
         }
 
@@ -261,8 +265,10 @@ namespace necessaries.src.SharpenerStuff
             ItemSlot slot = byPlayer.InventoryManager.ActiveHotbarSlot;
             int slotSel = blockSel.SelectionBoxIndex;
 
+            // Player hotbar slot is empty
             if (slot.Empty)
             {
+                // Try taking off the tool.
                 if (slotSel == 1)
                 {
                     if (inventory[1].Empty) return false;
@@ -271,6 +277,7 @@ namespace necessaries.src.SharpenerStuff
                     MarkDirty(true);
                     return true;
                 }
+                // Try taking off the grindstone.
                 if (slotSel == 2)
                 {
                     if (inventory[0].Empty) return false;
@@ -280,20 +287,16 @@ namespace necessaries.src.SharpenerStuff
                     return true;
                 }
             }
+            // Player is holding something in their hand.
             else
             {
-                if (slotSel == 1)
+                // Player is trying to put a tool into an empty tool inventory slot.
+                if (slotSel == 1 && ToolSlot.IsTool(slot) && inventory[1].Empty)
                 {
-                    if (ToolSlot.IsTool(slot))
-                    {
-                        if (inventory[1].Empty)
-                        {
-                            int res = slot.TryPutInto(Api.World, inventory[1], 1);
-                            updateMesh(1);
-                            MarkDirty(true);
-                            return true;
-                        }
-                    }
+                    int res = slot.TryPutInto(Api.World, inventory[1], 1);
+                    updateMesh(1);
+                    MarkDirty(true);
+                    return true;
                 }
                 if (slotSel == 2)
                 {
@@ -325,8 +328,9 @@ namespace necessaries.src.SharpenerStuff
         {
             if(packetid == 1101)
             {
-                if (IAmRotating == BitConverter.ToBoolean(data, 0)) return;
-                IAmRotating = BitConverter.ToBoolean(data, 0);
+                var doAnimation = BitConverter.ToBoolean(data, 0);
+                if (IAmRotating == doAnimation) return;
+                IAmRotating = doAnimation;
                 ((ICoreServerAPI)Api).Network.BroadcastBlockEntityPacket(Pos.X, Pos.Y, Pos.Z, 1101, data);
                 MarkDirty();
             } else
@@ -337,8 +341,9 @@ namespace necessaries.src.SharpenerStuff
         {
             if(packetid == 1101)
             {
-                Animate(BitConverter.ToBoolean(data, 0));
-                if (BitConverter.ToBoolean(data, 0))
+                var doAnimation = BitConverter.ToBoolean(data, 0);
+                Animate(doAnimation);
+                if (doAnimation)
                 {
                     if (!Inventory[0].Empty)
                     {
@@ -383,24 +388,34 @@ namespace necessaries.src.SharpenerStuff
 
             return base.OnTesselation(mesher, tessThreadTesselator);
         }
-
-        public override void updateMeshes()
+        protected override void updateMesh(int index)
         {
-            mat.Identity();
-            mat.RotateYDeg(Block.Shape.rotateY);
-
-            base.updateMeshes();
+            if (index == 0) return;
+            base.updateMesh(index);
         }
-
-        protected override MeshData genMesh(ItemStack stack)
+        protected override float[][] genTransformationMatrices()
         {
-            
+            float[][] tfMatrices = new float[2][];
+            tfMatrices[0] = new Matrixf()
+                            .Identity()
+                            .Values;
+            tfMatrices[1] = new Matrixf()
+                            .Translate(0.5f, 0.8f, 1.15f)
+                            .RotateYDeg(Block.Shape.rotateY)
+                            .RotateXDeg(45)
+                            .Values;
+            return tfMatrices;
+        }
+        /*
+        protected override MeshData getOrCreateMesh(ItemStack stack, int index)
+        {
+
             MeshData mesh;
 
             ICoreClientAPI capi = Api as ICoreClientAPI;
 
             if (stack.Collectible.FirstCodePart().Equals("sharpener")) return null;
-            
+
             nowTesselatingObj = stack.Item;
             nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
             capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
@@ -419,20 +434,6 @@ namespace necessaries.src.SharpenerStuff
                 mesh.ModelTransform(transform);
             }
 
-            /*
-            // ------ Debug
-            transform = ModelTransform.NoTransform;
-            transform.EnsureDefaultValues();
-
-            transform.Origin.Set(0.5f, 0.1f, 0.5f);
-            transform.Rotation.Set(230f, 0f, 0f);
-            transform.Translation.Set(-0.6f, 0.35f, 0.25f);
-            transform.Scale = 1f;
-
-            mesh.ModelTransform(transform);
-            // ------ End Debug
-            */
-
             transform = ModelTransform.NoTransform;
             transform.EnsureDefaultValues();
 
@@ -445,7 +446,7 @@ namespace necessaries.src.SharpenerStuff
             transform.Rotation.Z = 0;
 
             transform.Scale = 1f;
-            
+
             mesh.ModelTransform(transform);
 
             float x = 0f;
@@ -457,12 +458,12 @@ namespace necessaries.src.SharpenerStuff
 
             return mesh;
         }
+        */
 
-        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessForResolve)
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
-            base.FromTreeAttributes(tree, worldAccessForResolve);
+            base.FromTreeAttributes(tree, worldForResolving);
             IAmRotating = tree.GetBool("IAmRotating");
-
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -490,24 +491,24 @@ namespace necessaries.src.SharpenerStuff
             else if(tool.Itemstack == null && grindstone.Itemstack != null)
             {
                 sb.AppendLine(Lang.Get("necessaries:grindstone-place-tool"));
-                sb.AppendLine(Lang.Get("necessaries:grindstone-sharpenerdurability") + " " + grindstone.Itemstack.Attributes.GetInt("durability", grindstone.Itemstack.Item.GetDurability(grindstone.Itemstack)) + "/" + grindstone.Itemstack.Item.GetDurability(grindstone.Itemstack));
+                sb.AppendLine(Lang.Get("necessaries:grindstone-sharpenerdurability") + " " + grindstone.Itemstack.Attributes.GetInt("durability", grindstone.Itemstack.Item.GetMaxDurability(grindstone.Itemstack)) + "/" + grindstone.Itemstack.Item.GetMaxDurability(grindstone.Itemstack));
             }
             else if (tool.Itemstack != null && grindstone.Itemstack == null)
             {
-                sb.AppendLine(Lang.Get("necessaries:grindstone-tooldurability") + " " + tool.Itemstack.Attributes.GetInt("durability", tool.Itemstack.Item.GetDurability(tool.Itemstack)) + "/" + tool.Itemstack.Attributes.GetInt("maxRepair", tool.Itemstack.Item.GetDurability(tool.Itemstack)));
+                sb.AppendLine(Lang.Get("necessaries:grindstone-tooldurability") + " " + tool.Itemstack.Attributes.GetInt("durability", tool.Itemstack.Item.GetMaxDurability(tool.Itemstack)) + "/" + tool.Itemstack.Attributes.GetInt("maxRepair", tool.Itemstack.Item.GetMaxDurability(tool.Itemstack)));
                 sb.AppendLine(Lang.Get("necessaries:grindstone-place-grindstone"));
             }
             else if (tool.Itemstack != null && grindstone.Itemstack != null)
             {
-                sb.AppendLine(Lang.Get("necessaries:grindstone-tooldurability") + " " + tool.Itemstack.Attributes.GetInt("durability", tool.Itemstack.Item.GetDurability(tool.Itemstack)) + "/" + tool.Itemstack.Attributes.GetInt("maxRepair", tool.Itemstack.Item.GetDurability(tool.Itemstack)));
-                sb.AppendLine(Lang.Get("necessaries:grindstone-sharpenerdurability") + " " + grindstone.Itemstack.Attributes.GetInt("durability", grindstone.Itemstack.Item.GetDurability(grindstone.Itemstack)) + "/" + grindstone.Itemstack.Item.GetDurability(grindstone.Itemstack));
+                sb.AppendLine(Lang.Get("necessaries:grindstone-tooldurability") + " " + tool.Itemstack.Attributes.GetInt("durability", tool.Itemstack.Item.GetMaxDurability(tool.Itemstack)) + "/" + tool.Itemstack.Attributes.GetInt("maxRepair", tool.Itemstack.Item.GetMaxDurability(tool.Itemstack)));
+                sb.AppendLine(Lang.Get("necessaries:grindstone-sharpenerdurability") + " " + grindstone.Itemstack.Attributes.GetInt("durability", grindstone.Itemstack.Item.GetMaxDurability(grindstone.Itemstack)) + "/" + grindstone.Itemstack.Item.GetMaxDurability(grindstone.Itemstack));
             }
         }
 
         public override void OnBlockRemoved()
         {
             base.OnBlockRemoved();
-            
+
             if (sharpenSound != null)
             {
                 sharpenSound.Stop();

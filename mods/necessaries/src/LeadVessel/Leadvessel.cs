@@ -10,7 +10,7 @@ using Vintagestory.GameContent;
 
 namespace necessaries.src.LeadVessel
 {
-    class Leadvessel : Block
+    class Leadvessel : Block, IIgnitable
     {
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
@@ -34,14 +34,14 @@ namespace necessaries.src.LeadVessel
                                     {
                                         if (contents.StackSize >= 5)
                                         {
-                                            
+
                                             if (be.OnInteract(contents, byPlayer))
                                             {
-                                                
+
                                                 contents.StackSize -= 5;
                                                 if (contents.StackSize == 0)
                                                     contents = null;
-                                                
+
                                             }
                                             container.SetContent(activeSlot.Itemstack, contents);
                                             activeSlot.MarkDirty();
@@ -125,30 +125,35 @@ namespace necessaries.src.LeadVessel
             return new ItemStack[] { OnPickBlock(world, pos) };
         }
 
-        public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
+        public void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
         {
             BELeadvessel be = byEntity.World.BlockAccessor.GetBlockEntity(pos) as BELeadvessel;
             if (be != null)
             {
-                if(be.burnTime == 0 && be.locals == LeadVesselContents.WATERSULFUR)
+                if (be.burnTime == 0 && be.locals == LeadVesselContents.WATERSULFUR)
                 {
                     be.burnTime = byEntity.World.Calendar.TotalHours + 0.5f;
                     be.MarkDirty(true);
                 }
             }
-            else
-                base.OnTryIgniteBlockOver(byEntity, pos, secondsIgniting, ref handling);
+        }
+
+        public EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
+        {
+            BELeadvessel be = api.World.BlockAccessor.GetBlockEntity(pos) as BELeadvessel;
+            if (be == null || be.locals != LeadVesselContents.WATERSULFUR) return EnumIgniteState.NotIgnitable;
+            return EnumIgniteState.Ignitable;
         }
 
         public override bool ShouldReceiveClientParticleTicks(IWorldAccessor world, IPlayer player, BlockPos pos, out bool isWindAffected)
         {
             base.ShouldReceiveClientParticleTicks(world, player, pos, out _);
             isWindAffected = true;
-            
+
             BELeadvessel be = world.BlockAccessor.GetBlockEntity(pos) as BELeadvessel;
             if (be != null)
             {
-                if (be.burnTime > 0) 
+                if (be.burnTime > 0)
                     return true;
                 else
                     return false;
@@ -166,11 +171,11 @@ namespace necessaries.src.LeadVessel
                     {
                         AdvancedParticleProperties bps = ParticleProperties[i];
                         bps.WindAffectednesAtPos = windAffectednessAtPos;
-                      
+
                         bps.basePos.X = pos.X + 0.5F;
                         bps.basePos.Y = pos.Y + 1F;
                         bps.basePos.Z = pos.Z + 0.5F;
-                      
+
                         manager.Spawn(bps);
                     }
                 }
