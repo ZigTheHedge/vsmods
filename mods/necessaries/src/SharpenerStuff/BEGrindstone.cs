@@ -49,6 +49,8 @@ namespace necessaries.src.SharpenerStuff
         public int phase = 0;
         bool IAmRotating = false;
 
+        public override string AttributeTransformCode => "onGrindstoneTransform";
+
         public override InventoryBase Inventory
         {
             get { return inventory; }
@@ -64,7 +66,6 @@ namespace necessaries.src.SharpenerStuff
         public BEGrindstone()
         {
             inventory = new GrindstoneInventory(null, null);
-            //meshes = new MeshData[2];
 
         }
 
@@ -72,11 +73,6 @@ namespace necessaries.src.SharpenerStuff
         {
             if (Api.World.Side == EnumAppSide.Client)
             {
-                if (animUtil != null)
-                {
-                    //animUtil.renderer?.Dispose();
-                    //(Api as ICoreClientAPI)?.Event.UnregisterRenderer(animUtil, EnumRenderStage.Opaque);
-                }
                 if (ModConfigFile.Current.grindstoneEnabled)
                     animUtil.InitializeAnimator("necessaries:grindstone", null, null, new Vec3f(0, Block.Shape.rotateY, 0));
             }
@@ -129,10 +125,6 @@ namespace necessaries.src.SharpenerStuff
             {
                 if (Inventory[0].Empty || Inventory[1].Empty) return;
                 particlesStab.Color = ColorUtil.ColorFromRgba(143, 208, 240, 255);
-                /*
-                particlesStab.BlueEvolve = EvolvingNatFloat.create(EnumTransformFunction.LINEAR, -10f);
-                particlesStab.GreenEvolve = EvolvingNatFloat.create(EnumTransformFunction.LINEAR, 10f);
-                */
 
                 if (Block.Variant["horizontalorientation"] == "north")
                 {
@@ -375,8 +367,6 @@ namespace necessaries.src.SharpenerStuff
                 base.OnReceivedServerPacket(packetid, data);
         }
 
-        Matrixf mat = new Matrixf();
-
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
 
@@ -400,65 +390,72 @@ namespace necessaries.src.SharpenerStuff
                             .Identity()
                             .Values;
             tfMatrices[1] = new Matrixf()
-                            .Translate(0.5f, 0.8f, 1.15f)
-                            .RotateYDeg(Block.Shape.rotateY)
-                            .RotateXDeg(45)
+                            .Identity()
                             .Values;
             return tfMatrices;
         }
-        /*
+
         protected override MeshData getOrCreateMesh(ItemStack stack, int index)
         {
+            MeshData mesh = getMesh(stack);
+            if (mesh != null) return mesh;
 
-            MeshData mesh;
+            var meshSource = stack.Collectible as IContainedMeshSource;
 
-            ICoreClientAPI capi = Api as ICoreClientAPI;
-
-            if (stack.Collectible.FirstCodePart().Equals("sharpener")) return null;
-
-            nowTesselatingObj = stack.Item;
-            nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
-            capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
-
-            mesh.RenderPassesAndExtraBits.Fill((short)EnumChunkRenderPass.BlendNoCull);
-
-
-            ModelTransform transform;
-
-            if (stack.Collectible.Attributes?["onGrindstoneTransform"].Exists == true)
+            if (meshSource != null)
             {
-                transform = stack.Collectible.Attributes?["onGrindstoneTransform"].AsObject<ModelTransform>();
-                transform.EnsureDefaultValues();
+                mesh = meshSource.GenMesh(stack, capi.BlockTextureAtlas, Pos);
+            }
+            else
+            {
+                ICoreClientAPI capi = Api as ICoreClientAPI;
+                if (stack.Class == EnumItemClass.Block)
+                {
+                    mesh = capi.TesselatorManager.GetDefaultBlockMesh(stack.Block).Clone();
+                }
+                else
+                {
+                    nowTesselatingObj = stack.Collectible;
+                    nowTesselatingShape = null;
+                    if (stack.Item.Shape?.Base != null)
+                    {
+                        nowTesselatingShape = capi.TesselatorManager.GetCachedShape(stack.Item.Shape.Base);
+                    }
+                    capi.Tesselator.TesselateItem(stack.Item, out mesh, this);
 
-                //transform.Rotation.Y += Block.Shape.rotateY;
-                mesh.ModelTransform(transform);
+                    mesh.RenderPassesAndExtraBits.Fill((short)EnumChunkRenderPass.BlendNoCull);
+                }
             }
 
-            transform = ModelTransform.NoTransform;
-            transform.EnsureDefaultValues();
+            if (stack.Collectible.Attributes?[AttributeTransformCode].Exists == true)
+            {
 
-            transform.Origin.X = 0.5f;
-            transform.Origin.Y = 0;
-            transform.Origin.Z = 0.5f;
+                ModelTransform transform = stack.Collectible.Attributes?[AttributeTransformCode].AsObject<ModelTransform>();
+                transform.EnsureDefaultValues();
+                mesh.ModelTransform(transform);
 
-            transform.Rotation.X = 0;
-            transform.Rotation.Y = Block.Shape.rotateY;
-            transform.Rotation.Z = 0;
+                // The Grindstone is facing in a certain direction, but the tool is always placed facing
+                // in a compass direction. So we need to rotate the tool in the plane of the ground
+                // (xz-plane in the game) by 90 degrees around the y-axis, or the any point at the center of
+                // of the xz-plane (e.g. (0.5f, 0, 0.5f); others might work too).
+                // The tool faces east, so we need to subtract 1 from HorizontalAngleIndex.
+                Block block = Api.World.BlockAccessor.GetBlock(Pos);
+                BlockFacing facing = BlockFacing.FromCode(block.LastCodePart());
+                mesh.Rotate(new Vec3f(0.5f, 0f, 0.5f), 0, (facing.HorizontalAngleIndex - 1) * 90 * GameMath.DEG2RAD, 0);
+            }
 
-            transform.Scale = 1f;
+            if (stack.Class == EnumItemClass.Item && (stack.Item.Shape == null || stack.Item.Shape.VoxelizeTexture))
+            {
+                mesh.Rotate(new Vec3f(0.5f, 0.5f, 0.5f), GameMath.PIHALF, 0, 0);
+                mesh.Scale(new Vec3f(0.5f, 0.5f, 0.5f), 0.33f, 0.33f, 0.33f);
+                mesh.Translate(0, -7.5f / 16f, 0f);
+            }
 
-            mesh.ModelTransform(transform);
-
-            float x = 0f;
-            float y = 0.07f;
-            float z = 0;
-
-            Vec4f offset = mat.TransformVector(new Vec4f(x, y, z, 0));
-            mesh.Translate(offset.XYZ);
+            string key = getMeshCacheKey(stack);
+            MeshCache[key] = mesh;
 
             return mesh;
         }
-        */
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
