@@ -22,11 +22,11 @@ namespace necessaries.src
     {
         [ProtoMember(1)]
         public string title;
-        [ProtoMember(2)] 
+        [ProtoMember(2)]
         public int X;
-        [ProtoMember(3)] 
+        [ProtoMember(3)]
         public int Y;
-        [ProtoMember(4)] 
+        [ProtoMember(4)]
         public int Z;
         [ProtoMember(5)]
         public bool doRemove = false;
@@ -128,7 +128,7 @@ namespace necessaries.src
 
             api.RegisterBlockClass("parcel", typeof(ParcelBlock));
             api.RegisterBlockEntityClass("beparcel", typeof(BEParcel));
-            
+
             api.RegisterBlockClass("trashcan", typeof(TrashcanBlock));
             api.RegisterBlockEntityClass("betrashcan", typeof(BETrashcan));
 
@@ -139,7 +139,7 @@ namespace necessaries.src
 
             api.RegisterBlockClass("leadvessel", typeof(Leadvessel));
             api.RegisterBlockEntityClass("beleadvessel", typeof(BELeadvessel));
-            
+
             api.RegisterItemClass("branchcutter", typeof(ItemBranchcutter));
             api.RegisterItemClass("sharpener", typeof(Sharpener));
 
@@ -228,16 +228,24 @@ namespace necessaries.src
             api.Event.GameWorldSave += SavePostServices;
             api.Event.PlayerJoin += PushPostServices;
 
-            if(ModConfigFile.Current.mailEnabled)
-                api.RegisterCommand("listmailboxes", "Prints a list of all registered mailboxes on a server", "", ListMailboxes, Privilege.readlists);
+            if (ModConfigFile.Current.mailEnabled)
+            {
+                api.ChatCommands
+                    .GetOrCreate("listmailboxes")
+                    .WithDescription("Prints a list of all registered mailboxes on a server")
+                    .RequiresPrivilege("readlists")
+                    .HandleWith(ListMailboxes);
+            }
         }
 
-        private void ListMailboxes(IServerPlayer player, int groupId, CmdArgs args)
+        private TextCommandResult ListMailboxes(TextCommandCallingArgs args)
         {
+            var caller = args.Caller;
+            var player = caller.Player as IServerPlayer;
+            var groupId = caller.FromChatGroupId;
             serverApi.SendMessage(player, groupId, "List of all registered mailboxes:", EnumChatType.Notification);
             if (ModConfigFile.Current.mailHardmodeEnabled) serverApi.SendMessage(player, groupId, "Mail HARD MODE is enabled!", EnumChatType.Notification);
             serverApi.SendMessage(player, groupId, "------------------------------", EnumChatType.Notification);
-            //deathData.PrintTopFive(serverApi, player, groupId);
             int centerX = player.WorldData.EntityPlayer.World.BlockAccessor.MapSizeX / 2;
             int centerZ = player.WorldData.EntityPlayer.World.BlockAccessor.MapSizeZ / 2;
             for (int i = 0; i < postServicesServer.Count; i++)
@@ -251,6 +259,7 @@ namespace necessaries.src
             }
             if(postServicesServer.Count == 0)
                 serverApi.SendMessage(player, groupId, "There are none.", EnumChatType.Notification);
+            return TextCommandResult.Success("All mailboxes listed.");
         }
 
         public static int CountMailboxes(IPlayer player, ICoreAPI api)
@@ -300,7 +309,7 @@ namespace necessaries.src
         {
             for(int i = 0; i < postServicesServer.Count; i++)
             {
-                if(postServicesServer[i].X == X && 
+                if(postServicesServer[i].X == X &&
                     postServicesServer[i].Y == Y &&
                     postServicesServer[i].Z == Z)
                 {
@@ -349,7 +358,7 @@ namespace necessaries.src
                     if (postServicesServer[i].X == X &&
                     postServicesServer[i].Y == Y &&
                     postServicesServer[i].Z == Z) continue;
-                    
+
                     return false;
                 }
             }
