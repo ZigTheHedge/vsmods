@@ -18,7 +18,7 @@ namespace necessaries.src.Mailbox
 
         public string DefAddress
         {
-            get => defAddress; 
+            get => defAddress;
             set
             {
                 defAddress = value;
@@ -56,15 +56,15 @@ namespace necessaries.src.Mailbox
             }
 
             ElementBounds mainBounds = ElementBounds.Fixed(0, 0, 300, 150);
-            
+
             ElementBounds addressTitleBounds = ElementBounds.Fixed(0, 30, 300, 30);
 
             ElementBounds addressBounds = ElementBounds.Fixed(0, 60, 300, 30);
 
             ElementBounds inboxSlotsBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 0, 100, 4, 1);
-            
+
             ElementBounds sendDetailsBounds = ElementBounds.Fixed(0, 160, 300, 30);
-            
+
             ElementBounds mediaSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 0, 190, 1, 1);
 
             ElementBounds sendButtonBounds = ElementBounds.FixedSize(0, 0).FixedUnder(mediaSlotBounds, 2 * 5).WithAlignment(EnumDialogArea.CenterFixed).WithFixedPadding(10, 2);
@@ -90,7 +90,7 @@ namespace necessaries.src.Mailbox
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 4 }, mediaSlotBounds, "mediumSlot")
                     .AddTextInput(addressBounds, OnAddressChanged, null, "address")
                     .AddStaticText(Lang.Get("necessaries:mailbox-send-to"), CairoFont.WhiteSmallText(), sendDetailsBounds)
-                    .AddSmallButton(Lang.Get("necessaries:mailbox-send"), OnButtonSend, sendButtonBounds, EnumButtonStyle.Normal, EnumTextOrientation.Center, "sendBtn")
+                    .AddSmallButton(Lang.Get("necessaries:mailbox-send"), OnButtonSend, sendButtonBounds, EnumButtonStyle.Normal, "sendBtn")
                 .EndChildElements()
                 .Compose()
             ;
@@ -144,7 +144,7 @@ namespace necessaries.src.Mailbox
             capi.Network.SendBlockEntityPacket(BlockEntityPosition.X, BlockEntityPosition.Y, BlockEntityPosition.Z, 1001, data);
             TryClose();
         }
-        
+
         public override void OnGuiOpened()
         {
             base.OnGuiOpened();
